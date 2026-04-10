@@ -156,4 +156,4 @@ left JOIN (select top 1 A.CardName , A.TransId
 
 WHERE OJDT.[TransId] = '1'
 
---ORDER BY (T1.Line_ID+1)
+ORDER BY (T1.Line_ID+1)
