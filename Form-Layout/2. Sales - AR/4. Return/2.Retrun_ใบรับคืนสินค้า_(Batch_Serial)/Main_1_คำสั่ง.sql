@@ -20,7 +20,7 @@ ORDN.[DocDate],
 ORDN.[DocNum],
 ORDN.[DocEntry],
 NNM1.[BeginStr],
-ORDN.[CreateDate],
+ORDN.[CreateDate],v
 RDN1.[unitMsr],
 (RDN1.[VisOrder]) As 'No.',
 RDN1.LineNum as 'Line No.', 
