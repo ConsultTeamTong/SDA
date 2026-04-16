@@ -1,12 +1,4 @@
-﻿-- ============================================================
--- Report: 1.Purchase Order_TH_ใบสั่งซื้อ.rpt
-Path:   3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ.rpt
-Extracted: 2026-04-09 15:22:44
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT 
+﻿SELECT DISTINCT 
 BRANCH.Code ,
 CASE WHEN BRANCH.Code = '00000' AND OPOR.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่' 
   WHEN BRANCH.Code = '00000' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Head office' 
@@ -50,7 +42,8 @@ OCRD.Phone1,
 ISNULL(OCRD.Fax,'') AS 'Fax',
 OCRD.LicTradNum,
 NNM1.BeginStr, 
-OPOR.DocNum, 
+OPOR.DocNum,
+OPOR.CardCode, 
 OPOR.DocDate, 
 OPOR.DocDueDate, 
 OCTG.PymntGroup, 
@@ -76,16 +69,22 @@ CAST(OPOR.Comments AS nvarchar(max)) AS 'Comments',
 POR1.LineType,
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
 OCRD.cntctPrsn,
+OCRD.E_mail,
+POR1.U_SLD_Dis_Amount,
 CAST(ocrd.MailAddres AS nvarchar(max)) AS 'MailAddres',
 ocrd.Country,
 POR1.Project, 
 CAST(por12.StreetS AS nvarchar(max)) as StreetS, CAST(por12.StreetNoS AS nvarchar(max)) as StreetS,CAST(por12.BlockS AS nvarchar(max)) as BlockS, CAST(por12.BuildingS AS nvarchar(max)) as BuildingS, 
 CAST(por12.CityS AS nvarchar(max)) as CityS, por12.ZipCodeS, CAST(por12.CountyS AS nvarchar(max)) as CountyS, por12.StateS,
 CAST(por12.StreetB AS nvarchar(max)) as StreetB, CAST(por12.StreetNoB AS nvarchar(max)) as StreetNoB,CAST(por12.BlockB AS nvarchar(max)) as BlockB, CAST(por12.BuildingB AS nvarchar(max)) as BuildingB, 
-CAST(por12.CityB AS nvarchar(max)) as CityB, por12.ZipCodeB, CAST(por12.CountyB AS nvarchar(max)) as CountyB, por12.StateB
+CAST(por12.CityB AS nvarchar(max)) as CityB, por12.ZipCodeB, CAST(por12.CountyB AS nvarchar(max)) as CountyB, por12.StateB,
+OCPR.Name,
+OCPR.Tel1,
+OCPR.E_MailL
 
 FROM OPOR   
 INNER JOIN POR1 ON OPOR.DocEntry = POR1.DocEntry 
+INNER JOIN POR12 ON OPOR.DocEntry = POR12.DocEntry 
 LEFT JOIN OITM ON POR1.ItemCode = OITM.ItemCode 
 LEFT JOIN OCRD ON OPOR.CardCode = OCRD.CardCode 
 LEFT JOIN CRD1 ON (OPOR.[PaytoCode] = CRD1.[Address] AND OPOR.CardCode = CRD1.CardCode and CRD1.AdresType = 'B')
@@ -98,7 +97,7 @@ LEFT JOIN POR12 ON OPOR.DocEntry = POR12.DocEntry
 LEFT JOIN OUSR ON OPOR.UserSign = OUSR.USERID
 LEFT JOIN OPRJ ON POR1.Project = OPRJ.PrjCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPOR.U_SLD_LVatBranch = BRANCH.Code, oadm
-WHERE OPOR.DocEntry = {?DocKey@}
+WHERE OPOR.DocEntry = 9
 
 UNION ALL
 
@@ -146,7 +145,8 @@ OCRD.Phone1,
 ISNULL(OCRD.Fax,'') AS 'Fax',
 OCRD.LicTradNum,
 NNM1.BeginStr, 
-OPOR.DocNum, 
+OPOR.DocNum,
+OPOR.CardCode, 
 OPOR.DocDate, 
 OPOR.DocDueDate, 
 OCTG.PymntGroup, 
@@ -172,16 +172,22 @@ CAST(OPOR.Comments AS nvarchar(max)) AS 'Comments',
 POR10.LineType,
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
 OCRD.cntctPrsn,
+OCRD.E_mail,
+POR1.U_SLD_Dis_Amount,
 CAST(ocrd.MailAddres AS nvarchar(max)) AS 'MailAddres',
 ocrd.Country,
 POR1.Project, 
 CAST(por12.StreetS AS nvarchar(max)) as StreetS, CAST(por12.StreetNoS AS nvarchar(max)) as StreetS,CAST(por12.BlockS AS nvarchar(max)) as BlockS, CAST(por12.BuildingS AS nvarchar(max)) as BuildingS, 
 CAST(por12.CityS AS nvarchar(max)) as CityS, por12.ZipCodeS, CAST(por12.CountyS AS nvarchar(max)) as CountyS, por12.StateS,
 CAST(por12.StreetB AS nvarchar(max)) as StreetB, CAST(por12.StreetNoB AS nvarchar(max)) as StreetNoB,CAST(por12.BlockB AS nvarchar(max)) as BlockB, CAST(por12.BuildingB AS nvarchar(max)) as BuildingB, 
-CAST(por12.CityB AS nvarchar(max)) as CityB, por12.ZipCodeB, CAST(por12.CountyB AS nvarchar(max)) as CountyB, por12.StateB
+CAST(por12.CityB AS nvarchar(max)) as CityB, por12.ZipCodeB, CAST(por12.CountyB AS nvarchar(max)) as CountyB, por12.StateB,
+OCPR.Name,
+OCPR.Tel1,
+OCPR.E_MailL
 
 FROM OPOR   
 INNER JOIN POR10 ON OPOR.DocEntry = POR10.DocEntry 
+INNER JOIN POR12 ON OPOR.DocEntry = POR12.DocEntry 
 LEFT JOIN POR1 ON OPOR.DocEntry = POR1.DocEntry 
 LEFT JOIN OCRD ON OPOR.CardCode = OCRD.CardCode 
 LEFT JOIN CRD1 ON (OPOR.[PaytoCode] = CRD1.[Address] AND OPOR.CardCode = CRD1.CardCode and CRD1.AdresType = 'B')
@@ -193,6 +199,6 @@ LEFT JOIN OSLP ON OPOR.SlpCode = OSLP.SlpCode
 LEFT JOIN POR12 ON OPOR.DocEntry = POR12.DocEntry
 LEFT JOIN OUSR ON OPOR.UserSign = OUSR.USERID
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPOR.U_SLD_LVatBranch = BRANCH.Code, oadm
-WHERE OPOR.DocEntry = {?DocKey@}
+WHERE OPOR.DocEntry = 9
 
 ORDER BY 'No.' , 'Line No.'

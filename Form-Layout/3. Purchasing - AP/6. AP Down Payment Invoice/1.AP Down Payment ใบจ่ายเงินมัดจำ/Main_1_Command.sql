@@ -1,12 +1,4 @@
-﻿-- ============================================================
--- Report: 1.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ.rpt
-Path:   3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ.rpt
-Extracted: 2026-04-09 15:22:45
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT Distinct
+﻿SELECT Distinct
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
 BRANCH.Code ,
 CASE WHEN BRANCH.Code = '00000' AND ODPO.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่' 
@@ -86,10 +78,18 @@ ODPO.Printed,
 DPO1.Project,
 OCPR.E_MailL,
 OCPR.Tel1,
-OCPR.Name
+OCPR.Name,
+DPO12.StreetB,
+DPO12.StreetNoB,
+DPO12.BlockB,
+DPO12.CityB,
+DPO12.ZipCodeB,
+DPO12.CountyB,
+DPO12.CountryB
 
 FROM ODPO 
-INNER JOIN DPO1 ON ODPO.DocEntry = DPO1.DocEntry 
+INNER JOIN DPO1 ON ODPO.DocEntry = DPO1.DocEntry
+INNER JOIN DPO12 ON ODPO.DocEntry = DPO12.DocEntry
 LEFT JOIN NNM1 ON ODPO.Series = NNM1.Series 
 LEFT JOIN OCRD ON ODPO.CardCode = OCRD.CardCode
 LEFT JOIN OCPR ON ODPO.CntctCode = OCPR.CntctCode
@@ -186,7 +186,14 @@ ODPO.Printed,
 DPO1.Project,
 OCPR.E_MailL,
 OCPR.Tel1,
-OCPR.Name
+OCPR.Name,
+DPO12.StreetB,
+DPO12.StreetNoB,
+DPO12.BlockB,
+DPO12.CityB,
+DPO12.ZipCodeB,
+DPO12.CountyB,
+DPO12.CountryB
 
 Union all
 SELECT Distinct
@@ -269,10 +276,18 @@ ODPO.Printed,
 DPO1.Project,
 OCPR.E_MailL,
 OCPR.Tel1,
-OCPR.Name
+OCPR.Name,
+DPO12.StreetB,
+DPO12.StreetNoB,
+DPO12.BlockB,
+DPO12.CityB,
+DPO12.ZipCodeB,
+DPO12.CountyB,
+DPO12.CountryB
 
 FROM ODPO 
-INNER JOIN DPO10 ON ODPO.DocEntry = DPO10.DocEntry 
+INNER JOIN DPO10 ON ODPO.DocEntry = DPO10.DocEntry
+INNER JOIN DPO12 ON ODPO.DocEntry = DPO12.DocEntry 
 Inner join dpo1 on ODPO.DocEntry = DPO10.DocEntry 
 LEFT JOIN NNM1 ON ODPO.Series = NNM1.Series 
 LEFT JOIN OCRD ON ODPO.CardCode = OCRD.CardCode
@@ -363,6 +378,13 @@ ODPO.Printed,
 DPO1.Project,
 OCPR.E_MailL,
 OCPR.Tel1,
-OCPR.Name
+OCPR.Name,
+DPO12.StreetB,
+DPO12.StreetNoB,
+DPO12.BlockB,
+DPO12.CityB,
+DPO12.ZipCodeB,
+DPO12.CountyB,
+DPO12.CountryB
 
 Order by 'No.' , 'Line Num'
