@@ -18,7 +18,15 @@
       "Bash(node -e ':*)",
       "Bash(code --install-extension ms-mssql.mssql)",
       "Bash(mdfind \"kMDItemCFBundleIdentifier == 'com.microsoft.VSCode'\")",
-      "Bash(\"/Users/user/Library/CloudStorage/GoogleDrive-sattrawut@sala-daeng.com/My Drive/00.Downloads/Visual Studio Code.app/Contents/Resources/app/bin/code\" --install-extension ms-mssql.mssql)"
+      "Bash(\"/Users/user/Library/CloudStorage/GoogleDrive-sattrawut@sala-daeng.com/My Drive/00.Downloads/Visual Studio Code.app/Contents/Resources/app/bin/code\" --install-extension ms-mssql.mssql)",
+      "Bash(mkdir -p \"C:/SDAWR/SDA/backup-before-pull/6. AP Down Payment Invoice\")",
+      "Bash(mkdir -p \"C:/SDAWR/SDA/backup-before-pull/8. AP Credit Memo\")",
+      "Bash(cp -r \"C:/SDAWR/SDA/Form-Layout/3. Purchasing - AP/6. AP Down Payment Invoice/2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\" \"C:/SDAWR/SDA/backup-before-pull/6. AP Down Payment Invoice/\")",
+      "Bash(cp -r \"C:/SDAWR/SDA/Form-Layout/3. Purchasing - AP/6. AP Down Payment Invoice/1.AP Down Payment ใบจ่ายเงินมัดจำ\" \"C:/SDAWR/SDA/backup-before-pull/6. AP Down Payment Invoice/\")",
+      "Bash(cp \"C:/SDAWR/SDA/Form-Layout/3. Purchasing - AP/8. AP Credit Memo/1.AP Credit Memo_ใบลดหนี้/HAddress.sql\" \"C:/SDAWR/SDA/backup-before-pull/8. AP Credit Memo/\")",
+      "Read(//c/SDAWR/SDA/backup-before-pull/6. AP Down Payment Invoice/**)",
+      "Read(//c/SDAWR/SDA/backup-before-pull/8. AP Credit Memo/**)",
+      "Bash(tasklist)"
     ]
   }
 }
