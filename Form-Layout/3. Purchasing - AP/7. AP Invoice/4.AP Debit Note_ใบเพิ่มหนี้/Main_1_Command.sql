@@ -1,12 +1,4 @@
-﻿-- ============================================================
--- Report: 4.AP Debit Note_ใบเพิ่มหนี้.rpt
-Path:   3. Purchasing - AP\7. AP Invoice\4.AP Debit Note_ใบเพิ่มหนี้.rpt
-Extracted: 2026-04-09 15:22:46
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT
+﻿SELECT DISTINCT
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
 BRANCH.Code ,
 CASE WHEN BRANCH.Code = '00000' AND OPCH.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่' 
@@ -108,7 +100,7 @@ LEFT JOIN OSLP ON OPCH.SlpCode = OSLP.SlpCode
 LEFT JOIN [dbo].[@SLD_REASON_DBNOTE] T10 ON OPCH.U_DB_01 = T10.code
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPCH.U_SLD_LVatBranch = BRANCH.Code , oadm
 
-WHERE OPCH.DocEntry = {?DocKey@}
+WHERE OPCH.DocEntry = 1
 
 Union all
 SELECT DISTINCT
@@ -213,5 +205,5 @@ LEFT JOIN OSLP ON OPCH.SlpCode = OSLP.SlpCode
 LEFT JOIN [dbo].[@SLD_REASON_DBNOTE] T10 ON OPCH.U_DB_01 = T10.code
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPCH.U_SLD_LVatBranch = BRANCH.Code , oadm
 
-WHERE OPCH.DocEntry = {?DocKey@}
+WHERE OPCH.DocEntry = 1
 Order by 'No.' , 'Line No.'
