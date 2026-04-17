@@ -1,12 +1,4 @@
-﻿-- ============================================================
--- Report: 2.Sale Quotation_ใบเสนอราคาขาย_(Dis).rpt
-Path:   2. Sales - AR\1. Sales Quotation\2.Sale Quotation_ใบเสนอราคาขาย_(Dis).rpt
-Extracted: 2026-04-09 15:22:33
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT
+﻿SELECT DISTINCT
 case when OCRD.Phone2 is null then ''
   when OCRD.Phone2 is not null then ', ' + OCRD.Phone2
   END 'Phone2',
@@ -61,7 +53,8 @@ OQUT.DocDueDate,
 (QUT1.VisOrder) As 'No.',
 QUT1.LineNum as 'Line No.', 
 QUT1.ItemCode,
-QUT1.Dscription 'Dscription',
+OITM.FrgnName AS 'Dscription',
+--QUT1.Dscription 'Dscription',
 QUT1.Quantity,
 QUT1.PriceBefDi,
 QUT1.LineTotal,
@@ -78,9 +71,32 @@ OQUT.DocTotalFC,
 OCPR.FirstName,
 OCPR.LastName,
 OQUT.CreateDate,
+OQUT.CntctCode,
 QUT1.unitMsr,
 OQUT.Comments
-,qut1.LineType
+,qut1.LineType,
+qut1.Project,
+OCPR.E_MailL as 'Contact',
+OCPR.Cellolar as 'Mobile Phone',
+ocpr.Tel1 as 'Tel1',
+OSLP.U_Name_Foreign as 'Sale Name contact',
+--OSLP.SlpName as 'Sale Name contact',
+OSLP.Mobil as 'Mobile',
+OSLP.Email as 'Email-Sale',
+OCTG.PymntGroup,
+OCRD.Cardname,
+OCRD.CardFname,
+OCPR.name,
+QUT12.StreetB     AS 'Street / PO Box12',
+QUT12.StreetNoB   AS 'Street No.12',
+QUT12.BlockB      AS 'Block12',
+QUT12.CityB       AS 'City12',
+QUT12.ZipCodeB    AS 'Zip Code12',
+QUT12.CountyB     AS 'County12',
+QUT12.StateB      AS 'State12',
+QUT12.CountryB    AS 'Country/Region12',
+QUT1.U_SLD_Dis_Amount,
+OUGP.UgpCode
 
 FROM OQUT  
 INNER JOIN QUT1 ON OQUT.DocEntry = QUT1.DocEntry 
@@ -93,6 +109,8 @@ LEFT JOIN OCTG ON OQUT.GroupNum = OCTG.GroupNum
 LEFT JOIN OHEM ON OQUT.OwnerCode = OHEM.empID
 LEFT JOIN OSLP ON OQUT.SLPCODE = OSLP.SLPCODE 
 LEFT JOIN OPRJ ON QUT1.PROJECT = OPRJ.PRJCODE
+LEFT JOIN OUGP ON QUT1.UomCode = OUGP.UgpCode
+INNER JOIN QUT12 ON OQUT.DocEntry = QUT12.DocEntry
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OQUT.U_SLD_LVatBranch = BRANCH.Code , oadm
 
 WHERE OQUT.DocEntry = '{?DocKey@}'
@@ -171,10 +189,32 @@ OQUT.DocTotalFC,
 OCPR.FirstName,
 OCPR.LastName,
 OQUT.CreateDate,
+OQUT.CntctCode,
 '' as unitMsr,
 OQUT.Comments,
-qut10.LineType
-
+qut10.LineType,
+'' as Project,
+OCPR.E_MailL as 'Email',
+OCPR.Cellolar as 'Mobile Phone',
+ocpr.Tel1 as 'Tel1',
+OSLP.U_Name_Foreign as 'Sale Name contact',
+--OSLP.SlpName as 'Sale Name contact',
+OSLP.Mobil as 'Mobile',
+OSLP.Email as 'Email-Sale',
+OCTG.PymntGroup,
+OCRD.Cardname,
+OCRD.CardFname,
+OCPR.name,
+QUT12.StreetB    AS 'Street / PO Box12',
+QUT12.StreetNoB   AS 'Street No.12',
+QUT12.BlockB      AS 'Block12',
+QUT12.CityB       AS 'City12',
+QUT12.ZipCodeB    AS 'Zip Code12',
+QUT12.CountyB     AS 'County12',
+QUT12.StateB      AS 'State12',
+QUT12.CountryB    AS 'Country/Region12',
+'' as U_SLD_Dis_Amount,
+'' AS UgpCode 
 FROM OQUT  
 INNER JOIN QUT10 ON OQUT.DocEntry = QUT10.DocEntry 
 --LEFT JOIN OITM ON QUT1.ItemCode = OITM.ItemCode 
@@ -185,6 +225,7 @@ LEFT JOIN NNM1 ON OQUT.Series = NNM1.Series
 LEFT JOIN OCTG ON OQUT.GroupNum = OCTG.GroupNum
 LEFT JOIN OHEM ON OQUT.OwnerCode = OHEM.empID
 LEFT JOIN OSLP ON OQUT.SLPCODE = OSLP.SLPCODE 
+INNER JOIN QUT12 ON OQUT.DocEntry = QUT12.DocEntry
 --LEFT JOIN OPRJ ON QUT1.PROJECT = OPRJ.PRJCODE
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OQUT.U_SLD_LVatBranch = BRANCH.Code , oadm
 
