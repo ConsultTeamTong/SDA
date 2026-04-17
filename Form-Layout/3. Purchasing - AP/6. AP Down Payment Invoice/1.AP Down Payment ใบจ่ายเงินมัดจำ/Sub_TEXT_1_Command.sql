@@ -1,5 +1,5 @@
 SELECT
     TOP 1 DPO10.LineText
 FROM DPO1
-INNER JOIN DPO10 ON DPO1.[DocEntry] = DPO10.[DocEntry] AND DPO10.AftLineNum = 0
+INNER JOIN DPO10 ON DPO1.[DocEntry] = DPO10.[DocEntry] AND DPO10.AftLineNum = {?lineNum@}
 WHERE DPO1.[DocEntry] = {?DocKey@}

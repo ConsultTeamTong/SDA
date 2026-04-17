@@ -1,5 +1,5 @@
 SELECT
     TOP 1 IGN10.LineText
 FROM IGN1
-INNER JOIN IGN10 ON IGN1.[DocEntry] = IGN10.[DocEntry] AND IGN10.AftLineNum = 0
+INNER JOIN IGN10 ON IGN1.[DocEntry] = IGN10.[DocEntry] AND IGN10.AftLineNum = {?lineNum@}
 WHERE IGN1.[DocEntry] = {?DocKey@}
