@@ -3,7 +3,6 @@ case when OCPR.Cellolar is null then ''
   when OCPR.Cellolar is not null then ', ' + OCPR.Cellolar
   END 'Phone2',
 OCPR.name AS 'Coontact',
-BRANCH.Code ,
 CASE WHEN BRANCH.Code = '00000' AND ODLN.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่' 
   WHEN BRANCH.Code = '00000' AND ODLN.DocCur <> OADM.MainCurncy THEN 'Head office' 
   WHEN BRANCH.Code <> '00000' AND ODLN.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code) 
@@ -21,20 +20,6 @@ END 'GLN_BP' ,
  WHEN ODLN.Printed = 'Y' AND ODLN.DocCur <> OADM.MainCurncy THEN 'Copy'  
  WHEN ODLN.Printed = 'Y' AND ODLN.DocCur = OADM.MainCurncy THEN N'สำเนา'
  END AS 'Print Status',
-BRANCH.[Name] As 'BranchName',
-BRANCH.U_SLD_VTAXID As 'TaxIdNum',
-BRANCH.U_SLD_VComName As 'PrintHeadr',
-BRANCH.U_SLD_F_VComName As 'PrintHdrF',
-CASE WHEN ODLN.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Building ELSE BRANCH.U_SLD_F_Building END AS 'Building',
-CASE WHEN ODLN.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Steet  ELSE BRANCH.U_SLD_F_Steet  END AS 'Street',
-CASE WHEN ODLN.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Block  ELSE BRANCH.U_SLD_F_Block   END AS 'Block',
-CASE WHEN ODLN.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_City  ELSE BRANCH.U_SLD_F_City  END As 'City',
-CASE WHEN ODLN.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_County ELSE BRANCH.U_SLD_F_County  END As 'County',
-BRANCH.U_SLD_ZipCode As 'ZipCode',
-BRANCH.U_SLD_Tel As 'Tel',
-BRANCH.U_SLD_Fax As 'BFax',
-BRANCH.U_SLD_Email AS 'E-Mail',
---------------------------------------------------------------------------------------------------------
 ODLN.DocEntry,
 ODLN.CardCode,
 DLN12.StreetB     AS '1Bill',
