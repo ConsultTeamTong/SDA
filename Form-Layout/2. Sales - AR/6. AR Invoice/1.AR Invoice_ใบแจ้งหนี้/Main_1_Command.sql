@@ -1,12 +1,4 @@
-﻿-- ============================================================
--- Report: 1.AR Invoice_ใบแจ้งหนี้.rpt
-Path:   2. Sales - AR\6. AR Invoice\1.AR Invoice_ใบแจ้งหนี้.rpt
-Extracted: 2026-04-09 15:22:37
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT  DISTINCT
+﻿SELECT  DISTINCT
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
 BRANCH.Code ,
 CASE WHEN BRANCH.Code = '00000' AND OINV.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่' 
@@ -76,10 +68,22 @@ CASE WHEN OINV.DocCur = 'THB' THEN OINV.DocTotal ELSE OINV.DocTotalFC END AS 'Do
 CASE WHEN OINV.DocCur = 'THB' THEN OINV.DpmAmnt ELSE OINV.DpmAmntFC END AS 'DpmAmnt',
 SUM(CASE WHEN OINV.DocCur = 'THB' THEN INV1.LineTotal ELSE INV1.TotalFrgn END) OVER() AS 'Sum_LineTotal_All',
 OINV.Printed,
-INV1.LineType
+INV1.LineType,
+INV1.Project,
+OCPR.Name,
+OCPR.Tel1,
+OCPR.E_MailL,
+INV12.StreetB,
+INV12.StreetNoB,
+INV12.BlockB,
+INV12.CityB,
+INV12.ZipCodeB,
+INV12.CountyB,
+INV12.CountryB
 
 FROM OINV
 INNER JOIN INV1 ON OINV.DocEntry = INV1.DocEntry
+INNER JOIN INV12 ON OINV.DocEntry = INV12.DocEntry
 LEFT JOIN NNM1 ON OINV.Series = NNM1.Series 
 LEFT JOIN OCRD ON OINV.CardCode = OCRD.CardCode 
 LEFT JOIN OCPR ON OINV.CntctCode = OCPR.CntctCode
