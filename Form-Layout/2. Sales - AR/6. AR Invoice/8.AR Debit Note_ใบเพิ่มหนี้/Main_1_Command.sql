@@ -54,19 +54,38 @@ CASE WHEN OINV.DocCur = 'THB' THEN OINV.DocTotal ELSE OINV.DocTotalFC END AS 'Do
 CASE WHEN OINV.DocCur = 'THB' THEN OINV.DpmAmnt ELSE OINV.DpmAmntFC END AS 'DpmAmnt',
 SUM(CASE WHEN OINV.DocCur = 'THB' THEN INV1.LineTotal ELSE INV1.TotalFrgn END) OVER() AS 'Sum_LineTotal_All',
 OINV.Printed,
-OINV.U_CN_01,
-OINV.U_CN_02,
-OINV.U_CN_03,
-CASE WHEN OINV.U_DB_02 IS not NULL THEN ''
-  WHEN OINV.U_DB_02 IS NULL THEN T10.[Name]
-  END 'Reason_DB',
-CASE WHEN OINV.U_DB_02 IS NULL THEN ''
-  WHEN OINV.U_DB_02 IS NOT NULL THEN N'เพิ่มหนี้เนื่องจาก' + OINV.U_DB_02
-  END 'Reason_DB_Remark'
-  ,inv1.DiscPrcnt 'LDiscPrcnt'
+--OINV.U_CN_01,
+--OINV.U_CN_02,
+--OINV.U_CN_03,
+--CASE WHEN OINV.U_DB_02 IS not NULL THEN ''
+ -- WHEN OINV.U_DB_02 IS NULL THEN T10.[Name]
+  --END 'Reason_DB',
+--CASE WHEN OINV.U_DB_02 IS NULL THEN ''
+  --WHEN OINV.U_DB_02 IS NOT NULL THEN N'เพิ่มหนี้เนื่องจาก' + OINV.U_DB_02
+  --END 'Reason_DB_Remark'
+  inv1.DiscPrcnt 'LDiscPrcnt',
+  INV1.Project,
+OCPR.Name,
+OCPR.Tel1,
+OCPR.E_MailL,
+INV12.StreetB,
+INV12.StreetNoB,
+INV12.BlockB,
+INV12.CityB,
+INV12.ZipCodeB,
+INV12.CountyB,
+INV12.CountryB,
+Ref_NNM.BeginStr                          AS 'Ref_BeginStr',
+Ref_OINV.DocNum                           AS 'Ref_DocNum',
+Ref_OINV.DocDate                          AS 'Ref_DocDate',
+CASE WHEN OINV.DocCur = 'THB' 
+     THEN Ref_OINV.DocTotal 
+     ELSE Ref_OINV.DocTotalFC 
+END                                        AS 'Ref_DocTotal'
 
 FROM OINV
 INNER JOIN INV1 ON OINV.DocEntry = INV1.DocEntry
+INNER JOIN INV12 ON OINV.DocEntry = INV12.DocEntry
 LEFT JOIN NNM1 ON OINV.Series = NNM1.Series 
 LEFT JOIN OCRD ON OINV.CardCode = OCRD.CardCode 
 LEFT JOIN OCPR ON OINV.CntctCode = OCPR.CntctCode
@@ -79,10 +98,13 @@ LEFT JOIN ODPI ON INV11.BASEABS = ODPI.DocEntry
 LEFT JOIN NNM1 NNM ON ODPI.Series = NNM.Series 
 LEFT JOIN OUSR ON OINV.UserSign = OUSR.USERID
 LEFT JOIN OPRJ ON INV1.Project = OPRJ.PrjCode
-Left join [dbo].[@SLD_REASON_DBNOTE] T10 on OINV.U_DB_01 = T10.code
-LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OINV.U_SLD_LVatBranch = BRANCH.Code , oadm
+--Left join [dbo].[@SLD_REASON_DBNOTE] T10 on OINV.U_DB_01 = T10.code
+LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OINV.U_SLD_LVatBranch = BRANCH.Code
+LEFT JOIN OINV Ref_OINV ON INV1.BaseEntry = Ref_OINV.DocEntry 
+                        AND INV1.BaseType  = 13
+LEFT JOIN NNM1 Ref_NNM  ON Ref_OINV.Series = Ref_NNM.Series , oadm
 
-WHERE OINV.DocEntry = 1
+WHERE OINV.DocEntry = {?DocKey@}
 
 Order by 'No.' , 'Line No.'
 
