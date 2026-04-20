@@ -1,12 +1,4 @@
-﻿-- ============================================================
--- Report: 2.AR_Credit Memo_ใบลดหนี้_(Dis) แก้ไขยอดเงิน.rpt
-Path:   2. Sales - AR\7. AR Credit Memo\2.AR_Credit Memo_ใบลดหนี้_(Dis) แก้ไขยอดเงิน.rpt
-Extracted: 2026-04-09 15:22:41
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT
+﻿SELECT DISTINCT
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
 CASE WHEN BRANCH.Code = '00000' AND ORIN.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่'
   WHEN BRANCH.Code = '00000' AND ORIN.DocCur <> OADM.MainCurncy THEN 'Head office'
@@ -19,6 +11,7 @@ CASE WHEN CRD1.GlblLocNum = '00000' AND ORIN.DocCur = OADM.MainCurncy THEN N'(�
   WHEN CRD1.GlblLocNum <> '00000' AND ORIN.DocCur <> OADM.MainCurncy THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')')
   when CRD1.GlblLocNum = '' or CRD1.GlblLocNum is null then ''
 END 'GLN_BP' ,
+
  CASE
  WHEN ORIN.Printed = 'N' AND ORIN.DocCur <> OADM.MainCurncy THEN 'Original'
  WHEN ORIN.Printed = 'N' AND ORIN.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ'
@@ -28,9 +21,9 @@ END 'GLN_BP' ,
 ORIN.CardCode,
 ORIN.[Address],
 ORIN.LicTradNum,
-ORIN.U_CN_01,
-ORIN.U_CN_02,
-ORIN.U_CN_03,
+--ORIN.U_CN_01,
+--ORIN.U_CN_02,
+--ORIN.U_CN_03,
 OCRD.U_SLD_Title,
 OCRD.U_SLD_FullName,
 CASE WHEN CRD1.GlblLocNum IS NULL THEN ''
@@ -53,30 +46,46 @@ RIN1.LineType as 'LineType',
 RIN1.Quantity,
 RIN1.PriceBefDi,
 CASE WHEN ORIN.DocCur = 'THB' THEN RIN1.LineTotal ELSE RIN1.TotalFrgn END AS 'LineTotal',
-CASE WHEN ORIN.DocCur = 'THB' THEN ORIN.DiscSum ELSE ORIN.DiscSumFC END AS 'DiscSum',
 CASE WHEN ORIN.DocCur = 'THB' THEN ORIN.VatSum ELSE ORIN.VatSumFC END AS 'VatSum',
 CASE WHEN ORIN.DocCur = 'THB' THEN ORIN.DocTotal ELSE ORIN.DocTotalFC END AS 'DocTotal',
 SUM(CASE WHEN ORIN.DocCur = 'THB' THEN RIN1.LineTotal ELSE RIN1.TotalFrgn END) OVER() AS 'Sum_LineTotal_All',
-RIN1.DiscPrcnt,
 ORIN.DocCur,
 ORIN.DocEntry,
 ORIN.CreateDate,
-ORIN.DiscPrcnt As 'DiscP',
 RIN1.unitmsr,
-orin.Printed,
-
-CASE WHEN ORIN.U_CN_05 IS not NULL THEN ''
-  WHEN ORIN.U_CN_05 IS NULL THEN T10.[Name]
-  END 'Reason_CN',
-CASE WHEN ORIN.U_CN_05 IS NULL THEN ''
-  WHEN ORIN.U_CN_05 IS NOT NULL THEN N'ลดหนี้เนื่องจาก' + ORIN.U_CN_05
-  END 'Reason_CN_Remark'
-,Orin.comments
+orin.Printed
+--CASE WHEN ORIN.U_CN_05 IS not NULL THEN ''
+  --WHEN ORIN.U_CN_05 IS NULL THEN T10.[Name]
+  --END 'Reason_CN',
+--CASE WHEN ORIN.U_CN_05 IS NULL THEN ''
+  --WHEN ORIN.U_CN_05 IS NOT NULL THEN N'ลดหนี้เนื่องจาก' + ORIN.U_CN_05
+  --END 'Reason_CN_Remark'
+,ORIN.comments
 ,OINV.VatSum as 'InvVat'
-,OINV.VatSumFC as 'InvVatFC'
+,OINV.VatSumFC as 'InvVatFC',
+Ref_NNM.BeginStr                          AS 'Ref_BeginStr',
+Ref_OINV.DocNum                           AS 'Ref_DocNum',
+Ref_OINV.DocDate                          AS 'Ref_DocDate',
+CASE WHEN OINV.DocCur = 'THB' 
+     THEN Ref_OINV.DocTotal 
+     ELSE Ref_OINV.DocTotalFC 
+END                                        AS 'Ref_DocTotal',
+RIN1.Project,
+OCPR.Name,
+OCPR.Tel1,
+OCPR.E_MailL,
+RIN12.StreetB,
+RIN12.StreetNoB,
+RIN12.BlockB,
+RIN12.CityB,
+RIN12.ZipCodeB,
+RIN12.CountyB,
+RIN12.CountryB,
+Rin1.DiscPrcnt
 
 FROM ORIN
 INNER JOIN RIN1 ON ORIN.DocEntry = RIN1.DocEntry 
+INNER JOIN RIN12 ON ORIN.DocEntry = RIN12.DocEntry 
 left join INV1 on RIN1.BaseEntry = INV1.DocEntry and RIN1.BaseLine = INV1.LineNum and RIN1.BaseType = 13
 inner join OINV on OINV.DocEntry = inv1.DocEntry
 
@@ -88,13 +97,15 @@ LEFT JOIN NNM1 ON ORIN.Series = NNM1.Series
 LEFT JOIN OCTG ON ORIN.GroupNum = OCTG.GroupNum
 LEFT JOIN OHEM ON ORIN.OwnerCode = OHEM.empID
 LEFT JOIN OSLP ON ORIN.SlpCode = OSLP.SlpCode
-Left join [dbo].[@SLD_REASON_RD] T10 on ORIN.U_CN_04 = T10.code
+--Left join [dbo].[@SLD_REASON_RD] T10 on ORIN.U_CN_04 = T10.code
 LEFT JOIN OUSR ON ORIN.UserSign = OUSR.USERID
 LEFT JOIN OPRJ ON RIN1.Project = OPRJ.PrjCode
-LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ORIN.U_SLD_LVatBranch = BRANCH.Code , oadm
+LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ORIN.U_SLD_LVatBranch = BRANCH.Code 
+LEFT JOIN OINV Ref_OINV ON INV1.BaseEntry = Ref_OINV.DocEntry 
+                        AND INV1.BaseType  = 13  -- 13 = A/R Invoice
+LEFT JOIN NNM1 Ref_NNM  ON Ref_OINV.Series = Ref_NNM.Series
+, oadm
 
-
-WHERE ORIN.DocEntry = {?DocKey@}
+WHERE ORIN.DocEntry = 2
 
 Order by 'No.' , 'Line No.'
-
