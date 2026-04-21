@@ -19,6 +19,9 @@ param(
     [switch]$DryRun
 )
 
+# Load DB plugin
+. "$PSScriptRoot\DB-MSSQL.ps1"
+
 # ObjectType -> TypeCode (RTYP.CODE) mapping
 $TypeCodeMap = @{
     "30"         = "JDT2"   # Journal Entry
@@ -88,14 +91,12 @@ Write-Log "DryRun : $DryRun"
 $mapRows = Read-MapExcel -Path $MapFile
 Write-Log "Loaded $($mapRows.Count) mapping rows"
 
-$cs = "Server=$Server;Database=$CompanyDB;User ID=$DBUser;Password=$DBPassword;Connection Timeout=10;"
-$conn = New-Object System.Data.SqlClient.SqlConnection $cs
-$conn.Open()
+$conn = New-DBConnection -Server $Server -Database $CompanyDB -User $DBUser -Password $DBPassword
 
 # Pre-fetch max sequence per TypeCode to avoid query per row
 $maxSeqMap = @{}
 $seqCmd = $conn.CreateCommand()
-$seqCmd.CommandText = "SELECT TypeCode, MAX(CAST(SUBSTRING(DocCode, LEN(TypeCode)+1, 4) AS INT)) AS MaxSeq FROM RDOC WHERE LEN(DocCode)>=5 AND ISNUMERIC(SUBSTRING(DocCode, LEN(TypeCode)+1, 4))=1 GROUP BY TypeCode"
+$seqCmd.CommandText = "SELECT TypeCode, MAX(CAST(SUBSTRING(DocCode, LEN(TypeCode)+1, 4) AS INT)) AS MaxSeq FROM RDOC WHERE LEN(DocCode)>=5 AND $DB_ISNUM(SUBSTRING(DocCode, LEN(TypeCode)+1, 4))=1 GROUP BY TypeCode"
 $rdr = $seqCmd.ExecuteReader()
 while ($rdr.Read()) {
     $tc = [string]$rdr["TypeCode"]
@@ -134,10 +135,10 @@ foreach ($row in $mapRows) {
 
         # Check if this layout already exists (match on DocName + TypeCode + Author)
         $chk = $conn.CreateCommand()
-        $chk.CommandText = "SELECT DocCode FROM RDOC WHERE DocName=@n AND TypeCode=@t AND Author=@a"
-        [void]$chk.Parameters.AddWithValue("@n", $layoutName)
-        [void]$chk.Parameters.AddWithValue("@t", $typeCode)
-        [void]$chk.Parameters.AddWithValue("@a", $Author)
+        $chk.CommandText = Convert-DBSql "SELECT DocCode FROM RDOC WHERE DocName=@n AND TypeCode=@t AND Author=@a"
+        Add-DBParam $chk "${DB_PARAM}n" $layoutName
+        Add-DBParam $chk "${DB_PARAM}t" $typeCode
+        Add-DBParam $chk "${DB_PARAM}a" $Author
         $existingCode = $chk.ExecuteScalar()
 
         $action = ""; $docCode = ""
@@ -160,22 +161,21 @@ foreach ($row in $mapRows) {
         }
 
         if ($action -eq "UPDATE") {
-            $sql = "UPDATE RDOC SET Template=@Template, RptHash=@RptHash, UpdateDate=GETDATE() WHERE DocCode=@DocCode"
+            $sql = "UPDATE RDOC SET Template=@Template, RptHash=@RptHash, UpdateDate=$DB_NOW WHERE DocCode=@DocCode"
         } else {
-            $sql = "INSERT INTO RDOC (DocCode,DocName,Author,Notes,Width,Height,LMargin,RMargin,TMargin,BMargin,CanChange,PaperSize,Oreint,GridSize,GridType,ShowGrid,SnapGrid,TypeCode,FrgnReport,CanSort,LeaderCode,FollowCode,SwapOnScrn,ScreenFont,ScrFOffset,SwpInEmail,EmailFont,EmFOffset,QString,QType,RobjCode,ExtName,ExtOnErr,NumRepArs,AlgnFooter,TimeFormat,DateFormat,NumCopy,GbiSupport,Use1stPrtr,Shading,Template,Category,CreateDate,Status,B1Version,CRVersion,Local,UseSysPref,ForMobile,TypeDetail,IsIMCE,CsUrl,RptHash) VALUES (@DocCode,@DocName,@Author,'',595,842,10,30,10,10,'Y','A4','P',10,'1','Y','Y',@TypeCode,'N','Y','','','N','Arial',-1,'N','Arial',-1,'','R',0,'','S',-1,'N','0','0',1,'N','N','Y',@Template,'C',GETDATE(),'A','','','','Y','Y','','N','',@RptHash)"
+            $sql = "INSERT INTO RDOC (DocCode,DocName,Author,Notes,Width,Height,LMargin,RMargin,TMargin,BMargin,CanChange,PaperSize,Oreint,GridSize,GridType,ShowGrid,SnapGrid,TypeCode,FrgnReport,CanSort,LeaderCode,FollowCode,SwapOnScrn,ScreenFont,ScrFOffset,SwpInEmail,EmailFont,EmFOffset,QString,QType,RobjCode,ExtName,ExtOnErr,NumRepArs,AlgnFooter,TimeFormat,DateFormat,NumCopy,GbiSupport,Use1stPrtr,Shading,Template,Category,CreateDate,Status,B1Version,CRVersion,Local,UseSysPref,ForMobile,TypeDetail,IsIMCE,CsUrl,RptHash) VALUES (@DocCode,@DocName,@Author,'',595,842,10,30,10,10,'Y','A4','P',10,'1','Y','Y',@TypeCode,'N','Y','','','N','Arial',-1,'N','Arial',-1,'','R',0,'','S',-1,'N','0','0',1,'N','N','Y',@Template,'C',$DB_NOW,'A','','','','Y','Y','','N','',@RptHash)"
         }
 
         $cmd = $conn.CreateCommand()
-        $cmd.CommandText = $sql
-        [void]$cmd.Parameters.AddWithValue("@DocCode", $docCode)
+        $cmd.CommandText = Convert-DBSql $sql
+        Add-DBParam $cmd "${DB_PARAM}DocCode" $docCode
         if ($action -ne "UPDATE") {
-            [void]$cmd.Parameters.AddWithValue("@DocName", $layoutName)
-            [void]$cmd.Parameters.AddWithValue("@Author", $Author)
-            [void]$cmd.Parameters.AddWithValue("@TypeCode", $typeCode)
+            Add-DBParam $cmd "${DB_PARAM}DocName" $layoutName
+            Add-DBParam $cmd "${DB_PARAM}Author" $Author
+            Add-DBParam $cmd "${DB_PARAM}TypeCode" $typeCode
         }
-        $pTpl = $cmd.Parameters.Add("@Template", [System.Data.SqlDbType]::Image)
-        $pTpl.Value = $bytes
-        [void]$cmd.Parameters.AddWithValue("@RptHash", $hash)
+        Add-BlobParam $cmd "${DB_PARAM}Template" $bytes
+        Add-DBParam $cmd "${DB_PARAM}RptHash" $hash
 
         [void]$cmd.ExecuteNonQuery()
         Write-Log ("{0} [{1,3}] {2} -> DocCode={3} ({4} bytes, {5})" -f $action, $row.No, $row.RPT_FileName, $docCode, $bytes.Length, $layoutName)
