@@ -9,7 +9,7 @@ set COMPANYDB=SBO_Thaifood
 set DBUSER=sa
 set DBPASSWORD=1q2w3e4r
 
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Test-SQLConnect.ps1" ^
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Scripts\Test-SQLConnect.ps1" ^
     -Server "%SERVER%" ^
     -CompanyDB "%COMPANYDB%" ^
     -DBUser "%DBUSER%" ^
