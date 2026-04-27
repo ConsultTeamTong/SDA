@@ -1,46 +1,44 @@
-﻿-- ============================================================
--- Report: 1.Receipt from Production_ใบรับสินค้าจากการผลิต.rpt
-Path:   6. Production\2. Receipt from Production\1.Receipt from Production_ใบรับสินค้าจากการผลิต.rpt
-Extracted: 2026-04-09 15:22:53
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT
-OIGN.DocEntry,
+﻿SELECT DISTINCT
+(WOR1.VisOrder) 'No.' ,
+WOR1.ItemType,
+--Case 
+--	when ORSC.ResName is not null or ORSC.ResName <> '' then ORSC.ResName
+--		when WOR1.ItemName is not null or WOR1.ItemName <> '' then WOR1.ItemName
+--			end 'Item' ,
+WOR1.ItemName ,
+--CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
+     --WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
+--END AS 'GLN_H',
+OWOR.DocEntry,
+NNM1.SeriesName AS 'SeriesName',
 NNM1.BeginStr,
-NNM1.SeriesName,
-OIGN.DocNum,
-OIGN.DocDate,
-PNNM.BeginStr As 'OderBeginStr',
-PNNM.SeriesName As 'OderSeries',
-OWOR.DocNum As 'OderNo.',
-OWOR.ItemCode AS 'Production_No',
-OWOR.ProdName,
-OWOR.PlannedQty,
-OWOR.Warehouse,
-(IGN1.VisOrder+1) AS 'No.',
-IGN1.ItemCode,
-IGN1.Dscription,
-IGN1.Quantity,
-IGN1.UomCode,
-IGN1.WhsCode,
-OIGN.Comments,
-CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
-     WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
-END AS 'GLN_H'
+OWOR.DocNum AS 'DocNum' ,
+OWOR.PostDate AS 'PostDate' ,
+OWOR.DueDate AS 'DueDate',
+OWOR.ItemCode AS 'Code FG',
+OWOR.ProdName AS 'ProdName',
+OWOR.PlannedQty AS 'PlannedQty',
+OWOR.Uom AS 'Uom', 
+OWOR.Warehouse AS 'Warehouse',
+WOR1.ItemCode AS 'Code RM',
+OWOR.OriginNum As 'Sale No.',
+WOR1.UomCode As 'UomCode',
+WOR1.PlannedQty,
+WOR1.IssuedQty,
+WOR1.wareHouse AS 'WH' ,
+OWOR.Comments
 
-FROM OIGN
-LEFT JOIN IGN1 ON OIGN.DocEntry = IGN1.DocEntry --and IGN1.BaseRef =
-LEFT JOIN NNM1 ON OIGN.Series = NNM1.Series 
-LEFT JOIN OPRJ ON IGN1.Project = OPRJ.PrjCode
-LEFT JOIN OWOR ON IGN1.BaseEntry = OWOR.DocEntry
-LEFT JOIN NNM1 PNNM ON OWOR.Series = PNNM.Series
-LEFT JOIN OWHS ON OIGN.U_SLD_LVatbranch = OWHS.GlblLocNum
-LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OIGN.U_SLD_LVatBranch = BRANCH.Code
+FROM OWOR 
+LEFT Outer JOIN WOR1 ON OWOR.DocEntry = WOR1.DocEntry
+LEFT JOIN OITM ON WOR1.ItemCode = OITM.ItemCode 
+LEFT JOIN NNM1 ON OWOR.Series = NNM1.Series
+LEFT JOIN ORSC ON WOR1.ItemCode = ORSC.VisResCode
+LEFT JOIN OPRJ ON OWOR.Project = OPRJ.PrjCode
+LEFT JOIN OUSR ON OWOR.UserSign = OUSR.USERID
+LEFT JOIN OWHS ON OWOR.Warehouse = OWHS.WhsCode
+--LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OWOR.U_SLD_LVatBranch = BRANCH.Code
 
-WHERE 
-OIGN.DocEntry = '{?DocKey@}'
-AND IGN1.BaseType = '202'
+WHERE OWOR.DocEntry  =  {?DocKey@}
 
-ORDER BY (IGN1.VisOrder+1)
+Order by WOR1.VisOrder
+

@@ -1,17 +1,9 @@
-﻿-- ============================================================
--- Report: 1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt
-Path:   3. Purchasing - AP\9. Landed Costs\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt
-Extracted: 2026-04-09 15:22:47
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT
-CASE WHEN BRANCH.Code = '00000' AND OIPF.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่'
-  WHEN BRANCH.Code = '00000' AND OIPF.DocCur <> OADM.MainCurncy THEN 'Head office'
-  WHEN BRANCH.Code <> '00000' AND OIPF.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code)
-  WHEN BRANCH.Code <> '00000' AND OIPF.DocCur <> OADM.MainCurncy THEN concat('Branch' ,' ',BRANCH.Code)
-END 'GLN_H' ,
+﻿SELECT DISTINCT
+--CASE WHEN BRANCH.Code = '00000' AND OIPF.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่'
+  --WHEN BRANCH.Code = '00000' AND OIPF.DocCur <> OADM.MainCurncy THEN 'Head office'
+  --WHEN BRANCH.Code <> '00000' AND OIPF.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code)
+  --WHEN BRANCH.Code <> '00000' AND OIPF.DocCur <> OADM.MainCurncy THEN concat('Branch' ,' ',BRANCH.Code)
+--END 'GLN_H' ,
 CASE WHEN CRD1.GlblLocNum = '00000' AND OIPF.DocCur = OADM.MainCurncy THEN N'(สำนักงานใหญ่)'
   WHEN CRD1.GlblLocNum = '00000' AND OIPF.DocCur <> OADM.MainCurncy THEN '(Head office)'
   WHEN CRD1.GlblLocNum <> '00000' AND OIPF.DocCur = OADM.MainCurncy THEN concat(N'(สาขาที่' ,' ',CRD1.GlblLocNum,')')
@@ -51,7 +43,7 @@ OIPF.Descr,
 --  END 'GLN',
 CASE WHEN OCRD.Phone2 IS NULL THEN ''
   WHEN OCRD.Phone2 IS NOT NULL THEN ', ' + OCRD.Phone2
-  END 'Phone2',
+  END as 'Phone2',
 OCRD.Phone1
 
 FROM OIPF
@@ -63,10 +55,10 @@ LEFT JOIN OALC ON IPF2.AlcCode = OALC.AlcCode
 LEFT JOIN OCRD ON OIPF.CardCode = OCRD.CardCode
 LEFT JOIN CRD1 ON (OCRD.CardCode = CRD1.CardCode AND CRD1.AdresType ='B')
 LEFT JOIN NNM1 ON OIPF.Series = NNM1.Series
-LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OIPF.U_SLD_LVatBranch = BRANCH.Code , oadm
+--LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OIPF.U_SLD_LVatBranch = BRANCH.Code 
+cross join oadm
 
 
-WHERE OIPF.DocEntry = 
-{?@DocKey}
+WHERE OIPF.DocEntry = {?DocKey@}
 
 ORDER BY (IPF1.LineNum+1)
