@@ -85,23 +85,13 @@ if (-not $Force) {
 
 $tran = $conn.BeginTransaction()
 try {
-    # Stage DocCodes that will be deleted into a temp table on this connection
-    $stage = $conn.CreateCommand()
-    $stage.Transaction = $tran
-    $stage.CommandText = @"
-SELECT DocCode INTO #DelDocs FROM RDOC WHERE Author<>@a OR Author IS NULL;
-CREATE INDEX IX_DelDocs ON #DelDocs(DocCode);
-"@
-    [void]$stage.Parameters.AddWithValue("@a", $SystemAuthor)
-    $stage.CommandTimeout = 300
-    [void]$stage.ExecuteNonQuery()
-
-    # Delete child rows for those DocCodes (skip table if it doesn't exist)
+    # Delete children first (subquery against RDOC works while parent rows still exist)
     foreach ($tbl in @('RITM','RDC1','RCON')) {
         try {
             $c = $conn.CreateCommand()
             $c.Transaction = $tran
-            $c.CommandText = "DELETE FROM dbo.$tbl WHERE DocCode IN (SELECT DocCode FROM #DelDocs)"
+            $c.CommandText = "DELETE FROM dbo.$tbl WHERE DocCode IN (SELECT DocCode FROM RDOC WHERE Author<>@a OR Author IS NULL)"
+            [void]$c.Parameters.AddWithValue("@a", $SystemAuthor)
             $c.CommandTimeout = 300
             $cn = $c.ExecuteNonQuery()
             Write-Host ("  {0,-4}: deleted {1,5} child rows" -f $tbl, $cn) -ForegroundColor DarkYellow
@@ -113,7 +103,8 @@ CREATE INDEX IX_DelDocs ON #DelDocs(DocCode);
     # Delete RDOC parent rows
     $exec = $conn.CreateCommand()
     $exec.Transaction = $tran
-    $exec.CommandText = "DELETE FROM RDOC WHERE DocCode IN (SELECT DocCode FROM #DelDocs)"
+    $exec.CommandText = "DELETE FROM RDOC WHERE Author<>@a OR Author IS NULL"
+    [void]$exec.Parameters.AddWithValue("@a", $SystemAuthor)
     $exec.CommandTimeout = 300
     $n = $exec.ExecuteNonQuery()
     Write-Host ("  RDOC: deleted {0,5} rows" -f $n) -ForegroundColor Green
@@ -129,11 +120,6 @@ CREATE INDEX IX_DelDocs ON #DelDocs(DocCode);
     } catch {
         Write-Host ("  DFLT_PRNTING: skipped ({0})" -f $_.Exception.Message) -ForegroundColor DarkGray
     }
-
-    $drop = $conn.CreateCommand()
-    $drop.Transaction = $tran
-    $drop.CommandText = "DROP TABLE #DelDocs"
-    [void]$drop.ExecuteNonQuery()
 
     $tran.Commit()
     Write-Host ""
