@@ -2,7 +2,7 @@
 chcp 65001 >nul
 REM ============================================================
 REM  Rollback Crystal Layouts imported from RPT_Import_Map.xlsx
-REM  Deletes rows in RDOC matching (DocName + TypeCode + Author)
+REM  Deletes rows in RDOC matching (DocName + TypeCode), Author ignored
 REM ============================================================
 set SERVER=10.10.10.115
 set COMPANYDB=SBO_SDA_MARK1
@@ -75,6 +75,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Scripts\Rollback-F
     -DBPassword "%DBPASSWORD%" ^
     -Author "%AUTHOR%" ^
     -MapFile "!CFG!\!MAPFILE!" ^
+    -UseFileNameAsDocName ^
     %MODE%
 endlocal
 

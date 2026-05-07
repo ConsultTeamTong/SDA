@@ -23,7 +23,7 @@ REM ============================================================
 set MODE=
 
 REM ============================================================
-REM  ONDUP: how to handle duplicate layouts (DocName+TypeCode+Author match)
+REM  ONDUP: how to handle duplicate layouts (DocName+TypeCode match, Author ignored)
 REM    Update  = overwrite existing (recommended, default)
 REM    Skip    = leave existing alone, only insert new
 REM    Insert  = always insert new row (creates duplicates - careful!)
