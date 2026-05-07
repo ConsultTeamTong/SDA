@@ -2,16 +2,19 @@
 chcp 65001 >nul
 REM ============================================================
 REM  Import Crystal Layouts to SAP B1 (SQL Direct)
-REM  EDIT THE 4 CREDENTIAL LINES + 2 MODE LINES BELOW IF NEEDED
+REM  Connection settings are in _settings.bat (shared, gitignored).
 REM ============================================================
-set SERVER=10.10.10.115
-set COMPANYDB=SBO_SDA_(Test)_Pre_Training
-set DBUSER=sa
-set DBPASSWORD=1q2w3e4r@
+if not exist "%~dp0_settings.bat" (
+    echo ERROR: _settings.bat not found.
+    echo Copy _settings.bat.example to _settings.bat and edit it.
+    pause
+    exit /b 1
+)
+call "%~dp0_settings.bat"
 
 REM ============================================================
-REM  AUTHOR: who to record as the layout author
-REM  Use "manager" to overwrite existing layouts created by manager
+REM  AUTHOR: stored on NEW rows only (INSERT). Updates to existing
+REM  layouts keep the original Author -- dedup matches across authors.
 REM ============================================================
 set AUTHOR=manager
 
@@ -23,7 +26,7 @@ REM ============================================================
 set MODE=
 
 REM ============================================================
-REM  ONDUP: how to handle duplicate layouts (DocName+TypeCode+Author match)
+REM  ONDUP: how to handle duplicate layouts (DocName+TypeCode match, Author ignored)
 REM    Update  = overwrite existing (recommended, default)
 REM    Skip    = leave existing alone, only insert new
 REM    Insert  = always insert new row (creates duplicates - careful!)
@@ -32,12 +35,9 @@ set ONDUP=Update
 
 REM ============================================================
 REM  CONFIGDIR: folder to scan for mapping .xlsx files
-REM  RPTROOT  : root folder that contains the .rpt files
-REM             (RPT_Folder column in the Excel is resolved relative to this)
-REM  Both can be relative (e.g. Config, ..) or absolute (C:\path\...)
+REM  Can be relative (Config) or absolute (C:\path\...)
 REM ============================================================
 set CONFIGDIR=Config
-set RPTROOT=C:\GitHub\SDA\Form-Layout
 
 setlocal enabledelayedexpansion
 REM Resolve CONFIGDIR / RPTROOT to absolute paths

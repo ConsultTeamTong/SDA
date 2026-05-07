@@ -1,14 +1,15 @@
 # ============================================================
-# Delete ALL layouts in RDOC EXCEPT system defaults
-# "System" = rows where Author = '-System-'
-# All other authors (manager, SDA, custom users, etc.) will be deleted.
+# Delete ALL layouts in RDOC EXCEPT system defaults.
+# "System" = rows where Author = 'System' (configurable via -SystemAuthor).
+# Also deletes child rows in RITM/RDC1/RCON for the deleted DocCodes
+# and clears DFLT_PRNTING orphans. All work is wrapped in a transaction.
 # ============================================================
 param(
     [Parameter(Mandatory=$true)][string]$Server,
     [Parameter(Mandatory=$true)][string]$CompanyDB,
     [string]$DBUser     = "sa",
     [Parameter(Mandatory=$true)][string]$DBPassword,
-    [string]$SystemAuthor = "-System-",
+    [string]$SystemAuthor = "System",
     [switch]$DryRun,
     [switch]$Force
 )
@@ -82,12 +83,52 @@ if (-not $Force) {
     }
 }
 
-$exec = $conn.CreateCommand()
-$exec.CommandText = "DELETE FROM RDOC WHERE Author<>@a OR Author IS NULL"
-[void]$exec.Parameters.AddWithValue("@a", $SystemAuthor)
-$exec.CommandTimeout = 300
-$n = $exec.ExecuteNonQuery()
-$conn.Close()
+$tran = $conn.BeginTransaction()
+try {
+    # Delete children first (subquery against RDOC works while parent rows still exist)
+    foreach ($tbl in @('RITM','RDC1','RCON')) {
+        try {
+            $c = $conn.CreateCommand()
+            $c.Transaction = $tran
+            $c.CommandText = "DELETE FROM dbo.$tbl WHERE DocCode IN (SELECT DocCode FROM RDOC WHERE Author<>@a OR Author IS NULL)"
+            [void]$c.Parameters.AddWithValue("@a", $SystemAuthor)
+            $c.CommandTimeout = 300
+            $cn = $c.ExecuteNonQuery()
+            Write-Host ("  {0,-4}: deleted {1,5} child rows" -f $tbl, $cn) -ForegroundColor DarkYellow
+        } catch {
+            Write-Host ("  {0,-4}: skipped ({1})" -f $tbl, $_.Exception.Message) -ForegroundColor DarkGray
+        }
+    }
 
-Write-Host ""
-Write-Host "=== Summary: Deleted=$n / Kept(system)=$sysCount ===" -ForegroundColor Cyan
+    # Delete RDOC parent rows
+    $exec = $conn.CreateCommand()
+    $exec.Transaction = $tran
+    $exec.CommandText = "DELETE FROM RDOC WHERE Author<>@a OR Author IS NULL"
+    [void]$exec.Parameters.AddWithValue("@a", $SystemAuthor)
+    $exec.CommandTimeout = 300
+    $n = $exec.ExecuteNonQuery()
+    Write-Host ("  RDOC: deleted {0,5} rows" -f $n) -ForegroundColor Green
+
+    # Clean DFLT_PRNTING orphans (table may not exist on older versions)
+    try {
+        $d = $conn.CreateCommand()
+        $d.Transaction = $tran
+        $d.CommandText = "DELETE FROM dbo.DFLT_PRNTING WHERE DocCode IS NOT NULL AND DocCode<>N'' AND DocCode NOT IN (SELECT DocCode FROM RDOC)"
+        $d.CommandTimeout = 300
+        $dn = $d.ExecuteNonQuery()
+        Write-Host ("  DFLT_PRNTING orphans cleaned: {0,5} rows" -f $dn) -ForegroundColor DarkYellow
+    } catch {
+        Write-Host ("  DFLT_PRNTING: skipped ({0})" -f $_.Exception.Message) -ForegroundColor DarkGray
+    }
+
+    $tran.Commit()
+    Write-Host ""
+    Write-Host "=== Summary: Deleted=$n / Kept(system)=$sysCount ===" -ForegroundColor Cyan
+} catch {
+    $tran.Rollback()
+    Write-Host ""
+    Write-Host ("[ROLLBACK] {0}" -f $_.Exception.Message) -ForegroundColor Red
+    throw
+} finally {
+    $conn.Close()
+}

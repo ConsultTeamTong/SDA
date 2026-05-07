@@ -1,6 +1,6 @@
 # ============================================================
 # Rollback: Delete layouts in RDOC that match rows in Excel mapping
-# Reads RPT_Import_Map.xlsx -> deletes matching rows by (DocName + TypeCode + Author)
+# Reads RPT_Import_Map.xlsx -> deletes matching rows by (DocName + TypeCode)
 # ============================================================
 param(
     [string]$Server     = "SLD-C072",
@@ -9,6 +9,7 @@ param(
     [string]$DBPassword = "1q2w3e4r",
     [string]$MapFile    = "C:\SDA\SDA\Form-Layout\ImportLayouts\Config\RPT_Import_Map.xlsx",
     [string]$Author     = "SDA",
+    [switch]$UseFileNameAsDocName,
     [switch]$DryRun,
     [switch]$Force
 )
@@ -145,20 +146,26 @@ $toDelete = @()
 $skipped = 0
 foreach ($row in $mapRows) {
     $objType = [string]$row.ObjectType
-    $layoutName = if ([string]::IsNullOrWhiteSpace($row.LayoutName)) { $row.RPT_FileName } else { [string]$row.LayoutName }
+    if ($UseFileNameAsDocName) {
+        $layoutName = [System.IO.Path]::GetFileNameWithoutExtension($row.RPT_FileName)
+    } else {
+        $layoutName = if ([string]::IsNullOrWhiteSpace($row.LayoutName)) { $row.RPT_FileName } else { [string]$row.LayoutName }
+    }
     if ([string]::IsNullOrWhiteSpace($objType) -or $objType -eq "-") { $skipped++; continue }
     $typeCode = $TypeCodeMap[$objType]
     if ([string]::IsNullOrWhiteSpace($typeCode)) { $skipped++; continue }
 
+    # Match on DocName + TypeCode only (Author ignored, mirrors Import dedup).
+    # Capture ALL matches so duplicates that pre-date the dedup fix get cleaned too.
     $chk = $conn.CreateCommand()
-    $chk.CommandText = "SELECT DocCode FROM RDOC WHERE DocName=@n AND TypeCode=@t AND Author=@a"
+    $chk.CommandText = "SELECT DocCode FROM RDOC WHERE DocName=@n AND TypeCode=@t"
     [void]$chk.Parameters.AddWithValue("@n", $layoutName)
     [void]$chk.Parameters.AddWithValue("@t", $typeCode)
-    [void]$chk.Parameters.AddWithValue("@a", $Author)
-    $existingCode = $chk.ExecuteScalar()
-    if ($existingCode) {
-        $toDelete += [PSCustomObject]@{ No=$row.No; DocCode=$existingCode; TypeCode=$typeCode; DocName=$layoutName }
+    $rdr = $chk.ExecuteReader()
+    while ($rdr.Read()) {
+        $toDelete += [PSCustomObject]@{ No=$row.No; DocCode=[string]$rdr["DocCode"]; TypeCode=$typeCode; DocName=$layoutName }
     }
+    $rdr.Close()
 }
 
 Write-Host ""
