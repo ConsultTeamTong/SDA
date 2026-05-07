@@ -64,14 +64,13 @@ echo  Database : %COMPANYDB%
 echo  MapFile  : !MAPFILE!
 echo  RptRoot  : !RPT!
 echo ============================================
-echo.
-set /p FILTER=Type keyword from filename (e.g. Journal Entry, Sale Order, AR Invoice):
 
-if "%FILTER%"=="" (
-    echo No keyword entered. Exiting.
-    pause
-    exit /b
-)
+:KEYWORD_LOOP
+echo.
+set "FILTER="
+set /p FILTER=Type keyword (e.g. Sale Order) -- empty Enter to quit:
+
+if "%FILTER%"=="" goto DONE
 
 echo.
 echo Importing rows matching "%FILTER%" ...
@@ -88,7 +87,14 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Scripts\Import_SQL
     -FilterFileName "%FILTER%" ^
     -UseFileNameAsDocName ^
     -OnDuplicate Update
-endlocal
 
 echo.
-pause
+echo ============================================
+echo  Done. Type next keyword, or empty Enter to quit.
+echo ============================================
+goto KEYWORD_LOOP
+
+:DONE
+endlocal
+echo.
+echo Bye.
