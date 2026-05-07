@@ -69,7 +69,13 @@ LEFT JOIN VPM1 ON OVPM.DocENTRY = VPM1.DocNum
 LEFT JOIN VPM2 ON OVPM.DocEntry = VPM2.DocNum
 INNER JOIN NNM1 ON OVPM.Series = NNM1.Series
 LEFT OUTER JOIN OCRD ON OVPM.CardCode = OCRD.CardCode
-LEFT OUTER JOIN OCPR ON OVPM.CardCode = OCPR.CardCode
-LEFT JOIN CRD1 ON (OCRD.CardCode = CRD1.CardCode AND OVPM.PayToCode = CRD1.Address AND CRD1.AdresType ='B')
+LEFT JOIN OCPR ON OVPM.CntctCode = OCPR.CntctCode  
+LEFT JOIN CRD1 ON (OCRD.CardCode = CRD1.CardCode 
+               AND OVPM.PayToCode = CRD1.[Address] 
+               AND CRD1.AdresType = 'B')
 LEFT JOIN OUSR ON OVPM.UserSign = OUSR.USERID
-LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OVPM.U_SLD_VatBranch = BRANCH.Code , oadm
+LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH 
+    ON OVPM.U_SLD_VatBranch = BRANCH.Code
+CROSS JOIN OADM                                     
+
+WHERE OVPM.DocEntry = {?DocKey@}

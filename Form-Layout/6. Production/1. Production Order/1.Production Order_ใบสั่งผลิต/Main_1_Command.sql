@@ -1,12 +1,4 @@
-﻿-- ============================================================
--- Report: 1.Production Order_ใบสั่งผลิต.rpt
-Path:   6. Production\1. Production Order\1.Production Order_ใบสั่งผลิต.rpt
-Extracted: 2026-04-09 15:22:52
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT
+﻿SELECT DISTINCT
 (WOR1.VisOrder) 'No.' ,
 WOR1.ItemType,
 --Case 
@@ -14,9 +6,9 @@ WOR1.ItemType,
 --		when WOR1.ItemName is not null or WOR1.ItemName <> '' then WOR1.ItemName
 --			end 'Item' ,
 WOR1.ItemName ,
-CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
-     WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
-END AS 'GLN_H',
+--CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
+     --WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
+--END AS 'GLN_H',
 OWOR.DocEntry,
 NNM1.SeriesName AS 'SeriesName',
 NNM1.BeginStr,
@@ -44,9 +36,9 @@ LEFT JOIN ORSC ON WOR1.ItemCode = ORSC.VisResCode
 LEFT JOIN OPRJ ON OWOR.Project = OPRJ.PrjCode
 LEFT JOIN OUSR ON OWOR.UserSign = OUSR.USERID
 LEFT JOIN OWHS ON OWOR.Warehouse = OWHS.WhsCode
-LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OWOR.U_SLD_LVatBranch = BRANCH.Code
+--LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OWOR.U_SLD_LVatBranch = BRANCH.Code
 
-WHERE OWOR.DocEntry  =  '{?DocKey@}'
+WHERE OWOR.DocEntry  =  {?DocKey@}
 
-Order by VisOrder
+Order by WOR1.VisOrder
 

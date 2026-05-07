@@ -34,6 +34,7 @@ BRANCH.U_SLD_Tel As 'Tel',
 BRANCH.U_SLD_Fax As 'BFax',
 BRANCH.U_SLD_Email AS 'E-Mail',
 OJDT.FcTotal,
+--------------------------------------------------------------------------------------------------------
 OJDT.[Series], 
 OJDT.[Ref1], 
 OJDT.[Memo], 
@@ -114,6 +115,7 @@ CASE
 END AS 'Series_link' 
 ,ad.*
 ,T1.Project
+,OJDT.DocDate
 
 FROM OJDT 
 LEFT JOIN JDT1 T1 ON OJDT.[TransId] = T1.[TransId]

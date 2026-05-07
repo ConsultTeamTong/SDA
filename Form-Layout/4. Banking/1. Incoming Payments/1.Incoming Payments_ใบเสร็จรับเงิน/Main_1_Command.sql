@@ -82,7 +82,10 @@
     RCT1.[CheckSum],
     RCT1.CheckNum,
     ODSC.BankName,
-    RCT1.DueDate
+    RCT1.DueDate,
+    OCPR.Name,
+    OCPR.Tel1,
+    OCPR.E_MailL
 
 FROM ORCT 
 LEFT JOIN RCT2 ON ORCT.DocENTRY = RCT2.DocNum
@@ -113,6 +116,6 @@ LEFT OUTER JOIN NNM1 NNM1_DPI ON ODPI.Series = NNM1_DPI.Series
 LEFT OUTER JOIN OJDT ON RCT2.InvType = '30' AND RCT2.BASEABS = OJDT.TransId
 LEFT OUTER JOIN NNM1 NNM1_JDT ON OJDT.Series = NNM1_JDT.Series
 WHERE RCT2.InvType IN ('13', '14', '203', '30')
-AND ORCT.DocENTRY = '{?DocKey@}' 
+AND ORCT.DocENTRY = 1
 
 ORDER BY 13

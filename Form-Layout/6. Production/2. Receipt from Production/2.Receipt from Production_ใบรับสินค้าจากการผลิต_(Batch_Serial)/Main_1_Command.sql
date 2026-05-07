@@ -1,12 +1,4 @@
-﻿-- ============================================================
--- Report: 2.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial).rpt
-Path:   6. Production\2. Receipt from Production\2.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial).rpt
-Extracted: 2026-04-09 15:22:54
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT
+﻿SELECT DISTINCT
 OIGN.DocEntry,
 NNM1.BeginStr,
 NNM1.SeriesName,
@@ -26,11 +18,21 @@ IGN1.Quantity,
 IGN1.UomCode,
 IGN1.WhsCode,
 OIGN.Comments,
-CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
-     WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
-END AS 'GLN_H'
+BRANCH.Code as 'BranchCode' ,
+BRANCH.Name As 'BranchName',
+BRANCH.U_SLD_VComName As 'PrintHeadr',
+BRANCH.U_SLD_F_VComName As 'PrintHdrF',
+BRANCH.U_SLD_VTAXID As 'TaxIdNum',
+BRANCH.U_SLD_Building As 'Building',
+BRANCH.U_SLD_Steet As 'Street',
+BRANCH.U_SLD_Block As 'Block',
+BRANCH.U_SLD_City As 'City',
+BRANCH.U_SLD_County As 'County',
+BRANCH.U_SLD_ZipCode As 'ZipCode',
+BRANCH.U_SLD_Tel As 'Tel',
+BRANCH.U_SLD_Fax As 'BFax'
 
-FROM OIGN
+FROM OIGN 
 LEFT JOIN IGN1 ON OIGN.DocEntry = IGN1.DocEntry --and IGN1.BaseRef =
 LEFT JOIN NNM1 ON OIGN.Series = NNM1.Series 
 LEFT JOIN OPRJ ON IGN1.Project = OPRJ.PrjCode

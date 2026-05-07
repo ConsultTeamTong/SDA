@@ -44,7 +44,17 @@ OSLP.U_Name_Foreign as 'Sale Name contact',
 --OSLP.SlpName as 'Sale Name contact',
 OSLP.Mobil as 'Mobile',
 OSLP.Email as 'Email-Sale',
-OCTG.PymntGroup,
+CASE WHEN OCTG.PymntGroup = N'เงินสด' THEN 'Cash'
+	 WHEN OCTG.PymntGroup = N'120 วัน' THEN '120 Days'
+	 WHEN OCTG.PymntGroup = N'90 วัน' THEN '90 Days'
+	 WHEN OCTG.PymntGroup = N'60 วัน' THEN '60 Days'
+	 WHEN OCTG.PymntGroup = N'45 วัน' THEN '45 Days'
+	 WHEN OCTG.PymntGroup = N'30 วัน' THEN '30 Days'
+	 WHEN OCTG.PymntGroup = N'15 วัน' THEN '15 Days'
+	 WHEN OCTG.PymntGroup = N'7 วัน' THEN '7 Days'
+	 WHEN OCTG.PymntGroup = N'3 วัน' THEN '3 Days'
+	 END AS 'PaymentEng',
+--OCTG.PymntGroup,
 OCRD.Cardname,
 OCRD.CardFname,
 OCPR.name,
@@ -73,7 +83,7 @@ LEFT JOIN OUGP ON QUT1.UomCode = OUGP.UgpCode
 INNER JOIN QUT12 ON OQUT.DocEntry = QUT12.DocEntry
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OQUT.U_SLD_LVatBranch = BRANCH.Code , oadm
 
-WHERE OQUT.DocEntry = '{?DocKey@}'
+WHERE OQUT.DocEntry = {?DocKey@}
 
 
 Order by 'No.' , 'Line No.'

@@ -1,12 +1,4 @@
-﻿-- ============================================================
--- Report: 1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต.rpt
-Path:   6. Production\3. Issue for Production\1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต.rpt
-Extracted: 2026-04-09 15:22:54
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT
+﻿SELECT DISTINCT
 OIGE.docentry,
 PNNM.BeginStr As 'OderBeginStr',
 PNNM.SeriesName As 'OderSeries',
@@ -27,11 +19,21 @@ IGE1.WhsCode,
 OWOR.PostDate as 'PostDate' ,
 NNM1.BeginStr,
 OIGE.Comments,
-CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
-     WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
-END AS 'GLN_H'
+BRANCH.Code as 'BranchCode' ,
+BRANCH.[Name] As 'BranchName',
+BRANCH.U_SLD_VComName As 'PrintHeadr',
+BRANCH.U_SLD_F_VComName As 'PrintHdrF',
+BRANCH.U_SLD_VTAXID As 'TaxIdNum',
+BRANCH.U_SLD_Building As 'Building',
+BRANCH.U_SLD_Steet As 'Street',
+BRANCH.U_SLD_Block As 'Block',
+BRANCH.U_SLD_City As 'City',
+BRANCH.U_SLD_County As 'County',
+BRANCH.U_SLD_ZipCode As 'ZipCode',
+BRANCH.U_SLD_Tel As 'Tel',
+BRANCH.U_SLD_Fax As 'BFax'
 
-FROM OIGE
+FROM OIGE 
 LEFT JOIN IGE1 ON OIGE.DocEntry = IGE1.DocEntry 
 LEFT JOIN NNM1 ON OIGE.Series = NNM1.Series 
 LEFT JOIN OWOR ON IGE1.BaseEntry = OWOR.DocEntry
