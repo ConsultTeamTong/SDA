@@ -260,3 +260,57 @@
 [2026-04-22 15:54:17] [INFO] UPDATE [  6] 1.Sale Order_ใบสั่งขาย_(Dis).rpt -> DocCode=RDR20001 (393728 bytes, 1.Sale Order_ใบสั่งขาย_(Dis))
 [2026-04-22 15:54:17] [INFO] UPDATE [  7] 1.Sale Order_ใบสั่งขาย_(Bom).rpt -> DocCode=RDR20002 (439296 bytes, 1.Sale Order_ใบสั่งขาย_(Bom))
 [2026-04-22 15:54:17] [INFO] === Summary: OK=6 FAIL=0 SKIP=0 ===
+[2026-05-07 10:28:12] [INFO] === Start SQL Direct Import ===
+[2026-05-07 10:28:12] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportLayouts\Config\RPT_Import_Map.xlsx
+[2026-05-07 10:28:12] [INFO] DryRun : False
+[2026-05-07 10:28:12] [INFO] Loaded 48 mapping rows
+[2026-05-07 10:28:12] [INFO] Pre-loaded max sequences for 400 TypeCodes
+[2026-05-07 10:28:12] [INFO] UPDATE [  1] 1.Journal Entry_ใบบันทึกรายการบัญชี.rpt -> DocCode=JDT20001 (812544 bytes, 1.Journal Entry_ใบบันทึกรายการบัญชี)
+[2026-05-07 10:28:12] [WARN] SKIP MISSING file: C:\GitHub\SDA\Form-Layout\2. Sales - AR\1. Sales Quotation\1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(Bom).rpt
+[2026-05-07 10:28:13] [INFO] UPDATE [  3] 2.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt -> DocCode=QUT20004 (1263104 bytes, 2.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG)
+[2026-05-07 10:28:13] [INFO] UPDATE [  4] 1.Sale Quotation_ใบเสนอราคาขาย_(Dis).rpt -> DocCode=QUT20005 (1265664 bytes, 1.Sale Quotation_ใบเสนอราคาขาย_(Dis))
+[2026-05-07 10:28:13] [INFO] UPDATE [  5] 2.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG.rpt -> DocCode=QUT20008 (1263104 bytes, 2.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG)
+[2026-05-07 10:28:13] [INFO] UPDATE [  6] 1.Sale Order_ใบสั่งขาย_(Dis).rpt -> DocCode=RDR20001 (1254400 bytes, 1.Sale Order_ใบสั่งขาย_(Dis))
+[2026-05-07 10:28:13] [INFO] UPDATE [  7] 1.Sale Order_ใบสั่งขาย_(Bom).rpt -> DocCode=RDR20008 (1254400 bytes, 1.Sale Order_ใบสั่งขาย_(Bom))
+[2026-05-07 10:28:13] [INFO] UPDATE [  8] 2.Delivery_ใบส่งของ_(Batch_Serial).rpt -> DocCode=DLN20008 (428544 bytes, 2.Delivery_ใบส่งของ_(Batch_Serial))
+[2026-05-07 10:28:14] [INFO] UPDATE [  9] 1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt -> DocCode=DLN20009 (427520 bytes, 1.Delivery_ใบส่งของ_Eng (Batch_Serial))
+[2026-05-07 10:28:14] [INFO] UPDATE [ 10] 1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt -> DocCode=RDN20001 (425984 bytes, 1.Retrun_ใบรับคืนสินค้า_(Batch_Serial))
+[2026-05-07 10:28:14] [INFO] UPDATE [ 11] 1.AR Down Payment_ใบเสร็จรับเงินมัดจำ.rpt -> DocCode=DPI20001 (422912 bytes, 1.AR Down Payment_ใบเสร็จรับเงินมัดจำ)
+[2026-05-07 10:28:14] [INFO] UPDATE [ 12] 2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt -> DocCode=DPI20002 (412672 bytes, 2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี)
+[2026-05-07 10:28:14] [INFO] UPDATE [ 13] 4.AR InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี.rpt -> DocCode=INV20001 (1264128 bytes, 4.AR InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี)
+[2026-05-07 10:28:14] [INFO] UPDATE [ 14] 8.AR Debit Note_ใบเพิ่มหนี้.rpt -> DocCode=INV20002 (1265664 bytes, 8.AR Debit Note_ใบเพิ่มหนี้)
+[2026-05-07 10:28:15] [INFO] UPDATE [ 15] 3.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) แก้ไขยอดเงิน.rpt -> DocCode=RIN20001 (1277440 bytes, 3.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) แก้ไขยอดเงิน)
+[2026-05-07 10:28:15] [INFO] UPDATE [ 16] 4.AR_Credit Memo_ใบลดหนี้_(Batch&Serial)(Dis).rpt -> DocCode=RIN20002 (1271808 bytes, 4.AR_Credit Memo_ใบลดหนี้_(Batch&Serial)(Dis))
+[2026-05-07 10:28:15] [INFO] UPDATE [ 17] 1.Purchase Request_TH_ใบขอซื้อ.rpt -> DocCode=PRQ20001 (1259520 bytes, 1.Purchase Request_TH_ใบขอซื้อ)
+[2026-05-07 10:28:15] [INFO] UPDATE [ 18] 1.Purchase Quotation_ใบเสนอราคาซื้อ.rpt -> DocCode=PQT20001 (839680 bytes, 1.Purchase Quotation_ใบเสนอราคาซื้อ)
+[2026-05-07 10:28:15] [INFO] UPDATE [ 19] 1.Purchase Order_TH_ใบสั่งซื้อ.rpt -> DocCode=POR20001 (1265664 bytes, 1.Purchase Order_TH_ใบสั่งซื้อ)
+[2026-05-07 10:28:15] [INFO] UPDATE [ 20] 2.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial).rpt -> DocCode=PDN20001 (432640 bytes, 2.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial))
+[2026-05-07 10:28:15] [INFO] UPDATE [ 21] 2.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial).rpt -> DocCode=RPD20001 (425984 bytes, 2.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial))
+[2026-05-07 10:28:16] [INFO] UPDATE [ 22] 2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt -> DocCode=DPO20001 (843264 bytes, 2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี)
+[2026-05-07 10:28:16] [INFO] UPDATE [ 23] 3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี.rpt -> DocCode=PCH20006 (832512 bytes, 3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี)
+[2026-05-07 10:28:16] [INFO] UPDATE [ 24] 3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี(Batch_Serial).rpt -> DocCode=PCH20002 (859136 bytes, 3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี(Batch_Serial))
+[2026-05-07 10:28:16] [INFO] UPDATE [ 25] 4.AP Debit Note_ใบเพิ่มหนี้.rpt -> DocCode=PCH20003 (825344 bytes, 4.AP Debit Note_ใบเพิ่มหนี้)
+[2026-05-07 10:28:16] [INFO] UPDATE [ 26] 1.AP Credit Memo_ใบลดหนี้.rpt -> DocCode=RPC20001 (1263616 bytes, 1.AP Credit Memo_ใบลดหนี้)
+[2026-05-07 10:28:16] [INFO] UPDATE [ 27] 1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt -> DocCode=IPF10001 (403968 bytes, 1.Landed Costs_ใบปรับราคาต้นทุนสินค้า)
+[2026-05-07 10:28:16] [INFO] UPDATE [ 28] 1.Incoming Payments_ใบเสร็จรับเงิน.rpt -> DocCode=RCT10001 (381952 bytes, 1.Incoming Payments_ใบเสร็จรับเงิน)
+[2026-05-07 10:28:16] [INFO] UPDATE [ 29] 2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี.rpt -> DocCode=RCT10002 (404992 bytes, 2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี)
+[2026-05-07 10:28:17] [INFO] UPDATE [ 30] 1.Outgoing Payments_ใบจ่ายชำระ.rpt -> DocCode=VPM10001 (856064 bytes, 1.Outgoing Payments_ใบจ่ายชำระ)
+[2026-05-07 10:28:17] [INFO] UPDATE [ 31] 2.Goods Receipt_ใบรับสินค้า_(Batch_Serial).rpt -> DocCode=IGN10001 (423936 bytes, 2.Goods Receipt_ใบรับสินค้า_(Batch_Serial))
+[2026-05-07 10:28:17] [INFO] UPDATE [ 32] 2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).rpt -> DocCode=IGE10001 (413184 bytes, 2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial))
+[2026-05-07 10:28:17] [INFO] UPDATE [ 33] 1.Inventory Transfer Request_ใบขอโอนสินค้า.rpt -> DocCode=WTQ10001 (1254400 bytes, 1.Inventory Transfer Request_ใบขอโอนสินค้า)
+[2026-05-07 10:28:17] [INFO] UPDATE [ 34] 2.Inventory Transfer_ใบโอนสินค้า_TH_(Batch_Serial).rpt -> DocCode=WTR10001 (845312 bytes, 2.Inventory Transfer_ใบโอนสินค้า_TH_(Batch_Serial))
+[2026-05-07 10:28:17] [INFO] UPDATE [ 35] 2.Inventory Transfer_ใบโอนสินค้า_EN_(Batch_Serial) - Copy.rpt -> DocCode=WTR10002 (832512 bytes, 2.Inventory Transfer_ใบโอนสินค้า_EN_(Batch_Serial) - Copy)
+[2026-05-07 10:28:17] [INFO] UPDATE [ 36] 1.Inventory Counting_ใบตรวจนับสินค้า_Befor.rpt -> DocCode=INC10001 (372224 bytes, 1.Inventory Counting_ใบตรวจนับสินค้า_Befor)
+[2026-05-07 10:28:18] [INFO] UPDATE [ 37] 2.Inventory Counting_ใบหลังตรวจนับสินค้า_After.rpt -> DocCode=INC10002 (79872 bytes, 2.Inventory Counting_ใบหลังตรวจนับสินค้า_After)
+[2026-05-07 10:28:18] [WARN] SKIP unmapped ObjectType=162 : 1.Inventory Revaluation_ใบปรับมูลค่า_Price.rpt
+[2026-05-07 10:28:18] [WARN] SKIP unmapped ObjectType=162 : 2.Inventory Revaluation_ใบปรับมูลค่า_DebitCredit.rpt
+[2026-05-07 10:28:18] [INFO] UPDATE [ 40] 1.Production Order_ใบสั่งผลิต.rpt -> DocCode=WOR10001 (402944 bytes, 1.Production Order_ใบสั่งผลิต)
+[2026-05-07 10:28:18] [INFO] UPDATE [ 41] 1.Receipt from Production_ใบรับสินค้าจากการผลิต.rpt -> DocCode=IGN10002 (399360 bytes, 1.Receipt from Production_ใบรับสินค้าจากการผลิต)
+[2026-05-07 10:28:18] [INFO] UPDATE [ 42] 2.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial).rpt -> DocCode=IGN10003 (421888 bytes, 2.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial))
+[2026-05-07 10:28:18] [INFO] UPDATE [ 43] 1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต.rpt -> DocCode=IGE10002 (400896 bytes, 1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต)
+[2026-05-07 10:28:18] [INFO] UPDATE [ 44] 2.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial).rpt -> DocCode=IGE10003 (421888 bytes, 2.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial))
+[2026-05-07 10:28:18] [WARN] SKIP no ObjectType: ทะเบียนสินทรัพย์.rpt
+[2026-05-07 10:28:18] [WARN] SKIP no ObjectType: รายการขายทรัพย์สิน เรียงตามรหัสสินทรัพย์.rpt
+[2026-05-07 10:28:18] [WARN] SKIP no ObjectType: รายการสินทรัพย์เข้าใหม่ เรียงตามรหัสสินทรัพย์.rpt
+[2026-05-07 10:28:18] [WARN] SKIP no ObjectType: รายงานค่าเสื่อมประจำเดือน สรุปตามกลุ่มสินทรัพย์.rpt
+[2026-05-07 10:28:18] [INFO] === Summary: OK=41 FAIL=0 SKIP=7 ===

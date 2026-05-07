@@ -37,7 +37,7 @@ REM             (RPT_Folder column in the Excel is resolved relative to this)
 REM  Both can be relative (e.g. Config, ..) or absolute (C:\path\...)
 REM ============================================================
 set CONFIGDIR=Config
-set RPTROOT=C:\SDA\SDA\Form-Layout
+set RPTROOT=C:\GitHub\SDA\Form-Layout
 
 setlocal enabledelayedexpansion
 REM Resolve CONFIGDIR / RPTROOT to absolute paths
