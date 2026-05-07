@@ -73,29 +73,34 @@ ImportLayouts/
 │
 ├── 📁 Backups/                     ← backup DB (สร้างอัตโนมัติ)
 │
+├── 🔑 _settings.bat                ← ⭐ shared connection settings (gitignored)
+├── 🔑 _settings.bat.example        ← template for new installs (committed)
+│
 ├── 🔧 .bat files (double-click ได้)
 │   ├── TestConnect.bat             ← ทดสอบต่อ DB
 │   ├── RunImport.bat               ← import ทั้งหมดจาก Excel
 │   ├── RunImport-Single.bat        ← import ทีละไฟล์ (ถาม keyword)
-│   └── RunRollback.bat             ← ลบที่ import จาก Excel
+│   ├── RunRollback.bat             ← ลบที่ import จาก Excel
+│   └── RunDeleteNonSystem.bat      ← ลบทุก non-system layout
 │
 ├── ⚙️ PowerShell scripts
 │   ├── Test-SQLConnect.ps1         ← logic ทดสอบ DB
 │   ├── Backup-RDOC.ps1             ← backup table RDOC
 │   ├── Import_SQL_Direct.ps1       ← ⭐ script หลัก
-│   └── Rollback-FromExcel.ps1      ← logic rollback
+│   ├── Rollback-FromExcel.ps1      ← logic rollback
+│   ├── Delete-NonSystemLayouts.ps1 ← logic delete non-system
+│   └── Restore-SystemLayouts.ps1   ← restore system จาก DB อื่น
 │
 ├── 🔌 DB Plugin
 │   └── DB-MSSQL.ps1                ← abstraction layer สำหรับ MSSQL
 │
 ├── 📊 Data
-│   └── RPT_Import_Map.xlsx         ← mapping table
+│   └── Config/RPT_Import_Map.xlsx  ← mapping table
 │
 ├── 📋 Log
-│   └── Import_SQL_Log.txt          ← log ทุก import (สร้างอัตโนมัติ)
+│   └── Import_SQL_Log.txt          ← log ทุก import (สร้างอัตโนมัติ, gitignored)
 │
-└── 🛡️ Config
-    └── .gitignore                  ← ป้องกัน commit password
+└── 🛡️ .gitignore                   ← exclude _settings.bat + log + backups
 ```
 
 ---
@@ -115,21 +120,31 @@ C:\SDA\SDA\Form-Layout\ImportLayouts\
 
 **แนะนำรันบนเครื่อง Client** เพราะสะดวก + ทดสอบ preview ใน SAP UI ต่อได้ทันที
 
-### 2. แก้ credentials ใน 3 ไฟล์ `.bat`
+### 2. สร้าง `_settings.bat` (ตั้งครั้งเดียว ใช้กับทุก .bat)
 
-เปิดด้วย **Notepad** แก้ 4 บรรทัดแรกให้ตรงกับ server ของคุณ
+```cmd
+copy _settings.bat.example _settings.bat
+```
 
-**TestConnect.bat, RunImport.bat, RunImport-Single.bat, RunRollback.bat**
+แล้วเปิด `_settings.bat` ด้วย **Notepad** แก้ 5 บรรทัดให้ตรงกับ environment ของคุณ:
+
 ```bat
 set SERVER=10.10.10.115            ← IP หรือชื่อ SQL Server
 set COMPANYDB=SBO_SDA_MARK1        ← ชื่อ Company DB
 set DBUSER=sa                      ← SQL user (ต้องมีสิทธิ์ INSERT ใน RDOC)
 set DBPASSWORD=YourPassword        ← password
+set RPTROOT=C:\SDA\SDA\Form-Layout ← root folder ที่มีไฟล์ .rpt
 ```
 
-เพิ่มเติมใน `RunImport.bat` และ test/rollback:
+> 📌 **ทุก `Run*.bat` `call _settings.bat` อัตโนมัติ** — เปลี่ยน server/DB/password ที่ไฟล์เดียว ไม่ต้องไปแก้ทุก .bat
+>
+> 🔒 **`_settings.bat` ถูก gitignored** — ไม่ขึ้น git ไม่หลุดไปเครื่องอื่น (share เฉพาะ `_settings.bat.example` ที่เป็น template)
+
+ใน `Run*.bat` แต่ละไฟล์มีตั้งค่าเฉพาะของตัวเองเพิ่มเติม (บนสุด หลัง `call _settings.bat`):
 ```bat
-set AUTHOR=manager                 ← owner ของ layout (แนะนำ "manager")
+set AUTHOR=manager       ← RunImport / RunImport-Single / RunRollback
+set MODE=                ← -DryRun / ว่าง / -Force
+set ONDUP=Update         ← RunImport เท่านั้น
 ```
 
 ### 3. ทดสอบ connection
@@ -236,7 +251,7 @@ set MODE=-Force         REM ลบทันที ไม่ถาม
 
 **ดับเบิลคลิกอีกครั้ง** → ลบจริง
 
-**กฎการลบ:** ต้องตรง `DocName + TypeCode + Author` ทั้ง 3 ฟิลด์ (ปลอดภัย ไม่ลบของคนอื่น)
+**กฎการลบ:** match ด้วย `DocName + TypeCode` (ไม่สน Author) — ลบทุก row ที่ตรงทั้งของตัวเองและของคนอื่น
 
 ---
 
@@ -314,21 +329,27 @@ cd C:\SDA\SDA\Form-Layout\ImportLayouts
 C:\SDA\SDA\Form-Layout\ImportLayouts\
 ```
 
-### Step 2: แก้ 4 บรรทัดใน 4 ไฟล์ `.bat`
+### Step 2: สร้าง / แก้ `_settings.bat` (ที่เดียว)
 
-ทุก `.bat` มี 4 บรรทัดเดียวกันบนสุด:
+```cmd
+copy _settings.bat.example _settings.bat
+notepad _settings.bat
+```
+
+แก้ 5 บรรทัด:
 ```bat
 set SERVER=...
 set COMPANYDB=...
 set DBUSER=...
 set DBPASSWORD=...
+set RPTROOT=...
 ```
+
+ทุก `Run*.bat` ใช้ค่าจาก `_settings.bat` อัตโนมัติ
 
 ### Step 3: แก้ Excel (ถ้า path .rpt เปลี่ยน)
 
-`RPT_Import_Map.xlsx` คอลัมน์ `RPT_Folder`
-
-หรือใส่ parameter `-RptRoot` ตอนเรียก
+แก้ `RPTROOT` ใน `_settings.bat` หรือคอลัมน์ `RPT_Folder` ใน `RPT_Import_Map.xlsx`
 
 ### Step 4: Test → Backup → Import
 
@@ -407,9 +428,9 @@ GROUP BY TypeCode
 
 ### Duplicate Detection
 
-ตรวจด้วย 3 ฟิลด์: `DocName + TypeCode + Author`
+ตรวจด้วย 2 ฟิลด์: `DocName + TypeCode` (ไม่สนใจ `Author` — re-import จะ UPDATE ข้ามเจ้าของได้)
 
-ถ้าตรงทั้ง 3 → ถือเป็น duplicate → ทำตาม `-OnDuplicate`:
+ถ้าตรงทั้ง 2 → ถือเป็น duplicate → ทำตาม `-OnDuplicate`:
 - `Update` → UPDATE `Template`, `RptHash`, `UpdateDate` (DocCode เดิม)
 - `Skip` → ไม่ทำอะไร
 - `Insert` → สร้าง row ใหม่ (DocCode ใหม่ → ในระบบจะมี 2 ตัว)
@@ -454,10 +475,11 @@ Main script dot-sources plugin:
 - .rpt ที่สร้างด้วย Crystal Designer version **ใหม่** กว่า Crystal Runtime ของ SAP B1 Client → เปิดไม่ได้
 - ทดสอบกับ 1 layout ก่อนเสมอ
 
-### ⚠️ Password ในไฟล์ `.bat`
-- `.bat` เก็บ password เป็น **plain text**
-- `.gitignore` ตั้งให้ไม่ commit ขึ้น git แล้ว
-- **อย่า** share folder นี้กับคนอื่น / upload ขึ้น cloud public
+### ⚠️ Password ใน `_settings.bat`
+- `_settings.bat` เก็บ password เป็น **plain text** (ตามข้อจำกัดของ batch script)
+- `.gitignore` exclude `_settings.bat` แล้ว — ไม่ขึ้น git, ไม่หลุดไปเครื่องอื่น
+- Share repo ได้ — คนใหม่จะเห็นแต่ `_settings.bat.example` (ค่า placeholder) ต้องตั้งของตัวเอง
+- **อย่า** เก็บไฟล์ `_settings.bat` ไว้ใน cloud public หรือส่งทาง email
 
 ### ⚠️ Layouts ที่ skip (import ไม่ได้ผ่าน script)
 - **Inventory Revaluation** (ObjectType=162) — ไม่มี RTYP.CODE

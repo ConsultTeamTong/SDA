@@ -2,12 +2,18 @@
 chcp 65001 >nul
 REM ============================================================
 REM  Rollback Crystal Layouts imported from RPT_Import_Map.xlsx
-REM  Deletes rows in RDOC matching (DocName + TypeCode + Author)
+REM  Deletes rows in RDOC matching (DocName + TypeCode), Author ignored
+REM  Connection settings are in _settings.bat (shared, gitignored).
 REM ============================================================
-set SERVER=10.10.10.115
-set COMPANYDB=SBO_SDA_MARK1
-set DBUSER=sa
-set DBPASSWORD=1q2w3e4r@
+if not exist "%~dp0_settings.bat" (
+    echo ERROR: _settings.bat not found.
+    echo Copy _settings.bat.example to _settings.bat and edit it.
+    pause
+    exit /b 1
+)
+call "%~dp0_settings.bat"
+
+REM AUTHOR is no longer used for matching; kept only for log display.
 set AUTHOR=SDA
 
 REM ============================================================
@@ -75,6 +81,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Scripts\Rollback-F
     -DBPassword "%DBPASSWORD%" ^
     -Author "%AUTHOR%" ^
     -MapFile "!CFG!\!MAPFILE!" ^
+    -UseFileNameAsDocName ^
     %MODE%
 endlocal
 
