@@ -10,8 +10,8 @@ set DBUSER=sa
 set DBPASSWORD=1q2w3e4r@
 
 REM ============================================================
-REM  AUTHOR: who to record as the layout author
-REM  Use "manager" to overwrite existing layouts created by manager
+REM  AUTHOR: stored on NEW rows only (INSERT). Updates to existing
+REM  layouts keep the original Author -- dedup matches across authors.
 REM ============================================================
 set AUTHOR=manager
 
