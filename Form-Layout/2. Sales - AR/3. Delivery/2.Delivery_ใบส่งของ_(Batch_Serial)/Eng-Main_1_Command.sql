@@ -20,7 +20,7 @@ END 'GLN_BP' ,
  WHEN ODLN.Printed = 'Y' AND ODLN.DocCur <> OADM.MainCurncy THEN 'Copy'  
  WHEN ODLN.Printed = 'Y' AND ODLN.DocCur = OADM.MainCurncy THEN N'สำเนา'
  END AS 'Print Status',
-ODLN.DocEntry, 
+ODLN.DocEntry,
 ODLN.CardCode,
 DLN12.StreetB     AS '1Bill',
     DLN12.StreetNoB   AS '2Bill',
