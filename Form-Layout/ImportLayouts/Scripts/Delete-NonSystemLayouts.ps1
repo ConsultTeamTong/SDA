@@ -8,7 +8,7 @@ param(
     [Parameter(Mandatory=$true)][string]$CompanyDB,
     [string]$DBUser     = "sa",
     [Parameter(Mandatory=$true)][string]$DBPassword,
-    [string]$SystemAuthor = "-System-",
+    [string]$SystemAuthor = "System",
     [switch]$DryRun,
     [switch]$Force
 )

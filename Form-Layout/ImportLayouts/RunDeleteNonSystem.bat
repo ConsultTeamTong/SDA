@@ -8,7 +8,7 @@ set SERVER=10.10.10.115
 set COMPANYDB=SBO_SDA_(Test)_Pre_Training
 set DBUSER=sa
 set DBPASSWORD=1q2w3e4r@
-set SYSTEMAUTHOR=-System-
+set SYSTEMAUTHOR=System
 
 REM ============================================================
 REM  MODE:
