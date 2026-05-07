@@ -2,12 +2,15 @@
 chcp 65001 >nul
 REM ============================================================
 REM  Test SQL connection to SAP B1 Company DB
-REM  EDIT THE 4 LINES BELOW IF SERVER OR CREDENTIALS CHANGE
+REM  Connection settings are in _settings.bat (shared, gitignored).
 REM ============================================================
-set SERVER=10.10.10.115
-set COMPANYDB=SBO_SDA_UAT
-set DBUSER=sa
-set DBPASSWORD=1q2w3e4r@
+if not exist "%~dp0_settings.bat" (
+    echo ERROR: _settings.bat not found.
+    echo Copy _settings.bat.example to _settings.bat and edit it.
+    pause
+    exit /b 1
+)
+call "%~dp0_settings.bat"
 
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Scripts\Test-SQLConnect.ps1" ^
     -Server "%SERVER%" ^

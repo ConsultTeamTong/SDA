@@ -1,13 +1,18 @@
 @echo off
 chcp 65001 >nul
 REM ============================================================
-REM  Delete ALL layouts in RDOC EXCEPT Author='-System-'
+REM  Delete ALL layouts in RDOC EXCEPT Author='System'
 REM  ** DESTRUCTIVE ** - backup RDOC first if needed
+REM  Connection settings are in _settings.bat (shared, gitignored).
 REM ============================================================
-set SERVER=10.10.10.115
-set COMPANYDB=SBO_SDA_(Test)_Pre_Training
-set DBUSER=sa
-set DBPASSWORD=1q2w3e4r@
+if not exist "%~dp0_settings.bat" (
+    echo ERROR: _settings.bat not found.
+    echo Copy _settings.bat.example to _settings.bat and edit it.
+    pause
+    exit /b 1
+)
+call "%~dp0_settings.bat"
+
 set SYSTEMAUTHOR=System
 
 REM ============================================================
