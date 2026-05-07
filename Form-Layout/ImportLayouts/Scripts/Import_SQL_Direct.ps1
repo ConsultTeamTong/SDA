@@ -202,12 +202,12 @@ foreach ($row in $mapRows) {
         $hash = [BitConverter]::ToString($md5.ComputeHash($bytes)).Replace("-","")
         $md5.Dispose()
 
-        # Check if this layout already exists (match on DocName + TypeCode + Author)
+        # Check if this layout already exists (match on DocName + TypeCode only --
+        # Author is intentionally ignored so re-imports update across owners).
         $chk = $conn.CreateCommand()
-        $chk.CommandText = Convert-DBSql "SELECT DocCode FROM RDOC WHERE DocName=@n AND TypeCode=@t AND Author=@a"
+        $chk.CommandText = Convert-DBSql "SELECT DocCode FROM RDOC WHERE DocName=@n AND TypeCode=@t"
         Add-DBParam $chk "${DB_PARAM}n" $layoutName
         Add-DBParam $chk "${DB_PARAM}t" $typeCode
-        Add-DBParam $chk "${DB_PARAM}a" $Author
         $existingCode = $chk.ExecuteScalar()
 
         $action = ""; $docCode = ""

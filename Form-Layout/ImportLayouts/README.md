@@ -407,9 +407,9 @@ GROUP BY TypeCode
 
 ### Duplicate Detection
 
-ตรวจด้วย 3 ฟิลด์: `DocName + TypeCode + Author`
+ตรวจด้วย 2 ฟิลด์: `DocName + TypeCode` (ไม่สนใจ `Author` — re-import จะ UPDATE ข้ามเจ้าของได้)
 
-ถ้าตรงทั้ง 3 → ถือเป็น duplicate → ทำตาม `-OnDuplicate`:
+ถ้าตรงทั้ง 2 → ถือเป็น duplicate → ทำตาม `-OnDuplicate`:
 - `Update` → UPDATE `Template`, `RptHash`, `UpdateDate` (DocCode เดิม)
 - `Skip` → ไม่ทำอะไร
 - `Insert` → สร้าง row ใหม่ (DocCode ใหม่ → ในระบบจะมี 2 ตัว)
