@@ -83,7 +83,8 @@ RIN12.ZipCodeB,
 RIN12.CountyB,
 RIN12.CountryB,
 Rin1.DiscPrcnt,
-RIN1.U_SLD_Dis_Amount
+RIN1.U_SLD_Dis_Amount,
+ORIN.U_SLD_Returnreason
 
 FROM ORIN
 INNER JOIN RIN1 ON ORIN.DocEntry = RIN1.DocEntry 
