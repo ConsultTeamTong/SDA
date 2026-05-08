@@ -12,6 +12,7 @@ CASE WHEN CRD1.GlblLocNum = '00000' AND OVPM.DocCurr = OADM.MainCurncy THEN N'(�
   WHEN CRD1.GlblLocNum <> '00000' AND OVPM.DocCurr <> OADM.MainCurncy THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')') 
   when CRD1.GlblLocNum = '' or CRD1.GlblLocNum is null then ''
 END 'GLN_BP' ,
+
  CASE 
  WHEN OVPM.Printed = 'N' AND OVPM.DocCurr <> OADM.MainCurncy THEN 'Original'
  WHEN OVPM.Printed = 'N' AND OVPM.DocCurr = OADM.MainCurncy THEN N'ต้นฉบับ' 
@@ -61,8 +62,8 @@ OVPM.JrnlMemo,
 OVPM.TransId,
 OVPM.CheckSumSy, 
 NNM1.Beginstr, 
-CONVERT(NVARCHAR(100),OCRD.Building ) AS 'BPBuilding',
-OCPR.Name
+CONVERT(NVARCHAR(100),OCRD.Building ) AS 'BPBuilding'  
+
 FROM OVPM 
 LEFT JOIN VPM1 ON OVPM.DocENTRY = VPM1.DocNum
 LEFT JOIN VPM2 ON OVPM.DocEntry = VPM2.DocNum
@@ -76,4 +77,5 @@ LEFT JOIN OUSR ON OVPM.UserSign = OUSR.USERID
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH 
     ON OVPM.U_SLD_VatBranch = BRANCH.Code
 CROSS JOIN OADM                                     
+
 WHERE OVPM.DocEntry = {?DocKey@}

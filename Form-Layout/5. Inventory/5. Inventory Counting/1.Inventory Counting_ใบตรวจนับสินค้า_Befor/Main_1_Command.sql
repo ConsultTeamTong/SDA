@@ -1,8 +1,17 @@
-﻿SELECT distinct
+﻿-- ============================================================
+-- Report: 1.Inventory Counting_ใบตรวจนับสินค้า_Befor.rpt
+Path:   5. Inventory\5. Inventory Counting\1.Inventory Counting_ใบตรวจนับสินค้า_Befor.rpt
+Extracted: 2026-04-09 15:22:51
+-- Source: Main Report
+-- Table:  Command
+-- ============================================================
+
+------ ก่อนตรวจ ต้องไม่แสดงยอด sap ให้ดู
+SELECT distinct
 T0.DocEntry,
---CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
-     --WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
---END AS 'GLN_H',
+CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
+     WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
+END AS 'GLN_H',
 T1.[VisOrder], T1.[ItemCode], T1.[ItemDesc], T1.[UomCode], T1.[WhsCode], T1.[BinEntry]
 ,T3.[BinCode]
 ,T5.DistNumber
@@ -24,6 +33,7 @@ T1.[VisOrder], T1.[ItemCode], T1.[ItemDesc], T1.[UomCode], T1.[WhsCode], T1.[Bin
 ,T0.UserSign
 ,T11.U_NAME
 ,Concat(OHEM.firstName,'',OHEM.middleName,' ',OHEM.lastname) as 'CounterName'
+
 FROM OINC T0  
 LEFT JOIN INC1 T1 ON T0.[DocEntry] = T1.[DocEntry]
 --Bin
@@ -37,9 +47,11 @@ LEFT JOIN OITB t7 ON T7.ItmsGrpCod = T6.ItmsGrpCod
 LEFT JOIN OBTQ T8 on T1.ItemCode = T8.ItemCode and  T8.[WhsCode] =T1.[WhsCode] and  T8.[Quantity] <>0
 LEFT JOIN INC3 T9 ON T9.ObjAbs = T8.MdAbsEntry
 LEFT JOIN OUGP T10 on T6.UgpEntry = T10.UgpEntry
---LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON T0.U_SLD_LVatBranch = BRANCH.Code
+LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON T0.U_SLD_LVatBranch = BRANCH.Code
 LEFT JOIN OUSR T11 ON T0.UserSign = T11.USERID
 right JOIN OHEM ON OHEM.empID = t0.Taker1Id --and t0.taker1Type = '171' เลือก Counter แบบ Multiple ไม่ได้
+
 WHERE (T1.[BinEntry] is not null or T1.[BinEntry] <> '') and
- T0.DocEntry = 1--{?DocKey@}
+ T0.DocEntry = {?DocKey@}
+
 ORDER BY T1.[VisOrder],T1.[BinEntry]

@@ -14,8 +14,8 @@ IGN1.UomCode,
 IGN1.WhsCode,
 OIGN.comments,
 OIGN.U_GR_RE,
-IGN1.Project,
-IGN1.UnitMsr
+IGN1.Project
+
 FROM OIGN
 LEFT JOIN IGN1 ON OIGN.DocEntry = IGN1.DocEntry
 LEFT JOIN NNM1 ON OIGN.Series = NNM1.Series

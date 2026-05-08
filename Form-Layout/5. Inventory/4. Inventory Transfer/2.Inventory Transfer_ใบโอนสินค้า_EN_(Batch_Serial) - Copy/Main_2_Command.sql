@@ -1,7 +1,7 @@
 ﻿-- ============================================================
--- Report: 2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).rpt
-Path:   5. Inventory\2. Goods Issue\2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).rpt
-Extracted: 2026-04-09 15:22:49
+-- Report: 2.Inventory Transfer_ใบโอนสินค้า_EN_(Batch_Serial) - Copy.rpt
+Path:   5. Inventory\4. Inventory Transfer\2.Inventory Transfer_ใบโอนสินค้า_EN_(Batch_Serial) - Copy.rpt
+Extracted: 2026-04-09 15:22:51
 -- Source: Main Report
 -- Table:  Command
 -- ============================================================

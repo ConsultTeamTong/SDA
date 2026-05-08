@@ -1,3 +1,11 @@
+-- ============================================================
+-- Report: 2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).rpt
+Path:   5. Inventory\2. Goods Issue\2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).rpt
+Extracted: 2026-04-09 15:22:49
+-- Source: Main Report
+-- Table:  Command
+-- ============================================================
+
 SELECT
 CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
      WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)

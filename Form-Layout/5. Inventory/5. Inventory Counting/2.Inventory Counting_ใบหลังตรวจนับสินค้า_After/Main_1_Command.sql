@@ -1,8 +1,18 @@
-﻿SELECT distinct
+﻿-- ============================================================
+-- Report: 2.Inventory Counting_ใบหลังตรวจนับสินค้า_After.rpt
+Path:   5. Inventory\5. Inventory Counting\2.Inventory Counting_ใบหลังตรวจนับสินค้า_After.rpt
+Extracted: 2026-04-09 15:22:52
+-- Source: Main Report
+-- Table:  Command
+-- ============================================================
+
+------ ก่อนตรวจ ต้องไม่แสดงยอด sap ให้ดู
+----มี Batch มี BIN
+SELECT distinct
 T0.DocEntry,
---CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
-     --WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
---END AS 'GLN_H',
+CASE WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
+     WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
+END AS 'GLN_H',
 T1.[VisOrder], T1.[ItemCode], T1.[ItemDesc], T1.[UomCode], T1.[WhsCode]
 ,T1.[BinEntry]
 ,T3.[BinCode]
@@ -29,6 +39,7 @@ T1.[VisOrder], T1.[ItemCode], T1.[ItemDesc], T1.[UomCode], T1.[WhsCode]
 ,case when T1.Counted = 'Y' then T8.Quantity else '0' end as 'InWhs'
 ,case when T1.Counted = 'Y' then T9.Quantity else '0' end as 'CountedQ'
 ,case when T1.Counted = 'Y' then (T9.Quantity - T8.Quantity) else '0' end as 'Diff'
+
 FROM OINC T0  
 inner JOIN INC1 T1 ON T0.[DocEntry] = T1.[DocEntry]
 LEFT JOIN OITM T6 ON T1.[ItemCode] = T6.[ItemCode]
@@ -42,11 +53,13 @@ LEFT JOIN OITB t7 ON T7.ItmsGrpCod = T6.ItmsGrpCod
 LEFT JOIN INC3 T9 ON T1.DocEntry = T9.DocEntry and T0.DocEntry = T9.DocEntry and T9.ObjAbs = T4.SnBMDAbs 
 LEFT JOIN OBTQ T8 on T1.ItemCode = T8.ItemCode and  T8.[WhsCode] = T1.[WhsCode] and  T8.[Quantity] <> 0 and T9.ObjAbs = T8.MdAbsEntry and T8.MdAbsEntry = T4.SnBMDAbs and T5.SysNumber = T8.SysNumber
 LEFT JOIN OUGP T10 on T6.UgpEntry = T10.UgpEntry
---LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON T0.U_SLD_LVatBranch = BRANCH.Code
+LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON T0.U_SLD_LVatBranch = BRANCH.Code
 LEFT JOIN OUSR T11 ON T0.UserSign = T11.USERID
 right JOIN OHEM ON OHEM.empID = t0.Taker1Id --and t0.taker1Type = '171' เลือก Counter แบบ Multiple ไม่ได้
+
 WHERE (T1.[BinEntry] is not null or T1.[BinEntry] <> '') and
  T0.DocEntry = {?DocKey@}
+
 ORDER BY T1.[VisOrder],T1.[BinEntry]
 
 

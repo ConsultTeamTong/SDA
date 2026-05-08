@@ -1,5 +1,5 @@
 SELECT [LineText]
-FROM IGE10
+FROM WTR10
 WHERE [DocEntry] = {?DocKey@}
-  AND [AftLineNum] = -1
+  AND [AftLineNum] = {?lineNum@}
 ORDER BY [LineSeq] ASC

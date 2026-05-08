@@ -1,7 +1,7 @@
 ﻿============================================================
-Report: 2.Goods Receipt_ใบรับสินค้า_(Batch_Serial).rpt
-Path:   5. Inventory\1. Goods Receipt\2.Goods Receipt_ใบรับสินค้า_(Batch_Serial).rpt
-Extracted: 2026-04-09 15:22:49
+Report: 2.Inventory Transfer_ใบโอนสินค้า_EN_(Batch_Serial) - Copy.rpt
+Path:   5. Inventory\4. Inventory Transfer\2.Inventory Transfer_ใบโอนสินค้า_EN_(Batch_Serial) - Copy.rpt
+Extracted: 2026-04-09 15:22:51
 ============================================================
 
 ************************************************************
@@ -21,7 +21,7 @@ Parameter: (error)
 ************************************************************
   CONNECTION INFO
 ************************************************************
-Table:    G_Receipt
+Table:    Transfer
   Server:   10.10.10.115
   Database: SBO_SDA_MARK1
   UserID:   sa
@@ -40,6 +40,6 @@ Table:    Command
 ************************************************************
   RECORD SELECTION FORMULA
 ************************************************************
-(No record selection formula)
+ (  {Transfer.DocEntry} = {?DocKey@}  )  
 
 
