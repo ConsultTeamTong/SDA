@@ -1,4 +1,4 @@
-﻿SELECT DISTINCT
+SELECT DISTINCT
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
 BRANCH.Code ,
 CASE WHEN BRANCH.Code = '00000' AND OVPM.DocCurr = OADM.MainCurncy THEN N'สำนักงานใหญ่' 

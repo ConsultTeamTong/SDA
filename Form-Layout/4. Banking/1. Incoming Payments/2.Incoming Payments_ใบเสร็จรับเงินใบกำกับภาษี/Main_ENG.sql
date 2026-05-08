@@ -1,4 +1,4 @@
-﻿SELECT DISTINCT
+SELECT DISTINCT
     ORCT.Comments,
     CONCAT(OCPR.FirstName, ' ', OCPR.LastName) AS 'Coontact',
     BRANCH.Code,
