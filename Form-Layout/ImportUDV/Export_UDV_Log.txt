@@ -1,0 +1,56 @@
+﻿[2026-05-12 23:45:58] [INFO] === Start UDV/FMS Export (DI API) ===
+[2026-05-12 23:45:58] [INFO] Loaded DI API: C:\Program Files\SAP\Data Transfer Workbench\Interop.SAPbobsCOM.dll
+[2026-05-12 23:45:58] [INFO] Server   : POWERAIDB115
+[2026-05-12 23:45:58] [INFO] CompanyDB: SBO_SDA_UAT
+[2026-05-12 23:45:58] [INFO] OutFile  : C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260512_234556.csv
+[2026-05-12 23:46:22] [INFO] === Start UDV/FMS Export (DI API) ===
+[2026-05-12 23:46:22] [INFO] Loaded DI API: C:\Program Files\SAP\Data Transfer Workbench\Interop.SAPbobsCOM.dll
+[2026-05-12 23:46:22] [INFO] Server   : POWERAIDB115
+[2026-05-12 23:46:22] [INFO] CompanyDB: SBO_SDA_UAT
+[2026-05-12 23:46:22] [INFO] OutFile  : C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260512_234621.csv
+[2026-05-12 23:46:28] [INFO] Connected (DbServerType=dst_MSSQL2019)
+[2026-05-12 23:46:29] [INFO] Loaded 304 saved queries from OUQR
+[2026-05-12 23:46:29] [INFO] Found 32 FMS records in CSHS
+[2026-05-12 23:46:29] [WARN]   [1/32] Error reading 134/1320002080/-1 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [2/32] Error reading 134/56/-1 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [3/32] Error reading 134/7/-1 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [4/32] Error reading 139/38/15 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [5/32] Error reading 139/38/U_SLD_T_BeDis : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [6/32] Error reading 1470000200/38/15 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [7/32] Error reading 1470000200/38/21 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [8/32] Error reading 1470000200/38/U_SLD_T_BeDis : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [9/32] Error reading 149/38/15 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [10/32] Error reading 149/38/20 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [11/32] Error reading 149/38/21 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [12/32] Error reading 149/38/U_SLD_Dis_Amount : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [13/32] Error reading 149/38/U_SLD_Dis_Sum : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [14/32] Error reading 149/38/U_SLD_T_BeDis : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [15/32] Error reading 150/1320002059/-1 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [16/32] Error reading 185/4/U_SLD_ItemSeries : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [17/32] Error reading 185/4/U_SLD_Series : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [18/32] Error reading 392/76/U_SLD_BPAds : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:29] [WARN]   [19/32] Error reading 392/76/U_SLD_CardName : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [20/32] Error reading 392/76/U_SLD_LBPTaxID : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [21/32] Error reading 392/76/U_SLD_LPBranch : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [22/32] Error reading 392/76/U_SLD_WTBaseAmt : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [23/32] Error reading 392/76/U_SLD_WTCode : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [24/32] Error reading 393/76/U_SLD_BPAds : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [25/32] Error reading 393/76/U_SLD_CardName : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [26/32] Error reading 393/76/U_SLD_LBPTaxID : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [27/32] Error reading 393/76/U_SLD_LPBranch : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [28/32] Error reading 393/76/U_SLD_WTBaseAmt : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [29/32] Error reading 393/76/U_SLD_WTCode : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [30/32] Error reading 65300/38/U_SLD_T_BeDis : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [31/32] Error reading 720/13/57 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:46:30] [WARN]   [32/32] Error reading 721/13/57 : Cannot find an overload for "GetByKey" and the argument count: "3"
+[2026-05-12 23:50:25] [INFO] === Start UDV/FMS Export (SQL via DI API Recordset) ===
+[2026-05-12 23:50:26] [INFO] Loaded DI API: C:\Program Files\SAP\Data Transfer Workbench\Interop.SAPbobsCOM.dll
+[2026-05-12 23:50:26] [INFO] Server   : POWERAIDB115
+[2026-05-12 23:50:26] [INFO] CompanyDB: SBO_SDA_UAT
+[2026-05-12 23:50:26] [INFO] OutFile  : C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260512_235025.csv
+[2026-05-12 23:50:31] [INFO] Connected (DbServerType=dst_MSSQL2019)
+[2026-05-12 23:50:32] [INFO] CSHS columns (10): ActionT, ByField, ColID, FieldID, FormID, FrceRfrsh, IndexID, ItemID, QueryId, Refresh
+[2026-05-12 23:50:32] [INFO] Loaded 304 saved queries from OUQR
+[2026-05-12 23:50:33] [INFO] Read 32 FMS rows from CSHS
+[2026-05-12 23:50:33] [INFO] === Done. Exported 32 records ===
+[2026-05-12 23:50:33] [INFO] Output: C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260512_235025.csv

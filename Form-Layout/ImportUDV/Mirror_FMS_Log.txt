@@ -1,0 +1,20 @@
+﻿[2026-05-13 00:19:27] [INFO] === Mirror FMS: source=149 -> target=139 (Item=38) DryRun=False ===
+[2026-05-13 00:19:27] [INFO] Connected to SQL: POWERAIDB115 / SBO_SDA_UAT
+[2026-05-13 00:19:27] [INFO] Source 149 has 6 FMS row(s) to mirror
+[2026-05-13 00:19:27] [INFO]   Source  Item=38           Col=15                     ActionT=2  QueryId=298    Refresh=Y  ByField=N  FieldID=                    FrceRfrsh=N
+[2026-05-13 00:19:27] [INFO]   Source  Item=38           Col=20                     ActionT=0  QueryId=(null)  Refresh=N  ByField=C  FieldID=                    FrceRfrsh=N
+[2026-05-13 00:19:27] [INFO]   Source  Item=38           Col=21                     ActionT=0  QueryId=(null)  Refresh=N  ByField=N  FieldID=                    FrceRfrsh=N
+[2026-05-13 00:19:27] [INFO]   Source  Item=38           Col=U_SLD_Dis_Amount       ActionT=2  QueryId=303    Refresh=Y  ByField=N  FieldID=U_SLD_Dis_Sum       FrceRfrsh=N
+[2026-05-13 00:19:27] [INFO]   Source  Item=38           Col=U_SLD_Dis_Sum          ActionT=2  QueryId=302    Refresh=Y  ByField=N  FieldID=                    FrceRfrsh=N
+[2026-05-13 00:19:27] [INFO]   Source  Item=38           Col=U_SLD_T_BeDis          ActionT=2  QueryId=301    Refresh=Y  ByField=N  FieldID=                    FrceRfrsh=N
+[2026-05-13 00:19:27] [INFO] Deleted 6 existing row(s) on target 139
+[2026-05-13 00:19:27] [INFO] Current MAX(IndexID) = 32 -> new rows start at 33
+[2026-05-13 00:19:28] [INFO] Inserted 6 row(s) on target 139 — committed
+[2026-05-13 00:19:28] [INFO] Post-import state of 139 :
+[2026-05-13 00:19:28] [INFO]   Result  Col=15                     ActionT=2  QueryId=298    Refresh=Y  ByField=N  FieldID=                    FrceRfrsh=N
+[2026-05-13 00:19:28] [INFO]   Result  Col=20                     ActionT=0  QueryId=(null)  Refresh=N  ByField=C  FieldID=                    FrceRfrsh=N
+[2026-05-13 00:19:28] [INFO]   Result  Col=21                     ActionT=0  QueryId=(null)  Refresh=N  ByField=N  FieldID=                    FrceRfrsh=N
+[2026-05-13 00:19:28] [INFO]   Result  Col=U_SLD_Dis_Amount       ActionT=2  QueryId=303    Refresh=Y  ByField=N  FieldID=U_SLD_Dis_Sum       FrceRfrsh=N
+[2026-05-13 00:19:28] [INFO]   Result  Col=U_SLD_Dis_Sum          ActionT=2  QueryId=302    Refresh=Y  ByField=N  FieldID=                    FrceRfrsh=N
+[2026-05-13 00:19:28] [INFO]   Result  Col=U_SLD_T_BeDis          ActionT=2  QueryId=301    Refresh=Y  ByField=N  FieldID=                    FrceRfrsh=N
+[2026-05-13 00:19:28] [INFO] === Done ===

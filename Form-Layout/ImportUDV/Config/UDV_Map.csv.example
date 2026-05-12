@@ -1,0 +1,15 @@
+Action,FormID,ItemID,ColumnID,FMSAction,QueryName,QueryCategory,QueryBody,FixedValue,Refresh,TriggerID,TriggerColumn,ForceRefresh
+# ------------------------------------------------------------------------------
+# Examples — delete this header block and any leading "#" lines before importing.
+# Notes:
+#   - FormID/ItemID/ColumnID/TriggerID/TriggerColumn are from View > System Information (Ctrl+Shift+I)
+#   - FormID 139 = Sales Order header, 60090 = AR Invoice (varies by version)
+#   - ColumnID blank/0 = header field; non-zero = matrix column
+#   - QueryBody may contain $[$...] tokens. In CSV, just write them as-is.
+#     Inline UDF (grid row):   $[$U_xxx.0.0]
+#     Side-panel UDF (header): $[$38.U_xxx]
+#   - Quote any field containing comma/quote/newline using standard CSV rules.
+# ------------------------------------------------------------------------------
+ADD,139,38,14,Q,GetItemPrice_FMS,-1,"SELECT Price FROM OITM WHERE ItemCode = $[$38.1.0]",,Y,38,1,Y
+UPSERT,139,16,0,F,,,,DefaultRemark,N,,,N
+DELETE,139,38,14,,,,,,,,,
