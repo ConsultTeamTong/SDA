@@ -2,6 +2,7 @@
 chcp 65001 >nul
 REM ============================================================
 REM  Export all User-Defined Values (FMS) from SAP B1 to CSV.
+REM  Uses .NET SqlClient direct (no DI API required).
 REM  Output: Config\UDV_Export_<timestamp>.csv (Import-ready).
 REM  Connection settings in _settings.bat (shared, gitignored).
 REM ============================================================
@@ -13,34 +14,13 @@ if not exist "%~dp0_settings.bat" (
 )
 call "%~dp0_settings.bat"
 
-if "%SAPUSER%"==""     set SAPUSER=manager
-if "%SAPPASSWORD%"=="" set SAPPASSWORD=%DBPASSWORD%
-if "%DBTYPE%"==""      set DBTYPE=MSSQL
-
-REM Auto-select PowerShell arch to match installed DI API
-set "PS64=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
-set "PS32=%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe"
-set "PFX64=%ProgramFiles%"
-set "PFX86=%ProgramFiles(x86)%"
-set "PS="
-if exist "%PFX64%\SAP\SAP Business One DI API\" set "PS=%PS64%"
-if defined PS goto :ps_found
-if exist "%PFX86%\SAP\SAP Business One DI API\" set "PS=%PS32%"
-if defined PS goto :ps_found
-echo ERROR: DI API not detected.
-echo   Looked in: %PFX64%\SAP\SAP Business One DI API\
-echo   Looked in: %PFX86%\SAP\SAP Business One DI API\
-pause
-exit /b 2
-:ps_found
+REM 64-bit PowerShell - no DI API needed for SQL-direct path
+set "PS=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
 
 echo ============================================
-echo  Export UDV/FMS to CSV (DI API)
+echo  Export UDV/FMS to CSV (SQL Direct)
 echo  Server    : %SERVER%
 echo  Database  : %COMPANYDB%
-echo  DBType    : %DBTYPE%
-echo  B1 User   : %SAPUSER%
-echo  PS        : %PS%
 echo ============================================
 echo.
 
@@ -48,10 +28,7 @@ echo.
     -Server "%SERVER%" ^
     -CompanyDB "%COMPANYDB%" ^
     -DBUser "%DBUSER%" ^
-    -DBPassword "%DBPASSWORD%" ^
-    -SapUser "%SAPUSER%" ^
-    -SapPassword "%SAPPASSWORD%" ^
-    -DBType "%DBTYPE%"
+    -DBPassword "%DBPASSWORD%"
 
 echo.
 echo ============================================

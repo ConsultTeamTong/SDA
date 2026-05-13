@@ -109,3 +109,25 @@
 [2026-05-13 10:58:29] [INFO] Read 36 CSHS rows; expanded to 59 CSV rows (one per trigger when multi-trigger)
 [2026-05-13 10:58:29] [INFO] === Done. Exported 59 records ===
 [2026-05-13 10:58:29] [INFO] Output: C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260513_105820.csv
+[2026-05-13 20:10:46] [INFO] === Start UDV/FMS Export (SQL Direct) ===
+[2026-05-13 20:10:46] [INFO] Server   : 10.10.10.115
+[2026-05-13 20:10:46] [INFO] CompanyDB: SBO_SDA_UAT
+[2026-05-13 20:10:46] [INFO] OutFile  : C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260513_201046.csv
+[2026-05-13 20:10:46] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 20:10:46] [INFO] CSHS columns (10): ActionT, ByField, ColID, FieldID, FormID, FrceRfrsh, IndexID, ItemID, QueryId, Refresh
+[2026-05-13 20:10:46] [INFO] Loaded 304 saved queries from OUQR
+[2026-05-13 20:10:46] [INFO] Loaded SHS1 triggers for 6 CSHS row(s)
+[2026-05-13 20:10:47] [INFO] Read 36 CSHS rows; expanded to 46 CSV rows
+[2026-05-13 20:10:47] [INFO] === Done. Exported 46 records ===
+[2026-05-13 20:10:47] [INFO] Output: C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260513_201046.csv
+[2026-05-14 00:46:16] [INFO] === Start UDV/FMS Export (SQL Direct) ===
+[2026-05-14 00:46:16] [INFO] Server   : 10.10.10.115
+[2026-05-14 00:46:16] [INFO] CompanyDB: SBO_SDA_UAT
+[2026-05-14 00:46:16] [INFO] OutFile  : C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260514_004616.csv
+[2026-05-14 00:46:16] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-14 00:46:16] [INFO] CSHS columns (10): ActionT, ByField, ColID, FieldID, FormID, FrceRfrsh, IndexID, ItemID, QueryId, Refresh
+[2026-05-14 00:46:17] [INFO] Loaded 304 saved queries from OUQR
+[2026-05-14 00:46:17] [INFO] Loaded SHS1 triggers for 54 CSHS row(s)
+[2026-05-14 00:46:17] [INFO] Read 102 CSHS rows; expanded to 156 CSV rows
+[2026-05-14 00:46:17] [INFO] === Done. Exported 156 records ===
+[2026-05-14 00:46:17] [INFO] Output: C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260514_004616.csv

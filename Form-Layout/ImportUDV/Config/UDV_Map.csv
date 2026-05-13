@@ -1,15 +1,25 @@
-Action,FormID,ItemID,ColumnID,FMSAction,QueryName,QueryCategory,QueryBody,FixedValue,Refresh,TriggerID,TriggerColumn,ForceRefresh
+Action,FormID,ItemID,ColumnID,FMSAction,QueryName,QueryCategory,QueryBody,FixedValue,Refresh,ByField,TriggerID,TriggerColumn,ForceRefresh
 # ------------------------------------------------------------------------------
-# Examples — delete this header block and any leading "#" lines before importing.
-# Notes:
-#   - FormID/ItemID/ColumnID/TriggerID/TriggerColumn are from View > System Information (Ctrl+Shift+I)
-#   - FormID 139 = Sales Order header, 60090 = AR Invoice (varies by version)
-#   - ColumnID blank/0 = header field; non-zero = matrix column
-#   - QueryBody may contain $[$...] tokens. In CSV, just write them as-is.
-#     Inline UDF (grid row):   $[$U_xxx.0.0]
-#     Side-panel UDF (header): $[$38.U_xxx]
-#   - Quote any field containing comma/quote/newline using standard CSV rules.
+# UDV/FMS Map — delete this header block and any "#" lines before importing.
+#
+# Schema notes (B1 v10):
+#   - FormID/ItemID/ColumnID/TriggerID are from View > System Information (Ctrl+Shift+I)
+#   - ColumnID can be numeric (e.g. 15) for matrix column index, OR UDF code
+#     (e.g. U_SLD_T_BeDis) for UDF columns. ColumnID 0/-1 = header field.
+#   - FMSAction: Q (Query) | F (FixedValue)
+#   - QueryBody may contain $[$...] tokens:
+#       Inline UDF (grid row):   $[$U_xxx.0.0]
+#       Side-panel UDF (header): $[$38.U_xxx]
+#   - Refresh: Y/N — auto-refresh on field/form changes
+#   - ByField: Y/N/C — DB-level flag; usually 'N'. B1 also auto-extracts trigger
+#     fields from QueryBody $[$...] tokens (multi-trigger shown in UI).
+#   - TriggerID: name of the explicit trigger field (maps to CSHS.FieldID).
+#     Empty = trigger fields are derived from QueryBody only.
+#   - TriggerColumn: kept for older schemas — usually unused in v10.
+#   - ForceRefresh: Y/N — "Display Saved Values" (show value without Shift+F2).
+#
+# Quote any field containing comma/quote/newline using standard CSV rules.
 # ------------------------------------------------------------------------------
-ADD,139,38,14,Q,GetItemPrice_FMS,-1,"SELECT Price FROM OITM WHERE ItemCode = $[$38.1.0]",,Y,38,1,Y
-UPSERT,139,16,0,F,,,,DefaultRemark,N,,,N
-DELETE,139,38,14,,,,,,,,,
+ADD,139,38,14,Q,GetItemPrice_FMS,-1,"SELECT Price FROM OITM WHERE ItemCode = $[$38.1.0]",,Y,N,,,Y
+UPSERT,139,16,0,F,,,,DefaultRemark,N,N,,,N
+DELETE,139,38,14,,,,,,,,,,
