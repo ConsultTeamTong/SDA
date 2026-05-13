@@ -1,0 +1,195 @@
+﻿[2026-05-13 11:12:02] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 11:12:02] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (2 CSV rows)
+[2026-05-13 11:12:02] [INFO] DryRun : False
+[2026-05-13 11:12:02] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 11:12:02] [INFO] Connected to SQL: POWERAIDB115 / SBO_SDA_UAT
+[2026-05-13 11:12:02] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 11:12:02] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 11:12:02] [INFO] Current MAX(IndexID)=38
+[2026-05-13 11:12:02] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 11:12:03] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 11:12:03] [INFO]   Note: first trigger -> CSHS.FieldID; appended to QueryBody for UI: U_SLD_Dis_Sum
+[2026-05-13 11:12:03] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 11:12:37] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 11:12:37] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (2 CSV rows)
+[2026-05-13 11:12:37] [INFO] DryRun : False
+[2026-05-13 11:12:37] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 11:12:37] [INFO] Connected to SQL: POWERAIDB115 / SBO_SDA_UAT
+[2026-05-13 11:12:37] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 11:12:37] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 11:12:37] [INFO] Current MAX(IndexID)=38
+[2026-05-13 11:12:37] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 11:12:37] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 11:12:37] [INFO]   Note: first trigger -> CSHS.FieldID; appended to QueryBody for UI: U_SLD_Dis_Sum
+[2026-05-13 11:12:38] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 11:14:14] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 11:14:14] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (1 CSV rows)
+[2026-05-13 11:14:14] [INFO] DryRun : False
+[2026-05-13 11:14:15] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 11:14:15] [INFO] Connected to SQL: POWERAIDB115 / SBO_SDA_UAT
+[2026-05-13 11:14:15] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 11:14:15] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 11:14:15] [INFO] Current MAX(IndexID)=38
+[2026-05-13 11:14:15] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 11:14:15] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 11:14:15] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 17:42:17] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 17:42:17] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (2 CSV rows)
+[2026-05-13 17:42:17] [INFO] DryRun : False
+[2026-05-13 17:42:17] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:05:42] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 18:05:42] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (2 CSV rows)
+[2026-05-13 18:05:42] [INFO] DryRun : False
+[2026-05-13 18:05:42] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:05:42] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 18:05:42] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 18:05:42] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 18:05:42] [INFO] Current MAX(IndexID)=38
+[2026-05-13 18:05:42] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 18:05:42] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 18:05:42] [INFO]   Note: first trigger -> CSHS.FieldID; appended to QueryBody for UI: U_SLD_Dis_Amount
+[2026-05-13 18:05:42] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 18:14:33] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 18:14:33] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (2 CSV rows)
+[2026-05-13 18:14:33] [INFO] DryRun : False
+[2026-05-13 18:14:33] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:14:34] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 18:14:34] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 18:14:34] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 18:14:34] [INFO] Current MAX(IndexID)=38
+[2026-05-13 18:14:34] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 18:14:34] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 18:14:34] [INFO]   Note: first trigger -> CSHS.FieldID; appended to QueryBody for UI: U_SLD_Dis_Amount
+[2026-05-13 18:14:34] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 18:16:19] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 18:16:19] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (2 CSV rows)
+[2026-05-13 18:16:19] [INFO] DryRun : False
+[2026-05-13 18:16:19] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:16:20] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 18:16:20] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 18:16:20] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 18:16:20] [INFO] Current MAX(IndexID)=38
+[2026-05-13 18:16:20] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 18:16:20] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 18:16:20] [INFO]   Note: first trigger -> CSHS.FieldID; appended to QueryBody for UI: U_SLD_Dis_Amount
+[2026-05-13 18:16:20] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 18:17:37] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 18:17:38] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (2 CSV rows)
+[2026-05-13 18:17:38] [INFO] DryRun : False
+[2026-05-13 18:17:38] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:17:38] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 18:17:38] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 18:17:38] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 18:17:38] [INFO] Current MAX(IndexID)=38
+[2026-05-13 18:17:38] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 18:17:38] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 18:17:38] [INFO]   Note: first trigger -> CSHS.FieldID; appended to QueryBody for UI: U_SLD_Dis_Amount
+[2026-05-13 18:17:38] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 18:20:06] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 18:20:07] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (2 CSV rows)
+[2026-05-13 18:20:07] [INFO] DryRun : False
+[2026-05-13 18:20:07] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:20:07] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 18:20:07] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 18:20:07] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 18:20:07] [INFO] Current MAX(IndexID)=38
+[2026-05-13 18:20:07] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 18:20:07] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 18:20:07] [INFO]   Note: first trigger -> CSHS.FieldID; appended to QueryBody for UI: U_SLD_Dis_Sum
+[2026-05-13 18:20:07] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 18:23:32] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 18:23:32] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (4 CSV rows)
+[2026-05-13 18:23:32] [INFO] DryRun : False
+[2026-05-13 18:23:32] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:23:32] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 18:23:32] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 18:23:32] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 18:23:32] [INFO] Current MAX(IndexID)=38
+[2026-05-13 18:23:32] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 18:23:32] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 18:23:32] [INFO]   Note: first trigger -> CSHS.FieldID; appended to QueryBody for UI: U_SLD_Dis_Sum, 11, 14
+[2026-05-13 18:23:32] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 18:27:36] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 18:27:37] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (4 CSV rows)
+[2026-05-13 18:27:37] [INFO] DryRun : False
+[2026-05-13 18:27:37] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:27:37] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 18:27:37] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 18:27:37] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 18:27:37] [INFO] Current MAX(IndexID)=38
+[2026-05-13 18:27:37] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 18:27:37] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 18:27:37] [INFO]   Note: first trigger -> CSHS.FieldID; appended to QueryBody for UI: U_SLD_Dis_Sum, 11, 14
+[2026-05-13 18:27:37] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 18:31:18] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 18:31:18] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (4 CSV rows)
+[2026-05-13 18:31:18] [INFO] DryRun : False
+[2026-05-13 18:31:18] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:31:18] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 18:31:19] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 18:31:19] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 18:31:19] [INFO] Current MAX(IndexID)=38
+[2026-05-13 18:31:19] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 18:31:19] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 18:31:19] [INFO]   Note: multi-trigger -> CSHS.FieldID emptied, all 4 triggers injected to QueryBody (quoted): U_SLD_Dis_Amount, U_SLD_Dis_Sum, 11, 14
+[2026-05-13 18:31:19] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 18:41:42] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 18:41:42] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (4 CSV rows)
+[2026-05-13 18:41:42] [INFO] DryRun : False
+[2026-05-13 18:41:43] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:41:43] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 18:41:43] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 18:41:43] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 18:41:43] [INFO] Current MAX(IndexID)=38
+[2026-05-13 18:41:43] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 18:41:43] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 18:41:43] [INFO]   Note: multi-trigger -> CSHS.FieldID emptied, all 4 triggers injected to QueryBody (quoted): U_SLD_Dis_Amount, U_SLD_Dis_Sum, 11, 14
+[2026-05-13 18:41:43] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 18:46:57] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 18:46:57] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (4 CSV rows)
+[2026-05-13 18:46:57] [INFO] DryRun : False
+[2026-05-13 18:46:57] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 18:46:57] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 18:46:57] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 18:46:57] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 18:46:57] [INFO] Current MAX(IndexID)=38
+[2026-05-13 18:46:57] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 18:46:57] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 18:46:57] [INFO]   Note: multi-trigger -> CSHS.FieldID emptied, all 4 triggers injected to QueryBody (quoted): U_SLD_Dis_Amount, U_SLD_Dis_Sum, 11, 14
+[2026-05-13 18:46:57] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 19:04:34] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 19:04:34] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (4 CSV rows)
+[2026-05-13 19:04:34] [INFO] DryRun : False
+[2026-05-13 19:04:34] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 19:04:35] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 19:04:35] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 19:04:35] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 19:04:35] [INFO] Current MAX(IndexID)=38
+[2026-05-13 19:04:35] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 19:04:35] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 19:04:35] [INFO]   Triggers (SHS1) IndexID=38 : -2 +4 (U_SLD_Dis_Amount, U_SLD_Dis_Sum, 11, 14)
+[2026-05-13 19:04:35] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 19:04:48] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 19:04:48] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (4 CSV rows)
+[2026-05-13 19:04:48] [INFO] DryRun : False
+[2026-05-13 19:04:48] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 19:04:48] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 19:04:48] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 19:04:48] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 19:04:48] [INFO] Current MAX(IndexID)=38
+[2026-05-13 19:04:48] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 19:04:48] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 19:04:48] [INFO]   Triggers (SHS1) IndexID=38 : -0 +4 (U_SLD_Dis_Amount, U_SLD_Dis_Sum, 11, 14)
+[2026-05-13 19:04:48] [INFO] Committed. OK=1 FAIL=0 SKIP=0
+[2026-05-13 19:06:16] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-13 19:06:16] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (4 CSV rows)
+[2026-05-13 19:06:16] [INFO] DryRun : False
+[2026-05-13 19:06:16] [INFO] Grouped to 1 unique CSHS key(s)
+[2026-05-13 19:06:17] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_UAT
+[2026-05-13 19:06:17] [INFO] Pre-loaded 36 existing CSHS rows
+[2026-05-13 19:06:17] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-13 19:06:17] [INFO] Current MAX(IndexID)=38
+[2026-05-13 19:06:17] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=301), body updated
+[2026-05-13 19:06:17] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-13 19:06:17] [INFO]   Triggers (SHS1) IndexID=38 : -0 +4 (U_SLD_Dis_Amount, U_SLD_Dis_Sum, 11, 14)
+[2026-05-13 19:06:17] [INFO] Committed. OK=1 FAIL=0 SKIP=0

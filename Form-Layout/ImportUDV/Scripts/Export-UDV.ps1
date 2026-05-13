@@ -127,6 +127,37 @@ function To-YN {
     if ($s -in @("Y","YES","TRUE","1")) { "Y" } else { "N" }
 }
 
+# ------------------------------------------------------------
+# Parse QueryBody for $[$...] tokens to derive trigger fields.
+# B1 UI shows these in "Auto Refresh -> Fields" list even when
+# CSHS.FieldID is empty (v10 stores only the explicit trigger).
+#   Token formats handled:
+#     $[$ItemID.Col.Type]      e.g. $[$38.U_SLD_T_BeDis.NUMBER]
+#     $[$ItemID.Col]           e.g. $[$76.U_SLD_SuppCode]
+#     $[Table.Field]           e.g. $[OCRD.GroupCode]
+# Returns ordered, deduped list of field codes.
+# ------------------------------------------------------------
+function Get-QueryTriggers {
+    param([string]$QueryBody)
+    $list = New-Object System.Collections.Generic.List[string]
+    if ([string]::IsNullOrWhiteSpace($QueryBody)) { return $list }
+
+    # Pattern 1: $[$ItemID.Field...]
+    $rx1 = [regex]'\$\[\$\d+\.([^.\]]+)'
+    foreach ($m in $rx1.Matches($QueryBody)) {
+        $f = $m.Groups[1].Value.Trim()
+        if ($f -and (-not $list.Contains($f))) { [void]$list.Add($f) }
+    }
+
+    # Pattern 2: $[Table.Field] (no $ after [)
+    $rx2 = [regex]'\$\[([A-Za-z][A-Za-z0-9_]*)\.([^\]]+)\]'
+    foreach ($m in $rx2.Matches($QueryBody)) {
+        $f = $m.Groups[2].Value.Trim()
+        if ($f -and (-not $list.Contains($f))) { [void]$list.Add($f) }
+    }
+    return $list
+}
+
 try {
     $rs = $company.GetBusinessObject([SAPbobsCOM.BoObjectTypes]::BoRecordset)
 
@@ -158,6 +189,26 @@ try {
     Write-Log "Loaded $($queries.Count) saved queries from OUQR"
 
     # ------------------------------------------------------------
+    # 2b) Load SHS1 trigger fields per CSHS IndexID.
+    # SHS1 (IndexID int, FieldID nvarchar) stores the trigger
+    # field list shown in B1 UI "Auto Refresh -> Fields".
+    # ------------------------------------------------------------
+    $shs1Map = @{}   # IndexID -> @(triggerField1, triggerField2, ...)
+    try {
+        $rs.DoQuery("SELECT IndexID, FieldID FROM SHS1 ORDER BY IndexID")
+        while (-not $rs.EoF) {
+            $iid = [int]$rs.Fields.Item("IndexID").Value
+            $fld = [string]$rs.Fields.Item("FieldID").Value
+            if (-not $shs1Map.ContainsKey($iid)) { $shs1Map[$iid] = New-Object System.Collections.Generic.List[string] }
+            if ($fld) { [void]$shs1Map[$iid].Add($fld) }
+            $rs.MoveNext()
+        }
+        Write-Log "Loaded SHS1 triggers for $($shs1Map.Count) CSHS row(s)"
+    } catch {
+        Write-Log "SHS1 not available or read failed: $($_.Exception.Message)" "WARN"
+    }
+
+    # ------------------------------------------------------------
     # 3) Read all CSHS rows, map heuristically
     # ------------------------------------------------------------
     $rs.DoQuery("SELECT * FROM CSHS ORDER BY FormID, ItemID, ColID")
@@ -167,21 +218,26 @@ try {
         $rowNo++
         $f = $rs.Fields
 
+        $indexId = [int](Read-FieldByNames $f $cshsIdx @("IndexID"))
         $formId  = [string](Read-FieldByNames $f $cshsIdx @("FormID"))
         $itemId  = [string](Read-FieldByNames $f $cshsIdx @("ItemID"))
         $colId   = [string](Read-FieldByNames $f $cshsIdx @("ColID","ColumnID"))
-        $action  = ([string](Read-FieldByNames $f $cshsIdx @("Action","ActionType"))).Trim().ToUpper()
-        $queryId = Read-FieldByNames $f $cshsIdx @("QueryID","QueryId")
+        # v10 CSHS columns: ActionT (not Action), QueryId, FrceRfrsh, ByField, FieldID
+        $actionT = ([string](Read-FieldByNames $f $cshsIdx @("ActionT","Action","ActionType"))).Trim()
+        $queryId = Read-FieldByNames $f $cshsIdx @("QueryId","QueryID")
         $fixedVal = [string](Read-FieldByNames $f $cshsIdx @("StringVal","StringValue","FixedValue","DefaultValue","Value"))
         $refresh  = To-YN (Read-FieldByNames $f $cshsIdx @("Refresh","AutoRefresh"))
-        $trigId   = [string](Read-FieldByNames $f $cshsIdx @("TriggerID","TrigID","TrigerID"))
+        $byField  = [string](Read-FieldByNames $f $cshsIdx @("ByField"))
+        # CSHS.FieldID = single explicit trigger (often empty for multi).
+        # Real trigger list is in SHS1.FieldID rows (loaded above).
+        $trigId   = [string](Read-FieldByNames $f $cshsIdx @("FieldID","TriggerID","TrigID","TrigerID"))
         $trigCol  = [string](Read-FieldByNames $f $cshsIdx @("TriggerCol","TrigCol","TriggerColumn","TrigerCol"))
-        $forceRf  = To-YN (Read-FieldByNames $f $cshsIdx @("ForceRfsh","ForceRefresh","ForceRefr","DisplaySaved"))
+        $forceRf  = To-YN (Read-FieldByNames $f $cshsIdx @("FrceRfrsh","ForceRfsh","ForceRefresh","ForceRefr","DisplaySaved"))
 
-        # Decide FMSAction: prefer explicit Action column, else infer from QueryID
-        $fmsAction = if ($action -eq "F") { "F" }
-                     elseif ($action -eq "Q") { "Q" }
-                     elseif ($queryId -and [int]$queryId -gt 0) { "Q" }
+        # Decide FMSAction: ActionT in v10 is numeric (2=Query, 0/1=Fixed/Empty).
+        # Treat any non-zero with non-null QueryId as Query, else Fixed.
+        $fmsAction = if ($queryId -and [int]$queryId -gt 0) { "Q" }
+                     elseif ($actionT -in @("Q")) { "Q" }
                      else { "F" }
 
         $qInfo = $null
@@ -190,27 +246,53 @@ try {
             if ($queries.ContainsKey($qi)) { $qInfo = $queries[$qi] }
         }
 
-        [void]$output.Add([pscustomobject]@{
-            Action        = $ExportAction
-            FormID        = $formId
-            ItemID        = $itemId
-            ColumnID      = $colId
-            FMSAction     = $fmsAction
-            QueryName     = if ($qInfo) { $qInfo.Name }     else { "" }
-            QueryCategory = if ($qInfo) { $qInfo.Category } else { "" }
-            QueryBody     = if ($qInfo) { $qInfo.Body }     else { "" }
-            FixedValue    = if ($fmsAction -eq "F") { $fixedVal } else { "" }
-            Refresh       = $refresh
-            TriggerID     = $trigId
-            TriggerColumn = $trigCol
-            ForceRefresh  = $forceRf
-        })
+        # Build full trigger list — SHS1 child rows are the canonical source.
+        # Fall back to CSHS.FieldID + query-body parsing if SHS1 is empty.
+        $allTriggers = New-Object System.Collections.Generic.List[string]
+        if ($shs1Map.ContainsKey($indexId)) {
+            foreach ($t in $shs1Map[$indexId]) {
+                if ($t -and (-not $allTriggers.Contains($t))) { [void]$allTriggers.Add($t) }
+            }
+        }
+        # Also include CSHS.FieldID (single explicit) in case both are used
+        if ((-not [string]::IsNullOrWhiteSpace($trigId)) -and (-not $allTriggers.Contains($trigId))) {
+            [void]$allTriggers.Add($trigId)
+        }
+        # Last resort: parse $[$..] tokens from QueryBody (older B1 styles)
+        if ($allTriggers.Count -eq 0) {
+            $qBodyForParse = if ($qInfo) { [string]$qInfo.Body } else { "" }
+            foreach ($t in (Get-QueryTriggers $qBodyForParse)) {
+                if (-not $allTriggers.Contains($t)) { [void]$allTriggers.Add($t) }
+            }
+        }
+
+        # Emit at least one row. If multiple triggers, emit one row per trigger
+        # (all columns identical except TriggerID) — UI shows full trigger list.
+        $emitArr = if ($allTriggers.Count -eq 0) { @("") } else { @($allTriggers) }
+        foreach ($trig in $emitArr) {
+            [void]$output.Add([pscustomobject]@{
+                Action        = $ExportAction
+                FormID        = $formId
+                ItemID        = $itemId
+                ColumnID      = $colId
+                FMSAction     = $fmsAction
+                QueryName     = if ($qInfo) { $qInfo.Name }     else { "" }
+                QueryCategory = if ($qInfo) { $qInfo.Category } else { "" }
+                QueryBody     = if ($qInfo) { $qInfo.Body }     else { "" }
+                FixedValue    = if ($fmsAction -eq "F") { $fixedVal } else { "" }
+                Refresh       = $refresh
+                ByField       = $byField
+                TriggerID     = $trig
+                TriggerColumn = $trigCol
+                ForceRefresh  = $forceRf
+            })
+        }
 
         $rs.MoveNext()
     }
     [void][System.Runtime.InteropServices.Marshal]::ReleaseComObject($rs)
 
-    Write-Log "Read $($output.Count) FMS rows from CSHS"
+    Write-Log "Read $rowNo CSHS rows; expanded to $($output.Count) CSV rows (one per trigger when multi-trigger)"
 
     # ------------------------------------------------------------
     # 4) Write CSV (UTF-8 with BOM for Excel + Thai)
@@ -219,7 +301,7 @@ try {
     if (-not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir -Force | Out-Null }
 
     if ($output.Count -eq 0) {
-        $csvLines = @('"Action","FormID","ItemID","ColumnID","FMSAction","QueryName","QueryCategory","QueryBody","FixedValue","Refresh","TriggerID","TriggerColumn","ForceRefresh"')
+        $csvLines = @('"Action","FormID","ItemID","ColumnID","FMSAction","QueryName","QueryCategory","QueryBody","FixedValue","Refresh","ByField","TriggerID","TriggerColumn","ForceRefresh"')
     } else {
         $csvLines = @($output | ConvertTo-Csv -NoTypeInformation)
     }

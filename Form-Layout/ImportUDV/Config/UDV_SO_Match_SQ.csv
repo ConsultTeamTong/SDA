@@ -1,7 +1,5 @@
-﻿"Action","FormID","ItemID","ColumnID","FMSAction","QueryName","QueryCategory","QueryBody","FixedValue","Refresh","TriggerID","TriggerColumn","ForceRefresh"
-"UPSERT","139","38","15","Q","FMS_DisAmount","-1","SELECT CASE     WHEN CAST(ISNULL(NULLIF('$[$38.U_SLD_T_BeDis.NUMBER]',''),'0') AS numeric(19,6)) = 0 THEN 0    ELSE         CAST(ISNULL(NULLIF('$[$38.U_SLD_Dis_Sum.NUMBER]',''),'0') AS numeric(19,6))        / NULLIF(CAST(ISNULL(NULLIF('$[$38.U_SLD_T_BeDis.NUMBER]',''),'0') AS numeric(19,6)), 0)        * 100END","","Y","","","N"
-"UPSERT","139","38","20","F","","","","","N","","","N"
-"UPSERT","139","38","21","F","","","","","N","","","N"
-"UPSERT","139","38","U_SLD_Dis_Amount","Q","FMS_ToUnit","-1","SELECT CASE     WHEN CAST(ISNULL(NULLIF('$[$38.11.NUMBER]',''),'0') AS numeric(19,6)) = 0 THEN 0    ELSE         CAST(ISNULL(NULLIF('$[$38.U_SLD_Dis_Sum.NUMBER]',''),'0') AS numeric(19,6))        / NULLIF(CAST(ISNULL(NULLIF('$[$38.11.NUMBER]',''),'0') AS numeric(19,6)), 0)END","","Y","","","N"
-"UPSERT","139","38","U_SLD_Dis_Sum","Q","FMS_ToSum","-1","SELECT     CAST(ISNULL(NULLIF('$[$38.U_SLD_Dis_Amount.NUMBER]',''),'0') AS numeric(19,6))    * CAST(ISNULL(NULLIF('$[$38.11.NUMBER]',''),'0') AS numeric(19,6))","","Y","","","N"
-"UPSERT","139","38","U_SLD_T_BeDis","Q","FMS_Price_Total","-1","SELECT CAST($[$38.11.NUMBER] AS numeric(19,6)) * (CAST($[$38.14.NUMBER] AS numeric(19,6)))","","Y","","","N"
+﻿Action,FormID,ItemID,ColumnID,FMSAction,QueryName,QueryCategory,QueryBody,FixedValue,Refresh,ByField,TriggerID,TriggerColumn,ForceRefresh
+UPSERT,139,38,U_SLD_T_BeDis,Q,FMS_Price_Total,-1,"SELECT CAST($[$38.11.NUMBER] AS numeric(19,6)) * (CAST($[$38.14.NUMBER] AS numeric(19,6)))",,Y,N,U_SLD_Dis_Amount,,N
+UPSERT,139,38,U_SLD_T_BeDis,Q,FMS_Price_Total,-1,"SELECT CAST($[$38.11.NUMBER] AS numeric(19,6)) * (CAST($[$38.14.NUMBER] AS numeric(19,6)))",,Y,N,U_SLD_Dis_Sum,,N
+UPSERT,139,38,U_SLD_T_BeDis,Q,FMS_Price_Total,-1,"SELECT CAST($[$38.11.NUMBER] AS numeric(19,6)) * (CAST($[$38.14.NUMBER] AS numeric(19,6)))",,Y,N,11,,N
+UPSERT,139,38,U_SLD_T_BeDis,Q,FMS_Price_Total,-1,"SELECT CAST($[$38.11.NUMBER] AS numeric(19,6)) * (CAST($[$38.14.NUMBER] AS numeric(19,6)))",,Y,N,14,,N

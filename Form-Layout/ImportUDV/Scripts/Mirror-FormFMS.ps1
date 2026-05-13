@@ -44,17 +44,41 @@ try {
     $conn.Open()
     Write-Log "Connected to SQL: $Server / $CompanyDB"
 
-    # 1) Discover what's on source
+    # 1a) Discover CSHS-related child tables.
+    # B1 v10 uses SHS1 (not CSHS1) for multi-trigger field storage,
+    # linked via IndexID. Also include any CSHS* / SHS* siblings.
+    $childTables = @()
+    $cmd = $conn.CreateCommand()
+    $cmd.CommandText = "SELECT name FROM sys.tables WHERE (name LIKE 'CSHS%' OR name LIKE 'SHS%') AND name <> 'CSHS' ORDER BY name"
+    $rdr = $cmd.ExecuteReader()
+    while ($rdr.Read()) { $childTables += [string]$rdr["name"] }
+    $rdr.Close()
+    Write-Log "Child tables found: $(if ($childTables.Count -eq 0) { '(none)' } else { $childTables -join ', ' })"
+
+    # 1b) Discover columns of each child table (for dynamic INSERT)
+    $childCols = @{}
+    foreach ($t in $childTables) {
+        $cmd.CommandText = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '$t' ORDER BY ORDINAL_POSITION"
+        $rdr = $cmd.ExecuteReader()
+        $cols = @()
+        while ($rdr.Read()) { $cols += [string]$rdr["COLUMN_NAME"] }
+        $rdr.Close()
+        $childCols[$t] = $cols
+        Write-Log "  $t : $($cols -join ', ')"
+    }
+
+    # 2) Read source CSHS rows (capture IndexID so we can fetch child rows)
     $itemFilter = ""
     if ($ItemID) { $itemFilter = " AND ItemID = @item" }
     $sel = $conn.CreateCommand()
-    $sel.CommandText = "SELECT FormID, ItemID, ColID, ActionT, QueryId, Refresh, ByField, FieldID, FrceRfrsh FROM CSHS WHERE FormID = @src$itemFilter ORDER BY ItemID, ColID"
+    $sel.CommandText = "SELECT IndexID, FormID, ItemID, ColID, ActionT, QueryId, Refresh, ByField, FieldID, FrceRfrsh FROM CSHS WHERE FormID = @src$itemFilter ORDER BY ItemID, ColID"
     [void]$sel.Parameters.AddWithValue("@src", $SourceFormID)
     if ($ItemID) { [void]$sel.Parameters.AddWithValue("@item", $ItemID) }
     $rdr = $sel.ExecuteReader()
     $srcRows = New-Object System.Collections.ArrayList
     while ($rdr.Read()) {
         [void]$srcRows.Add([pscustomobject]@{
+            SrcIndexID = [int]$rdr["IndexID"]
             ItemID   = [string]$rdr["ItemID"]
             ColID    = [string]$rdr["ColID"]
             ActionT  = [string]$rdr["ActionT"]
@@ -74,7 +98,15 @@ try {
 
     foreach ($r in $srcRows) {
         $q = if ($null -eq $r.QueryId) { "(null)" } else { $r.QueryId }
-        Write-Log ("  Source  Item={0,-12} Col={1,-22} ActionT={2}  QueryId={3,-5}  Refresh={4}  ByField={5}  FieldID={6,-18}  FrceRfrsh={7}" -f $r.ItemID, $r.ColID, $r.ActionT, $q, $r.Refresh, $r.ByField, $r.FieldID, $r.FrceRfrsh)
+        Write-Log ("  Source  Idx={0,-5} Item={1,-12} Col={2,-22} ActionT={3}  QueryId={4,-5}  Refresh={5}  ByField={6}  FieldID={7,-18}  FrceRfrsh={8}" -f $r.SrcIndexID, $r.ItemID, $r.ColID, $r.ActionT, $q, $r.Refresh, $r.ByField, $r.FieldID, $r.FrceRfrsh)
+        # Show child rows preview
+        foreach ($t in $childTables) {
+            $prev = $conn.CreateCommand()
+            $prev.CommandText = "SELECT COUNT(*) FROM $t WHERE IndexID = @idx"
+            [void]$prev.Parameters.AddWithValue("@idx", $r.SrcIndexID)
+            $cnt = [int]$prev.ExecuteScalar()
+            if ($cnt -gt 0) { Write-Log "             $t : $cnt row(s)" }
+        }
     }
 
     if ($DryRun) {
@@ -82,27 +114,54 @@ try {
         exit 0
     }
 
-    # 2) Execute DELETE + INSERT inside a transaction
+    # 3) Execute DELETE + INSERT inside a transaction
     $tx = $conn.BeginTransaction()
     try {
-        # DELETE existing rows on target (scoped to ItemID if given)
+        # 3a) Find current target IndexIDs (for child-table delete)
+        $tgtIdxList = @()
+        $qIdx = $conn.CreateCommand()
+        $qIdx.Transaction = $tx
+        $qIdx.CommandText = "SELECT IndexID FROM CSHS WHERE FormID = @tgt$itemFilter"
+        [void]$qIdx.Parameters.AddWithValue("@tgt", $TargetFormID)
+        if ($ItemID) { [void]$qIdx.Parameters.AddWithValue("@item", $ItemID) }
+        $rdr = $qIdx.ExecuteReader()
+        while ($rdr.Read()) { $tgtIdxList += [int]$rdr["IndexID"] }
+        $rdr.Close()
+        Write-Log "Current target IndexIDs: $(if ($tgtIdxList.Count -eq 0) { '(none)' } else { $tgtIdxList -join ',' })"
+
+        # 3b) DELETE from child tables first (FK / dependency order)
+        if ($tgtIdxList.Count -gt 0) {
+            $idxIn = $tgtIdxList -join ","
+            foreach ($t in $childTables) {
+                $dc = $conn.CreateCommand()
+                $dc.Transaction = $tx
+                $dc.CommandText = "DELETE FROM $t WHERE IndexID IN ($idxIn)"
+                $n = $dc.ExecuteNonQuery()
+                Write-Log "Deleted $n row(s) from $t (target IndexIDs)"
+            }
+        }
+
+        # 3c) DELETE existing rows on target CSHS
         $del = $conn.CreateCommand()
         $del.Transaction = $tx
         $del.CommandText = "DELETE FROM CSHS WHERE FormID = @tgt$itemFilter"
         [void]$del.Parameters.AddWithValue("@tgt", $TargetFormID)
         if ($ItemID) { [void]$del.Parameters.AddWithValue("@item", $ItemID) }
         $delCount = $del.ExecuteNonQuery()
-        Write-Log "Deleted $delCount existing row(s) on target $TargetFormID"
+        Write-Log "Deleted $delCount existing row(s) on target CSHS $TargetFormID"
 
-        # IndexID is NOT NULL but NOT IDENTITY -> compute next manually
+        # 3d) IndexID is NOT NULL but NOT IDENTITY -> compute next manually
         $maxCmd = $conn.CreateCommand()
         $maxCmd.Transaction = $tx
         $maxCmd.CommandText = "SELECT ISNULL(MAX(IndexID), 0) FROM CSHS"
         $nextIdx = [int]$maxCmd.ExecuteScalar()
         Write-Log "Current MAX(IndexID) = $nextIdx -> new rows start at $($nextIdx + 1)"
 
-        # INSERT each source row with FormID changed to target
+        # 3e) INSERT each source row with FormID changed to target,
+        #     then cascade child rows (CSHS1 etc) using new IndexID
         $insCount = 0
+        $childCounts = @{}
+        foreach ($t in $childTables) { $childCounts[$t] = 0 }
         foreach ($r in $srcRows) {
             $nextIdx++
             $ins = $conn.CreateCommand()
@@ -126,9 +185,27 @@ VALUES (@idx, @fid, @iid, @cid, @act, @qid, @ref, @byf, @fld, @frc)
             [void]$ins.Parameters.AddWithValue("@fld", $r.FieldID)
             [void]$ins.Parameters.AddWithValue("@frc", $r.FrceRfrsh)
             $insCount += $ins.ExecuteNonQuery()
+
+            # Cascade child rows (dynamic column list, IndexID -> new value)
+            foreach ($t in $childTables) {
+                $cols = $childCols[$t]
+                $insertCols = ($cols | ForEach-Object { "[$_]" }) -join ","
+                $selectCols = ($cols | ForEach-Object { if ($_ -eq "IndexID") { "@newIdx" } else { "[$_]" } }) -join ","
+                $cins = $conn.CreateCommand()
+                $cins.Transaction = $tx
+                $cins.CommandText = "INSERT INTO $t ($insertCols) SELECT $selectCols FROM $t WHERE IndexID = @oldIdx"
+                [void]$cins.Parameters.AddWithValue("@newIdx", $nextIdx)
+                [void]$cins.Parameters.AddWithValue("@oldIdx", $r.SrcIndexID)
+                $n = $cins.ExecuteNonQuery()
+                $childCounts[$t] += $n
+                if ($n -gt 0) {
+                    Write-Log "  -> $t : copied $n row(s) (IndexID $($r.SrcIndexID) -> $nextIdx)"
+                }
+            }
         }
         $tx.Commit()
-        Write-Log "Inserted $insCount row(s) on target $TargetFormID — committed"
+        $childSum = ($childCounts.GetEnumerator() | ForEach-Object { "$($_.Key)=$($_.Value)" }) -join ", "
+        Write-Log "Inserted $insCount CSHS row(s); child rows: $(if ($childSum) { $childSum } else { '(none)' }) — committed"
     } catch {
         $tx.Rollback()
         Write-Log "ROLLBACK: $($_.Exception.Message)" "ERROR"
