@@ -12,7 +12,11 @@ param(
     [string]$DBPassword  = "1q2w3e4r",
     [string]$OutFile     = "",
     [string]$LogFile     = "",
-    [string]$ExportAction = "UPSERT"
+    [string]$ExportAction = "UPSERT",
+    # Optional filters — blank = export everything.
+    [string]$FormID      = "",
+    [string]$ItemID      = "",
+    [string]$ColumnID    = ""
 )
 
 if (-not $OutFile) {
@@ -139,9 +143,25 @@ try {
     }
 
     # ------------------------------------------------------------
-    # 3) Read all CSHS rows and emit multi-row CSV
+    # 3) Read CSHS rows (with optional FormID/ItemID/ColumnID filter)
+    #    and emit multi-row CSV
     # ------------------------------------------------------------
-    $cmd.CommandText = "SELECT * FROM CSHS ORDER BY FormID, ItemID, ColID"
+    $whereParts = @()
+    if ($FormID)   { $whereParts += "FormID = @fid" }
+    if ($ItemID)   { $whereParts += "ItemID = @iid" }
+    if ($ColumnID) { $whereParts += "ColID = @cid" }
+    $whereClause = if ($whereParts.Count -gt 0) { " WHERE " + ($whereParts -join " AND ") } else { "" }
+
+    $cmd.CommandText = "SELECT * FROM CSHS$whereClause ORDER BY FormID, ItemID, ColID"
+    $cmd.Parameters.Clear()
+    if ($FormID)   { [void]$cmd.Parameters.AddWithValue("@fid", $FormID) }
+    if ($ItemID)   { [void]$cmd.Parameters.AddWithValue("@iid", $ItemID) }
+    if ($ColumnID) { [void]$cmd.Parameters.AddWithValue("@cid", $ColumnID) }
+    if ($whereClause) {
+        Write-Log "Filter:$whereClause (fid='$FormID' iid='$ItemID' cid='$ColumnID')"
+    } else {
+        Write-Log "Filter: (none — exporting all CSHS rows)"
+    }
     $rdr = $cmd.ExecuteReader()
     $output = New-Object System.Collections.ArrayList
     $rowNo = 0
