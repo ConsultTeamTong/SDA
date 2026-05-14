@@ -79,6 +79,7 @@ RDR12.StreetB     AS 'Street / PO Box12',
 	OCPR.Name,
 	OCPR.Tel1,
 	OCPR.E_MailL
+	
 FROM ORDR   
 INNER JOIN RDR1 ON ORDR.DocEntry = RDR1.DocEntry 
 LEFT JOIN OITM ON RDR1.ItemCode = OITM.ItemCode 
@@ -90,7 +91,8 @@ LEFT JOIN OCTG ON ORDR.GroupNum = OCTG.GroupNum
 LEFT JOIN OSLP ON ORDR.SlpCode = OSLP.SlpCode
 LEFT JOIN OPRJ ON RDR1.PROJECT = OPRJ.PRJCODE 
 LEFT JOIN RDR12 ON ORDR.DocEntry = RDR12.DocEntry
-INNER JOIN OITT ON RDR1.ItemCode = OITT.Code AND OITT.TreeType = 'S'
+LEFT JOIN OITT ON RDR1.ItemCode = OITT.Code AND OITT.TreeType = 'S'
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ORDR.U_SLD_LVatBranch = BRANCH.Code , oadm
 WHERE ORDR.DocEntry = {?DocKey@}
+AND RDR1.TreeType <> 'I'
 Order by 'No.' , 'Line No.'
