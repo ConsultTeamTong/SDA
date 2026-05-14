@@ -7,7 +7,7 @@ REM  the values for your environment. _settings.bat is gitignored.
 REM ============================================================
 
 REM --- Database (also used as DI API credentials) ---
-set SERVER=POWERAIDB115
+set SERVER=10.10.10.115
 set COMPANYDB=SBO_SDA_UAT
 set DBUSER=sa
 set DBPASSWORD=1q2w3e4r@

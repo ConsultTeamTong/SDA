@@ -1,7 +1,8 @@
 ﻿# ============================================================
-# Export current FMS (UDV) to CSV in UDV_Map.csv format
-# Reads CSHS + OUQR via SQL (DI API Recordset). Discovers
-# CSHS columns at runtime so it works across B1 versions.
+# Export current FMS (UDV) to CSV in UDV_Map.csv format.
+# Uses .NET SqlClient direct SQL (no DI API dependency).
+# Reads CSHS + OUQR + SHS1 and writes a multi-row CSV
+# (1 row per trigger field, grouped by FMS key).
 # Output is round-trip safe: re-import with Action=UPSERT.
 # ============================================================
 param(
@@ -9,17 +10,16 @@ param(
     [string]$CompanyDB   = "SBO_SDA",
     [string]$DBUser      = "sa",
     [string]$DBPassword  = "1q2w3e4r",
-    [string]$SapUser     = "manager",
-    [string]$SapPassword = "1q2w3e4r",
-    [ValidateSet("MSSQL","HANA")]
-    [string]$DBType      = "MSSQL",
     [string]$OutFile     = "",
-    [string]$LogFile     = "$PSScriptRoot\..\Export_UDV_Log.txt",
+    [string]$LogFile     = "",
     [string]$ExportAction = "UPSERT"
 )
 
 if (-not $OutFile) {
-    $OutFile = Join-Path "$PSScriptRoot\..\Config" ("UDV_Export_{0}.csv" -f (Get-Date -Format 'yyyyMMdd_HHmmss'))
+    $OutFile = Join-Path $PSScriptRoot ("..\Config\UDV_Export_{0}.csv" -f (Get-Date -Format 'yyyyMMdd_HHmmss'))
+}
+if (-not $LogFile) {
+    $LogFile = Join-Path $PSScriptRoot "..\Export_UDV_Log.txt"
 }
 
 # ------------------------------------------------------------
@@ -32,156 +32,140 @@ function Write-Log {
     Add-Content -Path $LogFile -Value $line -Encoding UTF8
 }
 
-# ------------------------------------------------------------
-# Locate DI API interop assembly
-# ------------------------------------------------------------
-function Find-DIAPIAssembly {
-    $is64 = [Environment]::Is64BitProcess
-    $roots = if ($is64) {
-        @("${env:ProgramFiles}\SAP", "${env:ProgramW6432}\SAP")
-    } else {
-        @("${env:ProgramFiles(x86)}\SAP")
-    }
-    $roots = $roots | Where-Object { $_ -and (Test-Path $_) } | Select-Object -Unique
-    foreach ($r in $roots) {
-        $hit = Get-ChildItem -Path $r -Recurse -Filter "Interop.SAPbobsCOM.dll" -ErrorAction SilentlyContinue |
-            Sort-Object -Property @{Expression = { $_.FullName -match "DI API" }; Descending = $true} |
-            Select-Object -First 1 -ExpandProperty FullName
-        if ($hit) { return $hit }
-    }
-    return $null
-}
-
-$diDll = Find-DIAPIAssembly
-if (-not $diDll) {
-    Write-Log "DI API interop (Interop.SAPbobsCOM.dll) not found." "ERROR"
-    exit 2
-}
-try {
-    Add-Type -Path $diDll -ErrorAction Stop
-} catch {
-    Write-Log "Failed to load $diDll : $($_.Exception.Message)" "ERROR"
-    exit 2
-}
-
-Write-Log "=== Start UDV/FMS Export (SQL via DI API Recordset) ==="
-Write-Log "Loaded DI API: $diDll"
-Write-Log "Server   : $Server"
-Write-Log "CompanyDB: $CompanyDB"
-Write-Log "OutFile  : $OutFile"
-
-# ------------------------------------------------------------
-# Connect
-# ------------------------------------------------------------
-$company = New-Object -ComObject SAPbobsCOM.Company
-$company.Server     = $Server
-$company.CompanyDB  = $CompanyDB
-$company.UserName   = $SapUser
-$company.Password   = $SapPassword
-$company.DbUserName = $DBUser
-$company.DbPassword = $DBPassword
-$company.UseTrusted = $false
-$company.language   = [SAPbobsCOM.BoSuppLangs]::ln_English
-
-$connected = $false
-if ($DBType -eq "HANA") {
-    $company.DbServerType = [SAPbobsCOM.BoDataServerTypes]::dst_HANADB
-    if ($company.Connect() -eq 0) { $connected = $true }
-} else {
-    $tries = @(
-        [SAPbobsCOM.BoDataServerTypes]::dst_MSSQL2019,
-        [SAPbobsCOM.BoDataServerTypes]::dst_MSSQL2017,
-        [SAPbobsCOM.BoDataServerTypes]::dst_MSSQL2016,
-        [SAPbobsCOM.BoDataServerTypes]::dst_MSSQL2014,
-        [SAPbobsCOM.BoDataServerTypes]::dst_MSSQL2012
-    )
-    foreach ($t in $tries) {
-        $company.DbServerType = $t
-        if ($company.Connect() -eq 0) { $connected = $true; Write-Log "Connected (DbServerType=$t)"; break }
-    }
-}
-if (-not $connected) {
-    Write-Log "Connect failed: $($company.GetLastErrorDescription())" "ERROR"
-    exit 3
-}
-
-# ------------------------------------------------------------
-# Helper: get field value by trying multiple column names
-# ------------------------------------------------------------
-function Read-FieldByNames {
-    param($Fields, $NameToIndex, [string[]]$Names)
-    foreach ($n in $Names) {
-        if ($NameToIndex.ContainsKey($n)) {
-            try {
-                $v = $Fields.Item($NameToIndex[$n]).Value
-                if ($null -ne $v) { return $v }
-            } catch {}
-        }
-    }
-    return $null
-}
-
 function To-YN {
     param($Val)
     $s = ([string]$Val).Trim().ToUpper()
     if ($s -in @("Y","YES","TRUE","1")) { "Y" } else { "N" }
 }
 
+# ------------------------------------------------------------
+# Helper: read column from SqlDataReader by trying multiple names.
+# Returns null if no match. Treats DBNull as null.
+# ------------------------------------------------------------
+function Read-ReaderByNames {
+    param($Reader, $ColMap, [string[]]$Names)
+    foreach ($n in $Names) {
+        if ($ColMap.Contains($n)) {
+            $v = $Reader[$n]
+            if ($null -ne $v -and -not ($v -is [DBNull])) { return $v }
+        }
+    }
+    return $null
+}
+
+# ------------------------------------------------------------
+# Parse QueryBody for $[$...] tokens to derive trigger fields
+# (fallback when SHS1 is empty / unavailable).
+# ------------------------------------------------------------
+function Get-QueryTriggers {
+    param([string]$QueryBody)
+    $list = New-Object System.Collections.Generic.List[string]
+    if ([string]::IsNullOrWhiteSpace($QueryBody)) { return $list }
+
+    $rx1 = [regex]'\$\[\$\d+\.([^.\]]+)'
+    foreach ($m in $rx1.Matches($QueryBody)) {
+        $f = $m.Groups[1].Value.Trim()
+        if ($f -and (-not $list.Contains($f))) { [void]$list.Add($f) }
+    }
+    $rx2 = [regex]'\$\[([A-Za-z][A-Za-z0-9_]*)\.([^\]]+)\]'
+    foreach ($m in $rx2.Matches($QueryBody)) {
+        $f = $m.Groups[2].Value.Trim()
+        if ($f -and (-not $list.Contains($f))) { [void]$list.Add($f) }
+    }
+    return $list
+}
+
+Write-Log "=== Start UDV/FMS Export (SQL Direct) ==="
+Write-Log "Server   : $Server"
+Write-Log "CompanyDB: $CompanyDB"
+Write-Log "OutFile  : $OutFile"
+
+# ------------------------------------------------------------
+# Open SQL connection (no DI API needed)
+# ------------------------------------------------------------
+$connStr = "Server=$Server;Database=$CompanyDB;User ID=$DBUser;Password=$DBPassword;Connection Timeout=10"
+$conn = New-Object System.Data.SqlClient.SqlConnection $connStr
 try {
-    $rs = $company.GetBusinessObject([SAPbobsCOM.BoObjectTypes]::BoRecordset)
+    $conn.Open()
+    Write-Log "Connected to SQL: $Server / $CompanyDB"
 
     # ------------------------------------------------------------
-    # 1) Discover CSHS columns
+    # 1) Discover CSHS column names (some columns are version-specific)
     # ------------------------------------------------------------
-    $rs.DoQuery("SELECT TOP 1 * FROM CSHS")
-    $cshsIdx = @{}
-    for ($i = 0; $i -lt $rs.Fields.Count; $i++) {
-        $cshsIdx[$rs.Fields.Item($i).Name] = $i
-    }
-    $cshsColList = ($cshsIdx.Keys | Sort-Object) -join ", "
-    Write-Log "CSHS columns ($($cshsIdx.Count)): $cshsColList"
+    $cshsCols = New-Object System.Collections.Generic.HashSet[string]
+    $cmd = $conn.CreateCommand()
+    $cmd.CommandText = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='CSHS' ORDER BY ORDINAL_POSITION"
+    $rdr = $cmd.ExecuteReader()
+    while ($rdr.Read()) { [void]$cshsCols.Add([string]$rdr["COLUMN_NAME"]) }
+    $rdr.Close()
+    $cshsColList = ($cshsCols | Sort-Object) -join ", "
+    Write-Log "CSHS columns ($($cshsCols.Count)): $cshsColList"
 
     # ------------------------------------------------------------
     # 2) Load OUQR queries into hashtable[IntrnalKey]
     # ------------------------------------------------------------
     $queries = @{}
-    $rs.DoQuery("SELECT IntrnalKey, QCategory, QName, QString FROM OUQR")
-    while (-not $rs.EoF) {
-        $key = [int]$rs.Fields.Item("IntrnalKey").Value
+    $cmd.CommandText = "SELECT IntrnalKey, QCategory, QName, QString FROM OUQR"
+    $rdr = $cmd.ExecuteReader()
+    while ($rdr.Read()) {
+        $key = [int]$rdr["IntrnalKey"]
         $queries[$key] = @{
-            Category = [int]$rs.Fields.Item("QCategory").Value
-            Name     = [string]$rs.Fields.Item("QName").Value
-            Body     = [string]$rs.Fields.Item("QString").Value
+            Category = [int]$rdr["QCategory"]
+            Name     = [string]$rdr["QName"]
+            Body     = if ($rdr["QString"] -is [DBNull]) { "" } else { [string]$rdr["QString"] }
         }
-        $rs.MoveNext()
     }
+    $rdr.Close()
     Write-Log "Loaded $($queries.Count) saved queries from OUQR"
 
     # ------------------------------------------------------------
-    # 3) Read all CSHS rows, map heuristically
+    # 2b) Load SHS1 trigger field list per CSHS IndexID
+    # SHS1 (IndexID int, FieldID nvarchar) — canonical trigger storage
     # ------------------------------------------------------------
-    $rs.DoQuery("SELECT * FROM CSHS ORDER BY FormID, ItemID, ColID")
+    $shs1Map = @{}
+    try {
+        $cmd.CommandText = "SELECT IndexID, FieldID FROM SHS1 ORDER BY IndexID"
+        $rdr = $cmd.ExecuteReader()
+        while ($rdr.Read()) {
+            $iid = [int]$rdr["IndexID"]
+            $fld = if ($rdr["FieldID"] -is [DBNull]) { "" } else { [string]$rdr["FieldID"] }
+            if (-not $shs1Map.ContainsKey($iid)) { $shs1Map[$iid] = New-Object System.Collections.Generic.List[string] }
+            if ($fld) { [void]$shs1Map[$iid].Add($fld) }
+        }
+        $rdr.Close()
+        Write-Log "Loaded SHS1 triggers for $($shs1Map.Count) CSHS row(s)"
+    } catch {
+        Write-Log "SHS1 not available: $($_.Exception.Message)" "WARN"
+    }
+
+    # ------------------------------------------------------------
+    # 3) Read all CSHS rows and emit multi-row CSV
+    # ------------------------------------------------------------
+    $cmd.CommandText = "SELECT * FROM CSHS ORDER BY FormID, ItemID, ColID"
+    $rdr = $cmd.ExecuteReader()
     $output = New-Object System.Collections.ArrayList
     $rowNo = 0
-    while (-not $rs.EoF) {
+    while ($rdr.Read()) {
         $rowNo++
-        $f = $rs.Fields
 
-        $formId  = [string](Read-FieldByNames $f $cshsIdx @("FormID"))
-        $itemId  = [string](Read-FieldByNames $f $cshsIdx @("ItemID"))
-        $colId   = [string](Read-FieldByNames $f $cshsIdx @("ColID","ColumnID"))
-        $action  = ([string](Read-FieldByNames $f $cshsIdx @("Action","ActionType"))).Trim().ToUpper()
-        $queryId = Read-FieldByNames $f $cshsIdx @("QueryID","QueryId")
-        $fixedVal = [string](Read-FieldByNames $f $cshsIdx @("StringVal","StringValue","FixedValue","DefaultValue","Value"))
-        $refresh  = To-YN (Read-FieldByNames $f $cshsIdx @("Refresh","AutoRefresh"))
-        $trigId   = [string](Read-FieldByNames $f $cshsIdx @("TriggerID","TrigID","TrigerID"))
-        $trigCol  = [string](Read-FieldByNames $f $cshsIdx @("TriggerCol","TrigCol","TriggerColumn","TrigerCol"))
-        $forceRf  = To-YN (Read-FieldByNames $f $cshsIdx @("ForceRfsh","ForceRefresh","ForceRefr","DisplaySaved"))
+        $indexId  = [int](Read-ReaderByNames $rdr $cshsCols @("IndexID"))
+        $formId   = [string](Read-ReaderByNames $rdr $cshsCols @("FormID"))
+        $itemId   = [string](Read-ReaderByNames $rdr $cshsCols @("ItemID"))
+        $colId    = [string](Read-ReaderByNames $rdr $cshsCols @("ColID","ColumnID"))
+        # v10 CSHS: ActionT (numeric 2=Q, 0=F), QueryId, FrceRfrsh, ByField, FieldID
+        $actionT  = ([string](Read-ReaderByNames $rdr $cshsCols @("ActionT","Action","ActionType"))).Trim()
+        $queryId  = Read-ReaderByNames $rdr $cshsCols @("QueryId","QueryID")
+        $fixedVal = [string](Read-ReaderByNames $rdr $cshsCols @("StringVal","StringValue","FixedValue","DefaultValue","Value"))
+        $refresh  = To-YN (Read-ReaderByNames $rdr $cshsCols @("Refresh","AutoRefresh"))
+        $byField  = [string](Read-ReaderByNames $rdr $cshsCols @("ByField"))
+        # CSHS.FieldID = optional single explicit trigger (SHS1 is the real list).
+        $trigId   = [string](Read-ReaderByNames $rdr $cshsCols @("FieldID","TriggerID","TrigID","TrigerID"))
+        $trigCol  = [string](Read-ReaderByNames $rdr $cshsCols @("TriggerCol","TrigCol","TriggerColumn","TrigerCol"))
+        $forceRf  = To-YN (Read-ReaderByNames $rdr $cshsCols @("FrceRfrsh","ForceRfsh","ForceRefresh","ForceRefr","DisplaySaved"))
 
-        # Decide FMSAction: prefer explicit Action column, else infer from QueryID
-        $fmsAction = if ($action -eq "F") { "F" }
-                     elseif ($action -eq "Q") { "Q" }
-                     elseif ($queryId -and [int]$queryId -gt 0) { "Q" }
+        # Decide FMSAction
+        $fmsAction = if ($queryId -and [int]$queryId -gt 0) { "Q" }
+                     elseif ($actionT -in @("Q")) { "Q" }
                      else { "F" }
 
         $qInfo = $null
@@ -190,36 +174,56 @@ try {
             if ($queries.ContainsKey($qi)) { $qInfo = $queries[$qi] }
         }
 
-        [void]$output.Add([pscustomobject]@{
-            Action        = $ExportAction
-            FormID        = $formId
-            ItemID        = $itemId
-            ColumnID      = $colId
-            FMSAction     = $fmsAction
-            QueryName     = if ($qInfo) { $qInfo.Name }     else { "" }
-            QueryCategory = if ($qInfo) { $qInfo.Category } else { "" }
-            QueryBody     = if ($qInfo) { $qInfo.Body }     else { "" }
-            FixedValue    = if ($fmsAction -eq "F") { $fixedVal } else { "" }
-            Refresh       = $refresh
-            TriggerID     = $trigId
-            TriggerColumn = $trigCol
-            ForceRefresh  = $forceRf
-        })
+        # Build trigger list — SHS1 first (canonical), then CSHS.FieldID,
+        # finally fall back to QueryBody parsing if both are empty.
+        $allTriggers = New-Object System.Collections.Generic.List[string]
+        if ($shs1Map.ContainsKey($indexId)) {
+            foreach ($t in $shs1Map[$indexId]) {
+                if ($t -and (-not $allTriggers.Contains($t))) { [void]$allTriggers.Add($t) }
+            }
+        }
+        if ((-not [string]::IsNullOrWhiteSpace($trigId)) -and (-not $allTriggers.Contains($trigId))) {
+            [void]$allTriggers.Add($trigId)
+        }
+        if ($allTriggers.Count -eq 0) {
+            $qBodyForParse = if ($qInfo) { [string]$qInfo.Body } else { "" }
+            foreach ($t in (Get-QueryTriggers $qBodyForParse)) {
+                if (-not $allTriggers.Contains($t)) { [void]$allTriggers.Add($t) }
+            }
+        }
 
-        $rs.MoveNext()
+        # Emit 1+ rows (one per trigger, or 1 empty-trigger row)
+        $emitArr = if ($allTriggers.Count -eq 0) { @("") } else { @($allTriggers) }
+        foreach ($trig in $emitArr) {
+            [void]$output.Add([pscustomobject]@{
+                Action        = $ExportAction
+                FormID        = $formId
+                ItemID        = $itemId
+                ColumnID      = $colId
+                FMSAction     = $fmsAction
+                QueryName     = if ($qInfo) { $qInfo.Name }     else { "" }
+                QueryCategory = if ($qInfo) { $qInfo.Category } else { "" }
+                QueryBody     = if ($qInfo) { $qInfo.Body }     else { "" }
+                FixedValue    = if ($fmsAction -eq "F") { $fixedVal } else { "" }
+                Refresh       = $refresh
+                ByField       = $byField
+                TriggerID     = $trig
+                TriggerColumn = $trigCol
+                ForceRefresh  = $forceRf
+            })
+        }
     }
-    [void][System.Runtime.InteropServices.Marshal]::ReleaseComObject($rs)
-
-    Write-Log "Read $($output.Count) FMS rows from CSHS"
+    $rdr.Close()
+    Write-Log "Read $rowNo CSHS rows; expanded to $($output.Count) CSV rows"
 
     # ------------------------------------------------------------
-    # 4) Write CSV (UTF-8 with BOM for Excel + Thai)
+    # 4) Write CSV (UTF-8 with BOM)
     # ------------------------------------------------------------
     $dir = Split-Path $OutFile -Parent
     if (-not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir -Force | Out-Null }
 
     if ($output.Count -eq 0) {
-        $csvLines = @('"Action","FormID","ItemID","ColumnID","FMSAction","QueryName","QueryCategory","QueryBody","FixedValue","Refresh","TriggerID","TriggerColumn","ForceRefresh"')
+        $csvLines = @('"Action","FormID","ItemID","ColumnID","FMSAction","QueryName","QueryCategory","QueryBody","FixedValue","Refresh","ByField","TriggerID","TriggerColumn","ForceRefresh"')
     } else {
         $csvLines = @($output | ConvertTo-Csv -NoTypeInformation)
     }
@@ -228,7 +232,6 @@ try {
     Write-Log "=== Done. Exported $($output.Count) records ==="
     Write-Log "Output: $OutFile"
 } finally {
-    if ($company.Connected) { $company.Disconnect() | Out-Null }
-    [void][System.Runtime.InteropServices.Marshal]::ReleaseComObject($company)
+    if ($conn.State -eq 'Open') { $conn.Close() }
 }
 exit 0

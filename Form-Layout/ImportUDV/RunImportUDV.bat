@@ -1,12 +1,10 @@
 @echo off
 chcp 65001 >nul
 REM ============================================================
-REM  Import User-Defined Values (FMS) to SAP B1 via DI API
+REM  Import User-Defined Values (FMS) to SAP B1 via DIRECT SQL.
+REM  Replaces the DI API path (Import_UDV_DI.ps1, deprecated)
+REM  because DI API v10 doesn't persist QueryId/Refresh/FieldID.
 REM  Connection settings are in _settings.bat (shared, gitignored).
-REM
-REM  Auto-detects DI API bitness:
-REM    B1 v10+  in Program Files\SAP\...           -> 64-bit PS
-REM    B1 v9.x  in Program Files (x86)\SAP\...     -> 32-bit PS
 REM ============================================================
 if not exist "%~dp0_settings.bat" (
     echo ERROR: _settings.bat not found.
@@ -17,21 +15,8 @@ if not exist "%~dp0_settings.bat" (
 call "%~dp0_settings.bat"
 
 REM ============================================================
-REM  SAP B1 application login (required by DI API even with sa)
-REM    Put SAPUSER / SAPPASSWORD in _settings.bat if you prefer.
-REM    Fallback defaults below.
-REM ============================================================
-if "%SAPUSER%"==""     set SAPUSER=manager
-if "%SAPPASSWORD%"=="" set SAPPASSWORD=%DBPASSWORD%
-
-REM ============================================================
-REM  DBTYPE: MSSQL or HANA
-REM ============================================================
-if "%DBTYPE%"=="" set DBTYPE=MSSQL
-
-REM ============================================================
 REM  MODE:
-REM    -DryRun        = validate CSV, no DI API connect, no writes
+REM    -DryRun        = preview only (no writes, no transaction)
 REM    (leave empty)  = real import
 REM ============================================================
 set MODE=
@@ -63,43 +48,25 @@ if "%MAPFILE%"=="" ( echo Invalid selection. & pause & exit /b )
 
 echo.
 echo ============================================
-echo  SAP B1 UDV/FMS Import (DI API)
+echo  SAP B1 UDV/FMS Import (SQL Direct)
 echo  Server    : %SERVER%
 echo  Database  : %COMPANYDB%
-echo  DBType    : %DBTYPE%
-echo  B1 User   : %SAPUSER%
 echo  MapFile   : !MAPFILE!
-echo  Mode      : %MODE% (empty=real run)
+echo  Mode      : %MODE% (empty=REAL run, writes CSHS+OUQR)
 echo ============================================
 echo.
+echo This writes directly to CSHS (and OUQR for new queries).
+echo Press Ctrl+C to abort, or any key to continue.
 pause
 
-REM Auto-select PowerShell arch to match installed DI API
-set "PS64=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
-set "PS32=%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe"
-set "PFX64=%ProgramFiles%"
-set "PFX86=%ProgramFiles(x86)%"
-set "PS="
-if exist "%PFX64%\SAP\SAP Business One DI API\" set "PS=%PS64%"
-if defined PS goto :ps_found
-if exist "%PFX86%\SAP\SAP Business One DI API\" set "PS=%PS32%"
-if defined PS goto :ps_found
-echo ERROR: DI API not detected.
-echo   Looked in: %PFX64%\SAP\SAP Business One DI API\
-echo   Looked in: %PFX86%\SAP\SAP Business One DI API\
-pause
-exit /b 2
-:ps_found
-echo Using PowerShell: %PS%
+REM 64-bit PowerShell ? no DI API required for SQL-direct path
+set "PS=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
 
-"%PS%" -NoProfile -ExecutionPolicy Bypass -File "%~dp0Scripts\Import_UDV_DI.ps1" ^
+"%PS%" -NoProfile -ExecutionPolicy Bypass -File "%~dp0Scripts\Import_UDV_SQL.ps1" ^
     -Server "%SERVER%" ^
     -CompanyDB "%COMPANYDB%" ^
     -DBUser "%DBUSER%" ^
     -DBPassword "%DBPASSWORD%" ^
-    -SapUser "%SAPUSER%" ^
-    -SapPassword "%SAPPASSWORD%" ^
-    -DBType "%DBTYPE%" ^
     -MapFile "!CFG!\!MAPFILE!" ^
     %MODE%
 
@@ -107,6 +74,6 @@ endlocal
 
 echo.
 echo ============================================
-echo  Done. Check log: %~dp0Import_UDV_Log.txt
+echo  Done. Check log: %~dp0Import_UDV_SQL_Log.txt
 echo ============================================
 pause
