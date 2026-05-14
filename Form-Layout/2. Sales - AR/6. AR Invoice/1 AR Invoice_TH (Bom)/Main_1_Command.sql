@@ -65,7 +65,6 @@ INV12.CityB,
 INV12.ZipCodeB,
 INV12.CountyB,
 INV12.CountryB
-
 FROM OINV
 INNER JOIN INV1 ON OINV.DocEntry = INV1.DocEntry
 INNER JOIN INV12 ON OINV.DocEntry = INV12.DocEntry
@@ -81,9 +80,8 @@ LEFT JOIN ODPI ON INV11.BASEABS = ODPI.DocEntry
 LEFT JOIN NNM1 NNM ON ODPI.Series = NNM.Series 
 LEFT JOIN OUSR ON OINV.UserSign = OUSR.USERID
 LEFT JOIN OPRJ ON INV1.Project = OPRJ.PrjCode
-INNER JOIN OITT ON INV1.ItemCode = OITT.Code AND OITT.TreeType = 'S'
+left JOIN OITT ON INV1.ItemCode = OITT.Code AND OITT.TreeType = 'S'
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OINV.U_SLD_LVatBranch = BRANCH.Code , oadm
-
 WHERE OINV.DocEntry = {?DocKey@}
-
+  AND INV1.TreeType <> 'I'
 Order by 'No.' , 'Line No.'
