@@ -53,7 +53,7 @@ CASE WHEN OINV.DocCur = 'THB' THEN OINV.DpmAmnt ELSE OINV.DpmAmntFC END AS 'DpmA
 SUM(CASE WHEN OINV.DocCur = 'THB' THEN INV1.LineTotal ELSE INV1.TotalFrgn END) OVER() AS 'Sum_LineTotal_All',
 OINV.DiscPrcnt As 'DiscP',
 INV1.LineType,
-INV1.Project,
+pj.Project,
 OCPR.Name,
 OCPR.Tel1,
 OCPR.E_MailL,
@@ -66,6 +66,7 @@ INV12.CountyB,
 INV12.CountryB
 FROM OINV
 Left JOIN INV1 ON OINV.DocEntry = INV1.DocEntry
+Left JOIN INV1 pj ON OINV.DocEntry = INV1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 Left JOIN INV12 ON OINV.DocEntry = INV12.DocEntry
 Left JOIN NNM1 ON OINV.Series = NNM1.Series 
 Left JOIN OCRD ON OINV.CardCode = OCRD.CardCode 
@@ -78,7 +79,7 @@ Left JOIN INV11 ON OINV.DocEntry = INV11.DocEntry AND INV11.LineType = 'D'
 Left JOIN ODPI ON INV11.BASEABS = ODPI.DocEntry
 Left JOIN NNM1 NNM ON ODPI.Series = NNM.Series 
 LEFT JOIN OUSR ON OINV.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON INV1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OINV.U_SLD_LVatBranch = BRANCH.Code , oadm
 WHERE OINV.DocEntry  = {?DocKey@}
 Order by 'No.' , 'Line No.'

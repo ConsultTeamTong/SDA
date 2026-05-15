@@ -85,10 +85,11 @@ DPI1.LineType,
 OSLP.U_Name_Foreign as 'Name',
 OCPR.Tel1,
 OCPR.E_MailL,
-DPI1.Project,
+pj.Project,
 OUGP.UgpCode
 FROM ODPI
 INNER JOIN DPI1 ON ODPI.DocEntry = DPI1.DocEntry
+INNER JOIN DPI1 pj ON ODPI.DocEntry = DPI1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <>''
 LEFT JOIN DPI12 ON ODPI.DocEntry = DPI12.DocEntry
 LEFT JOIN NNM1 ON ODPI.Series = NNM1.Series 
 LEFT JOIN OCRD ON ODPI.CardCode = OCRD.CardCode 
@@ -98,7 +99,7 @@ LEFT JOIN OSLP ON ODPI.SlpCode = OSLP.SlpCode
 LEFT JOIN OCTG ON ODPI.GroupNum = OCTG.GroupNum 
 LEFT JOIN OHEM ON ODPI.OwnerCode = OHEM.empID
 LEFT JOIN OUSR ON ODPI.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON DPI1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN ORCT ON ODPI.ReceiptNum = ORCT.DocEntry
 LEFT JOIN RCT1 ON ORCT.DocEntry = RCT1.DocNum
 LEFT JOIN RCT2 ON ORCT.DocNum = RCT2.DocEntry
@@ -183,7 +184,7 @@ DPI12.ZipCodeS,
 OCPR.Name,
 OCPR.Tel1,
 OCPR.E_MailL,
-DPI1.Project,
+pj.Project,
 OUGP.UgpCode
 --------------------------------
 ORDER BY DPI1.VisOrder, DPI1.LineNum
