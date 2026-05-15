@@ -71,7 +71,7 @@ CASE WHEN OINV.DocCur = 'THB'
      THEN Ref_OINV.DocTotal 
      ELSE Ref_OINV.DocTotalFC 
 END                                        AS 'Ref_DocTotal',
-RIN1.Project,
+pj.Project,
 OCPR.Name,
 OCPR.Tel1,
 OCPR.E_MailL,
@@ -86,6 +86,7 @@ OUGP.UgpCode,
 OSLP.U_Name_Foreign as 'Sale Name contact'
 FROM ORIN
 INNER JOIN RIN1 ON ORIN.DocEntry = RIN1.DocEntry 
+INNER JOIN RIN1 pj ON ORIN.DocEntry = RIN1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 INNER JOIN RIN12 ON ORIN.DocEntry = RIN12.DocEntry 
 left join INV1 on RIN1.BaseEntry = INV1.DocEntry and RIN1.BaseLine = INV1.LineNum and RIN1.BaseType = 13
 Left join OINV on OINV.DocEntry = inv1.DocEntry
@@ -99,7 +100,7 @@ LEFT JOIN OHEM ON ORIN.OwnerCode = OHEM.empID
 LEFT JOIN OSLP ON ORIN.SlpCode = OSLP.SlpCode
 --Left join [dbo].[@SLD_REASON_RD] T10 on ORIN.U_CN_04 = T10.code
 LEFT JOIN OUSR ON ORIN.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON RIN1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ORIN.U_SLD_LVatBranch = BRANCH.Code 
 LEFT JOIN OINV Ref_OINV ON INV1.BaseEntry = Ref_OINV.DocEntry 
                         AND INV1.BaseType  = 13  -- 13 = A/R Invoice

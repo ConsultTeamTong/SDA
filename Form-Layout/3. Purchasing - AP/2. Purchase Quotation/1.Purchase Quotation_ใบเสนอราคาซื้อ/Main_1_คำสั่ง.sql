@@ -54,7 +54,7 @@ SUM(CASE WHEN OPQT.DocCur = 'THB' THEN PQT1.LineTotal ELSE PQT1.TotalFrgn END) O
 pqt1.unitMsr,
 PQT1.LineType,
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
-pqt1.Project,
+pj.Project,
 ocrd.CntctPrsn,
 ocrd.E_Mail,
 ocrd.Phone1,
@@ -67,17 +67,16 @@ opqt.cardcode,
 OCPR.Name,
 OCPR.Tel1,
 OCPR.E_MailL
-
 FROM OPQT
 INNER JOIN PQT1 ON OPQT.DocEntry = PQT1.DocEntry
+INNER JOIN PQT1 pj ON OPQT.DocEntry = PQT1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 inner join PQT12 on OPQT.DocEntry = PQT12.DocEntry
 LEFT JOIN OCRD ON OCRD.CardCode = OPQT.CardCode
 LEFT JOIN OCPR ON OCRD.CardCode = OCPR.CardCode AND OPQT.cntctcode = OCPR.cntctcode
 LEFT JOIN CRD1 ON (OCRD.CardCode = CRD1.CardCode AND OPQT.PaytoCode = CRD1.[Address] AND  CRD1.AdresType ='B')
 LEFT JOIN NNM1 ON OPQT.Series = NNM1.Series
 LEFT JOIN OUSR ON OPQT.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON PQT1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPQT.U_SLD_LVatBranch = BRANCH.Code, OADM
-
 WHERE OPQT.DocEntry = {?DocKey@}
 Order by 'No.' , 'Line No.'

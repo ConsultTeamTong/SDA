@@ -1,22 +1,37 @@
 ﻿SELECT Distinct
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
-CASE WHEN BRANCH.Code = '00000' AND ODPO.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่'
-  WHEN BRANCH.Code = '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN 'Head office'
-  WHEN BRANCH.Code <> '00000' AND ODPO.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code)
-  WHEN BRANCH.Code <> '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN concat('Branch' ,' ',BRANCH.Code)
+BRANCH.Code ,
+CASE WHEN BRANCH.Code = '00000' AND ODPO.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่' 
+  WHEN BRANCH.Code = '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN 'Head office' 
+  WHEN BRANCH.Code <> '00000' AND ODPO.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code) 
+  WHEN BRANCH.Code <> '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN concat('Branch' ,' ',BRANCH.Code) 
 END 'GLN_H' ,
-CASE WHEN CRD1.GlblLocNum = '00000' AND ODPO.DocCur = OADM.MainCurncy THEN N'(สำนักงานใหญ่)'
-  WHEN CRD1.GlblLocNum = '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN '(Head office)'
-  WHEN CRD1.GlblLocNum <> '00000' AND ODPO.DocCur = OADM.MainCurncy THEN concat(N'(สาขาที่' ,' ',CRD1.GlblLocNum,')')
-  WHEN CRD1.GlblLocNum <> '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')')
+CASE WHEN CRD1.GlblLocNum = '00000' AND ODPO.DocCur = OADM.MainCurncy THEN N'(สำนักงานใหญ่)' 
+  WHEN CRD1.GlblLocNum = '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN '(Head office)' 
+  WHEN CRD1.GlblLocNum <> '00000' AND ODPO.DocCur = OADM.MainCurncy THEN concat(N'(สาขาที่' ,' ',CRD1.GlblLocNum,')') 
+  WHEN CRD1.GlblLocNum <> '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')') 
   when CRD1.GlblLocNum = '' or CRD1.GlblLocNum is null then ''
 END 'GLN_BP' ,
- CASE
+ CASE 
  WHEN ODPO.Printed = 'N' AND ODPO.DocCur <> OADM.MainCurncy THEN 'Original'
- WHEN ODPO.Printed = 'N' AND ODPO.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ'
- WHEN ODPO.Printed = 'Y' AND ODPO.DocCur <> OADM.MainCurncy THEN 'Copy'
+ WHEN ODPO.Printed = 'N' AND ODPO.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ' 
+ WHEN ODPO.Printed = 'Y' AND ODPO.DocCur <> OADM.MainCurncy THEN 'Copy'  
  WHEN ODPO.Printed = 'Y' AND ODPO.DocCur = OADM.MainCurncy THEN N'สำเนา'
  END AS 'Print Status',
+BRANCH.[Name] As 'BranchName',
+BRANCH.U_SLD_VTAXID As 'TaxIdNum',
+BRANCH.U_SLD_VComName As 'PrintHeadr',
+BRANCH.U_SLD_F_VComName As 'PrintHdrF',
+CASE WHEN ODPO.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Building ELSE BRANCH.U_SLD_F_Building END AS 'Building',
+CASE WHEN ODPO.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Steet  ELSE BRANCH.U_SLD_F_Steet  END AS 'Street',
+CASE WHEN ODPO.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Block  ELSE BRANCH.U_SLD_F_Block   END AS 'Block',
+CASE WHEN ODPO.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_City  ELSE BRANCH.U_SLD_F_City  END As 'City',
+CASE WHEN ODPO.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_County ELSE BRANCH.U_SLD_F_County  END As 'County',
+BRANCH.U_SLD_ZipCode As 'ZipCode',
+BRANCH.U_SLD_Tel As 'Tel',
+BRANCH.U_SLD_Fax As 'BFax',
+BRANCH.U_SLD_Email AS 'E-Mail',
+--------------------------------------------------------------------------------------------------------
 NNM1.BeginStr,
 ODPO.DocEntry,
 ODPO.DocNum,
@@ -44,11 +59,13 @@ DPO1.Quantity,
 ODPO.Comments,
 ODPO.DocCur,
 DPO1.PriceBefDi,
-CASE WHEN ODPO.DocCur = 'THB' THEN DPO1.LineTotal ELSE DPO1.TotalFrgn END AS 'LineTotal',
-CASE WHEN ODPO.DocCur = 'THB' THEN ODPO.VatSum ELSE ODPO.VatSumFC END AS 'VatSum',
-CASE WHEN ODPO.DocCur = 'THB' THEN ODPO.DocTotal ELSE ODPO.DocTotalFC END AS 'DocTotal',
-CASE WHEN ODPO.DocCur = 'THB' THEN ODPO.DpmAmnt ELSE ODPO.DpmAmntFC END AS 'DpmAmnt',
-SUM(CASE WHEN ODPO.DocCur = 'THB' THEN DPO1.LineTotal ELSE DPO1.TotalFrgn END) OVER() AS 'Sum_LineTotal_All',
+DPO1.LineTotal,
+ODPO.VatSum,
+ODPO.DocTotal,
+ODPO.DpmAmnt,
+DPO1.TotalFrgn,
+ODPO.DocTotalFC,
+ODPO.DpmAmntFC,
 ODPO.dpmprcnt,
 VPM1.CheckNum,
 VPM1.[CheckSum] ,
@@ -57,7 +74,7 @@ SUM(OVPM.CashSum) As 'CashSum',
 SUM(OVPM.TrsfrSum) As 'TrsfrSum',
 ODSC.BankName,
 ODPO.Printed,
-DPO1.Project,
+pj.Project,
 OCPR.E_MailL,
 OCPR.Tel1,
 OCPR.Name,
@@ -68,9 +85,9 @@ DPO12.CityB,
 DPO12.ZipCodeB,
 DPO12.CountyB,
 DPO12.CountryB
-
 FROM ODPO 
 INNER JOIN DPO1 ON ODPO.DocEntry = DPO1.DocEntry
+INNER JOIN DPO1 pj ON ODPO.DocEntry = DPO1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 INNER JOIN DPO12 ON ODPO.DocEntry = DPO12.DocEntry
 LEFT JOIN NNM1 ON ODPO.Series = NNM1.Series 
 LEFT JOIN OCRD ON ODPO.CardCode = OCRD.CardCode
@@ -80,37 +97,46 @@ LEFT JOIN OSLP ON ODPO.SlpCode = OSLP.SlpCode
 LEFT JOIN OCTG ON ODPO.GroupNum = OCTG.GroupNum 
 LEFT JOIN OHEM ON ODPO.OwnerCode = OHEM.empID
 LEFT JOIN OUSR ON ODPO.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON ODPO.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN OVPM ON odpo.ReceiptNum = OVPM.docentry
 LEFT JOIN VPM1 ON OVPM.docentry = VPM1.DocNum
 LEFT JOIN VPM2 ON OVPM.DocEntry = VPM2.DocEntry
 LEFT JOIN ODSC ON VPM1.BankCode = ODSC.BankCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ODPO.U_SLD_LVatBranch = BRANCH.Code,oadm
-
-
 WHERE ODPO.DocEntry  = {?DocKey@}
-
-
 GROUP BY
-
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) ,
-CASE WHEN BRANCH.Code = '00000' AND ODPO.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่'
-  WHEN BRANCH.Code = '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN 'Head office'
-  WHEN BRANCH.Code <> '00000' AND ODPO.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code)
-  WHEN BRANCH.Code <> '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN concat('Branch' ,' ',BRANCH.Code)
+BRANCH.Code ,
+CASE WHEN BRANCH.Code = '00000' AND ODPO.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่' 
+  WHEN BRANCH.Code = '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN 'Head office' 
+  WHEN BRANCH.Code <> '00000' AND ODPO.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code) 
+  WHEN BRANCH.Code <> '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN concat('Branch' ,' ',BRANCH.Code) 
 END  ,
-CASE WHEN CRD1.GlblLocNum = '00000' AND ODPO.DocCur = OADM.MainCurncy THEN N'(สำนักงานใหญ่)'
-  WHEN CRD1.GlblLocNum = '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN '(Head office)'
-  WHEN CRD1.GlblLocNum <> '00000' AND ODPO.DocCur = OADM.MainCurncy THEN concat(N'(สาขาที่' ,' ',CRD1.GlblLocNum,')')
-  WHEN CRD1.GlblLocNum <> '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')')
+CASE WHEN CRD1.GlblLocNum = '00000' AND ODPO.DocCur = OADM.MainCurncy THEN N'(สำนักงานใหญ่)' 
+  WHEN CRD1.GlblLocNum = '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN '(Head office)' 
+  WHEN CRD1.GlblLocNum <> '00000' AND ODPO.DocCur = OADM.MainCurncy THEN concat(N'(สาขาที่' ,' ',CRD1.GlblLocNum,')') 
+  WHEN CRD1.GlblLocNum <> '00000' AND ODPO.DocCur <> OADM.MainCurncy THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')') 
   when CRD1.GlblLocNum = '' or CRD1.GlblLocNum is null then ''
 END  ,
- CASE
+ CASE 
  WHEN ODPO.Printed = 'N' AND ODPO.DocCur <> OADM.MainCurncy THEN 'Original'
- WHEN ODPO.Printed = 'N' AND ODPO.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ'
- WHEN ODPO.Printed = 'Y' AND ODPO.DocCur <> OADM.MainCurncy THEN 'Copy'
+ WHEN ODPO.Printed = 'N' AND ODPO.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ' 
+ WHEN ODPO.Printed = 'Y' AND ODPO.DocCur <> OADM.MainCurncy THEN 'Copy'  
  WHEN ODPO.Printed = 'Y' AND ODPO.DocCur = OADM.MainCurncy THEN N'สำเนา'
  END ,
+BRANCH.[Name] ,
+BRANCH.U_SLD_VTAXID ,
+BRANCH.U_SLD_VComName ,
+BRANCH.U_SLD_F_VComName ,
+CASE WHEN ODPO.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Building ELSE BRANCH.U_SLD_F_Building END ,
+CASE WHEN ODPO.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Steet  ELSE BRANCH.U_SLD_F_Steet  END,
+CASE WHEN ODPO.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Block  ELSE BRANCH.U_SLD_F_Block   END,
+CASE WHEN ODPO.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_City  ELSE BRANCH.U_SLD_F_City  END ,
+CASE WHEN ODPO.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_County ELSE BRANCH.U_SLD_F_County  END,
+BRANCH.U_SLD_ZipCode ,
+BRANCH.U_SLD_Tel ,
+BRANCH.U_SLD_Fax ,
+BRANCH.U_SLD_Email ,
 NNM1.BeginStr,
 ODPO.DocEntry,
 ODPO.DocNum,
@@ -138,17 +164,20 @@ DPO1.Quantity,
 ODPO.Comments,
 ODPO.DocCur,
 DPO1.PriceBefDi,
-CASE WHEN ODPO.DocCur = 'THB' THEN DPO1.LineTotal ELSE DPO1.TotalFrgn END,
-CASE WHEN ODPO.DocCur = 'THB' THEN ODPO.VatSum ELSE ODPO.VatSumFC END,
-CASE WHEN ODPO.DocCur = 'THB' THEN ODPO.DocTotal ELSE ODPO.DocTotalFC END,
-CASE WHEN ODPO.DocCur = 'THB' THEN ODPO.DpmAmnt ELSE ODPO.DpmAmntFC END,
+DPO1.LineTotal,
+ODPO.VatSum,
+ODPO.DocTotal,
+ODPO.DpmAmnt,
+DPO1.TotalFrgn,
+ODPO.DocTotalFC,
+ODPO.DpmAmntFC,
 ODPO.dpmprcnt,
 VPM1.CheckNum,
 VPM1.[CheckSum],
 VPM1.DueDate,
 ODSC.BankName,
 ODPO.Printed,
-DPO1.Project,
+pj.Project,
 OCPR.E_MailL,
 OCPR.Tel1,
 OCPR.Name,
@@ -158,6 +187,8 @@ DPO12.BlockB,
 DPO12.CityB,
 DPO12.ZipCodeB,
 DPO12.CountyB,
-DPO12.CountryB
+DPO12.CountryB,
+OCPR.FirstName,
+OCPR.LastName
 
 Order by 'No.' , 'Line Num'

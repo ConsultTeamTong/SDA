@@ -11,7 +11,6 @@ CASE WHEN CRD1.GlblLocNum = '00000' AND ORIN.DocCur = OADM.MainCurncy THEN N'(�
   WHEN CRD1.GlblLocNum <> '00000' AND ORIN.DocCur <> OADM.MainCurncy THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')')
   when CRD1.GlblLocNum = '' or CRD1.GlblLocNum is null then ''
 END 'GLN_BP' ,
-
  CASE
  WHEN ORIN.Printed = 'N' AND ORIN.DocCur <> OADM.MainCurncy THEN 'Original'
  WHEN ORIN.Printed = 'N' AND ORIN.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ'
@@ -84,13 +83,12 @@ RIN12.CountyB,
 RIN12.CountryB,
 Rin1.DiscPrcnt,
 RIN1.U_SLD_Dis_Amount
-
 FROM ORIN
 INNER JOIN RIN1 ON ORIN.DocEntry = RIN1.DocEntry 
+INNER JOIN RIN1 pj ON ORIN.DocEntry = RIN1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> '' 
 INNER JOIN RIN12 ON ORIN.DocEntry = RIN12.DocEntry 
 left join INV1 on RIN1.BaseEntry = INV1.DocEntry and RIN1.BaseLine = INV1.LineNum and RIN1.BaseType = 13
 Left join OINV on OINV.DocEntry = inv1.DocEntry
-
 LEFT JOIN OITM ON RIN1.ItemCode = OITM.ItemCode 
 LEFT JOIN OCRD ON ORIN.CardCode = OCRD.CardCode 
 LEFT JOIN CRD1 ON OCRD.CardCode = CRD1.CardCode AND CRD1.AdresType = 'B' AND CRD1.[Address] = ORIN.PayToCode
@@ -101,12 +99,11 @@ LEFT JOIN OHEM ON ORIN.OwnerCode = OHEM.empID
 LEFT JOIN OSLP ON ORIN.SlpCode = OSLP.SlpCode
 --Left join [dbo].[@SLD_REASON_RD] T10 on ORIN.U_CN_04 = T10.code
 LEFT JOIN OUSR ON ORIN.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON RIN1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ORIN.U_SLD_LVatBranch = BRANCH.Code 
 LEFT JOIN OINV Ref_OINV ON INV1.BaseEntry = Ref_OINV.DocEntry 
                         AND INV1.BaseType  = 13  -- 13 = A/R Invoice
 LEFT JOIN NNM1 Ref_NNM  ON Ref_OINV.Series = Ref_NNM.Series
 , oadm
-
 WHERE ORIN.DocEntry = {?DocKey@}
 Order by 'No.' , 'Line No.'

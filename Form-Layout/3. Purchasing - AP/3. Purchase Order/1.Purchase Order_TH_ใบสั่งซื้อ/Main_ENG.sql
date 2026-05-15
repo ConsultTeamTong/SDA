@@ -70,7 +70,7 @@ OCRD.E_mail,
 POR1.U_SLD_Dis_Amount,
 CAST(ocrd.MailAddres AS nvarchar(max)) AS 'MailAddres',
 ocrd.Country,
-POR1.Project, 
+pj.Project, 
 CAST(por12.StreetS AS nvarchar(max)) as StreetS, CAST(por12.StreetNoS AS nvarchar(max)) as StreetS,CAST(por12.BlockS AS nvarchar(max)) as BlockS, CAST(por12.BuildingS AS nvarchar(max)) as BuildingS, 
 CAST(por12.CityS AS nvarchar(max)) as CityS, por12.ZipCodeS, CAST(por12.CountyS AS nvarchar(max)) as CountyS, por12.StateS,
 CAST(por12.StreetB AS nvarchar(max)) as StreetB, CAST(por12.StreetNoB AS nvarchar(max)) as StreetNoB,CAST(por12.BlockB AS nvarchar(max)) as BlockB, CAST(por12.BuildingB AS nvarchar(max)) as BuildingB, 
@@ -82,6 +82,7 @@ OITM.FrgnName AS 'Dscription',
 OUGP.UgpCode
 FROM OPOR   
 INNER JOIN POR1 ON OPOR.DocEntry = POR1.DocEntry  
+INNER JOIN POR1 pj ON OPOR.DocEntry = POR1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN OITM ON POR1.ItemCode = OITM.ItemCode 
 LEFT JOIN OCRD ON OPOR.CardCode = OCRD.CardCode 
 LEFT JOIN CRD1 ON (OPOR.[PaytoCode] = CRD1.[Address] AND OPOR.CardCode = CRD1.CardCode and CRD1.AdresType = 'B')
@@ -92,7 +93,7 @@ LEFT JOIN OHEM ON OPOR.OwnerCode = OHEM.empID
 LEFT JOIN OSLP ON OPOR.SlpCode = OSLP.SlpCode
 LEFT JOIN POR12 ON OPOR.DocEntry = POR12.DocEntry
 LEFT JOIN OUSR ON OPOR.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON POR1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN OUGP ON POR1.UomCode = OUGP.UgpCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPOR.U_SLD_LVatBranch = BRANCH.Code, oadm
 WHERE OPOR.DocEntry = {?DocKey@}
