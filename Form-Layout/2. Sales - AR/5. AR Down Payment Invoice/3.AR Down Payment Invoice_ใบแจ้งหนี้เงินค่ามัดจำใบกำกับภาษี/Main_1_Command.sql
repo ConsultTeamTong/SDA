@@ -1,13 +1,4 @@
-﻿-- ============================================================
--- Report: 3.AR Down PaymentTax Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
-Path:   2. Sales - AR\5. AR Down Payment Invoice\3.AR Down PaymentTax Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
-Extracted: 2026-04-09 15:22:37
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
----ใบแจ้ง/ใบกำกับ---
-SELECT Distinct
+﻿SELECT Distinct
 DPI12.StreetB     AS '1Bill',
     DPI12.StreetNoB   AS '2Bill',
     DPI12.BlockB      AS '3Bill',
@@ -61,7 +52,7 @@ ODPI.LicTradNum,
 OCTG.PymntGroup,
 ODPI.DocDueDate,
 DPI1.ItemCode,
-DPI1.Dscription as 'Dscription',
+DPI1.Dscription as 'Dscription' ,
 DPI1.Quantity,
 ODPI.Comments,
 ODPI.DocCur,
@@ -78,9 +69,14 @@ RCT1.DueDate As 'Check Date',
 SUM(ORCT.CashSum) As 'CashSum',
 SUM(ORCT.TrsfrSum) As 'TrsfrSum',
 ODSC.BankName,
-DPI1.LineType
+DPI1.LineType,
+OCPR.Name,
+OCPR.Tel1,
+OCPR.E_MailL,
+pj.Project
 FROM ODPI
 INNER JOIN DPI1 ON ODPI.DocEntry = DPI1.DocEntry
+INNER JOIN DPI1  pj ON ODPI.DocEntry = DPI1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN DPI12 ON ODPI.DocEntry = DPI12.DocEntry
 LEFT JOIN NNM1 ON ODPI.Series = NNM1.Series 
 LEFT JOIN OCRD ON ODPI.CardCode = OCRD.CardCode 
@@ -90,12 +86,13 @@ LEFT JOIN OSLP ON ODPI.SlpCode = OSLP.SlpCode
 LEFT JOIN OCTG ON ODPI.GroupNum = OCTG.GroupNum 
 LEFT JOIN OHEM ON ODPI.OwnerCode = OHEM.empID
 LEFT JOIN OUSR ON ODPI.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON DPI1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN ORCT ON ODPI.ReceiptNum = ORCT.DocEntry
 LEFT JOIN RCT1 ON ORCT.DocEntry = RCT1.DocNum
 LEFT JOIN RCT2 ON ORCT.DocNum = RCT2.DocEntry
 LEFT JOIN ODSC ON RCT1.BankCode = ODSC.BankCode
-LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ODPI.U_SLD_LVatBranch = BRANCH.Code , oadm
+LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ODPI.U_SLD_LVatBranch = BRANCH.Code
+CROSS JOIN oadm
 WHERE ODPI.DocEntry  = {?DocKey@}
 GROUP BY
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) ,
@@ -154,8 +151,22 @@ RCT1.CheckNum,
 RCT1.[CheckSum],
 RCT1.DueDate,
 ODSC.BankName,
-DPI1.LineType
-
-------------------------
-Order by 'No.' , 'Line No.'
-
+DPI1.LineType,
+DPI12.StreetB,
+DPI12.StreetNoB,
+DPI12.BlockB,
+DPI12.CityB,
+DPI12.CountyB,
+DPI12.ZipCodeB,
+DPI12.StreetS,
+DPI12.StreetNoS,
+DPI12.BlockS,
+DPI12.CityS,
+DPI12.CountyS,
+DPI12.ZipCodeS,
+OCPR.Name,
+OCPR.Tel1,
+OCPR.E_MailL,
+pj.Project
+--------------------------------
+ORDER BY DPI1.VisOrder, DPI1.LineNum
