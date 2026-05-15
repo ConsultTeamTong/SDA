@@ -53,7 +53,7 @@ ORDR.DocCur ,
 RDR1.unitMsr,
 ORDR.Comments,
 rdr1.LineType,
-RDR1.project,
+pj.project,
 OCPR.E_MailL,
 OSLP.SlpName as 'Sale Name contact',
 OSLP.Mobil as 'Mobile',
@@ -78,9 +78,9 @@ RDR12.StreetB     AS 'Street / PO Box12',
 	OCPR.Name,
 	OCPR.Tel1,
 	OCPR.E_MailL
-	
 FROM ORDR   
 INNER JOIN RDR1 ON ORDR.DocEntry = RDR1.DocEntry 
+INNER JOIN RDR1 pj ON ORDR.DocEntry = RDR1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN OITM ON RDR1.ItemCode = OITM.ItemCode 
 LEFT JOIN OCRD ON ORDR.CardCode = OCRD.CardCode
 LEFT JOIN CRD1 ON (ORDR.CardCode = CRD1.CardCode AND ORDR.PaytoCode = CRD1.[Address] AND CRD1.AdresType ='B' ) 
@@ -88,8 +88,8 @@ LEFT JOIN OCPR ON ORDR.CardCode = OCPR.CardCode AND ORDR.CntctCode = OCPR.CntctC
 LEFT JOIN NNM1 ON ORDR.Series = NNM1.Series 
 LEFT JOIN OCTG ON ORDR.GroupNum = OCTG.GroupNum
 LEFT JOIN OSLP ON ORDR.SlpCode = OSLP.SlpCode
-LEFT JOIN OPRJ ON RDR1.PROJECT = OPRJ.PRJCODE 
+LEFT JOIN OPRJ ON pj.PROJECT = OPRJ.PRJCODE 
 LEFT JOIN RDR12 ON ORDR.DocEntry = RDR12.DocEntry
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ORDR.U_SLD_LVatBranch = BRANCH.Code , oadm
-WHERE ORDR.DocEntry = 1
+WHERE ORDR.DocEntry = {?DocKey@}
 Order by 'No.' , 'Line No.'

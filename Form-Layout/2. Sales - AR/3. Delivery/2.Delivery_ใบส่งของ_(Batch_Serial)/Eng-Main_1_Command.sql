@@ -62,14 +62,14 @@ OCPR.E_MailL AS ContactMail,
 OSLP.SlpName as 'Sale Name contact',
 OSLP.Mobil as 'Mobile',
 OSLP.Email as 'Email-Sale',
-OPRJ.PrjCode ,
+pj.Project ,
 OUGP.UgpCode,
 OCPR.Name,
 OCPR.Tel1,
 OCPR.E_MailL
-
 FROM ODLN 
 INNER JOIN DLN1 ON ODLN.DocEntry = DLN1.DocEntry 
+INNER JOIN DLN1 pj ON ODLN.DocEntry = DLN1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN DLN12 ON ODLN.DocEntry = DLN12.DocEntry 
 LEFT JOIN NNM1 ON ODLN.Series = NNM1.Series 
 LEFT JOIN OCRD ON ODLN.CardCode = OCRD.CardCode
@@ -77,7 +77,7 @@ LEFT JOIN OCPR ON ODLN.CntctCode = OCPR.CntctCode
 LEFT JOIN CRD1 ON (OCRD.CardCode = CRD1.CardCode AND ODLN.PayToCode = CRD1.[Address] AND CRD1.AdresType ='B')
 LEFT JOIN OCTG ON ODLN.GroupNum = OCTG.GroupNum
 LEFT JOIN OSLP ON ODLN.SlpCode = OSLP.SlpCode
-LEFT JOIN OPRJ ON DLN1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN OUSR ON ODLN.UserSign = OUSR.USERID
 LEFT JOIN OUGP ON DLN1.UomCode = OUGP.UgpCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ODLN.U_SLD_LVatBranch = BRANCH.Code , oadm
