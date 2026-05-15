@@ -28,7 +28,7 @@ RDN1.LineNum as 'Line No.',
 OCRD.U_SLD_Title,
 OCRD.U_SLD_FullName,
 OCRD.LicTradNum ,
-OPRJ.PrjCode,
+pj.Project,
 ORDN.U_SLD_Returnreason ,
 ORDN.U_SLD_ReturnTo ,
 CASE 
@@ -49,6 +49,7 @@ RDN10.AftLineNum,
 OUGP.UgpCode
 FROM ORDN  
 INNER JOIN RDN1 ON ORDN.[DocEntry] = RDN1.[DocEntry]
+INNER JOIN RDN1 pj ON ORDN.[DocEntry] = RDN1.[DocEntry] AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN RDN10 ON RDN1.[DocEntry] = RDN10.[DocEntry] AND RDN1.LineNum = RDN10.AftLineNum 
 LEFT JOIN RDN12 ON ORDN.DocEntry = RDN12.DocEntry 
 LEFT JOIN OCRD ON ORDN.CardCode = OCRD.CardCode
@@ -56,7 +57,7 @@ LEFT JOIN OCPR ON ORDN.CntctCode = OCPR.CntctCode
 LEFT JOIN CRD1 ON (ORDN.[CardCode] = CRD1.[CardCode] AND ORDN.[PayToCode] = CRD1.[Address] AND CRD1.[AdresType] ='B')
 LEFT JOIN NNM1 ON ORDN.[Series] = NNM1.[Series]
 LEFT JOIN OUSR ON ORDN.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON RDN1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT Join OITM ON RDN1.ItemCode = OITM.ItemCode 
 LEFT JOIN OUGP ON RDN1.UomCode = OUGP.UgpCode
 LEFT JOIN OSLP ON ORDN.SLPCODE = OSLP.SLPCODE 

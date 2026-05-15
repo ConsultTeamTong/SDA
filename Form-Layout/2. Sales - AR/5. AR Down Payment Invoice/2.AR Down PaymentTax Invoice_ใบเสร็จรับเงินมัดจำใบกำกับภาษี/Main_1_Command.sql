@@ -72,10 +72,11 @@ ODSC.BankName,
 DPI1.LineType,
 OCPR.Name,
 OCPR.Tel1,
-OCPR.E_MailL
-
+OCPR.E_MailL,
+pj.Project
 FROM ODPI
 INNER JOIN DPI1 ON ODPI.DocEntry = DPI1.DocEntry
+INNER JOIN DPI1 pj ON ODPI.DocEntry = DPI1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN DPI12 ON ODPI.DocEntry = DPI12.DocEntry
 LEFT JOIN NNM1 ON ODPI.Series = NNM1.Series 
 LEFT JOIN OCRD ON ODPI.CardCode = OCRD.CardCode 
@@ -85,15 +86,14 @@ LEFT JOIN OSLP ON ODPI.SlpCode = OSLP.SlpCode
 LEFT JOIN OCTG ON ODPI.GroupNum = OCTG.GroupNum 
 LEFT JOIN OHEM ON ODPI.OwnerCode = OHEM.empID
 LEFT JOIN OUSR ON ODPI.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON DPI1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN ORCT ON ODPI.ReceiptNum = ORCT.DocEntry
 LEFT JOIN RCT1 ON ORCT.DocEntry = RCT1.DocNum
 LEFT JOIN RCT2 ON ORCT.DocNum = RCT2.DocEntry
 LEFT JOIN ODSC ON RCT1.BankCode = ODSC.BankCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ODPI.U_SLD_LVatBranch = BRANCH.Code
 CROSS JOIN oadm
-
-WHERE ODPI.DocEntry  = 1
+WHERE ODPI.DocEntry  = {?DocKey@}
 GROUP BY
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) ,
 CASE WHEN BRANCH.Code = '00000' AND ODPI.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่'
@@ -166,6 +166,7 @@ DPI12.CountyS,
 DPI12.ZipCodeS,
 OCPR.Name,
 OCPR.Tel1,
-OCPR.E_MailL
+OCPR.E_MailL,
+pj.Project
 --------------------------------
 ORDER BY DPI1.VisOrder, DPI1.LineNum

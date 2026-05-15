@@ -49,10 +49,21 @@ OCRD.Phone1,
 ISNULL(OCRD.Phone2,'') As 'Phone2',
 OCRD.Fax,
 ODPI.LicTradNum,
-OCTG.PymntGroup,
+CASE WHEN OCTG.PymntGroup = N'เงินสด' THEN 'Cash'
+	 WHEN OCTG.PymntGroup = N'120 วัน' THEN '120 Days'
+	 WHEN OCTG.PymntGroup = N'90 วัน' THEN '90 Days'
+	 WHEN OCTG.PymntGroup = N'60 วัน' THEN '60 Days'
+	 WHEN OCTG.PymntGroup = N'45 วัน' THEN '45 Days'
+	 WHEN OCTG.PymntGroup = N'30 วัน' THEN '30 Days'
+	 WHEN OCTG.PymntGroup = N'15 วัน' THEN '15 Days'
+	 WHEN OCTG.PymntGroup = N'7 วัน' THEN '7 Days'
+	 WHEN OCTG.PymntGroup = N'3 วัน' THEN '3 Days'
+	 END AS 'PaymentEng',
+--OCTG.PymntGroup,
 ODPI.DocDueDate,
 DPI1.ItemCode,
-DPI1.Dscription as 'Dscription' ,
+--DPI1.Dscription as 'Dscription' ,
+OITM.FrgnName as 'Dscription',
 DPI1.Quantity,
 ODPI.Comments,
 ODPI.DocCur,
@@ -70,12 +81,15 @@ SUM(ORCT.CashSum) As 'CashSum',
 SUM(ORCT.TrsfrSum) As 'TrsfrSum',
 ODSC.BankName,
 DPI1.LineType,
-OCPR.Name,
+--OCPR.Name,
+OSLP.U_Name_Foreign as 'Name',
 OCPR.Tel1,
-OCPR.E_MailL
-
+OCPR.E_MailL,
+pj.Project,
+OUGP.UgpCode
 FROM ODPI
 INNER JOIN DPI1 ON ODPI.DocEntry = DPI1.DocEntry
+INNER JOIN DPI1 pj ON ODPI.DocEntry = DPI1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN DPI12 ON ODPI.DocEntry = DPI12.DocEntry
 LEFT JOIN NNM1 ON ODPI.Series = NNM1.Series 
 LEFT JOIN OCRD ON ODPI.CardCode = OCRD.CardCode 
@@ -85,16 +99,16 @@ LEFT JOIN OSLP ON ODPI.SlpCode = OSLP.SlpCode
 LEFT JOIN OCTG ON ODPI.GroupNum = OCTG.GroupNum 
 LEFT JOIN OHEM ON ODPI.OwnerCode = OHEM.empID
 LEFT JOIN OUSR ON ODPI.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON DPI1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN ORCT ON ODPI.ReceiptNum = ORCT.DocEntry
 LEFT JOIN RCT1 ON ORCT.DocEntry = RCT1.DocNum
 LEFT JOIN RCT2 ON ORCT.DocNum = RCT2.DocEntry
 LEFT JOIN ODSC ON RCT1.BankCode = ODSC.BankCode
-INNER JOIN OITT ON DPI1.ItemCode = OITT.Code AND OITT.TreeType = 'S'
+LEFT JOIN OITM ON DPI1.ItemCode = OITM.ItemCode
+LEFT JOIN OUGP ON DPI1.UomCode = OUGP.UgpCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ODPI.U_SLD_LVatBranch = BRANCH.Code
 CROSS JOIN oadm
-
-WHERE ODPI.DocEntry  = 1
+WHERE ODPI.DocEntry = {?DocKey@}
 GROUP BY
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) ,
 CASE WHEN BRANCH.Code = '00000' AND ODPI.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่'
@@ -114,6 +128,8 @@ END  ,
  WHEN ODPI.Printed = 'Y' AND ODPI.DocCur <> OADM.MainCurncy THEN 'Copy'
  WHEN ODPI.Printed = 'Y' AND ODPI.DocCur = OADM.MainCurncy THEN N'สำเนา'
  END ,
+ OITM.FrgnName,
+ OSLP.U_Name_Foreign,
 NNM1.BeginStr,
 ODPI.DocEntry,
 ODPI.DocNum,
@@ -167,6 +183,8 @@ DPI12.CountyS,
 DPI12.ZipCodeS,
 OCPR.Name,
 OCPR.Tel1,
-OCPR.E_MailL
+OCPR.E_MailL,
+pj.Project,
+OUGP.UgpCode
 --------------------------------
 ORDER BY DPI1.VisOrder, DPI1.LineNum

@@ -20,10 +20,10 @@ OQUT.DocDueDate,
 QUT1.LineNum as 'Line No.', 
 QUT1.ItemCode,
 OITM.ItemName AS 'Dscription',
---QUT1.Dscription 'Dscription',
 QUT1.Quantity,
 QUT1.PriceBefDi,
 CASE WHEN OQUT.DocCur = 'THB' THEN QUT1.LineTotal ELSE QUT1.TotalFrgn END AS 'LineTotal',
+CASE WHEN OQUT.DocCur = 'THB' THEN OQUT.GrosProfit ELSE OQUT.GrosProfFC END AS 'GrossProfit',
 CASE WHEN OQUT.DocCur = 'THB' THEN OQUT.DiscSum ELSE OQUT.DiscSumFC END AS 'DiscSum',
 CASE WHEN OQUT.DocCur = 'THB' THEN OQUT.VatSum ELSE OQUT.VatSumFC END AS 'VatSum',
 CASE WHEN OQUT.DocCur = 'THB' THEN OQUT.DocTotal ELSE OQUT.DocTotalFC END AS 'DocTotal',
@@ -36,13 +36,12 @@ OCPR.LastName,
 OQUT.CreateDate,
 OQUT.CntctCode,
 QUT1.unitMsr,
-OQUT.Comments
-,qut1.LineType,
-qut1.Project,
+OQUT.Comments,
+qut1.LineType,
+pj.Project,
 OCPR.E_MailL as 'Contact',
 OCPR.Cellolar as 'Mobile Phone',
 ocpr.Tel1 as 'Tel1',
---OSLP.U_Name_Foreign as 'Sale Name contact',
 OSLP.SlpName as 'Sale Name contact',
 OSLP.Mobil as 'Mobile',
 OSLP.Email as 'Email-Sale',
@@ -59,10 +58,11 @@ QUT12.CountyB     AS 'County12',
 QUT12.StateB      AS 'State12',
 QUT12.CountryB    AS 'Country/Region12',
 QUT1.U_SLD_Dis_Amount,
+OQUT.U_SDL_InternalNo,
 OUGP.UgpCode
-
 FROM OQUT  
 INNER JOIN QUT1 ON OQUT.DocEntry = QUT1.DocEntry 
+INNER JOIN QUT1 pj ON OQUT.DocEntry = QUT1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN OITM ON QUT1.ItemCode = OITM.ItemCode 
 LEFT JOIN OCRD ON OQUT.CardCode = OCRD.CardCode 
 LEFT JOIN CRD1 ON (OQUT.CardCode = CRD1.CardCode AND OQUT.PaytoCode = CRD1.Address AND CRD1.AdresType ='B') 
@@ -71,11 +71,9 @@ LEFT JOIN NNM1 ON OQUT.Series = NNM1.Series
 LEFT JOIN OCTG ON OQUT.GroupNum = OCTG.GroupNum
 LEFT JOIN OHEM ON OQUT.OwnerCode = OHEM.empID
 LEFT JOIN OSLP ON OQUT.SLPCODE = OSLP.SLPCODE 
-LEFT JOIN OPRJ ON QUT1.PROJECT = OPRJ.PRJCODE
+LEFT JOIN OPRJ ON pj.PROJECT = OPRJ.PRJCODE
 LEFT JOIN OUGP ON QUT1.UomCode = OUGP.UgpCode
 INNER JOIN QUT12 ON OQUT.DocEntry = QUT12.DocEntry
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OQUT.U_SLD_LVatBranch = BRANCH.Code , oadm
-
 WHERE OQUT.DocEntry = '{?DocKey@}'
-
 Order by 'No.' , 'Line No.'

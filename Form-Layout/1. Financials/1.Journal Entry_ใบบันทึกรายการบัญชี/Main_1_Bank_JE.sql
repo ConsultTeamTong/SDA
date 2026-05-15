@@ -11,7 +11,6 @@ END 'GLN_H' ,
 --  WHEN CRD1.GlblLocNum <> '00000' AND OJDT.FcTotal <> '0' THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')') 
 --  when CRD1.GlblLocNum = '' or CRD1.GlblLocNum is null then ''
 --END 'GLN_BP' ,
-
 BRANCH.[Name] As 'BranchName',
 BRANCH.U_SLD_VTAXID As 'TaxIdNum',
 --CASE WHEN OQUT.DocCurr = OADM.MainCurncy THEN BRANCH.U_SLD_VComName ELSE BRANCH.U_SLD_F_VComName END AS 'PrintHeadr',
@@ -53,19 +52,14 @@ T3.[ActId],
 T3.[AcctName], 
 T3.[Segment_0], 
 T4.[CardName],
-
 CASE
 	WHEN T3.[ActId] IS NOT NULL THEN T3.[AcctName] 
 	ELSE T4.[CardName] 
 END AS 'NAME',
-
 CASE
 	WHEN T3.[ActId] IS NOT NULL THEN T3.FormatCode
 	ELSE T1.[ShortName] 
 END AS 'CODE' , 
-
-
-
 --CASE 
 --	WHEN OJDT.[TransType] = 13 THEN T5.[CardName] --A/R Invoice
 --	WHEN OJDT.[TransType] = 18 THEN T6.[CardName] --A/P Invoice
@@ -96,7 +90,6 @@ END AS 'CODE' ,
 --)A2
 --)
 --END AS 'Name_link' ,
-
 CASE 
 	WHEN OJDT.[TransType] = 13 THEN 'IN' --A/R Invoice
 	WHEN OJDT.[TransType] = 18 THEN 'PU' --A/P Invoice
@@ -114,11 +107,11 @@ CASE
 	ELSE NULL
 END AS 'Series_link' 
 ,ad.*
-,T1.Project
-,OJDT.DocDate
-
+,pj.Project
 FROM OJDT 
 LEFT JOIN JDT1 T1 ON OJDT.[TransId] = T1.[TransId]
+LEFT JOIN JDT1 pj ON OJDT.[TransId] = pj.[TransId] AND pj.Project IS NOT NULL AND pj.Project <> ''
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OJDT.U_S_ComVatB = BRANCH.Code
 LEFT JOIN NNM1 T2 ON OJDT.[Series] = T2.[Series]
 LEFT JOIN OACT T3 ON T1.[ShortName] = T3.[AcctCode]
@@ -147,15 +140,11 @@ left JOIN (select top 1 A.CardName , A.TransId
 		WHERE (T01.[ShortName] LIKE 'C%' OR T01.[ShortName] LIKE 'V%' OR T01.[ShortName] LIKE 'S%')
 		)A on T0.TransId = A.TransId
 		)T18 ON OJDT.TransId = T18.TransId
-
 	 ,
 	 (SELECT T0.[CompnyName], T1.[Street], T1.[StreetNo], T1.[Block], T1.[Building], T1.[City], T1.[County]
 	 , T1.[ZipCode], T0.[Phone1], T0.[Phone2], T0.[Fax], T0.[E_Mail], T0.[TaxIdNum], T0.[PrintHeadr], T0.[PrintHdrF]
-
 	FROM OADM T0 , ADM1 T1
 	)AD
-
-
-WHERE OJDT.[TransId] = 3
+WHERE OJDT.[TransId] = '{?DocKey@}'
 
 ORDER BY (T1.Line_ID+1)
