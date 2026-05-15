@@ -70,7 +70,7 @@ PDN1.ItemCode,
 PDN1.Dscription as 'Dscription', 
 PDN1.Quantity,
 PDN1.unitMsr,
-PDN1.Project,
+pj.Project,
 OPDN.Comments,
 PDN1.LineType,
 CRD1.Street,
@@ -85,9 +85,9 @@ OCRD.CntctPrsn,
 OCPR.Name,
 OCPR.Tel1,
 OCPR.E_MailL
-
 FROM OPDN 
 INNER JOIN PDN1 ON OPDN.DocEntry = PDN1.DocEntry 
+INNER JOIN PDN1 pj ON OPDN.DocEntry = PDN1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN PDN12 ON OPDN.DocEntry = PDN12.DocEntry
 LEFT JOIN OITM ON PDN1.ItemCode = OITM.ItemCode 
 LEFT JOIN OCRD ON OPDN.CardCode = OCRD.CardCode 
@@ -97,10 +97,7 @@ LEFT JOIN NNM1 ON OPDN.Series = NNM1.Series
 LEFT JOIN OCTG ON OPDN.GroupNum = OCTG.GroupNum
 LEFT JOIN OHEM ON OPDN.OwnerCode = OHEM.empID
 LEFT JOIN OUSR ON OPDN.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON PDN1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPDN.U_SLD_LVatBranch = BRANCH.Code , oadm
-
-
 WHERE OPDN.DocEntry  = {?DocKey@}
-
 Order by 'No.' , 'Line No.'

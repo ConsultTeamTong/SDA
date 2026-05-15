@@ -1,4 +1,4 @@
-﻿SELECT DISTINCT
+SELECT DISTINCT
     ORPD.DocEntry,
     (RPD1.VisOrder) AS 'No.',
     RPD1.LineNum AS 'Line No.', 
@@ -15,7 +15,8 @@
     ORPD.NumAtCard, 
     ORPD.Comments,
     RPD1.ItemCode,
-    RPD1.dscription AS 'Dscription', 
+    OITM.FrgnName AS 'Dscription',
+    --RPD1.dscription AS 'Dscription', 
     RPD1.Quantity, 
     ORPD.DocDate, 
     NNM1.BeginStr,
@@ -60,7 +61,8 @@
     CAST(rpd12.CountyB AS nvarchar(max)) AS CountyB, 
     rpd12.StateB,
     OCPR.Name,
-    OCPR.Tel1
+    OCPR.Tel1,
+    OUGP.UgpCode
 FROM ORPD 
 INNER JOIN RPD1 ON ORPD.DocEntry = RPD1.DocEntry
 INNER JOIN RPD1 pj ON ORPD.DocEntry = RPD1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
@@ -72,5 +74,6 @@ LEFT JOIN OCRD ON ORPD.CardCode = OCRD.CardCode
 LEFT JOIN CRD1 ON (OCRD.CardCode = CRD1.CardCode AND ORPD.PayToCode = CRD1.Address AND CRD1.AdresType ='B')
 LEFT JOIN OCPR ON OCRD.CardCode = OCPR.CardCode
 LEFT JOIN OITM ON RPD1.ItemCode = OITM.ItemCode
+LEFT JOIN OUGP ON RPD1.UomCode = OUGP.UgpCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ORPD.U_SLD_LVatBranch = BRANCH.Code, OADM
 WHERE ORPD.DocEntry = {?DocKey@}
