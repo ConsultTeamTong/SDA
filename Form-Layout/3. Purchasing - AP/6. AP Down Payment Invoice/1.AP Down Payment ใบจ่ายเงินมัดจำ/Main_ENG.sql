@@ -97,7 +97,7 @@ SUM(OVPM.CashSum) As 'CashSum',
 SUM(OVPM.TrsfrSum) As 'TrsfrSum',
 ODSC.BankName,
 ODPO.Printed,
-DPO1.Project,
+pj.Project,
 OCPR.E_MailL,
 OCPR.Tel1,
 OCPR.Name,
@@ -111,6 +111,7 @@ DPO12.CountryB,
 OUGP.UgpCode
 FROM ODPO 
 INNER JOIN DPO1 ON ODPO.DocEntry = DPO1.DocEntry
+INNER JOIN DPO1 pj ON ODPO.DocEntry = DPO1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 INNER JOIN DPO12 ON ODPO.DocEntry = DPO12.DocEntry
 LEFT JOIN NNM1 ON ODPO.Series = NNM1.Series 
 LEFT JOIN OCRD ON ODPO.CardCode = OCRD.CardCode
@@ -120,7 +121,7 @@ LEFT JOIN OSLP ON ODPO.SlpCode = OSLP.SlpCode
 LEFT JOIN OCTG ON ODPO.GroupNum = OCTG.GroupNum 
 LEFT JOIN OHEM ON ODPO.OwnerCode = OHEM.empID
 LEFT JOIN OUSR ON ODPO.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON ODPO.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN OVPM ON odpo.ReceiptNum = OVPM.docentry
 LEFT JOIN VPM1 ON OVPM.docentry = VPM1.DocNum
 LEFT JOIN VPM2 ON OVPM.DocEntry = VPM2.DocEntry
@@ -202,7 +203,7 @@ VPM1.[CheckSum],
 VPM1.DueDate,
 ODSC.BankName,
 ODPO.Printed,
-DPO1.Project,
+pj.Project,
 OCPR.E_MailL,
 OCPR.Tel1,
 OCPR.Name,
