@@ -27,11 +27,12 @@ IGE1.WhsCode,
 OIGE.Comments,
 IGE1.unitmsr,
 OIGE.U_GI_RE,
-IGE1.Project
+pj.Project
 FROM OIGE
 INNER JOIN IGE1 IGE1 ON OIGE.DocEntry = IGE1.DocEntry
+LEFT JOIN IGE1 pj ON OIGE.DocEntry = IGE1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN NNM1 ON OIGE.Series = NNM1.Series
-LEFT JOIN OPRJ ON IGE1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN OUSR ON OIGE.UserSign = OUSR.USERID
 LEFT JOIN OITM ON IGE1.ItemCode = OITM.ItemCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OIGE.U_SLD_LVatBranch = BRANCH.Code
