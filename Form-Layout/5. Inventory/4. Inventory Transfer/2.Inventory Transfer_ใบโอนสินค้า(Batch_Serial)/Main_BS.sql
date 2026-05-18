@@ -1,4 +1,4 @@
-﻿SELECT
+SELECT
     CASE 
         WHEN BRANCH.Code = '00000' THEN N'สำนักงานใหญ่'
         WHEN BRANCH.Code <> '00000' THEN concat(N'สาขาที่', ' ', BRANCH.Code)
@@ -18,7 +18,7 @@
     WTR1.unitMsr,
     WTR1.FromWhsCod,
     WTR1.WhsCode,
-    WTR1.Project
+    pj.Project
 FROM OWTR
 INNER JOIN WTR1 ON OWTR.DocEntry = WTR1.DocEntry 
 LEFT JOIN WTR1 pj ON OWTR.DocEntry = WTR1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''

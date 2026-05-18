@@ -12,9 +12,11 @@ WTQ1.Quantity,
 WTQ1.UomCode ,
 OWTQ.Comments,
 (WTQ1.VisOrder+1) as 'No',
-WTQ1.Project
+pj.Project
 FROM OWTQ 
-LEFT JOIN WTQ1 ON OWTQ.DocEntry = WTQ1.DocEntry 
+INNER JOIN WTQ1 ON OWTQ.DocEntry = WTQ1.DocEntry 
+LEFT JOIN WTQ1 pj ON OWTQ.DocEntry = WTQ1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN OBPL ON OWTQ.BPLId = OBPL.BPLId 
 LEFT JOIN NNM1 ON OWTQ.Series = NNM1.Series 
 ,OADM  , OADP
