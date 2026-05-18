@@ -1,12 +1,4 @@
-﻿-- ============================================================
--- Report: 2.AP Invoice_ใบแจ้งหนี้_(Batch_Serial).rpt
-Path:   3. Purchasing - AP\7. AP Invoice\2.AP Invoice_ใบแจ้งหนี้_(Batch_Serial).rpt
-Extracted: 2026-04-09 15:22:46
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT
+﻿SELECT DISTINCT
 PCH12.StreetB     AS '1Bill',
     PCH12.StreetNoB   AS '2Bill',
     PCH12.BlockB      AS '3Bill',
@@ -73,9 +65,11 @@ SUM(CASE WHEN OPCH.DocCur = 'THB' THEN PCH1.LineTotal ELSE PCH1.TotalFrgn END) O
 PCH1.unitMsr,
 OPCH.Comments,
 CASE WHEN OPCH.DocCur = 'THB' THEN OPCH.DpmAmnt ELSE OPCH.DpmAmntFC END AS 'DpmAmnt',
-PCH1.LineType
+PCH1.LineType,
+pj.Project
 FROM OPCH
 INNER JOIN PCH1 ON OPCH.DocEntry = PCH1.DocEntry
+INNER JOIN PCH1 pj ON OPCH.DocEntry = PCH1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN PCH12 ON OPCH.DocEntry = PCH12.DocEntry
 LEFT JOIN OITM ON PCH1.ItemCode = OITM.ItemCode 
 LEFT JOIN OCRD ON OPCH.CardCode = OCRD.CardCode 
@@ -85,7 +79,7 @@ LEFT JOIN NNM1 ON OPCH.Series = NNM1.Series
 LEFT JOIN OCTG ON OPCH.GroupNum = OCTG.GroupNum
 LEFT JOIN OHEM ON OPCH.OwnerCode = OHEM.empID
 LEFT JOIN CRD1 CRD ON (OPCH.PaytoCode = CRD.[Address] AND OPCH.CardCode = CRD.CardCode AND CRD.AdresType ='B' ) 
-LEFT JOIN OPRJ ON PCH1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN OUSR ON OPCH.UserSign = OUSR.USERID
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPCH.U_SLD_LVatBranch = BRANCH.Code, oadm
 WHERE OPCH.DocEntry = {?DocKey@}
