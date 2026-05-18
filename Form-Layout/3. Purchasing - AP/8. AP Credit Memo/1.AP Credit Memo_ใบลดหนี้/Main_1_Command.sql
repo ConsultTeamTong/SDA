@@ -1,51 +1,48 @@
-﻿-- ============================================================
--- Report: 1.AP Credit Memo_ใบลดหนี้.rpt
-Path:   3. Purchasing - AP\8. AP Credit Memo\1.AP Credit Memo_ใบลดหนี้.rpt
-Extracted: 2026-04-09 15:22:46
--- Source: Main Report
--- Table:  Command
--- ============================================================
-
-SELECT DISTINCT
-RPC12.StreetB     AS '1Bill',
-    RPC12.StreetNoB   AS '2Bill',
-    RPC12.BlockB      AS '3Bill',
-    RPC12.CityB       AS '4Bill',
-    RPC12.CountyB     AS '5Bill',
-    RPC12.ZipCodeB    AS '6Bill',
-        RPC12.StreetS     AS '1Ship',
-    RPC12.StreetNoS   AS '2Ship',
-    RPC12.BlockS      AS '3Ship',
-    RPC12.CityS       AS '4Ship',
-    RPC12.CountyS     AS '5Ship',
-    RPC12.ZipCodeS    AS '6Ship',
+﻿SELECT DISTINCT
 CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
-CASE WHEN BRANCH.Code = '00000' AND ORPC.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่'
-  WHEN BRANCH.Code = '00000' AND ORPC.DocCur <> OADM.MainCurncy THEN 'Head office'
-  WHEN BRANCH.Code <> '00000' AND ORPC.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code)
-  WHEN BRANCH.Code <> '00000' AND ORPC.DocCur <> OADM.MainCurncy THEN concat('Branch' ,' ',BRANCH.Code)
+BRANCH.Code ,
+CASE WHEN BRANCH.Code = '00000' AND ORPC.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่' 
+  WHEN BRANCH.Code = '00000' AND ORPC.DocCur <> OADM.MainCurncy THEN 'Head office' 
+  WHEN BRANCH.Code <> '00000' AND ORPC.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code) 
+  WHEN BRANCH.Code <> '00000' AND ORPC.DocCur <> OADM.MainCurncy THEN concat('Branch' ,' ',BRANCH.Code) 
 END 'GLN_H' ,
-CASE WHEN CRD1.GlblLocNum = '00000' AND ORPC.DocCur = OADM.MainCurncy THEN N'(สำนักงานใหญ่)'
-  WHEN CRD1.GlblLocNum = '00000' AND ORPC.DocCur <> OADM.MainCurncy THEN '(Head office)'
-  WHEN CRD1.GlblLocNum <> '00000' AND ORPC.DocCur = OADM.MainCurncy THEN concat(N'(สาขาที่' ,' ',CRD1.GlblLocNum,')')
-  WHEN CRD1.GlblLocNum <> '00000' AND ORPC.DocCur <> OADM.MainCurncy THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')')
+CASE WHEN CRD1.GlblLocNum = '00000' AND ORPC.DocCur = OADM.MainCurncy THEN N'(สำนักงานใหญ่)' 
+  WHEN CRD1.GlblLocNum = '00000' AND ORPC.DocCur <> OADM.MainCurncy THEN '(Head office)' 
+  WHEN CRD1.GlblLocNum <> '00000' AND ORPC.DocCur = OADM.MainCurncy THEN concat(N'(สาขาที่' ,' ',CRD1.GlblLocNum,')') 
+  WHEN CRD1.GlblLocNum <> '00000' AND ORPC.DocCur <> OADM.MainCurncy THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')') 
   when CRD1.GlblLocNum = '' or CRD1.GlblLocNum is null then ''
 END 'GLN_BP' ,
- CASE
+ CASE 
  WHEN ORPC.Printed = 'N' AND ORPC.DocCur <> OADM.MainCurncy THEN 'Original'
- WHEN ORPC.Printed = 'N' AND ORPC.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ'
- WHEN ORPC.Printed = 'Y' AND ORPC.DocCur <> OADM.MainCurncy THEN 'Copy'
+ WHEN ORPC.Printed = 'N' AND ORPC.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ' 
+ WHEN ORPC.Printed = 'Y' AND ORPC.DocCur <> OADM.MainCurncy THEN 'Copy'  
  WHEN ORPC.Printed = 'Y' AND ORPC.DocCur = OADM.MainCurncy THEN N'สำเนา'
  END AS 'Print Status',
+BRANCH.[Name] As 'BranchName',
+BRANCH.U_SLD_VTAXID As 'TaxIdNum',
+BRANCH.U_SLD_VComName As 'PrintHeadr',
+BRANCH.U_SLD_F_VComName As 'PrintHdrF',
+CASE WHEN ORPC.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Building ELSE BRANCH.U_SLD_F_Building END AS 'Building',
+CASE WHEN ORPC.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Steet  ELSE BRANCH.U_SLD_F_Steet  END AS 'Street',
+CASE WHEN ORPC.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Block  ELSE BRANCH.U_SLD_F_Block   END AS 'Block',
+CASE WHEN ORPC.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_City  ELSE BRANCH.U_SLD_F_City  END As 'City',
+CASE WHEN ORPC.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_County ELSE BRANCH.U_SLD_F_County  END As 'County',
+BRANCH.U_SLD_ZipCode As 'ZipCode',
+BRANCH.U_SLD_Tel As 'Tel',
+BRANCH.U_SLD_Fax As 'BFax',
+BRANCH.U_SLD_Email AS 'E-Mail',
+--------------------------------------------------------------------------------------------------------
 ORPC.[Address],
-ORPC.U_CN_01,
-ORPC.U_CN_02,
-ORPC.U_CN_03,
+ORPC.VatSumFC, 
+ORPC.DocTotalFC,
+--ORPC.U_CN_01,
+--ORPC.U_CN_02,
+--ORPC.U_CN_03,
 OCRD.U_SLD_Title,
 OCRD.U_SLD_FullName,
-CASE WHEN CRD1.GlblLocNum IS NULL THEN ''
-  WHEN CRD1.GlblLocNum IS NOT NULL THEN N'สาขาที่ ' + CRD1.GlblLocNum
-  END 'GLN',
+--CASE WHEN CRD1.GlblLocNum IS NULL THEN ''
+  --WHEN CRD1.GlblLocNum IS NOT NULL THEN N'สาขาที่ ' + CRD1.GlblLocNum
+  --END 'GLN',
 CASE WHEN OCRD.Phone2 IS NULL THEN ''
   WHEN OCRD.Phone2 IS NOT NULL THEN ', ' + OCRD.Phone2
   END 'Phone2',
@@ -56,37 +53,47 @@ NNM1.BeginStr,
 ORPC.DocEntry, 
 ORPC.DocNum, 
 ORPC.DocDate,
-CASE WHEN ORPC.U_CN_05 IS not NULL THEN ''
-  WHEN ORPC.U_CN_05 IS NULL THEN T10.[Name]
-  END 'Reason_DB',
-CASE WHEN ORPC.U_CN_05 IS NULL THEN ''
-  WHEN ORPC.U_CN_05 IS NOT NULL THEN N'ลดหนี้เนื่องจาก' + ORPC.U_CN_05
-  END 'Reason_CN_Remark',
-
+--CASE WHEN ORPC.U_CN_05 IS not NULL THEN ''
+  --WHEN ORPC.U_CN_05 IS NULL THEN T10.[Name]
+  --END 'Reason_DB',
+--CASE WHEN ORPC.U_CN_05 IS NULL THEN ''
+  --WHEN ORPC.U_CN_05 IS NOT NULL THEN N'ลดหนี้เนื่องจาก' + ORPC.U_CN_05
+  --END 'Reason_CN_Remark',
 (RPC1.VisOrder) AS 'No.', 
 RPC1.LineNum as 'Line No.', 
-
 RPC1.ItemCode, 
-
 RPC1.Dscription as 'Dscription', 
 RPC1.LineType as 'LineType',
-
 RPC1.Quantity, 
 RPC1.UomCode,
 RPC1.unitMsr,  
-RPC1.PriceBefDi,
-CASE WHEN ORPC.DocCur = 'THB' THEN RPC1.LineTotal ELSE RPC1.TotalFrgn END AS 'LineTotal',
-CASE WHEN ORPC.DocCur = 'THB' THEN ORPC.VatSum ELSE ORPC.VatSumFC END AS 'VatSum',
-ORPC.DocCur,
-CASE WHEN ORPC.DocCur = 'THB' THEN ORPC.DocTotal ELSE ORPC.DocTotalFC END AS 'DocTotal',
-SUM(CASE WHEN ORPC.DocCur = 'THB' THEN RPC1.LineTotal ELSE RPC1.TotalFrgn END) OVER() AS 'Sum_LineTotal_All',
+RPC1.PriceBefDi, 
+RPC1.LineTotal,
+RPC1.TotalFrgn, 
+ORPC.VatSum,
+ORPC.DocCur, 
+ORPC.DocTotal,
 OCRD.LicTradNum,
 ORPC.Printed
-,ORPC.Comments
-
-FROM ORPC
+,ORPC.Comments,
+pj.Project,
+RPC12.StreetB,
+RPC12.StreetNoB,
+RPC12.BlockB,
+RPC12.CityB,
+RPC12.ZipCodeB,
+RPC12.CountyB,
+RPC12.CountryB,
+OCPR.Name,
+OCPR.Tel1,
+OCPR.E_MailL,
+OPCH.DocNum   AS 'Ref_DocNum',
+OPCH.DocDate  AS 'Ref_DocDate',
+OPCH.DocTotal AS 'Ref_DocTotal'
+FROM ORPC 
 INNER JOIN RPC1 ON ORPC.DocEntry = RPC1.DocEntry 
-LEFT JOIN RPC12 ON ORPC.DocEntry = RPC12.DocEntry
+LEFT JOIN RPC1 pj ON ORPC.DocEntry = RPC1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
+INNER JOIN RPC12 ON ORPC.DocEntry = RPC12.DocEntry 
 LEFT JOIN OITM ON RPC1.ItemCode = OITM.ItemCode 
 LEFT JOIN OCRD ON ORPC.CardCode = OCRD.CardCode 
 LEFT JOIN CRD1 ON OCRD.CardCode = CRD1.CardCode AND CRD1.AdresType = 'B' AND CRD1.[Address] = ORPC.PayToCode
@@ -95,11 +102,13 @@ LEFT JOIN NNM1 ON ORPC.Series = NNM1.Series
 LEFT JOIN OCTG ON ORPC.GroupNum = OCTG.GroupNum
 LEFT JOIN OHEM ON ORPC.OwnerCode = OHEM.empID
 LEFT JOIN OSLP ON ORPC.SlpCode = OSLP.SlpCode
-LEFT JOIN [dbo].[@SLD_REASON_RD] T10 ON ORPC.U_CN_04 = T10.code
+--LEFT JOIN [dbo].[@SLD_REASON_RD] T10 ON ORPC.U_CN_04 = T10.code
 LEFT JOIN CRD1 CRD ON (ORPC.PaytoCode = CRD.[Address] AND ORPC.CardCode = CRD.CardCode AND CRD.AdresType ='B' ) 
 LEFT JOIN OUSR ON ORPC.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON RPC1.Project = OPRJ.PrjCode
-LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ORPC.U_SLD_LVatBranch = BRANCH.Code , oadm
-
-WHERE ORPC.DocEntry  = '{?DocKey@}'
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
+LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ORPC.U_SLD_LVatBranch = BRANCH.Code 
+LEFT JOIN OPCH ON RPC1.BaseEntry = OPCH.DocEntry 
+              AND RPC1.BaseType  = 18
+, oadm
+WHERE ORPC.DocEntry  = {?DocKey@}
 Order by 'No.' , 'Line No.'

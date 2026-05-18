@@ -26,12 +26,13 @@ IGN1.WhsCode,
 OIGN.comments,
 CAST(IGN10.LineText As NVARCHAR(200)) As 'Text',
 OIGN.U_GR_RE,
-IGN1.Project
+pj.Project
 FROM OIGN
 LEFT JOIN IGN1 ON OIGN.DocEntry = IGN1.DocEntry
+LEFT JOIN IGN1 pj ON OIGN.DocEntry = IGN1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN IGN10 ON OIGN.Docentry = IGN10.DocEntry AND IGN1.VisOrder = IGN10.AftLineNum
 LEFT JOIN NNM1 ON OIGN.Series = NNM1.Series
-LEFT JOIN OPRJ ON IGN1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN OUSR ON OIGN.UserSign = OUSR.USERID
 LEFT JOIN OITM ON IGN1.ItemCode = OITM.ItemCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OIGN.U_SLD_LVatBranch = BRANCH.Code

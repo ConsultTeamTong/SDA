@@ -64,7 +64,7 @@ CASE WHEN OPCH.DocCur = 'THB' THEN OPCH.DpmAmnt ELSE OPCH.DpmAmntFC END AS 'DpmA
 --OPCH.U_CN_02,
 --OPCH.U_CN_03,
 opch.Printed,
-PCH1.Project,
+pj.Project,
 OCPR.Name,
 OCPR.Tel1,
 OCPR.E_MailL,
@@ -82,9 +82,9 @@ CASE WHEN OPCH.DocCur = 'THB'
      THEN COALESCE(Ref_OPDN.DocTotal, Ref_OPOR.DocTotal)
      ELSE COALESCE(Ref_OPDN.DocTotalFC, Ref_OPOR.DocTotalFC)
 END                                          AS 'Ref_DocTotal'
-
 FROM OPCH   
 INNER JOIN PCH1 ON OPCH.DocEntry = PCH1.DocEntry 
+INNER JOIN PCH1 pj ON OPCH.DocEntry = PCH1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 INNER JOIN PCH12 ON OPCH.DocEntry = PCH12.DocEntry 
 LEFT JOIN OITM ON PCH1.ItemCode = OITM.ItemCode 
 LEFT JOIN OCRD ON OPCH.CardCode = OCRD.CardCode 
@@ -94,7 +94,7 @@ LEFT JOIN NNM1 ON OPCH.Series = NNM1.Series
 LEFT JOIN OCTG ON OPCH.GroupNum = OCTG.GroupNum
 LEFT JOIN OHEM ON OPCH.OwnerCode = OHEM.empID
 LEFT JOIN CRD1 CRD ON (OPCH.PaytoCode = CRD.[Address] AND OPCH.CardCode = CRD.CardCode AND CRD.AdresType ='B') 
-LEFT JOIN OPRJ ON PCH1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN OUSR ON OPCH.UserSign = OUSR.USERID
 LEFT JOIN OSLP ON OPCH.SlpCode = OSLP.SlpCode
 --LEFT JOIN [dbo].[@SLD_REASON_DBNOTE] T10 ON OPCH.U_DB_01 = T10.code
@@ -106,6 +106,5 @@ LEFT JOIN OPOR Ref_OPOR ON PCH1.BaseEntry = Ref_OPOR.DocEntry
                         AND PCH1.BaseType  = 22   -- Purchase Order
 LEFT JOIN NNM1 Ref_N2   ON Ref_OPOR.Series = Ref_N2.Series
 , oadm
-
 WHERE OPCH.DocEntry = {?DocKey@}
 Order by 'No.' , 'Line No.'

@@ -14,15 +14,14 @@ IGN1.UomCode,
 IGN1.WhsCode,
 OIGN.comments,
 OIGN.U_GR_RE,
-IGN1.Project
-
+pj.Project
 FROM OIGN
 LEFT JOIN IGN1 ON OIGN.DocEntry = IGN1.DocEntry
+LEFT JOIN IGN1 pj ON OIGN.DocEntry = IGN1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN NNM1 ON OIGN.Series = NNM1.Series
-LEFT JOIN OPRJ ON IGN1.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
 LEFT JOIN OUSR ON OIGN.UserSign = OUSR.USERID
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OIGN.U_SLD_LVatBranch = BRANCH.Code
-
 WHERE OIGN.DocEntry = {?Dockey@}
 AND IGN1.basetype <> '202'
 
