@@ -80,7 +80,7 @@ RDR12.StreetB     AS 'Street / PO Box12',
 	OCPR.E_MailL
 FROM ORDR   
 INNER JOIN RDR1 ON ORDR.DocEntry = RDR1.DocEntry 
-INNER JOIN RDR1 pj ON ORDR.DocEntry = RDR1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
+LEFT JOIN RDR1 pj ON ORDR.DocEntry = RDR1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN OITM ON RDR1.ItemCode = OITM.ItemCode 
 LEFT JOIN OCRD ON ORDR.CardCode = OCRD.CardCode
 LEFT JOIN CRD1 ON (ORDR.CardCode = CRD1.CardCode AND ORDR.PaytoCode = CRD1.[Address] AND CRD1.AdresType ='B' ) 
