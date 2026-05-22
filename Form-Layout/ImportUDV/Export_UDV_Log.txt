@@ -191,3 +191,27 @@
 [2026-05-15 09:51:25] [INFO] Read 120 CSHS rows; expanded to 202 CSV rows
 [2026-05-15 09:51:25] [INFO] === Done. Exported 202 records ===
 [2026-05-15 09:51:25] [INFO] Output: C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260515_095124.csv
+[2026-05-20 16:39:08] [INFO] === Start UDV/FMS Export (SQL Direct) ===
+[2026-05-20 16:39:08] [INFO] Server   : 10.10.10.115
+[2026-05-20 16:39:08] [INFO] CompanyDB: SBO_SDA_Training
+[2026-05-20 16:39:08] [INFO] OutFile  : C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260520_163908.csv
+[2026-05-20 16:39:08] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_Training
+[2026-05-20 16:39:08] [INFO] CSHS columns (10): ActionT, ByField, ColID, FieldID, FormID, FrceRfrsh, IndexID, ItemID, QueryId, Refresh
+[2026-05-20 16:39:09] [INFO] Loaded 304 saved queries from OUQR
+[2026-05-20 16:39:09] [INFO] Loaded SHS1 triggers for 73 CSHS row(s)
+[2026-05-20 16:39:09] [INFO] Filter: WHERE FormID = @fid (fid='139' iid='' cid='')
+[2026-05-20 16:39:09] [INFO] Read 6 CSHS rows; expanded to 11 CSV rows
+[2026-05-20 16:39:09] [INFO] === Done. Exported 11 records ===
+[2026-05-20 16:39:09] [INFO] Output: C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260520_163908.csv
+[2026-05-21 11:46:40] [INFO] === Start UDV/FMS Export (SQL Direct) ===
+[2026-05-21 11:46:40] [INFO] Server   : 10.10.10.115
+[2026-05-21 11:46:40] [INFO] CompanyDB: SBO_SDA_TestAll
+[2026-05-21 11:46:40] [INFO] OutFile  : C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260521_114640.csv
+[2026-05-21 11:46:40] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_TestAll
+[2026-05-21 11:46:40] [INFO] CSHS columns (10): ActionT, ByField, ColID, FieldID, FormID, FrceRfrsh, IndexID, ItemID, QueryId, Refresh
+[2026-05-21 11:46:41] [INFO] Loaded 304 saved queries from OUQR
+[2026-05-21 11:46:41] [INFO] Loaded SHS1 triggers for 71 CSHS row(s)
+[2026-05-21 11:46:41] [INFO] Filter: (none — exporting all CSHS rows)
+[2026-05-21 11:46:41] [INFO] Read 121 CSHS rows; expanded to 202 CSV rows
+[2026-05-21 11:46:41] [INFO] === Done. Exported 202 records ===
+[2026-05-21 11:46:41] [INFO] Output: C:\GitHub\SDA\Form-Layout\ImportUDV\Scripts\..\Config\UDV_Export_20260521_114640.csv
