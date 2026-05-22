@@ -1,0 +1,9 @@
+﻿[2026-05-22 14:57:40][INFO] === Set-DatasourceLocation start ===
+[2026-05-22 14:57:40][INFO] Path=C:\GitHub\SDA\Form-Layout\1. Financials  NewServer=10.10.10.115  OldServer=  NewDatabase=SBO_SDA_UAT  NewUser=  WhatIf=False
+[2026-05-22 14:57:40][INFO] Found 1 report file(s).
+[2026-05-22 14:57:40][INFO] --> C:\GitHub\SDA\Form-Layout\1. Financials\1.Journal Entry_ใบบันทึกรายการบัญชี\1.Journal Entry_ใบบันทึกรายการบัญชี.rpt
+[2026-05-22 14:57:41][OK]   [main] 'Bank_JE' server '192.168.0.216' -> '10.10.10.115' db SBO_SDA_Training -> SBO_SDA_UAT
+[2026-05-22 14:57:41][OK]   [main] 'Command_Addrees' server '192.168.0.216' -> '10.10.10.115' db SBO_SDA_Training -> SBO_SDA_UAT
+[2026-05-22 14:57:41][OK]   [main] 'Create_Sign' server '192.168.0.216' -> '10.10.10.115' db SBO_SDA_Training -> SBO_SDA_UAT
+[2026-05-22 14:57:41][OK]   saved 3 table(s)
+[2026-05-22 14:57:42][INFO] === Done. ok=1  err=0  skipped=0  total=1 ===
