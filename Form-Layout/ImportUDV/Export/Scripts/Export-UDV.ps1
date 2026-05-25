@@ -20,7 +20,7 @@ param(
 )
 
 if (-not $OutFile) {
-    $OutFile = Join-Path $PSScriptRoot ("..\Config\UDV_Export_{0}.csv" -f (Get-Date -Format 'yyyyMMdd_HHmmss'))
+    $OutFile = Join-Path $PSScriptRoot ("..\..\Config\UDV_Export_{0}.csv" -f (Get-Date -Format 'yyyyMMdd_HHmmss'))
 }
 if (-not $LogFile) {
     $LogFile = Join-Path $PSScriptRoot "..\Export_UDV_Log.txt"

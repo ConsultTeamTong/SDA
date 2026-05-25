@@ -1,0 +1,55 @@
+﻿[2026-05-25 18:33:59] [INFO] === Mirror Form UI ===
+[2026-05-25 18:34:00] [INFO] FormID         : 139
+[2026-05-25 18:34:00] [INFO] Source         : UserSign=1 TPLId=34
+[2026-05-25 18:34:00] [INFO] Target         : UserSign=26 TPLId=3
+[2026-05-25 18:34:00] [INFO] DryRun         : True
+[2026-05-25 18:34:00] [INFO] Connected: 10.10.10.115 / SBO_Update_UI
+[2026-05-25 18:34:00] [INFO] CPRF cols (17): FormID, ItemID, ColID, Width, VisInForm, VisualIndx, EditInForm, VisInExpnd, ExpandIndx, EditInEXP, Folded, UserSign, ExtDisable, ExtInvsbl, TPLId, TableName, ItemUID
+[2026-05-25 18:34:00] [INFO] Source rows: 828
+[2026-05-25 18:34:00] [INFO] Target rows (existing, will be deleted): 0
+[2026-05-25 18:34:00] [INFO] DryRun=ON. Would DELETE 0 target rows and INSERT 828 new rows.
+[2026-05-25 18:34:00] [INFO] === DryRun done ===
+[2026-05-25 18:34:07] [INFO] === Mirror Form UI ===
+[2026-05-25 18:34:07] [INFO] FormID         : 139
+[2026-05-25 18:34:07] [INFO] Source         : UserSign=1 TPLId=34
+[2026-05-25 18:34:07] [INFO] Target         : UserSign=26 TPLId=3
+[2026-05-25 18:34:07] [INFO] DryRun         : True
+[2026-05-25 18:34:07] [INFO] Connected: 10.10.10.115 / SBO_Update_UI
+[2026-05-25 18:34:07] [INFO] CPRF cols (17): FormID, ItemID, ColID, Width, VisInForm, VisualIndx, EditInForm, VisInExpnd, ExpandIndx, EditInEXP, Folded, UserSign, ExtDisable, ExtInvsbl, TPLId, TableName, ItemUID
+[2026-05-25 18:34:07] [INFO] Source rows: 828
+[2026-05-25 18:34:07] [INFO] Target rows (existing, will be deleted): 0
+[2026-05-25 18:34:07] [INFO] DryRun=ON. Would DELETE 0 target rows and INSERT 828 new rows.
+[2026-05-25 18:34:07] [INFO] === DryRun done ===
+[2026-05-25 18:36:22] [INFO] === Mirror Form UI ===
+[2026-05-25 18:36:22] [INFO] FormID         : 139
+[2026-05-25 18:36:22] [INFO] Source         : UserSign=1 TPLId=34
+[2026-05-25 18:36:22] [INFO] Target         : UserSign=26 TPLId=3
+[2026-05-25 18:36:22] [INFO] DryRun         : True
+[2026-05-25 18:36:22] [INFO] Connected: 10.10.10.115 / SBO_Update_UI
+[2026-05-25 18:36:22] [INFO] CPRF cols (17): FormID, ItemID, ColID, Width, VisInForm, VisualIndx, EditInForm, VisInExpnd, ExpandIndx, EditInEXP, Folded, UserSign, ExtDisable, ExtInvsbl, TPLId, TableName, ItemUID
+[2026-05-25 18:36:22] [INFO] Source rows: 828
+[2026-05-25 18:36:22] [INFO] Target rows (existing, will be deleted): 0
+[2026-05-25 18:36:22] [INFO] DryRun=ON. Would DELETE 0 target rows and INSERT 828 new rows.
+[2026-05-25 18:36:22] [INFO] === DryRun done ===
+[2026-05-25 18:39:53] [INFO] === Mirror Form UI ===
+[2026-05-25 18:39:53] [INFO] FormID         : 139
+[2026-05-25 18:39:53] [INFO] Source         : UserSign=1 TPLId=34
+[2026-05-25 18:39:53] [INFO] Target         : UserSign=1 TPLId=3
+[2026-05-25 18:39:53] [INFO] DryRun         : True
+[2026-05-25 18:39:53] [INFO] Connected: 10.10.10.115 / SBO_Update_UI
+[2026-05-25 18:39:53] [INFO] CPRF cols (17): FormID, ItemID, ColID, Width, VisInForm, VisualIndx, EditInForm, VisInExpnd, ExpandIndx, EditInEXP, Folded, UserSign, ExtDisable, ExtInvsbl, TPLId, TableName, ItemUID
+[2026-05-25 18:39:53] [INFO] Source rows: 828
+[2026-05-25 18:39:53] [INFO] Target rows (existing, will be deleted): 919
+[2026-05-25 18:39:53] [INFO] DryRun=ON. Would DELETE 919 target rows and INSERT 828 new rows.
+[2026-05-25 18:39:53] [INFO] === DryRun done ===
+[2026-05-25 18:39:58] [INFO] === Mirror Form UI ===
+[2026-05-25 18:39:58] [INFO] FormID         : 139
+[2026-05-25 18:39:58] [INFO] Source         : UserSign=1 TPLId=34
+[2026-05-25 18:39:58] [INFO] Target         : UserSign=1 TPLId=3
+[2026-05-25 18:39:58] [INFO] DryRun         : True
+[2026-05-25 18:39:58] [INFO] Connected: 10.10.10.115 / SBO_Update_UI
+[2026-05-25 18:39:58] [INFO] CPRF cols (17): FormID, ItemID, ColID, Width, VisInForm, VisualIndx, EditInForm, VisInExpnd, ExpandIndx, EditInEXP, Folded, UserSign, ExtDisable, ExtInvsbl, TPLId, TableName, ItemUID
+[2026-05-25 18:39:58] [INFO] Source rows: 828
+[2026-05-25 18:39:58] [INFO] Target rows (existing, will be deleted): 919
+[2026-05-25 18:39:58] [INFO] DryRun=ON. Would DELETE 919 target rows and INSERT 828 new rows.
+[2026-05-25 18:39:58] [INFO] === DryRun done ===

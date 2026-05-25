@@ -4,13 +4,13 @@ REM ============================================================
 REM  Verify DI API install + B1 login. No data is modified.
 REM  Auto-selects PowerShell arch to match installed DI API.
 REM ============================================================
-if not exist "%~dp0_settings.bat" (
+if not exist "%~dp0..\_settings.bat" (
     echo ERROR: _settings.bat not found.
     echo Copy _settings.bat.example to _settings.bat and edit it.
     pause
     exit /b 1
 )
-call "%~dp0_settings.bat"
+call "%~dp0..\_settings.bat"
 
 if "%SAPUSER%"==""     set SAPUSER=manager
 if "%SAPPASSWORD%"=="" set SAPPASSWORD=%DBPASSWORD%

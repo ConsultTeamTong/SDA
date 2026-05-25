@@ -9,7 +9,7 @@ REM    1 = CSV -> XLSX (add column comments)
 REM    2 = XLSX -> CSV (flatten back to CSV for Import)
 REM ============================================================
 setlocal enabledelayedexpansion
-set "CFG=%~dp0Config"
+set "CFG=%~dp0..\Config"
 set "PS=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
 
 echo ============================================

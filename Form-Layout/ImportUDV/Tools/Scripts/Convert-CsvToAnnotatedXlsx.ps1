@@ -7,7 +7,7 @@
 # arch — Excel COM works both x64 and x86.
 # ============================================================
 param(
-    [string]$InputCsv  = "$PSScriptRoot\..\Config\UDV_SO_Match_SQ.csv",
+    [string]$InputCsv  = "$PSScriptRoot\..\..\Config\UDV_SO_Match_SQ.csv",
     [string]$OutputXlsx = ""
 )
 

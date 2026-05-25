@@ -1530,3 +1530,80 @@
 [2026-05-25 16:49:07] [INFO]   OK DELETE 540000405|38|U_SLD_T_BeDis Action=DELETE IndexID=122 (SHS1 child rows removed: 3)
 [2026-05-25 16:49:07] [INFO]   OK DELETE 65300|38|U_SLD_T_BeDis Action=DELETE IndexID=32 (SHS1 child rows removed: 2)
 [2026-05-25 16:49:07] [INFO] Committed. OK=100 FAIL=0 SKIP=0
+[2026-05-25 17:38:22] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-25 17:38:22] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Import\..\Config\UDV_Owner_AllMarketing.csv  (15 CSV rows)
+[2026-05-25 17:38:22] [INFO] DryRun : True
+[2026-05-25 17:38:22] [INFO] Grouped to 15 unique CSHS key(s)
+[2026-05-25 17:38:22] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_Training
+[2026-05-25 17:38:22] [INFO] Pre-loaded 22 existing CSHS rows
+[2026-05-25 17:38:22] [INFO] Pre-loaded 199 OUQR queries
+[2026-05-25 17:38:22] [INFO] DryRun=ON. Preview only:
+[2026-05-25 17:38:22] [INFO]   [EXISTS] 149|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [EXISTS] 139|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 140|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 179|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 141|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 203|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 182|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 181|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 540000841|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 142|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 143|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 180|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 133|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 204|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:38:22] [INFO]   [NEW] 18|222|-1 Action=UPSERT FMSAction=Q Query=Owner Triggers=12
+[2026-05-25 17:39:22] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-25 17:39:22] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Import\..\Config\UDV_Owner_AllMarketing.csv  (15 CSV rows)
+[2026-05-25 17:39:22] [INFO] DryRun : False
+[2026-05-25 17:39:22] [INFO] Grouped to 15 unique CSHS key(s)
+[2026-05-25 17:39:22] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_Training
+[2026-05-25 17:39:22] [INFO] Pre-loaded 22 existing CSHS rows
+[2026-05-25 17:39:22] [INFO] Pre-loaded 199 OUQR queries
+[2026-05-25 17:39:22] [INFO] Current MAX(IndexID)=22
+[2026-05-25 17:39:22] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:22] [INFO]   OK UPSERT->UPDATE 149|222|-1 Action=UPSERT IndexID=21
+[2026-05-25 17:39:22] [INFO]   Triggers (SHS1) IndexID=21 : -0 +1 (12)
+[2026-05-25 17:39:22] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:22] [INFO]   OK UPSERT->UPDATE 139|222|-1 Action=UPSERT IndexID=22
+[2026-05-25 17:39:22] [INFO]   Triggers (SHS1) IndexID=22 : -0 +1 (12)
+[2026-05-25 17:39:22] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:22] [INFO]   OK UPSERT->ADD 140|222|-1 Action=UPSERT IndexID=23
+[2026-05-25 17:39:22] [INFO]   Triggers (SHS1) IndexID=23 : -0 +1 (12)
+[2026-05-25 17:39:22] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:22] [INFO]   OK UPSERT->ADD 179|222|-1 Action=UPSERT IndexID=24
+[2026-05-25 17:39:22] [INFO]   Triggers (SHS1) IndexID=24 : -0 +1 (12)
+[2026-05-25 17:39:22] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:22] [INFO]   OK UPSERT->ADD 141|222|-1 Action=UPSERT IndexID=25
+[2026-05-25 17:39:22] [INFO]   Triggers (SHS1) IndexID=25 : -0 +1 (12)
+[2026-05-25 17:39:23] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 203|222|-1 Action=UPSERT IndexID=26
+[2026-05-25 17:39:23] [INFO]   Triggers (SHS1) IndexID=26 : -0 +1 (12)
+[2026-05-25 17:39:23] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 182|222|-1 Action=UPSERT IndexID=27
+[2026-05-25 17:39:23] [INFO]   Triggers (SHS1) IndexID=27 : -0 +1 (12)
+[2026-05-25 17:39:23] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 181|222|-1 Action=UPSERT IndexID=28
+[2026-05-25 17:39:23] [INFO]   Triggers (SHS1) IndexID=28 : -0 +1 (12)
+[2026-05-25 17:39:23] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 540000841|222|-1 Action=UPSERT IndexID=29
+[2026-05-25 17:39:23] [INFO]   Triggers (SHS1) IndexID=29 : -0 +1 (12)
+[2026-05-25 17:39:23] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 142|222|-1 Action=UPSERT IndexID=30
+[2026-05-25 17:39:23] [INFO]   Triggers (SHS1) IndexID=30 : -0 +1 (12)
+[2026-05-25 17:39:23] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 143|222|-1 Action=UPSERT IndexID=31
+[2026-05-25 17:39:23] [INFO]   Triggers (SHS1) IndexID=31 : -0 +1 (12)
+[2026-05-25 17:39:23] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 180|222|-1 Action=UPSERT IndexID=32
+[2026-05-25 17:39:23] [INFO]   Triggers (SHS1) IndexID=32 : -0 +1 (12)
+[2026-05-25 17:39:23] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 133|222|-1 Action=UPSERT IndexID=33
+[2026-05-25 17:39:23] [INFO]   Triggers (SHS1) IndexID=33 : -0 +1 (12)
+[2026-05-25 17:39:23] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 204|222|-1 Action=UPSERT IndexID=34
+[2026-05-25 17:39:23] [INFO]   Triggers (SHS1) IndexID=34 : -0 +1 (12)
+[2026-05-25 17:39:23] [INFO]   Reuse Query 'Owner' (IntrnalKey=304), body updated
+[2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 18|222|-1 Action=UPSERT IndexID=35
+[2026-05-25 17:39:24] [INFO]   Triggers (SHS1) IndexID=35 : -0 +1 (12)
+[2026-05-25 17:39:24] [INFO] Committed. OK=15 FAIL=0 SKIP=0

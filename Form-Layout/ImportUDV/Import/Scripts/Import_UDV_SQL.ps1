@@ -18,7 +18,7 @@ param(
     [string]$CompanyDB   = "SBO_SDA",
     [string]$DBUser      = "sa",
     [string]$DBPassword  = "1q2w3e4r",
-    [string]$MapFile     = "$PSScriptRoot\..\Config\UDV_Map.csv",
+    [string]$MapFile     = "$PSScriptRoot\..\..\Config\UDV_Map.csv",
     [string]$LogFile     = "",
     [switch]$DryRun
 )

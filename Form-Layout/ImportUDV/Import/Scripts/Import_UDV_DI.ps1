@@ -19,7 +19,7 @@ param(
     [ValidateSet("MSSQL","HANA")]
     [string]$DBType      = "MSSQL",
     [string]$DIAPIVersion = "",                                  # auto-detect if empty
-    [string]$MapFile     = "$PSScriptRoot\..\Config\UDV_Map.csv",
+    [string]$MapFile     = "$PSScriptRoot\..\..\Config\UDV_Map.csv",
     [string]$LogFile     = "$PSScriptRoot\..\Import_UDV_Log.txt",
     [switch]$DryRun
 )

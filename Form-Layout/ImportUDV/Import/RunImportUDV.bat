@@ -6,13 +6,13 @@ REM  Replaces the DI API path (Import_UDV_DI.ps1, deprecated)
 REM  because DI API v10 doesn't persist QueryId/Refresh/FieldID.
 REM  Connection settings are in _settings.bat (shared, gitignored).
 REM ============================================================
-if not exist "%~dp0_settings.bat" (
+if not exist "%~dp0..\_settings.bat" (
     echo ERROR: _settings.bat not found.
     echo Copy _settings.bat.example to _settings.bat and edit it.
     pause
     exit /b 1
 )
-call "%~dp0_settings.bat"
+call "%~dp0..\_settings.bat"
 
 REM ============================================================
 REM  MODE:
@@ -22,7 +22,7 @@ REM ============================================================
 set MODE=
 
 setlocal enabledelayedexpansion
-set "CFG=%~dp0Config"
+set "CFG=%~dp0..\Config"
 
 echo ============================================
 echo  Select UDV mapping CSV from:

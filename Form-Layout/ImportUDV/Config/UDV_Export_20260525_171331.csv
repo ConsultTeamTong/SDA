@@ -1,4 +1,4 @@
-"Action","FormID","ItemID","ColumnID","FMSAction","QueryName","QueryCategory","QueryBody","FixedValue","Refresh","ByField","TriggerID","TriggerColumn","ForceRefresh"
+﻿"Action","FormID","ItemID","ColumnID","FMSAction","QueryName","QueryCategory","QueryBody","FixedValue","Refresh","ByField","TriggerID","TriggerColumn","ForceRefresh"
 "UPSERT","134","1320002080","-1","Q","BPSeries","19","SELECT T0.SeriesFROM NNM1 T0WHERE T0.Remark LIKE (    SELECT T1.GroupName     FROM OCRG T1     WHERE T1.GroupCode = $[$16.0.0])","","Y","Y","3","","N"
 "UPSERT","134","56","-1","Q","BPAccount","19","SELECT U_SLD_AccountCodeFROM OCRG WHERE OCRG.GroupCode=$[OCRD.GroupCode]","","Y","Y","3","","N"
 "UPSERT","134","7","-1","Q","FMS_FullName","19","SELECTCASE WHEN $[OCRD.U_SLD_Title] = N'บริษัท' THEN ISNULL($[OCRD.U_SLD_Title], '') + ' ' + ISNULL($[OCRD.U_SLD_FullName], '')ELSE ISNULL($[OCRD.U_SLD_Title], '') + ISNULL($[OCRD.U_SLD_FullName], '')END","","Y","Y","U_SLD_Fullname","","N"

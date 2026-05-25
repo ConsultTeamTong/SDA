@@ -6,13 +6,13 @@ REM  Uses .NET SqlClient direct (no DI API required).
 REM  Output: Config\UDV_Export_<timestamp>.csv (Import-ready).
 REM  Connection settings in _settings.bat (shared, gitignored).
 REM ============================================================
-if not exist "%~dp0_settings.bat" (
+if not exist "%~dp0..\_settings.bat" (
     echo ERROR: _settings.bat not found.
     echo Copy _settings.bat.example to _settings.bat and edit it.
     pause
     exit /b 1
 )
-call "%~dp0_settings.bat"
+call "%~dp0..\_settings.bat"
 
 echo ============================================
 echo  Export UDV/FMS to CSV  (SQL Direct)

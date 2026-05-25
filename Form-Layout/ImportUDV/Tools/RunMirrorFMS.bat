@@ -6,12 +6,12 @@ REM  Use when DI API write path doesn't persist (v10 limitation).
 REM
 REM  Edit SOURCE / TARGET / ITEM below before running.
 REM ============================================================
-if not exist "%~dp0_settings.bat" (
+if not exist "%~dp0..\_settings.bat" (
     echo ERROR: _settings.bat not found.
     pause
     exit /b 1
 )
-call "%~dp0_settings.bat"
+call "%~dp0..\_settings.bat"
 
 REM ----------- EDIT THESE -----------
 set SOURCE=149
