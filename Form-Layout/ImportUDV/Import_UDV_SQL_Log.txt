@@ -1183,3 +1183,350 @@
 [2026-05-15 09:53:48] [INFO]   OK UPSERT->UPDATE 721|13|57 Action=UPSERT IndexID=14
 [2026-05-15 09:53:48] [INFO]   Triggers (SHS1) IndexID=14 : -0 +1 (1)
 [2026-05-15 09:53:48] [INFO] Committed. OK=120 FAIL=0 SKIP=0
+[2026-05-25 16:28:09] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-25 16:28:09] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_Export_20260525_160301_NoDiscFMS.csv  (21 CSV rows)
+[2026-05-25 16:28:09] [INFO] DryRun : False
+[2026-05-25 16:28:09] [INFO] Grouped to 20 unique CSHS key(s)
+[2026-05-25 16:28:10] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_Training
+[2026-05-25 16:28:10] [INFO] Pre-loaded 120 existing CSHS rows
+[2026-05-25 16:28:10] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-25 16:28:10] [INFO] Current MAX(IndexID)=122
+[2026-05-25 16:28:10] [INFO]   Reuse Query 'BPSeries' (IntrnalKey=295), body updated
+[2026-05-25 16:28:10] [INFO]   OK UPSERT->UPDATE 134|1320002080|-1 Action=UPSERT IndexID=18
+[2026-05-25 16:28:10] [INFO]   Triggers (SHS1) IndexID=18 : -1 +1 (3)
+[2026-05-25 16:28:10] [INFO]   Reuse Query 'BPAccount' (IntrnalKey=292), body updated
+[2026-05-25 16:28:10] [INFO]   OK UPSERT->UPDATE 134|56|-1 Action=UPSERT IndexID=16
+[2026-05-25 16:28:10] [INFO]   Triggers (SHS1) IndexID=16 : -1 +1 (3)
+[2026-05-25 16:28:10] [INFO]   Reuse Query 'FMS_FullName' (IntrnalKey=278), body updated
+[2026-05-25 16:28:10] [INFO]   OK UPSERT->UPDATE 134|7|-1 Action=UPSERT IndexID=1
+[2026-05-25 16:28:10] [INFO]   Triggers (SHS1) IndexID=1 : -2 +2 (U_SLD_Fullname, U_SLD_Title)
+[2026-05-25 16:28:10] [INFO]   Reuse Query 'ItemSeries' (IntrnalKey=296), body updated
+[2026-05-25 16:28:10] [INFO]   OK UPSERT->UPDATE 150|1320002059|-1 Action=UPSERT IndexID=20
+[2026-05-25 16:28:10] [INFO]   Triggers (SHS1) IndexID=20 : -1 +1 (3)
+[2026-05-25 16:28:10] [INFO]   Reuse Query 'ItemGroup' (IntrnalKey=297), body updated
+[2026-05-25 16:28:10] [INFO]   OK UPSERT->UPDATE 185|4|U_SLD_ItemSeries Action=UPSERT IndexID=19
+[2026-05-25 16:28:10] [INFO]   Reuse Query 'BPGroup' (IntrnalKey=294), body updated
+[2026-05-25 16:28:10] [INFO]   OK UPSERT->UPDATE 185|4|U_SLD_Series Action=UPSERT IndexID=17
+[2026-05-25 16:28:10] [INFO]   Reuse Query 'JE BP Address (ที่อยู่คู่ค้า)' (IntrnalKey=282), body updated
+[2026-05-25 16:28:10] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_BPAds Action=UPSERT IndexID=5
+[2026-05-25 16:28:10] [INFO]   Triggers (SHS1) IndexID=5 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:28:10] [INFO]   Reuse Query 'JE_Select BP Name (ชื่อคู่ค้า)' (IntrnalKey=279), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_CardName Action=UPSERT IndexID=2
+[2026-05-25 16:28:11] [INFO]   Triggers (SHS1) IndexID=2 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'JE_Select Tax Id (เลขประจำตัวผู้เสียภาษี)' (IntrnalKey=280), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_LBPTaxID Action=UPSERT IndexID=3
+[2026-05-25 16:28:11] [INFO]   Triggers (SHS1) IndexID=3 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'JE Select BP Branch (สาขาคู่ค้า)' (IntrnalKey=281), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_LPBranch Action=UPSERT IndexID=4
+[2026-05-25 16:28:11] [INFO]   Triggers (SHS1) IndexID=4 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'JE Cal WhBaseAmount (ฐานภาษีหัก ณ ที่จ่าย)' (IntrnalKey=284), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_WTBaseAmt Action=UPSERT IndexID=7
+[2026-05-25 16:28:11] [INFO]   Triggers (SHS1) IndexID=7 : -1 +1 (U_SLD_WTCode)
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'JE_JV Select WH Code (รหัสภาษีหัก ณ ที่จ่าย)' (IntrnalKey=283), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_WTCode Action=UPSERT IndexID=6
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'JV BP Address (ที่อยู่คู่ค้า)' (IntrnalKey=288), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_BPAds Action=UPSERT IndexID=11
+[2026-05-25 16:28:11] [INFO]   Triggers (SHS1) IndexID=11 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'JV_Select BP Name (ชื่อคู่ค้า)' (IntrnalKey=285), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_CardName Action=UPSERT IndexID=8
+[2026-05-25 16:28:11] [INFO]   Triggers (SHS1) IndexID=8 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'JV_Select Tax Id (เลขประจำตัวผู้เสียภาษี)' (IntrnalKey=286), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_LBPTaxID Action=UPSERT IndexID=9
+[2026-05-25 16:28:11] [INFO]   Triggers (SHS1) IndexID=9 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'JV_Select BP Branch (สาขาคู่ค้า)' (IntrnalKey=287), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_LPBranch Action=UPSERT IndexID=10
+[2026-05-25 16:28:11] [INFO]   Triggers (SHS1) IndexID=10 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'JV Cal WhBaseAmount (ฐานภาษีหัก ณ ที่จ่าย)' (IntrnalKey=289), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_WTBaseAmt Action=UPSERT IndexID=13
+[2026-05-25 16:28:11] [INFO]   Triggers (SHS1) IndexID=13 : -1 +1 (U_SLD_WTCode)
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'JE_JV Select WH Code (รหัสภาษีหัก ณ ที่จ่าย)' (IntrnalKey=283), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_WTCode Action=UPSERT IndexID=12
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'Acc_Issue' (IntrnalKey=290), body updated
+[2026-05-25 16:28:11] [INFO]   OK UPSERT->UPDATE 720|13|57 Action=UPSERT IndexID=15
+[2026-05-25 16:28:11] [INFO]   Triggers (SHS1) IndexID=15 : -1 +1 (1)
+[2026-05-25 16:28:11] [INFO]   Reuse Query 'Acc_Receive' (IntrnalKey=291), body updated
+[2026-05-25 16:28:12] [INFO]   OK UPSERT->UPDATE 721|13|57 Action=UPSERT IndexID=14
+[2026-05-25 16:28:12] [INFO]   Triggers (SHS1) IndexID=14 : -1 +1 (1)
+[2026-05-25 16:28:12] [INFO] Committed. OK=20 FAIL=0 SKIP=0
+[2026-05-25 16:32:57] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-25 16:32:57] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_Export_20260525_160301_NoDiscFMS.csv  (21 CSV rows)
+[2026-05-25 16:32:57] [INFO] DryRun : False
+[2026-05-25 16:32:57] [INFO] Grouped to 20 unique CSHS key(s)
+[2026-05-25 16:32:57] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_Training
+[2026-05-25 16:32:57] [INFO] Pre-loaded 120 existing CSHS rows
+[2026-05-25 16:32:57] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-25 16:32:57] [INFO] Current MAX(IndexID)=122
+[2026-05-25 16:32:57] [INFO]   Reuse Query 'BPSeries' (IntrnalKey=295), body updated
+[2026-05-25 16:32:57] [INFO]   OK UPSERT->UPDATE 134|1320002080|-1 Action=UPSERT IndexID=18
+[2026-05-25 16:32:57] [INFO]   Triggers (SHS1) IndexID=18 : -1 +1 (3)
+[2026-05-25 16:32:57] [INFO]   Reuse Query 'BPAccount' (IntrnalKey=292), body updated
+[2026-05-25 16:32:57] [INFO]   OK UPSERT->UPDATE 134|56|-1 Action=UPSERT IndexID=16
+[2026-05-25 16:32:57] [INFO]   Triggers (SHS1) IndexID=16 : -1 +1 (3)
+[2026-05-25 16:32:57] [INFO]   Reuse Query 'FMS_FullName' (IntrnalKey=278), body updated
+[2026-05-25 16:32:57] [INFO]   OK UPSERT->UPDATE 134|7|-1 Action=UPSERT IndexID=1
+[2026-05-25 16:32:57] [INFO]   Triggers (SHS1) IndexID=1 : -2 +2 (U_SLD_Fullname, U_SLD_Title)
+[2026-05-25 16:32:57] [INFO]   Reuse Query 'ItemSeries' (IntrnalKey=296), body updated
+[2026-05-25 16:32:57] [INFO]   OK UPSERT->UPDATE 150|1320002059|-1 Action=UPSERT IndexID=20
+[2026-05-25 16:32:57] [INFO]   Triggers (SHS1) IndexID=20 : -1 +1 (3)
+[2026-05-25 16:32:57] [INFO]   Reuse Query 'ItemGroup' (IntrnalKey=297), body updated
+[2026-05-25 16:32:57] [INFO]   OK UPSERT->UPDATE 185|4|U_SLD_ItemSeries Action=UPSERT IndexID=19
+[2026-05-25 16:32:57] [INFO]   Reuse Query 'BPGroup' (IntrnalKey=294), body updated
+[2026-05-25 16:32:57] [INFO]   OK UPSERT->UPDATE 185|4|U_SLD_Series Action=UPSERT IndexID=17
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JE BP Address (ที่อยู่คู่ค้า)' (IntrnalKey=282), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_BPAds Action=UPSERT IndexID=5
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=5 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JE_Select BP Name (ชื่อคู่ค้า)' (IntrnalKey=279), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_CardName Action=UPSERT IndexID=2
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=2 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JE_Select Tax Id (เลขประจำตัวผู้เสียภาษี)' (IntrnalKey=280), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_LBPTaxID Action=UPSERT IndexID=3
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=3 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JE Select BP Branch (สาขาคู่ค้า)' (IntrnalKey=281), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_LPBranch Action=UPSERT IndexID=4
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=4 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JE Cal WhBaseAmount (ฐานภาษีหัก ณ ที่จ่าย)' (IntrnalKey=284), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_WTBaseAmt Action=UPSERT IndexID=7
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=7 : -1 +1 (U_SLD_WTCode)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JE_JV Select WH Code (รหัสภาษีหัก ณ ที่จ่าย)' (IntrnalKey=283), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 392|76|U_SLD_WTCode Action=UPSERT IndexID=6
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JV BP Address (ที่อยู่คู่ค้า)' (IntrnalKey=288), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_BPAds Action=UPSERT IndexID=11
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=11 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JV_Select BP Name (ชื่อคู่ค้า)' (IntrnalKey=285), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_CardName Action=UPSERT IndexID=8
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=8 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JV_Select Tax Id (เลขประจำตัวผู้เสียภาษี)' (IntrnalKey=286), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_LBPTaxID Action=UPSERT IndexID=9
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=9 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JV_Select BP Branch (สาขาคู่ค้า)' (IntrnalKey=287), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_LPBranch Action=UPSERT IndexID=10
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=10 : -1 +1 (U_SLD_SuppCode)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JV Cal WhBaseAmount (ฐานภาษีหัก ณ ที่จ่าย)' (IntrnalKey=289), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_WTBaseAmt Action=UPSERT IndexID=13
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=13 : -1 +1 (U_SLD_WTCode)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'JE_JV Select WH Code (รหัสภาษีหัก ณ ที่จ่าย)' (IntrnalKey=283), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 393|76|U_SLD_WTCode Action=UPSERT IndexID=12
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'Acc_Issue' (IntrnalKey=290), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 720|13|57 Action=UPSERT IndexID=15
+[2026-05-25 16:32:58] [INFO]   Triggers (SHS1) IndexID=15 : -1 +1 (1)
+[2026-05-25 16:32:58] [INFO]   Reuse Query 'Acc_Receive' (IntrnalKey=291), body updated
+[2026-05-25 16:32:58] [INFO]   OK UPSERT->UPDATE 721|13|57 Action=UPSERT IndexID=14
+[2026-05-25 16:32:59] [INFO]   Triggers (SHS1) IndexID=14 : -1 +1 (1)
+[2026-05-25 16:32:59] [INFO] Committed. OK=20 FAIL=0 SKIP=0
+[2026-05-25 16:35:34] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-25 16:35:34] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_Delete_DiscFMS_20260525.csv  (181 CSV rows)
+[2026-05-25 16:35:34] [INFO] DryRun : True
+[2026-05-25 16:35:34] [INFO] Grouped to 100 unique CSHS key(s)
+[2026-05-25 16:35:34] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_Training
+[2026-05-25 16:35:34] [INFO] Pre-loaded 120 existing CSHS rows
+[2026-05-25 16:35:34] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-25 16:35:34] [INFO] DryRun=ON. Preview only:
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 133|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Amount, U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 133|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 133|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 133|38|U_SLD_Dis_Amount Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 133|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 133|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 139|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Amount, U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 139|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 139|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 139|38|U_SLD_Dis_Amount Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 139|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 139|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 140|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Amount, U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 140|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 140|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 140|38|U_SLD_Dis_Amount Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 140|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 140|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 141|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Amount, U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 141|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 141|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 141|38|U_SLD_Dis_Amount Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 141|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 141|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 142|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Amount, U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 142|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 142|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 142|38|U_SLD_Dis_Amount Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 142|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 142|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 143|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Amount, U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:34] [INFO]   [EXISTS] 143|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 143|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 143|38|U_SLD_Dis_Amount Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 143|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 143|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 1470000200|38|15 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 1470000200|38|21 Action=DELETE FMSAction=Q Query=FMS_TotalAmount Triggers=U_SLD_T_BeDis
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 1470000200|38|U_SLD_T_BeDis Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 149|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Amount, U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 149|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 149|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 149|38|U_SLD_Dis_Amount Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 149|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 149|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 178|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 178|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 178|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 178|38|U_SLD_Dis_Amount Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Sum
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 178|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToSum Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 178|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 179|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Amount, U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 179|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 179|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 179|38|U_SLD_Dis_Amount Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 179|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 179|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 18|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 18|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 18|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 18|38|U_SLD_Dis_Amount Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Sum
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 18|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToSum Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 18|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 181|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Amount, U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 181|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 181|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 181|38|U_SLD_Dis_Amount Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 181|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 181|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 19|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 19|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 19|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 19|38|U_SLD_Dis_Amount Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Sum
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 19|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToSum Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 19|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 20|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 20|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:35] [INFO]   [EXISTS] 20|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 20|38|U_SLD_Dis_Amount Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Sum
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 20|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToSum Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 20|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 21|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 21|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 21|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 21|38|U_SLD_Dis_Amount Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Sum
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 21|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToSum Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 21|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 22|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 22|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 22|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 22|38|U_SLD_Dis_Amount Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Sum
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 22|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToSum Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 22|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 540000405|38|15 Action=DELETE FMSAction=Q Query=FMS_DisAmount Triggers=U_SLD_Dis_Sum, U_SLD_T_BeDis
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 540000405|38|20 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 540000405|38|21 Action=DELETE FMSAction=F Query= Triggers=(none)
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 540000405|38|U_SLD_Dis_Amount Action=DELETE FMSAction=Q Query=FMS_ToUnit Triggers=11, U_SLD_Dis_Sum
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 540000405|38|U_SLD_Dis_Sum Action=DELETE FMSAction=Q Query=FMS_ToSum Triggers=11, U_SLD_Dis_Amount
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 540000405|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=11, 14, 20
+[2026-05-25 16:35:36] [INFO]   [EXISTS] 65300|38|U_SLD_T_BeDis Action=DELETE FMSAction=Q Query=FMS_Price_Total Triggers=14, 20
+[2026-05-25 16:49:03] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-25 16:49:03] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_Delete_DiscFMS_20260525.csv  (181 CSV rows)
+[2026-05-25 16:49:03] [INFO] DryRun : False
+[2026-05-25 16:49:03] [INFO] Grouped to 100 unique CSHS key(s)
+[2026-05-25 16:49:03] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_Training
+[2026-05-25 16:49:03] [INFO] Pre-loaded 120 existing CSHS rows
+[2026-05-25 16:49:03] [INFO] Pre-loaded 204 OUQR queries
+[2026-05-25 16:49:03] [INFO] Current MAX(IndexID)=122
+[2026-05-25 16:49:03] [INFO]   OK DELETE 133|38|15 Action=DELETE IndexID=39 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:03] [INFO]   OK DELETE 133|38|20 Action=DELETE IndexID=40 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:03] [INFO]   OK DELETE 133|38|21 Action=DELETE IndexID=41 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:03] [INFO]   OK DELETE 133|38|U_SLD_Dis_Amount Action=DELETE IndexID=42 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:03] [INFO]   OK DELETE 133|38|U_SLD_Dis_Sum Action=DELETE IndexID=43 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:03] [INFO]   OK DELETE 133|38|U_SLD_T_BeDis Action=DELETE IndexID=44 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 139|38|15 Action=DELETE IndexID=33 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 139|38|20 Action=DELETE IndexID=34 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 139|38|21 Action=DELETE IndexID=35 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 139|38|U_SLD_Dis_Amount Action=DELETE IndexID=36 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 139|38|U_SLD_Dis_Sum Action=DELETE IndexID=37 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 139|38|U_SLD_T_BeDis Action=DELETE IndexID=38 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 140|38|15 Action=DELETE IndexID=45 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 140|38|20 Action=DELETE IndexID=46 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 140|38|21 Action=DELETE IndexID=47 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 140|38|U_SLD_Dis_Amount Action=DELETE IndexID=48 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 140|38|U_SLD_Dis_Sum Action=DELETE IndexID=49 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 140|38|U_SLD_T_BeDis Action=DELETE IndexID=50 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 141|38|15 Action=DELETE IndexID=51 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 141|38|20 Action=DELETE IndexID=52 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 141|38|21 Action=DELETE IndexID=53 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 141|38|U_SLD_Dis_Amount Action=DELETE IndexID=54 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 141|38|U_SLD_Dis_Sum Action=DELETE IndexID=55 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 141|38|U_SLD_T_BeDis Action=DELETE IndexID=56 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 142|38|15 Action=DELETE IndexID=57 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 142|38|20 Action=DELETE IndexID=58 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 142|38|21 Action=DELETE IndexID=59 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 142|38|U_SLD_Dis_Amount Action=DELETE IndexID=60 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 142|38|U_SLD_Dis_Sum Action=DELETE IndexID=61 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 142|38|U_SLD_T_BeDis Action=DELETE IndexID=62 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 143|38|15 Action=DELETE IndexID=63 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 143|38|20 Action=DELETE IndexID=64 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 143|38|21 Action=DELETE IndexID=65 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 143|38|U_SLD_Dis_Amount Action=DELETE IndexID=66 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:04] [INFO]   OK DELETE 143|38|U_SLD_Dis_Sum Action=DELETE IndexID=67 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 143|38|U_SLD_T_BeDis Action=DELETE IndexID=68 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 1470000200|38|15 Action=DELETE IndexID=25 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 1470000200|38|21 Action=DELETE IndexID=26 (SHS1 child rows removed: 1)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 1470000200|38|U_SLD_T_BeDis Action=DELETE IndexID=24 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 149|38|15 Action=DELETE IndexID=22 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 149|38|20 Action=DELETE IndexID=29 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 149|38|21 Action=DELETE IndexID=23 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 149|38|U_SLD_Dis_Amount Action=DELETE IndexID=30 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 149|38|U_SLD_Dis_Sum Action=DELETE IndexID=31 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 149|38|U_SLD_T_BeDis Action=DELETE IndexID=21 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 178|38|15 Action=DELETE IndexID=69 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 178|38|20 Action=DELETE IndexID=70 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 178|38|21 Action=DELETE IndexID=71 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 178|38|U_SLD_Dis_Amount Action=DELETE IndexID=72 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 178|38|U_SLD_Dis_Sum Action=DELETE IndexID=73 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 178|38|U_SLD_T_BeDis Action=DELETE IndexID=74 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 179|38|15 Action=DELETE IndexID=75 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 179|38|20 Action=DELETE IndexID=76 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 179|38|21 Action=DELETE IndexID=77 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 179|38|U_SLD_Dis_Amount Action=DELETE IndexID=78 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 179|38|U_SLD_Dis_Sum Action=DELETE IndexID=79 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 179|38|U_SLD_T_BeDis Action=DELETE IndexID=80 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 18|38|15 Action=DELETE IndexID=81 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:05] [INFO]   OK DELETE 18|38|20 Action=DELETE IndexID=82 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 18|38|21 Action=DELETE IndexID=83 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 18|38|U_SLD_Dis_Amount Action=DELETE IndexID=84 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 18|38|U_SLD_Dis_Sum Action=DELETE IndexID=85 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 18|38|U_SLD_T_BeDis Action=DELETE IndexID=86 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 181|38|15 Action=DELETE IndexID=87 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 181|38|20 Action=DELETE IndexID=88 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 181|38|21 Action=DELETE IndexID=89 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 181|38|U_SLD_Dis_Amount Action=DELETE IndexID=90 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 181|38|U_SLD_Dis_Sum Action=DELETE IndexID=91 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 181|38|U_SLD_T_BeDis Action=DELETE IndexID=92 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 19|38|15 Action=DELETE IndexID=93 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 19|38|20 Action=DELETE IndexID=94 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 19|38|21 Action=DELETE IndexID=95 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 19|38|U_SLD_Dis_Amount Action=DELETE IndexID=96 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 19|38|U_SLD_Dis_Sum Action=DELETE IndexID=97 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 19|38|U_SLD_T_BeDis Action=DELETE IndexID=98 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 20|38|15 Action=DELETE IndexID=99 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 20|38|20 Action=DELETE IndexID=100 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 20|38|21 Action=DELETE IndexID=101 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 20|38|U_SLD_Dis_Amount Action=DELETE IndexID=102 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 20|38|U_SLD_Dis_Sum Action=DELETE IndexID=103 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 20|38|U_SLD_T_BeDis Action=DELETE IndexID=104 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 21|38|15 Action=DELETE IndexID=105 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 21|38|20 Action=DELETE IndexID=106 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 21|38|21 Action=DELETE IndexID=107 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:06] [INFO]   OK DELETE 21|38|U_SLD_Dis_Amount Action=DELETE IndexID=108 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 21|38|U_SLD_Dis_Sum Action=DELETE IndexID=109 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 21|38|U_SLD_T_BeDis Action=DELETE IndexID=110 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 22|38|15 Action=DELETE IndexID=111 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 22|38|20 Action=DELETE IndexID=112 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 22|38|21 Action=DELETE IndexID=113 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 22|38|U_SLD_Dis_Amount Action=DELETE IndexID=114 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 22|38|U_SLD_Dis_Sum Action=DELETE IndexID=115 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 22|38|U_SLD_T_BeDis Action=DELETE IndexID=116 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 540000405|38|15 Action=DELETE IndexID=117 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 540000405|38|20 Action=DELETE IndexID=118 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 540000405|38|21 Action=DELETE IndexID=119 (SHS1 child rows removed: 0)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 540000405|38|U_SLD_Dis_Amount Action=DELETE IndexID=120 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 540000405|38|U_SLD_Dis_Sum Action=DELETE IndexID=121 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 540000405|38|U_SLD_T_BeDis Action=DELETE IndexID=122 (SHS1 child rows removed: 3)
+[2026-05-25 16:49:07] [INFO]   OK DELETE 65300|38|U_SLD_T_BeDis Action=DELETE IndexID=32 (SHS1 child rows removed: 2)
+[2026-05-25 16:49:07] [INFO] Committed. OK=100 FAIL=0 SKIP=0
