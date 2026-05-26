@@ -17,8 +17,7 @@ set TGT_USER=1
 set TGT_TPL=3
 
 REM Toggle: -DryRun = preview only, blank = real run
-set MODE=-DryRun
-
+set MODE=
 set "PS=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
 "%PS%" -NoProfile -ExecutionPolicy Bypass -File "%~dp0Scripts\Mirror-FormUI.ps1" ^
     -Server "%SERVER%" -CompanyDB "%COMPANYDB%" -DBUser "%DBUSER%" -DBPassword "%DBPASSWORD%" ^
