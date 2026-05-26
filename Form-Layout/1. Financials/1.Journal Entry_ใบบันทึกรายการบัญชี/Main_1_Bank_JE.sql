@@ -58,8 +58,10 @@ CASE
 END AS 'NAME',
 CASE
 	WHEN T3.[ActId] IS NOT NULL THEN T3.FormatCode
+	WHEN LEFT(T1.[ShortName],2) IN ('VD','VF','VO','CD','CF','CO','CE') THEN Z1.ActId
 	ELSE T1.[ShortName] 
-END AS 'CODE' , 
+END AS 'CODE' ,
+
 --CASE 
 --	WHEN OJDT.[TransType] = 13 THEN T5.[CardName] --A/R Invoice
 --	WHEN OJDT.[TransType] = 18 THEN T6.[CardName] --A/P Invoice
@@ -116,6 +118,7 @@ LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OJDT.U_S_ComVatB = BRANCH.Code
 LEFT JOIN NNM1 T2 ON OJDT.[Series] = T2.[Series]
 LEFT JOIN OACT T3 ON T1.[ShortName] = T3.[AcctCode]
 LEFT JOIN OCRD T4 ON T1.[ShortName] = T4.[CardCode]
+LEFT JOIN OACT Z1 ON Z1.AcctCode = T4.DebPayAcct
 LEFT JOIN CRD1 ON (T4.CardCode = CRD1.CardCode AND CRD1.AdresType ='B')
 LEFT JOIN OINV T5 ON OJDT.[BaseRef] = CASE WHEN OJDT.[TransType] = 13 THEN T5.[DocNum] ELSE NULL END --A/R Invoice 
 LEFT JOIN OPCH T6 ON OJDT.[BaseRef] = CASE WHEN OJDT.[TransType] = 18 THEN T6.[DocNum] ELSE NULL END --A/P Invoice
@@ -145,6 +148,6 @@ left JOIN (select top 1 A.CardName , A.TransId
 	 , T1.[ZipCode], T0.[Phone1], T0.[Phone2], T0.[Fax], T0.[E_Mail], T0.[TaxIdNum], T0.[PrintHeadr], T0.[PrintHdrF]
 	FROM OADM T0 , ADM1 T1
 	)AD
-WHERE OJDT.[TransId] = '{?DocKey@}'
+WHERE OJDT.[TransId] = '7'
 
 ORDER BY (T1.Line_ID+1)
