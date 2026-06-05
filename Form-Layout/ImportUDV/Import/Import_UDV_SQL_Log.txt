@@ -1607,3 +1607,219 @@
 [2026-05-25 17:39:23] [INFO]   OK UPSERT->ADD 18|222|-1 Action=UPSERT IndexID=35
 [2026-05-25 17:39:24] [INFO]   Triggers (SHS1) IndexID=35 : -0 +1 (12)
 [2026-05-25 17:39:24] [INFO] Committed. OK=15 FAIL=0 SKIP=0
+[2026-05-28 15:03:42] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-28 15:03:42] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Import\..\Config\UDV_Import_PO_Item38.csv  (8 CSV rows)
+[2026-05-28 15:03:42] [INFO] DryRun : False
+[2026-05-28 15:03:42] [INFO] Grouped to 3 unique CSHS key(s)
+[2026-05-28 15:03:42] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_REAL
+[2026-05-28 15:03:42] [INFO] Pre-loaded 40 existing CSHS rows
+[2026-05-28 15:03:42] [INFO] Pre-loaded 203 OUQR queries
+[2026-05-28 15:03:42] [INFO] Current MAX(IndexID)=40
+[2026-05-28 15:03:42] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:03:42] [INFO]   OK UPSERT->UPDATE 142|38|21 Action=UPSERT IndexID=39
+[2026-05-28 15:03:42] [INFO]   Triggers (SHS1) IndexID=39 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:03:42] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:03:42] [INFO]   OK UPSERT->UPDATE 142|38|U_SLD_Dis_Amount Action=UPSERT IndexID=40
+[2026-05-28 15:03:42] [INFO]   Triggers (SHS1) IndexID=40 : -0 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:03:42] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:03:43] [INFO]   OK UPSERT->UPDATE 142|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-28 15:03:43] [INFO]   Triggers (SHS1) IndexID=38 : -2 +2 (11, 14)
+[2026-05-28 15:03:43] [INFO] Committed. OK=3 FAIL=0 SKIP=0
+[2026-05-28 15:06:30] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-28 15:06:30] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Import\..\Config\UDV_Export_PO.csv  (8 CSV rows)
+[2026-05-28 15:06:30] [INFO] DryRun : False
+[2026-05-28 15:06:30] [INFO] Grouped to 3 unique CSHS key(s)
+[2026-05-28 15:06:31] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_REAL
+[2026-05-28 15:06:31] [INFO] Pre-loaded 40 existing CSHS rows
+[2026-05-28 15:06:31] [INFO] Pre-loaded 203 OUQR queries
+[2026-05-28 15:06:31] [INFO] Current MAX(IndexID)=40
+[2026-05-28 15:06:31] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:06:31] [INFO]   OK UPSERT->ADD 141|38|21 Action=UPSERT IndexID=41
+[2026-05-28 15:06:31] [INFO]   Triggers (SHS1) IndexID=41 : -0 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:06:31] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:06:31] [INFO]   OK UPSERT->ADD 141|38|U_SLD_Dis_Amount Action=UPSERT IndexID=42
+[2026-05-28 15:06:31] [INFO]   Triggers (SHS1) IndexID=42 : -0 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:06:31] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:06:31] [INFO]   OK UPSERT->ADD 141|38|U_SLD_T_BeDis Action=UPSERT IndexID=43
+[2026-05-28 15:06:31] [INFO]   Triggers (SHS1) IndexID=43 : -0 +2 (11, 14)
+[2026-05-28 15:06:31] [INFO] Committed. OK=3 FAIL=0 SKIP=0
+[2026-05-28 15:46:04] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-28 15:46:04] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Import\..\Config\UDV_Import_AllMarketing_v4.3.csv  (72 CSV rows)
+[2026-05-28 15:46:04] [INFO] DryRun : False
+[2026-05-28 15:46:04] [INFO] Grouped to 27 unique CSHS key(s)
+[2026-05-28 15:46:04] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_REAL
+[2026-05-28 15:46:04] [INFO] Pre-loaded 43 existing CSHS rows
+[2026-05-28 15:46:04] [INFO] Pre-loaded 205 OUQR queries
+[2026-05-28 15:46:04] [INFO] Current MAX(IndexID)=43
+[2026-05-28 15:46:04] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:46:04] [INFO]   OK UPSERT->ADD 149|38|21 Action=UPSERT IndexID=44
+[2026-05-28 15:46:04] [INFO]   Triggers (SHS1) IndexID=44 : -0 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:46:04] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:46:04] [INFO]   OK UPSERT->ADD 149|38|U_SLD_Dis_Amount Action=UPSERT IndexID=45
+[2026-05-28 15:46:05] [INFO]   Triggers (SHS1) IndexID=45 : -0 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:46:05] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:46:05] [INFO]   OK UPSERT->ADD 149|38|U_SLD_T_BeDis Action=UPSERT IndexID=46
+[2026-05-28 15:46:05] [INFO]   Triggers (SHS1) IndexID=46 : -0 +2 (11, 14)
+[2026-05-28 15:46:05] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:46:05] [INFO]   OK UPSERT->ADD 139|38|21 Action=UPSERT IndexID=47
+[2026-05-28 15:46:05] [INFO]   Triggers (SHS1) IndexID=47 : -0 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:46:05] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:46:05] [INFO]   OK UPSERT->ADD 139|38|U_SLD_Dis_Amount Action=UPSERT IndexID=48
+[2026-05-28 15:46:05] [INFO]   Triggers (SHS1) IndexID=48 : -0 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:46:05] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:46:05] [INFO]   OK UPSERT->ADD 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=49
+[2026-05-28 15:46:05] [INFO]   Triggers (SHS1) IndexID=49 : -0 +2 (11, 14)
+[2026-05-28 15:46:05] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:46:05] [INFO]   OK UPSERT->ADD 140|38|21 Action=UPSERT IndexID=50
+[2026-05-28 15:46:05] [INFO]   Triggers (SHS1) IndexID=50 : -0 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:46:05] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:46:05] [INFO]   OK UPSERT->ADD 140|38|U_SLD_Dis_Amount Action=UPSERT IndexID=51
+[2026-05-28 15:46:05] [INFO]   Triggers (SHS1) IndexID=51 : -0 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:46:05] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:46:05] [INFO]   OK UPSERT->ADD 140|38|U_SLD_T_BeDis Action=UPSERT IndexID=52
+[2026-05-28 15:46:05] [INFO]   Triggers (SHS1) IndexID=52 : -0 +2 (11, 14)
+[2026-05-28 15:46:05] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:46:05] [INFO]   OK UPSERT->ADD 133|38|21 Action=UPSERT IndexID=53
+[2026-05-28 15:46:05] [INFO]   Triggers (SHS1) IndexID=53 : -0 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:46:05] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:46:05] [INFO]   OK UPSERT->ADD 133|38|U_SLD_Dis_Amount Action=UPSERT IndexID=54
+[2026-05-28 15:46:05] [INFO]   Triggers (SHS1) IndexID=54 : -0 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:46:05] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:46:05] [INFO]   OK UPSERT->ADD 133|38|U_SLD_T_BeDis Action=UPSERT IndexID=55
+[2026-05-28 15:46:06] [INFO]   Triggers (SHS1) IndexID=55 : -0 +2 (11, 14)
+[2026-05-28 15:46:06] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:46:06] [INFO]   OK UPSERT->ADD 179|38|21 Action=UPSERT IndexID=56
+[2026-05-28 15:46:06] [INFO]   Triggers (SHS1) IndexID=56 : -0 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:46:06] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:46:06] [INFO]   OK UPSERT->ADD 179|38|U_SLD_Dis_Amount Action=UPSERT IndexID=57
+[2026-05-28 15:46:06] [INFO]   Triggers (SHS1) IndexID=57 : -0 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:46:06] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:46:06] [INFO]   OK UPSERT->ADD 179|38|U_SLD_T_BeDis Action=UPSERT IndexID=58
+[2026-05-28 15:46:06] [INFO]   Triggers (SHS1) IndexID=58 : -0 +2 (11, 14)
+[2026-05-28 15:46:06] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:46:06] [INFO]   OK UPSERT->UPDATE 142|38|21 Action=UPSERT IndexID=39
+[2026-05-28 15:46:06] [INFO]   Triggers (SHS1) IndexID=39 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:46:06] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:46:06] [INFO]   OK UPSERT->UPDATE 142|38|U_SLD_Dis_Amount Action=UPSERT IndexID=40
+[2026-05-28 15:46:06] [INFO]   Triggers (SHS1) IndexID=40 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:46:06] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:46:06] [INFO]   OK UPSERT->UPDATE 142|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-28 15:46:06] [INFO]   Triggers (SHS1) IndexID=38 : -2 +2 (11, 14)
+[2026-05-28 15:46:06] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:46:06] [INFO]   OK UPSERT->ADD 143|38|21 Action=UPSERT IndexID=59
+[2026-05-28 15:46:06] [INFO]   Triggers (SHS1) IndexID=59 : -0 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:46:06] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:46:06] [INFO]   OK UPSERT->ADD 143|38|U_SLD_Dis_Amount Action=UPSERT IndexID=60
+[2026-05-28 15:46:07] [INFO]   Triggers (SHS1) IndexID=60 : -0 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:46:07] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:46:07] [INFO]   OK UPSERT->ADD 143|38|U_SLD_T_BeDis Action=UPSERT IndexID=61
+[2026-05-28 15:46:07] [INFO]   Triggers (SHS1) IndexID=61 : -0 +2 (11, 14)
+[2026-05-28 15:46:07] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:46:07] [INFO]   OK UPSERT->UPDATE 141|38|21 Action=UPSERT IndexID=41
+[2026-05-28 15:46:07] [INFO]   Triggers (SHS1) IndexID=41 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:46:07] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:46:07] [INFO]   OK UPSERT->UPDATE 141|38|U_SLD_Dis_Amount Action=UPSERT IndexID=42
+[2026-05-28 15:46:07] [INFO]   Triggers (SHS1) IndexID=42 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:46:07] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:46:07] [INFO]   OK UPSERT->UPDATE 141|38|U_SLD_T_BeDis Action=UPSERT IndexID=43
+[2026-05-28 15:46:07] [INFO]   Triggers (SHS1) IndexID=43 : -2 +2 (11, 14)
+[2026-05-28 15:46:07] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 15:46:07] [INFO]   OK UPSERT->ADD 181|38|21 Action=UPSERT IndexID=62
+[2026-05-28 15:46:07] [INFO]   Triggers (SHS1) IndexID=62 : -0 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 15:46:07] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 15:46:07] [INFO]   OK UPSERT->ADD 181|38|U_SLD_Dis_Amount Action=UPSERT IndexID=63
+[2026-05-28 15:46:07] [INFO]   Triggers (SHS1) IndexID=63 : -0 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 15:46:07] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 15:46:07] [INFO]   OK UPSERT->ADD 181|38|U_SLD_T_BeDis Action=UPSERT IndexID=64
+[2026-05-28 15:46:07] [INFO]   Triggers (SHS1) IndexID=64 : -0 +2 (11, 14)
+[2026-05-28 15:46:07] [INFO] Committed. OK=27 FAIL=0 SKIP=0
+[2026-05-28 16:40:14] [INFO] === Start UDV Import (SQL Direct) ===
+[2026-05-28 16:40:14] [INFO] MapFile: C:\GitHub\SDA\Form-Layout\ImportUDV\Import\..\Config\UDV_Import_AllMarketing_v4.3.csv  (72 CSV rows)
+[2026-05-28 16:40:14] [INFO] DryRun : False
+[2026-05-28 16:40:14] [INFO] Grouped to 27 unique CSHS key(s)
+[2026-05-28 16:40:14] [INFO] Connected to SQL: 10.10.10.115 / SBO_SDA_KEY
+[2026-05-28 16:40:14] [INFO] Pre-loaded 64 existing CSHS rows
+[2026-05-28 16:40:14] [INFO] Pre-loaded 205 OUQR queries
+[2026-05-28 16:40:14] [INFO] Current MAX(IndexID)=64
+[2026-05-28 16:40:14] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 16:40:14] [INFO]   OK UPSERT->UPDATE 149|38|21 Action=UPSERT IndexID=44
+[2026-05-28 16:40:14] [INFO]   Triggers (SHS1) IndexID=44 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 16:40:14] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 16:40:14] [INFO]   OK UPSERT->UPDATE 149|38|U_SLD_Dis_Amount Action=UPSERT IndexID=45
+[2026-05-28 16:40:14] [INFO]   Triggers (SHS1) IndexID=45 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 16:40:14] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 16:40:14] [INFO]   OK UPSERT->UPDATE 149|38|U_SLD_T_BeDis Action=UPSERT IndexID=46
+[2026-05-28 16:40:14] [INFO]   Triggers (SHS1) IndexID=46 : -2 +2 (11, 14)
+[2026-05-28 16:40:14] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 16:40:14] [INFO]   OK UPSERT->UPDATE 139|38|21 Action=UPSERT IndexID=47
+[2026-05-28 16:40:14] [INFO]   Triggers (SHS1) IndexID=47 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 16:40:14] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 16:40:14] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_Dis_Amount Action=UPSERT IndexID=48
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=48 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 139|38|U_SLD_T_BeDis Action=UPSERT IndexID=49
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=49 : -2 +2 (11, 14)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 140|38|21 Action=UPSERT IndexID=50
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=50 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 140|38|U_SLD_Dis_Amount Action=UPSERT IndexID=51
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=51 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 140|38|U_SLD_T_BeDis Action=UPSERT IndexID=52
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=52 : -2 +2 (11, 14)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 133|38|21 Action=UPSERT IndexID=53
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=53 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 133|38|U_SLD_Dis_Amount Action=UPSERT IndexID=54
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=54 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 133|38|U_SLD_T_BeDis Action=UPSERT IndexID=55
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=55 : -2 +2 (11, 14)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 179|38|21 Action=UPSERT IndexID=56
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=56 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 179|38|U_SLD_Dis_Amount Action=UPSERT IndexID=57
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=57 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 179|38|U_SLD_T_BeDis Action=UPSERT IndexID=58
+[2026-05-28 16:40:15] [INFO]   Triggers (SHS1) IndexID=58 : -2 +2 (11, 14)
+[2026-05-28 16:40:15] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 16:40:15] [INFO]   OK UPSERT->UPDATE 142|38|21 Action=UPSERT IndexID=39
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=39 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 142|38|U_SLD_Dis_Amount Action=UPSERT IndexID=40
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=40 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 142|38|U_SLD_T_BeDis Action=UPSERT IndexID=38
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=38 : -2 +2 (11, 14)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 143|38|21 Action=UPSERT IndexID=59
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=59 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 143|38|U_SLD_Dis_Amount Action=UPSERT IndexID=60
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=60 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 143|38|U_SLD_T_BeDis Action=UPSERT IndexID=61
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=61 : -2 +2 (11, 14)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 141|38|21 Action=UPSERT IndexID=41
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=41 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 141|38|U_SLD_Dis_Amount Action=UPSERT IndexID=42
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=42 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 141|38|U_SLD_T_BeDis Action=UPSERT IndexID=43
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=43 : -2 +2 (11, 14)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_LineTotal' (IntrnalKey=306), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 181|38|21 Action=UPSERT IndexID=62
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=62 : -2 +2 (U_SLD_Dis_Amount, U_SLD_T_BeDis)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_Discount' (IntrnalKey=308), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 181|38|U_SLD_Dis_Amount Action=UPSERT IndexID=63
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=63 : -4 +4 (15, 14, 11, U_SLD_Check)
+[2026-05-28 16:40:16] [INFO]   Reuse Query 'FMS_Price_Total' (IntrnalKey=307), body updated
+[2026-05-28 16:40:16] [INFO]   OK UPSERT->UPDATE 181|38|U_SLD_T_BeDis Action=UPSERT IndexID=64
+[2026-05-28 16:40:16] [INFO]   Triggers (SHS1) IndexID=64 : -2 +2 (11, 14)
+[2026-05-28 16:40:16] [INFO] Committed. OK=27 FAIL=0 SKIP=0
