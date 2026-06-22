@@ -7,3 +7,259 @@
 [2026-05-22 14:57:41][OK]   [main] 'Create_Sign' server '192.168.0.216' -> '10.10.10.115' db SBO_SDA_Training -> SBO_SDA_UAT
 [2026-05-22 14:57:41][OK]   saved 3 table(s)
 [2026-05-22 14:57:42][INFO] === Done. ok=1  err=0  skipped=0  total=1 ===
+[2026-06-19 11:15:01][INFO] === Set-DatasourceLocation start ===
+[2026-06-19 11:15:01][INFO] Path=C:\GitHub\SDA\Form-Layout\3. Purchasing - AP  NewServer=192.168.0.216  OldServer=  NewDatabase=SBO_SDA_REAL  NewUser=  WhatIf=False
+[2026-06-19 11:15:01][INFO] Found 16 report file(s).
+[2026-06-19 11:15:01][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\1. Purchase Request\1.Purchase Request_TH_ใบขอซื้อ\1.Purchase Request_TH_ใบขอซื้อ.rpt
+[2026-06-19 11:15:02][OK]   [main] 'AP_PR' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:02][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:02][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:02][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:02][OK]   [sub:Hremark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:02][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:02][OK]   saved 6 table(s)
+[2026-06-19 11:15:02][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\2. Purchase Quotation\1.Purchase Quotation_ใบเสนอราคาซื้อ\1.Purchase Quotation_ใบเสนอราคาซื้อ.rpt
+[2026-06-19 11:15:03][OK]   [main] 'AP_PQ' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:03][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:03][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:03][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:03][OK]   [sub:Hremark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:03][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:03][OK]   saved 6 table(s)
+[2026-06-19 11:15:03][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_ENG_ใบสั่งซื้อ.rpt
+[2026-06-19 11:15:04][OK]   [main] 'AP_PO' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   [sub:Hremark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   saved 6 table(s)
+[2026-06-19 11:15:04][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_TH_ใบสั่งซื้อ.rpt
+[2026-06-19 11:15:04][OK]   [main] 'AP_PO' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   [sub:Hremark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:04][OK]   saved 6 table(s)
+[2026-06-19 11:15:04][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\4. Goods Receipt PO\2.Goods Receive PO_TH_ใบรับสินค้า_(Batch_Serial) - Copy\2.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial).rpt
+[2026-06-19 11:15:05][OK]   [main] 'AP_GRPO_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   [sub:Batch/Serial] 'AP_GRPO_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   [sub:Hremark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   saved 6 table(s)
+[2026-06-19 11:15:05][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\5. Goods Return\2.Goods Return_EN_ใบส่งคืนสินค้า_(Batch_Serial)\2.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial).rpt
+[2026-06-19 11:15:05][OK]   [main] 'AP_GR_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   [main] 'Company' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   [sub:Head_Sub] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   [sub:Remark] 'Remark' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   [sub:batch&serial] 'AP_GR_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:05][OK]   saved 5 table(s)
+[2026-06-19 11:15:05][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment ใบจ่ายเงินมัดจำ\1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ.rpt
+[2026-06-19 11:15:06][OK]   [main] 'AP_DownPayment' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   [sub:H remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   saved 6 table(s)
+[2026-06-19 11:15:06][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment ใบจ่ายเงินมัดจำ\1.AP Down Payment_ใบจ่ายเงินมัดจำ.rpt
+[2026-06-19 11:15:06][OK]   [main] 'AP_DownPayment' server '10.10.10.115' -> '192.168.0.216' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   [main] 'Address' server '10.10.10.115' -> '192.168.0.216' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   [main] 'Create' server '10.10.10.115' -> '192.168.0.216' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   [main] 'Approve' server '10.10.10.115' -> '192.168.0.216' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   [sub:H remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:06][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   saved 6 table(s)
+[2026-06-19 11:15:07][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\2.AP Down Payment Invoice_ENG ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+[2026-06-19 11:15:07][OK]   [main] 'AP_DownPayment' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   [sub:H remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   saved 6 table(s)
+[2026-06-19 11:15:07][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+[2026-06-19 11:15:07][OK]   [main] 'AP_DownPayment' server '10.10.10.115' -> '192.168.0.216' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   [main] 'Address' server '10.10.10.115' -> '192.168.0.216' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   [main] 'Create' server '10.10.10.115' -> '192.168.0.216' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   [main] 'Approve' server '10.10.10.115' -> '192.168.0.216' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   [sub:HaedRemark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:07][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:08][OK]   saved 6 table(s)
+[2026-06-19 11:15:08][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\2.AP Invoice_ใบแจ้งหนี้_(Batch_Serial)\2.AP Invoice_ใบแจ้งหนี้_(Batch_Serial).rpt
+[2026-06-19 11:15:08][OK]   [main] 'AP_INV_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:08][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:08][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:08][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:08][OK]   [sub:HeadRemark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:08][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:08][OK]   [sub:batch&sserial] 'AP_INV_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:08][OK]   saved 7 table(s)
+[2026-06-19 11:15:08][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี(Batch_Serial).rpt
+[2026-06-19 11:15:09][OK]   [main] 'AP_INV_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   [sub:HeadRemark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   [sub:batch&sserial] 'AP_INV_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   saved 7 table(s)
+[2026-06-19 11:15:09][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี.rpt
+[2026-06-19 11:15:09][OK]   [main] 'AP_INV_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   [sub:TEXT] 'AP_INV_Text' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:09][OK]   saved 5 table(s)
+[2026-06-19 11:15:09][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\4.AP Debit Note_ใบเพิ่มหนี้\4.AP Debit Note_ใบเพิ่มหนี้.rpt
+[2026-06-19 11:15:10][OK]   [main] 'AP_INV' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   [sub:TEXT] 'AR_INV_Text' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   saved 5 table(s)
+[2026-06-19 11:15:10][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\8. AP Credit Memo\1.AP Credit Memo_ใบลดหนี้\1.AP Credit Memo_ใบลดหนี้.rpt
+[2026-06-19 11:15:10][OK]   [main] 'AP_CN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   [main] 'HAddress' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   [sub:HeadRemark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:10][OK]   saved 6 table(s)
+[2026-06-19 11:15:10][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\9. Landed Costs\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt
+[2026-06-19 11:15:11][OK]   [main] 'Landed_Cost' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:11][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-06-19 11:15:11][OK]   [sub:Landed_Cost] 'Landed_Cost' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-06-19 11:15:11][OK]   saved 3 table(s)
+[2026-06-19 11:15:11][INFO] === Done. ok=16  err=0  skipped=0  total=16 ===
+[2026-06-19 12:33:10][INFO] === Set-DatasourceLocation start ===
+[2026-06-19 12:33:10][INFO] Path=C:\GitHub\SDA\Form-Layout\3. Purchasing - AP  NewServer=192.168.0.216  OldServer=  NewDatabase=SBO_SDA_Real  NewUser=  WhatIf=False
+[2026-06-19 12:33:10][INFO] Found 16 report file(s).
+[2026-06-19 12:33:10][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\1. Purchase Request\1.Purchase Request_TH_ใบขอซื้อ\1.Purchase Request_TH_ใบขอซื้อ.rpt
+[2026-06-19 12:33:11][OK]   [main] 'AP_PR' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:11][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:11][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:11][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:11][OK]   [sub:Hremark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:11][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   saved 6 table(s)
+[2026-06-19 12:33:12][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\2. Purchase Quotation\1.Purchase Quotation_ใบเสนอราคาซื้อ\1.Purchase Quotation_ใบเสนอราคาซื้อ.rpt
+[2026-06-19 12:33:12][OK]   [main] 'AP_PQ' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   [sub:Hremark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   saved 6 table(s)
+[2026-06-19 12:33:12][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_ENG_ใบสั่งซื้อ.rpt
+[2026-06-19 12:33:12][OK]   [main] 'AP_PO' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   [sub:Hremark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:12][OK]   saved 6 table(s)
+[2026-06-19 12:33:12][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_TH_ใบสั่งซื้อ.rpt
+[2026-06-19 12:33:13][OK]   [main] 'AP_PO' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   [sub:Hremark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   saved 6 table(s)
+[2026-06-19 12:33:13][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\4. Goods Receipt PO\2.Goods Receive PO_TH_ใบรับสินค้า_(Batch_Serial) - Copy\2.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial).rpt
+[2026-06-19 12:33:13][OK]   [main] 'AP_GRPO_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   [sub:Batch/Serial] 'AP_GRPO_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   [sub:Hremark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:13][OK]   saved 6 table(s)
+[2026-06-19 12:33:13][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\5. Goods Return\2.Goods Return_EN_ใบส่งคืนสินค้า_(Batch_Serial)\2.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial).rpt
+[2026-06-19 12:33:14][OK]   [main] 'AP_GR_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   [main] 'Company' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   [sub:Head_Sub] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   [sub:Remark] 'Remark' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   [sub:batch&serial] 'AP_GR_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   saved 5 table(s)
+[2026-06-19 12:33:14][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment ใบจ่ายเงินมัดจำ\1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ.rpt
+[2026-06-19 12:33:14][OK]   [main] 'AP_DownPayment' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   [sub:H remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:14][OK]   saved 6 table(s)
+[2026-06-19 12:33:14][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment ใบจ่ายเงินมัดจำ\1.AP Down Payment_ใบจ่ายเงินมัดจำ.rpt
+[2026-06-19 12:33:15][OK]   [main] 'AP_DownPayment' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   [sub:H remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   saved 6 table(s)
+[2026-06-19 12:33:15][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\2.AP Down Payment Invoice_ENG ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+[2026-06-19 12:33:15][OK]   [main] 'AP_DownPayment' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   [sub:H remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:15][OK]   saved 6 table(s)
+[2026-06-19 12:33:15][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+[2026-06-19 12:33:16][OK]   [main] 'AP_DownPayment' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [sub:HaedRemark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   saved 6 table(s)
+[2026-06-19 12:33:16][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\2.AP Invoice_ใบแจ้งหนี้_(Batch_Serial)\2.AP Invoice_ใบแจ้งหนี้_(Batch_Serial).rpt
+[2026-06-19 12:33:16][OK]   [main] 'AP_INV_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [sub:HeadRemark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   [sub:batch&sserial] 'AP_INV_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:16][OK]   saved 7 table(s)
+[2026-06-19 12:33:16][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี(Batch_Serial).rpt
+[2026-06-19 12:33:17][OK]   [main] 'AP_INV_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:17][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:17][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:17][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:17][OK]   [sub:HeadRemark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:17][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:17][OK]   [sub:batch&sserial] 'AP_INV_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:17][OK]   saved 7 table(s)
+[2026-06-19 12:33:17][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี.rpt
+[2026-06-19 12:33:18][OK]   [main] 'AP_INV_BN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:18][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:18][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:18][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:18][OK]   [sub:TEXT] 'AP_INV_Text' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:18][OK]   saved 5 table(s)
+[2026-06-19 12:33:18][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\4.AP Debit Note_ใบเพิ่มหนี้\4.AP Debit Note_ใบเพิ่มหนี้.rpt
+[2026-06-19 12:33:18][OK]   [main] 'AP_INV' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:18][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:18][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:18][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:18][OK]   [sub:TEXT] 'AR_INV_Text' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:18][OK]   saved 5 table(s)
+[2026-06-19 12:33:18][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\8. AP Credit Memo\1.AP Credit Memo_ใบลดหนี้\1.AP Credit Memo_ใบลดหนี้.rpt
+[2026-06-19 12:33:19][OK]   [main] 'AP_CN' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:19][OK]   [main] 'HAddress' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:19][OK]   [main] 'Create' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:19][OK]   [main] 'Approve' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:19][OK]   [sub:HeadRemark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:19][OK]   [sub:Remark] 'Command' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:19][OK]   saved 6 table(s)
+[2026-06-19 12:33:19][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\9. Landed Costs\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt
+[2026-06-19 12:33:20][OK]   [main] 'Landed_Cost' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:20][OK]   [main] 'Address' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:20][OK]   [sub:Landed_Cost] 'Landed_Cost' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
+[2026-06-19 12:33:20][OK]   saved 3 table(s)
+[2026-06-19 12:33:20][INFO] === Done. ok=16  err=0  skipped=0  total=16 ===
