@@ -263,3 +263,644 @@
 [2026-06-19 12:33:20][OK]   [sub:Landed_Cost] 'Landed_Cost' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_Real
 [2026-06-19 12:33:20][OK]   saved 3 table(s)
 [2026-06-19 12:33:20][INFO] === Done. ok=16  err=0  skipped=0  total=16 ===
+[2026-07-13 12:27:10][INFO] === Set-DatasourceLocation start ===
+[2026-07-13 12:27:10][INFO] Path=C:\GitHub\SDA\Form-Layout  NewServer=119 094 672  OldServer=  NewDatabase=SBO_SDA_REAL  NewUser=  WhatIf=False
+[2026-07-13 12:27:10][INFO] Found 88 report file(s).
+[2026-07-13 12:27:10][INFO] --> C:\GitHub\SDA\Form-Layout\1. Financials\1.Journal Entry_ใบบันทึกรายการบัญชี\1.Journal Entry_ใบบันทึกรายการบัญชี.rpt
+[2026-07-13 12:27:12][OK]   [main] 'Bank_JE' server '10.10.10.115' -> '119 094 672' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-07-13 12:27:12][OK]   [main] 'Command_Addrees' server '10.10.10.115' -> '119 094 672' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-07-13 12:27:12][OK]   [main] 'Create_Sign' server '10.10.10.115' -> '119 094 672' db SBO_SDA_TestAll -> SBO_SDA_REAL
+[2026-07-13 12:27:12][OK]   saved 3 table(s)
+[2026-07-13 12:27:12][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\1. Sales Quotation\1.Sale Quotation_ใบเสนอราคาขาย(BOM)\2.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
+[2026-07-13 12:27:13][OK]   [main] 'AR_SQ' server '10.10.10.115' -> '119 094 672' db SBO_SDA_UAT -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   [main] 'Address' server '10.10.10.115' -> '119 094 672' db SBO_SDA_UAT -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   [main] 'Create' server '10.10.10.115' -> '119 094 672' db SBO_SDA_UAT -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   [main] 'Approve' server '10.10.10.115' -> '119 094 672' db SBO_SDA_UAT -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   saved 6 table(s)
+[2026-07-13 12:27:13][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\1. Sales Quotation\1.Sale Quotation_ใบเสนอราคาขาย(BOM)\2.Sale Quotation_ใบเสนอราคาขาย_(Bom).rpt
+[2026-07-13 12:27:13][OK]   [main] 'AR_SQ' server '10.10.10.115' -> '119 094 672' db SBO_SDA_UAT -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   [main] 'Address' server '10.10.10.115' -> '119 094 672' db SBO_SDA_UAT -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   [main] 'Create' server '10.10.10.115' -> '119 094 672' db SBO_SDA_UAT -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   [main] 'Approve' server '10.10.10.115' -> '119 094 672' db SBO_SDA_UAT -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:13][OK]   saved 6 table(s)
+[2026-07-13 12:27:13][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\1. Sales Quotation\2.Sale Quotation_ใบเสนอราคาขาย_(Dis)\1.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG.rpt
+[2026-07-13 12:27:14][OK]   [main] 'AR_SQ' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   saved 6 table(s)
+[2026-07-13 12:27:14][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\1. Sales Quotation\2.Sale Quotation_ใบเสนอราคาขาย_(Dis)\1.Sale Quotation_ใบเสนอราคาขาย_(Dis).rpt
+[2026-07-13 12:27:14][OK]   [main] 'AR_SQ' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:14][OK]   saved 6 table(s)
+[2026-07-13 12:27:14][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\2. Sales Order\1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt
+[2026-07-13 12:27:15][OK]   [main] 'AR_SO' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:15][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:15][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:15][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:15][OK]   [sub:Hremark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:15][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:15][OK]   saved 6 table(s)
+[2026-07-13 12:27:15][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\2. Sales Order\3.Sale Order_ใบสั่งขาย_(Bomm)\1.Sale Order_ใบสั่งขาย_(Bom).rpt
+[2026-07-13 12:27:16][OK]   [main] 'AR_SO' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:16][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:16][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:16][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:16][OK]   [sub:Haed_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:16][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:16][OK]   saved 6 table(s)
+[2026-07-13 12:27:17][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt
+[2026-07-13 12:27:18][OK]   [main] 'AR_Delivery_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:18][OK]   [main] 'address_eng' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:18][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:18][OK]   [sub:Batch/Serial] 'AR_Drlivery_BS' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:18][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:18][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:19][OK]   saved 6 table(s)
+[2026-07-13 12:27:19][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\2.Delivery_ใบส่งของ_(Batch_Serial).rpt
+[2026-07-13 12:27:19][OK]   [main] 'AR_Delivery_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:19][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:19][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:19][OK]   [sub:Batch/Serial] 'AR_Drlivery_BS' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:19][OK]   [sub:Haed_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:19][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:19][OK]   saved 6 table(s)
+[2026-07-13 12:27:19][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-07-13 12:27:20][OK]   [main] 'AR_Retrun_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   [main] 'OADM' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   [sub:Batch/Serial] 'AR_Retrun_BS' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   [sub:Head_Sup] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   [sub:Line_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   saved 6 table(s)
+[2026-07-13 12:27:20][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-07-13 12:27:20][OK]   [main] 'AR_Retrun_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   [sub:Batch/Serial] 'AR_Retrun_BS' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   [sub:Head_Sup] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:20][OK]   [sub:Line_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:21][OK]   saved 6 table(s)
+[2026-07-13 12:27:21][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\1.AR Down Payment_ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_BOM ใบเสร็จรับเงินมัดจำ.rpt
+[2026-07-13 12:27:21][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:21][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:21][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:21][OK]   [main] 'Command' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:21][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:21][OK]   [sub:head remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:21][OK]   saved 6 table(s)
+[2026-07-13 12:27:21][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\1.AR Down Payment_ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_BOM_ENG ใบเสร็จรับเงินมัดจำ.rpt
+[2026-07-13 12:27:22][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:22][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:22][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:22][OK]   [main] 'Command' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:22][OK]   [sub:Hremark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:22][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:22][OK]   saved 6 table(s)
+[2026-07-13 12:27:22][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\1.AR Down Payment_ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_ENG ใบเสร็จรับเงินมัดจำ.rpt
+[2026-07-13 12:27:22][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:22][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:22][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:22][OK]   [sub:Hreport] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:22][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   saved 5 table(s)
+[2026-07-13 12:27:23][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\1.AR Down Payment_ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_ใบเสร็จรับเงินมัดจำ.rpt
+[2026-07-13 12:27:23][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   [sub:head remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   saved 5 table(s)
+[2026-07-13 12:27:23][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_BOM ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+[2026-07-13 12:27:23][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   [main] 'Command' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:23][OK]   [sub:head remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:24][OK]   saved 6 table(s)
+[2026-07-13 12:27:24][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_BOM_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+[2026-07-13 12:27:24][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:24][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:24][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:24][OK]   [main] 'Command' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:24][OK]   [sub:Hremark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:24][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:24][OK]   saved 6 table(s)
+[2026-07-13 12:27:24][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+[2026-07-13 12:27:25][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:25][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:25][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:25][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:25][OK]   [sub:hmark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:25][OK]   saved 5 table(s)
+[2026-07-13 12:27:25][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+[2026-07-13 12:27:25][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:25][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:25][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:25][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:25][OK]   saved 4 table(s)
+[2026-07-13 12:27:25][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\3.AR Down Payment Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down Payment Invoice_BOM ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+[2026-07-13 12:27:26][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:26][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:26][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:26][OK]   [main] 'Command' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:26][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:26][OK]   [sub:head remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:26][OK]   saved 6 table(s)
+[2026-07-13 12:27:26][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\3.AR Down Payment Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down PaymentTax Invoice_BOM_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+[2026-07-13 12:27:27][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   [main] 'Command' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   [sub:Hremark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   saved 6 table(s)
+[2026-07-13 12:27:27][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\3.AR Down Payment Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down PaymentTax Invoice_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+[2026-07-13 12:27:27][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   [sub:hmark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:27][OK]   saved 5 table(s)
+[2026-07-13 12:27:27][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\5. AR Down Payment Invoice\3.AR Down Payment Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down PaymentTax Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+[2026-07-13 12:27:28][OK]   [main] 'AR_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   [sub:hmark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   saved 5 table(s)
+[2026-07-13 12:27:28][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\1 AR Invoice_TH (Bom)\1.AR Invoice_BOM_ENG ใบแจ้งหนี้.rpt
+[2026-07-13 12:27:28][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   [main] 'Command' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:28][OK]   saved 6 table(s)
+[2026-07-13 12:27:28][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\2.AR Invoice_ใบแจ้งหนี้_(Dis)\2.AR Invoice_ENG ใบแจ้งหนี้_(Dis).rpt
+[2026-07-13 12:27:29][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:29][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:29][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:29][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:29][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:29][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:29][OK]   saved 6 table(s)
+[2026-07-13 12:27:29][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\2.AR Invoice_ใบแจ้งหนี้_(Dis)\2.AR Invoice_ใบแจ้งหนี้_(Dis).rpt
+[2026-07-13 12:27:29][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:29][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:29][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:30][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:30][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:30][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:30][OK]   saved 6 table(s)
+[2026-07-13 12:27:30][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\3.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom)\3.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom).rpt
+[2026-07-13 12:27:30][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:30][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:30][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:30][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:30][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:30][OK]   saved 5 table(s)
+[2026-07-13 12:27:30][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\3.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom)\3.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom).rpt
+[2026-07-13 12:27:31][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   saved 5 table(s)
+[2026-07-13 12:27:31][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\4.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis)\4.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).rpt
+[2026-07-13 12:27:31][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:31][OK]   saved 6 table(s)
+[2026-07-13 12:27:31][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\4.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis)\4.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).rpt
+[2026-07-13 12:27:32][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:32][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:32][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:32][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:32][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:32][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:32][OK]   saved 6 table(s)
+[2026-07-13 12:27:32][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\5.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Bom)\5.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Bom).rpt
+[2026-07-13 12:27:33][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:33][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:33][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:33][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:33][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:33][OK]   saved 5 table(s)
+[2026-07-13 12:27:33][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\5.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Bom)\5.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Bom).rpt
+[2026-07-13 12:27:34][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:34][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:34][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:34][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:34][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:34][OK]   saved 5 table(s)
+[2026-07-13 12:27:34][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\6.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis)\6.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Dis).rpt
+[2026-07-13 12:27:34][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:34][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:34][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:34][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:35][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:35][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:35][OK]   saved 6 table(s)
+[2026-07-13 12:27:35][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\6. AR Invoice\6.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis)\6.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis).rpt
+[2026-07-13 12:27:36][OK]   [main] 'AR_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   saved 6 table(s)
+[2026-07-13 12:27:36][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\7. AR Credit Memo\1.AR_Credit Memo_ใบลดหนี้ แก้ไขยอดเงิน\1.AR_Credit Memo_ENG ใบลดหนี้ แก้ไขยอดเงิน.rpt
+[2026-07-13 12:27:36][OK]   [main] 'AR_CN_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [sub:Batch/Serial] 'AR_CN_BS' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [sub:HREMARK] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:36][OK]   [sub:Text] 'AR_CN_BS_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:37][OK]   saved 7 table(s)
+[2026-07-13 12:27:37][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\7. AR Credit Memo\1.AR_Credit Memo_ใบลดหนี้ แก้ไขยอดเงิน\1.AR_Credit Memo_ใบลดหนี้ แก้ไขยอดเงิน.rpt
+[2026-07-13 12:27:37][OK]   [main] 'AR_CN_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:37][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:37][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:37][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:37][OK]   [sub:Batch/Serial] 'AR_CN_BS' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:37][OK]   [sub:HREMARK] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:37][OK]   [sub:Text] 'AR_CN_BS_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:38][OK]   saved 7 table(s)
+[2026-07-13 12:27:38][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\7. AR Credit Memo\2.AR_Credit Memo_ใบลดหนี้_(Dis)\2.AR_Credit Memo_ENG ใบลดหนี้_(Dis) แก้ไขยอดเงิน.rpt
+[2026-07-13 12:27:38][OK]   [main] 'AR_CN' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:38][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:38][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:39][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:39][OK]   [sub:HREMARK] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:39][OK]   [sub:Text] 'AR_CN_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:39][OK]   saved 6 table(s)
+[2026-07-13 12:27:39][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\7. AR Credit Memo\2.AR_Credit Memo_ใบลดหนี้_(Dis)\2.AR_Credit Memo_ใบลดหนี้_(Dis) แก้ไขยอดเงิน.rpt
+[2026-07-13 12:27:39][OK]   [main] 'AR_CN' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:39][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:39][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:39][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:39][OK]   [sub:HREMARK] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:39][OK]   [sub:Text] 'AR_CN_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:39][OK]   saved 6 table(s)
+[2026-07-13 12:27:39][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\7. AR Credit Memo\3.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) แก้ไขยอดเงิน\3.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) แก้ไขยอดเงิน.rpt
+[2026-07-13 12:27:40][OK]   [main] 'AR_CN_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:40][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:40][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:40][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:40][OK]   [sub:Batch/Serial] 'AR_CN_BS' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:40][OK]   [sub:HREMARK] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:40][OK]   [sub:Text] 'AR_CN_BS_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:40][OK]   saved 7 table(s)
+[2026-07-13 12:27:40][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\7. AR Credit Memo\3.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) แก้ไขยอดเงิน\3.AR_Credit Memo_ใบลดหนี้_ENG (Batch_Serial) แก้ไขยอดเงิน.rpt
+[2026-07-13 12:27:41][OK]   [main] 'AR_CN_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:41][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:41][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:41][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:41][OK]   [sub:Batch/Serial] 'AR_CN_BS' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:41][OK]   [sub:HREMARK] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:41][OK]   [sub:Text] 'AR_CN_BS_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:41][OK]   saved 7 table(s)
+[2026-07-13 12:27:41][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\7. AR Credit Memo\4.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis)\4.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis).rpt
+[2026-07-13 12:27:42][OK]   [main] 'AR_CN' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:42][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:42][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:42][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:42][OK]   [sub:B/S] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:42][OK]   [sub:HREMARK] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:42][OK]   [sub:Text] 'AR_CN_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:42][OK]   saved 7 table(s)
+[2026-07-13 12:27:42][INFO] --> C:\GitHub\SDA\Form-Layout\2. Sales - AR\7. AR Credit Memo\4.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis)\4.AR_Credit Memo_ใบลดหนี้_ENG (Batch_Serial) (Dis).rpt
+[2026-07-13 12:27:43][OK]   [main] 'AR_CN' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:43][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:43][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:43][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:43][OK]   [sub:B/S] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:43][OK]   [sub:HREMARK] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:43][OK]   [sub:Text] 'AR_CN_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:43][OK]   saved 7 table(s)
+[2026-07-13 12:27:43][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\1. Purchase Request\1.Purchase Request_TH_ใบขอซื้อ\1.Purchase Request_TH_ใบขอซื้อ.rpt
+[2026-07-13 12:27:44][OK]   [main] 'AP_PR' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   [sub:Hremark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   saved 6 table(s)
+[2026-07-13 12:27:44][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\2. Purchase Quotation\1.Purchase Quotation_ใบเสนอราคาซื้อ\1.Purchase Quotation_ใบเสนอราคาซื้อ.rpt
+[2026-07-13 12:27:44][OK]   [main] 'AP_PQ' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   [sub:Hremark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:44][OK]   saved 6 table(s)
+[2026-07-13 12:27:44][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_ENG_ใบสั่งซื้อ.rpt
+[2026-07-13 12:27:45][OK]   [main] 'AP_PO' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:45][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:45][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:45][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:45][OK]   [sub:Hremark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:45][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:45][OK]   saved 6 table(s)
+[2026-07-13 12:27:45][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_TH_ใบสั่งซื้อ.rpt
+[2026-07-13 12:27:46][OK]   [main] 'AP_PO' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:46][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:46][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:46][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:46][OK]   [sub:Hremark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:46][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:46][OK]   saved 6 table(s)
+[2026-07-13 12:27:46][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\4. Goods Receipt PO\2.Goods Receive PO_TH_ใบรับสินค้า_(Batch_Serial) - Copy\2.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial).rpt
+[2026-07-13 12:27:47][OK]   [main] 'AP_GRPO_BN' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:47][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:47][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:47][OK]   [sub:Batch/Serial] 'AP_GRPO_BN' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:47][OK]   [sub:Hremark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:47][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:47][OK]   saved 6 table(s)
+[2026-07-13 12:27:47][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\5. Goods Return\2.Goods Return_EN_ใบส่งคืนสินค้า_(Batch_Serial)\2.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial).rpt
+[2026-07-13 12:27:47][OK]   [main] 'AP_GR_BN' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:47][OK]   [main] 'Company' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:47][OK]   [sub:Head_Sub] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:47][OK]   [sub:Remark] 'Remark' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:47][OK]   [sub:batch&serial] 'AP_GR_BN' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:48][OK]   saved 5 table(s)
+[2026-07-13 12:27:48][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment ใบจ่ายเงินมัดจำ\1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ.rpt
+[2026-07-13 12:27:48][OK]   [main] 'AP_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:48][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:48][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:48][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:48][OK]   [sub:H remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:48][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:48][OK]   saved 6 table(s)
+[2026-07-13 12:27:48][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment ใบจ่ายเงินมัดจำ\1.AP Down Payment_ใบจ่ายเงินมัดจำ.rpt
+[2026-07-13 12:27:49][OK]   [main] 'AP_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:49][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:49][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:49][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:49][OK]   [sub:H remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:49][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:49][OK]   saved 6 table(s)
+[2026-07-13 12:27:49][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\2.AP Down Payment Invoice_ENG ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+[2026-07-13 12:27:50][OK]   [main] 'AP_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:50][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:50][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:50][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:50][OK]   [sub:H remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:50][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:50][OK]   saved 6 table(s)
+[2026-07-13 12:27:50][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\6. AP Down Payment Invoice\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+[2026-07-13 12:27:51][OK]   [main] 'AP_DownPayment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:51][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:51][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:51][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:51][OK]   [sub:HaedRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:51][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:51][OK]   saved 6 table(s)
+[2026-07-13 12:27:51][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\2.AP Invoice_ใบแจ้งหนี้_(Batch_Serial)\2.AP Invoice_ใบแจ้งหนี้_(Batch_Serial).rpt
+[2026-07-13 12:27:52][OK]   [main] 'AP_INV_BN' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [sub:HeadRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [sub:batch&sserial] 'AP_INV_BN' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   saved 7 table(s)
+[2026-07-13 12:27:52][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี(Batch_Serial).rpt
+[2026-07-13 12:27:52][OK]   [main] 'AP_INV_BN' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [sub:HeadRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:52][OK]   [sub:batch&sserial] 'AP_INV_BN' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:53][OK]   saved 7 table(s)
+[2026-07-13 12:27:53][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี\3.AP InvoiceTax Invoice_ใบแจ้งหนี้ใบกำกับภาษี.rpt
+[2026-07-13 12:27:53][OK]   [main] 'AP_INV_BN' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:53][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:53][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:53][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:53][OK]   [sub:TEXT] 'AP_INV_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:53][OK]   saved 5 table(s)
+[2026-07-13 12:27:53][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\7. AP Invoice\4.AP Debit Note_ใบเพิ่มหนี้\4.AP Debit Note_ใบเพิ่มหนี้.rpt
+[2026-07-13 12:27:54][OK]   [main] 'AP_INV' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:54][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:54][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:54][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:54][OK]   [sub:TEXT] 'AR_INV_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:54][OK]   saved 5 table(s)
+[2026-07-13 12:27:54][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\8. AP Credit Memo\1.AP Credit Memo_ใบลดหนี้\1.AP Credit Memo_ใบลดหนี้.rpt
+[2026-07-13 12:27:55][OK]   [main] 'AP_CN' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:55][OK]   [main] 'HAddress' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:55][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:55][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:55][OK]   [sub:HeadRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:55][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:55][OK]   saved 6 table(s)
+[2026-07-13 12:27:55][INFO] --> C:\GitHub\SDA\Form-Layout\3. Purchasing - AP\9. Landed Costs\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt
+[2026-07-13 12:27:56][OK]   [main] 'Landed_Cost' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:56][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:56][OK]   [sub:Landed_Cost] 'Landed_Cost' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:56][OK]   saved 3 table(s)
+[2026-07-13 12:27:56][INFO] --> C:\GitHub\SDA\Form-Layout\4. Banking\1. Incoming Payments\1.Incoming Payments_ใบเสร็จรับเงิน\1.Incoming Payments_Eng ใบเสร็จรับเงิน.rpt
+[2026-07-13 12:27:56][OK]   [main] 'Bank_Receipt' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:56][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:56][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:56][OK]   [sub:CheckNum] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:56][OK]   saved 4 table(s)
+[2026-07-13 12:27:56][INFO] --> C:\GitHub\SDA\Form-Layout\4. Banking\1. Incoming Payments\1.Incoming Payments_ใบเสร็จรับเงิน\1.Incoming Payments_ใบเสร็จรับเงิน.rpt
+[2026-07-13 12:27:57][OK]   [main] 'Bank_Receipt' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:57][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:57][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:57][OK]   [sub:CheckNum] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:57][OK]   saved 4 table(s)
+[2026-07-13 12:27:57][INFO] --> C:\GitHub\SDA\Form-Layout\4. Banking\1. Incoming Payments\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี\2.Incoming Payments_ ENG ใบเสร็จรับเงินใบกำกับภาษี.rpt
+[2026-07-13 12:27:57][OK]   [main] 'Bank_ReceiptTax' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:57][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:57][OK]   [sub:CheckNum] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:57][OK]   saved 3 table(s)
+[2026-07-13 12:27:58][INFO] --> C:\GitHub\SDA\Form-Layout\4. Banking\1. Incoming Payments\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี.rpt
+[2026-07-13 12:27:58][OK]   [main] 'Bank_ReceiptTax' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:58][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:58][OK]   [sub:CheckNum] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   saved 3 table(s)
+[2026-07-13 12:27:59][INFO] --> C:\GitHub\SDA\Form-Layout\4. Banking\2. Outgoing Payments\1.Outgoing Payments_ใบจ่ายชำระ\1.Outgoing Payments_ENG ใบจ่ายชำระ.rpt
+[2026-07-13 12:27:59][OK]   [main] 'Bank_Payment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   [sub:Bank] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   [sub:Cash] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   [sub:Credit Card] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   [sub:JE] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   [sub:Report] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   [sub:TranFer] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:27:59][OK]   saved 10 table(s)
+[2026-07-13 12:27:59][INFO] --> C:\GitHub\SDA\Form-Layout\4. Banking\2. Outgoing Payments\1.Outgoing Payments_ใบจ่ายชำระ\1.Outgoing Payments_ใบจ่ายชำระ.rpt
+[2026-07-13 12:28:00][OK]   [main] 'Bank_Payment' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:00][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:00][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:00][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:00][OK]   [sub:Bank] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:00][OK]   [sub:Cash] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:00][OK]   [sub:Credit Card] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:00][OK]   [sub:JE] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:00][OK]   [sub:Report] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:00][OK]   [sub:TranFer] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:00][OK]   saved 10 table(s)
+[2026-07-13 12:28:00][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\1. Goods Receipt\1.Goods Receipt_ใบรับสินค้า\1.Goods Receipt_ENG ใบรับสินค้า.rpt
+[2026-07-13 12:28:01][OK]   [main] 'G_Receipt' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:01][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:01][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:01][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:03][OK]   saved 4 table(s)
+[2026-07-13 12:28:03][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\1. Goods Receipt\1.Goods Receipt_ใบรับสินค้า\1.Goods Receipt_ใบรับสินค้า.rpt
+[2026-07-13 12:28:04][OK]   [main] 'G_Receipt' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:04][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:04][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:04][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:06][OK]   saved 4 table(s)
+[2026-07-13 12:28:07][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\1. Goods Receipt\2.Goods Receipt_ใบรับสินค้า_(Batch_Serial)\2.Goods Receipt_ENG ใบรับสินค้า_(Batch_Serial).rpt
+[2026-07-13 12:28:07][OK]   [main] 'G_Receipt' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:07][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:07][OK]   [sub:Batch] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:07][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:07][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:27][OK]   saved 5 table(s)
+[2026-07-13 12:28:27][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\1. Goods Receipt\2.Goods Receipt_ใบรับสินค้า_(Batch_Serial)\2.Goods Receipt_ใบรับสินค้า_(Batch_Serial).rpt
+[2026-07-13 12:28:28][OK]   [main] 'G_Receipt' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:28][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:28][OK]   [sub:Batch] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:28][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:28][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:45][OK]   saved 5 table(s)
+[2026-07-13 12:28:46][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\2. Goods Issue\1.Goods Issue_ใบเบิกสินค้า\1.Goods Issue_ENG ใบเบิกสินค้า.rpt
+[2026-07-13 12:28:46][OK]   [main] 'G_Issue_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:46][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:46][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:46][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:46][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:46][OK]   saved 5 table(s)
+[2026-07-13 12:28:46][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\2. Goods Issue\1.Goods Issue_ใบเบิกสินค้า\1.Goods Issue_ใบเบิกสินค้า.rpt
+[2026-07-13 12:28:47][OK]   [main] 'G_Issue_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:47][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:47][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:47][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:47][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:47][OK]   saved 5 table(s)
+[2026-07-13 12:28:47][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\2. Goods Issue\2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial)\2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).rpt
+[2026-07-13 12:28:48][OK]   [main] 'G_Issue_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   [sub:Batch] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   saved 6 table(s)
+[2026-07-13 12:28:48][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\2. Goods Issue\2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial)\2.Goods Issue_ใบเบิกสินค้า_ENG (Batch_Serial).rpt
+[2026-07-13 12:28:48][OK]   [main] 'G_Issue_BS' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   [sub:Batch] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   [sub:Head_Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   [sub:Remark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:48][OK]   saved 6 table(s)
+[2026-07-13 12:28:48][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\3. Inventory Transfer Request\1.Inventory Transfer Request_ใบขอโอนสินค้า\1.Inventory Transfer Request_ใบขอโอนสินค้า.rpt
+[2026-07-13 12:28:49][OK]   [main] 'Transfer_Re' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [main] 'Transfer_Re_Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [sub:TEXT] 'Transfer_Re_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   saved 7 table(s)
+[2026-07-13 12:28:49][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\4. Inventory Transfer\2.Inventory Transfer_ใบโอนสินค้า(Batch_Serial)\2.Inventory Transfer_ใบโอนสินค้า.rpt
+[2026-07-13 12:28:49][OK]   [main] 'Transfer' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [main] 'Create' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [main] 'Approve' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   [sub:TEXT] 'Transfer_Re_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:49][OK]   saved 6 table(s)
+[2026-07-13 12:28:49][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\4. Inventory Transfer\2.Inventory Transfer_ใบโอนสินค้า(Batch_Serial)\2.Inventory Transfer_ใบโอนสินค้า_TH_(Batch_Serial).rpt
+[2026-07-13 12:28:50][OK]   [main] 'Transfer' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:50][OK]   [main] 'Address' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:50][OK]   [main] 'Create' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:50][OK]   [main] 'Approve' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:50][OK]   [sub:Batch] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:50][OK]   [sub:HRemark] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:50][OK]   [sub:TEXT] 'Transfer_Re_Text' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:50][OK]   saved 7 table(s)
+[2026-07-13 12:28:50][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\5. Inventory Counting\1.Inventory Counting_ใบตรวจนับสินค้า_Befor\1.Inventory Counting_ใบตรวจนับสินค้า_Befor.rpt
+[2026-07-13 12:28:50][OK]   [main] 'Command' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:50][OK]   [main] 'Address' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:50][OK]   saved 2 table(s)
+[2026-07-13 12:28:50][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\5. Inventory Counting\2.Inventory Counting_ใบหลังตรวจนับสินค้า_After\2.Inventory Counting_ใบหลังตรวจนับสินค้า_After.rpt
+[2026-07-13 12:28:51][OK]   [main] 'Command' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:51][OK]   [main] 'Address' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:51][OK]   saved 2 table(s)
+[2026-07-13 12:28:51][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\6. Inventory Revaluation\1.Inventory Revaluation_ใบปรับมูลค่า_Price\1.Inventory Revaluation_ใบปรับมูลค่า_Price.rpt
+[2026-07-13 12:28:51][OK]   [main] 'Inventory_Re' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:51][OK]   [main] 'Address' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:51][OK]   [main] 'Create' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:51][OK]   saved 3 table(s)
+[2026-07-13 12:28:51][INFO] --> C:\GitHub\SDA\Form-Layout\5. Inventory\6. Inventory Revaluation\2.Inventory Revaluation_ใบปรับมูลค่า_DebitCredit\2.Inventory Revaluation_ใบปรับมูลค่า_DebitCredit.rpt
+[2026-07-13 12:28:51][OK]   [main] 'Inven_Revalue' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:51][OK]   [main] 'Address' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:51][OK]   [main] 'Create' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:52][OK]   saved 3 table(s)
+[2026-07-13 12:28:52][INFO] --> C:\GitHub\SDA\Form-Layout\6. Production\1. Production Order\1.Production Order_ใบสั่งผลิต\1.Production Order_ใบสั่งผลิต.rpt
+[2026-07-13 12:28:52][OK]   [main] 'Prodution_Order' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:52][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:52][OK]   [sub:Text] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:52][OK]   saved 3 table(s)
+[2026-07-13 12:28:52][INFO] --> C:\GitHub\SDA\Form-Layout\6. Production\2. Receipt from Production\1.Receipt from Production_ใบรับสินค้าจากการผลิต\1.Receipt from Production_ใบรับสินค้าจากการผลิต.rpt
+[2026-07-13 12:28:52][OK]   [main] 'Receipt_f_Production' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:52][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:52][OK]   [sub:TEXT] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:52][OK]   saved 3 table(s)
+[2026-07-13 12:28:52][INFO] --> C:\GitHub\SDA\Form-Layout\6. Production\2. Receipt from Production\2.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial)\2.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial).rpt
+[2026-07-13 12:28:53][OK]   [main] 'Receipt_f_Prodution' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:53][OK]   [main] 'Address' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:53][OK]   [sub:B/S Number] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:53][OK]   [sub:TEXT] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:53][OK]   saved 4 table(s)
+[2026-07-13 12:28:53][INFO] --> C:\GitHub\SDA\Form-Layout\6. Production\3. Issue for Production\1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต\1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต.rpt
+[2026-07-13 12:28:53][OK]   [main] 'Issue_f_Prodution' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:53][OK]   [main] 'Address' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:53][OK]   [sub:TEXT] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:53][OK]   saved 3 table(s)
+[2026-07-13 12:28:53][INFO] --> C:\GitHub\SDA\Form-Layout\6. Production\3. Issue for Production\2.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial)\2.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial).rpt
+[2026-07-13 12:28:54][OK]   [main] 'Issue_f_Prodution' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:54][OK]   [main] 'Address' server '10.10.10.115' -> '119 094 672' db SBO_SDA_(Test)_Pre_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:54][OK]   [sub:B/S Num] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:54][OK]   [sub:TEXT] 'Command' server '119 094 672' -> '119 094 672' db SBO_SDA_REAL -> SBO_SDA_REAL
+[2026-07-13 12:28:54][OK]   saved 4 table(s)
+[2026-07-13 12:28:54][INFO] --> C:\GitHub\SDA\Form-Layout\7.Fixed Asset\ทะเบียนสินทรัพย์\ทะเบียนสินทรัพย์.rpt
+[2026-07-13 12:28:54][OK]   [main] 'คำสั่ง' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:54][OK]   saved 1 table(s)
+[2026-07-13 12:28:54][INFO] --> C:\GitHub\SDA\Form-Layout\7.Fixed Asset\รายการขายทรัพย์สิน เรียงตามรหัสสินทรัพย์\รายการขายทรัพย์สิน เรียงตามรหัสสินทรัพย์.rpt
+[2026-07-13 12:28:55][OK]   [main] 'Command' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:55][OK]   saved 1 table(s)
+[2026-07-13 12:28:55][INFO] --> C:\GitHub\SDA\Form-Layout\7.Fixed Asset\รายการสินทรัพย์เข้าใหม่ เรียงตามรหัสสินทรัพย์\รายการสินทรัพย์เข้าใหม่ เรียงตามรหัสสินทรัพย์.rpt
+[2026-07-13 12:28:55][OK]   [main] 'Command' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:55][OK]   saved 1 table(s)
+[2026-07-13 12:28:55][INFO] --> C:\GitHub\SDA\Form-Layout\7.Fixed Asset\รายงานค่าเสื่อมประจำเดือน สรุปตามกลุ่มสินทรัพย์\รายงานค่าเสื่อมประจำเดือน สรุปตามกลุ่มสินทรัพย์.rpt
+[2026-07-13 12:28:56][OK]   [main] 'คำสั่ง' server '192.168.0.216' -> '119 094 672' db SBO_SDA_Training -> SBO_SDA_REAL
+[2026-07-13 12:28:56][OK]   saved 1 table(s)
+[2026-07-13 12:28:56][INFO] === Done. ok=88  err=0  skipped=0  total=88 ===
