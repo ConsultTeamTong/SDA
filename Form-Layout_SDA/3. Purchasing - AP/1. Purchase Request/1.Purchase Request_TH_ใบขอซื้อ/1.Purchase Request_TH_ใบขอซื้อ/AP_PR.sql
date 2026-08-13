@@ -1,4 +1,12 @@
-﻿SELECT DISTINCT
+﻿-- ============================================================
+-- Report: 1.Purchase Request_TH_ใบขอซื้อ.rpt
+Path:   1.Purchase Request_TH_ใบขอซื้อ.rpt
+Extracted: 2026-08-05 18:29:45
+-- Source: Main Report
+-- Table:  AP_PR
+-- ============================================================
+
+SELECT DISTINCT
     CASE WHEN BRANCH.Code = '00000' AND OPRQ.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่'
          WHEN BRANCH.Code = '00000' AND OPRQ.DocCur <> OADM.MainCurncy THEN 'Head office'
          WHEN BRANCH.Code <> '00000' AND OPRQ.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code)
@@ -34,7 +42,7 @@
     ISNULL(NNM1.BeginStr,'') AS 'BeginStr', 
     OPRQ.DocNum, 
     OPRQ.DocDate, 
-    OPRQ.DocDueDate, 
+    OPRQ.ReqDate AS DocDueDate, 
     PRQ1.VisOrder AS 'No.', 
     PRQ1.LineNum AS 'Line No.', 
     PRQ1.ItemCode, 
@@ -49,7 +57,7 @@
     PRQ1.unitMsr,
     PRQ1.LineType,
     CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
-    pj.Project,
+    PRQ1.Project,
     OCRD.CntctPrsn,
     OCRD.E_Mail,
     OCRD.Phone1 AS 'BP_Phone1', -- Note: duplicate Phone1 alias renamed for safety
@@ -65,16 +73,16 @@
     CAST(PRQ12.CountyB AS NVARCHAR(MAX)) AS CountyB, 
     PRQ12.StateB,
     OPRQ.CardCode,
-    OUDP.Name 
+    OUDP.Name ,
+	OPRQ.Comments
 FROM OPRQ 
 INNER JOIN PRQ1 ON OPRQ.DocEntry = PRQ1.DocEntry
-INNER JOIN PRQ1 pj ON OPRQ.DocEntry = PRQ1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
 LEFT JOIN PRQ12 ON OPRQ.DocEntry = PRQ12.DocEntry
 LEFT JOIN OCRD ON OCRD.CardCode = OPRQ.CardCode 
 LEFT JOIN OCPR ON OCRD.CardCode = OCPR.CardCode AND OPRQ.cntctcode = OCPR.cntctcode
 LEFT JOIN CRD1 ON (OCRD.CardCode = CRD1.CardCode AND OPRQ.PaytoCode = CRD1.[Address] AND CRD1.AdresType ='B')
 LEFT JOIN NNM1 ON OPRQ.Series = NNM1.Series
-LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
+LEFT JOIN OPRJ ON PRQ1.Project = OPRJ.PrjCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPRQ.U_SLD_LVatBranch = BRANCH.Code
 left join OUDP ON OPRQ.Department = OUDP.Code 
 CROSS JOIN OADM 

@@ -1,7 +1,7 @@
 ﻿============================================================
 Report: 1.Purchase Request_TH_ใบขอซื้อ.rpt
-Path:   3. Purchasing - AP\1. Purchase Request\1.Purchase Request_TH_ใบขอซื้อ.rpt
-Extracted: 2026-04-09 15:22:43
+Path:   1.Purchase Request_TH_ใบขอซื้อ.rpt
+Extracted: 2026-08-05 18:29:45
 ============================================================
 
 ************************************************************
@@ -26,28 +26,33 @@ Formula: {@Total}
 {AP_PR.Quantity}*{AP_PR.Price}
 --- END ---
 
+Formula: {@page}
+--- BEGIN ---
+"หน้า " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+--- END ---
+
 
 ************************************************************
   CONNECTION INFO
 ************************************************************
 Table:    AP_PR
-  Server:   10.10.10.115
-  Database: SBO_SDA_MARK1
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
   UserID:   sa
 
-Table:    Command
-  Server:   10.10.10.115
-  Database: SBO_SDA_MARK1
+Table:    Address
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
   UserID:   sa
 
-Table:    APPROVE
-  Server:   10.10.10.115
-  Database: SBO_SDA_MARK1
+Table:    Approve
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
   UserID:   sa
 
-Table:    CREATE
-  Server:   10.10.10.115
-  Database: SBO_SDA_MARK1
+Table:    Create
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
   UserID:   sa
 
 

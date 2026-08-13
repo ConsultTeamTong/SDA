@@ -1,7 +1,7 @@
 ﻿-- ============================================================
 -- Report: 1.Sale Order_ใบสั่งขาย_(Dis).rpt
-Path:   1.Sale Order_ใบสั่งขาย_(Dis).rpt
-Extracted: 2026-07-31 00:01:55
+Path:   1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt
+Extracted: 2026-08-05 14:18:16
 -- Source: Main Report
 -- Table:  Approve
 -- ============================================================

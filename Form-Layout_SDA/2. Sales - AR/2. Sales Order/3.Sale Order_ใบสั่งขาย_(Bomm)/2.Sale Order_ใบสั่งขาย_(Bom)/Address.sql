@@ -1,16 +1,12 @@
 ﻿-- ============================================================
--- Report: 1.Purchase Request_TH_ใบขอซื้อ.rpt
-Path:   3. Purchasing - AP\1. Purchase Request\1.Purchase Request_TH_ใบขอซื้อ.rpt
-Extracted: 2026-04-09 15:22:43
+-- Report: 2.Sale Order_ใบสั่งขาย_(Bom).rpt
+Path:   3.Sale Order_ใบสั่งขาย_(Bomm)\2.Sale Order_ใบสั่งขาย_(Bom).rpt
+Extracted: 2026-08-05 14:18:16
 -- Source: Main Report
--- Table:  Command
+-- Table:  Address
 -- ============================================================
 
-
-
-
-
-Select CompnyName,adm1.Street,adm1.Block,adm1.City,adm1.County,adm1.ZipCode,AliasName,Phone1,IntrntAdrs,RevOffice,
+select CompnyName,adm1.Street,adm1.Block,adm1.City,adm1.County,adm1.ZipCode,AliasName,Phone1,IntrntAdrs,RevOffice,
 CASE WHEN adm1.GlblLocNum = '00000' THEN N'สำนักงานใหญ่'
   WHEN adm1.GlblLocNum <> '00000' THEN N'สาขาที่ ' + adm1.GlblLocNum
   END as 'GLN_H'
