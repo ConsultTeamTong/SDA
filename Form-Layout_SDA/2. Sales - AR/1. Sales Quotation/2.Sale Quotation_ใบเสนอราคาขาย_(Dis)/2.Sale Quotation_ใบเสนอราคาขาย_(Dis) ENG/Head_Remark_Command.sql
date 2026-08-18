@@ -1,7 +1,7 @@
 ﻿-- ============================================================
 -- Report: 2.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG.rpt
 Path:   2.Sale Quotation_ใบเสนอราคาขาย_(Dis)\2.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG.rpt
-Extracted: 2026-08-05 14:09:13
+Extracted: 2026-08-17 11:43:03
 -- Source: Subreport [Head_Remark]
 -- Table:  Command
 -- ============================================================

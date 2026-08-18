@@ -1,7 +1,7 @@
 ﻿-- ============================================================
 -- Report: 1.Sale Quotation_ใบเสนอราคาขาย_(Bom).rpt
 Path:   1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(Bom).rpt
-Extracted: 2026-08-05 14:09:13
+Extracted: 2026-08-17 11:43:02
 -- Source: Main Report
 -- Table:  AR_SQ
 -- ============================================================
@@ -13,43 +13,52 @@ WITH ComponentSums AS (
     -- 🟢 ส่วนคำนวณของเอกสารใบเสนอราคาจริง (OQUT)
     SELECT 
         T0.DocEntry,
-        (SELECT TOP 1 P.VisOrder 
-         FROM QUT1 P 
-         WHERE P.DocEntry = T0.DocEntry 
-           AND P.VisOrder < T0.VisOrder 
-           AND P.TreeType = 'S' 
-         ORDER BY P.VisOrder DESC) AS Parent_VisOrder,
+        (SELECT TOP 1 P.VisOrder FROM QUT1 P WHERE P.DocEntry = T0.DocEntry AND P.VisOrder < T0.VisOrder AND P.TreeType IN ('S', 'A', 'T') ORDER BY P.VisOrder DESC) AS Parent_VisOrder,
         T0.U_SLD_T_BeDis AS PriceBefDi,
         T0.U_SLD_Dis_Amount AS U_SLD_Dis_Amount,
         CASE WHEN OQ.DocCur = 'THB' THEN T0.LineTotal ELSE T0.TotalFrgn END AS CompLineTotal,
         '23' AS ObjType
     FROM QUT1 T0
     INNER JOIN OQUT OQ ON T0.DocEntry = OQ.DocEntry
-    WHERE T0.TreeType = 'i' 
-      AND T0.DocEntry = '{?DocKey@}'
-      AND '{?ObjectId@}' = '23'
+    WHERE T0.DocEntry = '{?DocKey@}' AND '{?ObjectId@}' = '23'
+      AND (
+          T0.TreeType IN ('i', 'I') -- ลูก BOM ปกติ
+          OR (
+              -- ลูกที่ถูก SAP แปลงเป็น N (Template BOM) แต่เช็คแล้วว่าเป็นลูกจริงๆ จาก Master Data
+              ISNULL(T0.TreeType, 'N') = 'N' 
+              AND EXISTS (
+                  SELECT 1 FROM ITT1 
+                  WHERE Code = T0.ItemCode 
+                    AND Father = (SELECT TOP 1 P.ItemCode FROM QUT1 P WHERE P.DocEntry = T0.DocEntry AND P.VisOrder < T0.VisOrder AND P.TreeType IN ('S', 'A', 'T') ORDER BY P.VisOrder DESC)
+              )
+          )
+      )
 
     UNION ALL
 
     -- 🟢 ส่วนคำนวณของเอกสารร่าง (ODRF)
     SELECT 
         T0.DocEntry,
-        (SELECT TOP 1 P.VisOrder 
-         FROM DRF1 P 
-         WHERE P.DocEntry = T0.DocEntry 
-           AND P.VisOrder < T0.VisOrder 
-           AND P.TreeType = 'S' 
-         ORDER BY P.VisOrder DESC) AS Parent_VisOrder,
+        (SELECT TOP 1 P.VisOrder FROM DRF1 P WHERE P.DocEntry = T0.DocEntry AND P.VisOrder < T0.VisOrder AND P.TreeType IN ('S', 'A', 'T') ORDER BY P.VisOrder DESC) AS Parent_VisOrder,
         T0.U_SLD_T_BeDis AS PriceBefDi,
         T0.U_SLD_Dis_Amount AS U_SLD_Dis_Amount,
         CASE WHEN OQ.DocCur = 'THB' THEN T0.LineTotal ELSE T0.TotalFrgn END AS CompLineTotal,
         '112' AS ObjType
     FROM DRF1 T0
     INNER JOIN ODRF OQ ON T0.DocEntry = OQ.DocEntry
-    WHERE T0.TreeType = 'i' 
-      AND T0.DocEntry = '{?DocKey@}' 
-      AND '{?ObjectId@}' = '112' 
-      AND OQ.ObjType = '23'
+    WHERE T0.DocEntry = '{?DocKey@}' AND '{?ObjectId@}' = '112' AND OQ.ObjType = '23'
+      AND (
+          T0.TreeType IN ('i', 'I') -- ลูก BOM ปกติ
+          OR (
+              -- ลูกที่ถูก SAP แปลงเป็น N (Template BOM) แต่เช็คแล้วว่าเป็นลูกจริงๆ จาก Master Data
+              ISNULL(T0.TreeType, 'N') = 'N' 
+              AND EXISTS (
+                  SELECT 1 FROM ITT1 
+                  WHERE Code = T0.ItemCode 
+                    AND Father = (SELECT TOP 1 P.ItemCode FROM DRF1 P WHERE P.DocEntry = T0.DocEntry AND P.VisOrder < T0.VisOrder AND P.TreeType IN ('S', 'A', 'T') ORDER BY P.VisOrder DESC)
+              )
+          )
+      )
 ),
 GroupedParent AS (
     SELECT 
@@ -166,7 +175,16 @@ LEFT JOIN GroupedParent GPS ON QUT1.DocEntry = GPS.DocEntry AND QUT1.VisOrder = 
 CROSS JOIN OADM
 
 WHERE OQUT.DocEntry = '{?DocKey@}' AND '{?ObjectId@}' = '23'
-  AND QUT1.TreeType <> 'I'
+  AND QUT1.TreeType NOT IN ('I', 'i') -- ซ่อนบรรทัดลูก BOM ปกติ
+  AND NOT (
+      -- ซ่อนบรรทัดลูก Template BOM ที่เช็คแล้วว่าผูกกับบรรทัดแม่ด้านบน
+      ISNULL(QUT1.TreeType, 'N') = 'N' 
+      AND EXISTS (
+          SELECT 1 FROM ITT1 
+          WHERE Code = QUT1.ItemCode 
+            AND Father = (SELECT TOP 1 P.ItemCode FROM QUT1 P WHERE P.DocEntry = QUT1.DocEntry AND P.VisOrder < QUT1.VisOrder AND P.TreeType IN ('S', 'A', 'T') ORDER BY P.VisOrder DESC)
+      )
+  )
 
 UNION ALL
 
@@ -272,6 +290,15 @@ LEFT JOIN GroupedParent GPS ON DRF1.DocEntry = GPS.DocEntry AND DRF1.VisOrder = 
 CROSS JOIN OADM
 
 WHERE ODRF.DocEntry = '{?DocKey@}' AND '{?ObjectId@}' = '112' AND ODRF.ObjType = '23'
-  AND DRF1.TreeType <> 'I'
+  AND DRF1.TreeType NOT IN ('I', 'i') -- ซ่อนบรรทัดลูก BOM ปกติ
+  AND NOT (
+      -- ซ่อนบรรทัดลูก Template BOM ที่เช็คแล้วว่าผูกกับบรรทัดแม่ด้านบน
+      ISNULL(DRF1.TreeType, 'N') = 'N' 
+      AND EXISTS (
+          SELECT 1 FROM ITT1 
+          WHERE Code = DRF1.ItemCode 
+            AND Father = (SELECT TOP 1 P.ItemCode FROM DRF1 P WHERE P.DocEntry = DRF1.DocEntry AND P.VisOrder < DRF1.VisOrder AND P.TreeType IN ('S', 'A', 'T') ORDER BY P.VisOrder DESC)
+      )
+  )
 
 ORDER BY [No.], [Line No.]

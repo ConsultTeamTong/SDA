@@ -1,7 +1,7 @@
 ﻿============================================================
 Report: 1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
 Path:   1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
-Extracted: 2026-08-05 14:09:12
+Extracted: 2026-08-17 11:43:02
 ============================================================
 
 ************************************************************
@@ -22,12 +22,7 @@ Formula: {@count date}
 
 --- END ---
 
-Formula: {@Sup Total}
---- BEGIN ---
-{AR_SQ.Sum_LineTotal_All}-{AR_SQ.DiscSum}
---- END ---
-
-Formula: {@ToText}
+Formula: {@Totext}
 --- BEGIN ---
 //=========================================================
 // @AmountToWordsEng - Convert number to English words
@@ -227,9 +222,27 @@ If bHasMinor Then (
 sResult
 --- END ---
 
-Formula: {@page}
+Formula: {@Sub Total}
 --- BEGIN ---
-"Page " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+{AR_SQ.Sum_LineTotal_All}-{AR_SQ.DiscSum}
+--- END ---
+
+Formula: {@thaipage}
+--- BEGIN ---
+" Page " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+--- END ---
+
+Formula: {@discount}
+--- BEGIN ---
+If IsNull({AR_SQ.U_SLD_Dis_Amount}) Then 0.00 Else {AR_SQ.U_SLD_Dis_Amount}
+--- END ---
+
+Formula: {@ToEng}
+--- BEGIN ---
+If IsNull({Address.Branch Name}) Then
+    ""
+Else
+    Replace ({Address.Branch Name}, "(สำนักงานใหญ่)", "(Head Office)")
 --- END ---
 
 

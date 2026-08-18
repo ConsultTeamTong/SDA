@@ -1,7 +1,7 @@
 ﻿============================================================
 Report: 1.Sale Quotation_ใบเสนอราคาขาย_(Bom).rpt
 Path:   1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(Bom).rpt
-Extracted: 2026-08-05 14:09:13
+Extracted: 2026-08-17 11:43:02
 ============================================================
 
 ************************************************************
@@ -27,7 +27,7 @@ Formula: {@Sub Total}
 {AR_SQ.GrossProfit}-{AR_SQ.DiscSum}
 --- END ---
 
-Formula: {@Totext}
+Formula: {@ToText}
 --- BEGIN ---
 // =======================================================
 // สูตรแปลงตัวเลขเป็นคำอ่านภาษาไทย (รองรับหลายสกุลเงิน)
@@ -136,6 +136,11 @@ MainText + SubText;
 Formula: {@page}
 --- BEGIN ---
 "หน้า " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+--- END ---
+
+Formula: {@discount}
+--- BEGIN ---
+If IsNull({AR_SQ.U_SLD_Dis_Amount}) Then 0.00 Else {AR_SQ.U_SLD_Dis_Amount}
 --- END ---
 
 

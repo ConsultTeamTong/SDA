@@ -1,7 +1,7 @@
 ﻿-- ============================================================
 -- Report: 1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
 Path:   1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
-Extracted: 2026-08-05 14:09:12
+Extracted: 2026-08-17 11:43:02
 -- Source: Main Report
 -- Table:  AR_SQ
 -- ============================================================
@@ -17,7 +17,7 @@ WITH ComponentSums AS (
          FROM QUT1 P 
          WHERE P.DocEntry = T0.DocEntry 
            AND P.VisOrder < T0.VisOrder 
-           AND P.TreeType = 'S' 
+           AND P.TreeType IN ('S', 'A', 'T') -- รองรับแม่ BOM ทุกประเภท
          ORDER BY P.VisOrder DESC) AS Parent_VisOrder,
          T0.U_SLD_T_BeDis AS PriceBefDi,
          T0.U_SLD_Dis_Amount AS U_SLD_Dis_Amount,
@@ -25,9 +25,19 @@ WITH ComponentSums AS (
         '23' AS ObjType
     FROM QUT1 T0
     INNER JOIN OQUT OQ ON T0.DocEntry = OQ.DocEntry
-    WHERE T0.TreeType = 'i' 
-      AND T0.DocEntry = '{?DocKey@}'
-      AND '{?ObjectId@}' = '23'
+    WHERE T0.DocEntry = '{?DocKey@}' AND '{?ObjectId@}' = '23'
+      AND (
+          T0.TreeType IN ('i', 'I') -- ลูก BOM ปกติ
+          OR (
+              -- ลูกที่ถูก SAP แปลงเป็น N (Template BOM) แต่เช็คแล้วว่าเป็นลูกจริงๆ จาก Master Data
+              ISNULL(T0.TreeType, 'N') = 'N' 
+              AND EXISTS (
+                  SELECT 1 FROM ITT1 
+                  WHERE Code = T0.ItemCode 
+                    AND Father = (SELECT TOP 1 P.ItemCode FROM QUT1 P WHERE P.DocEntry = T0.DocEntry AND P.VisOrder < T0.VisOrder AND P.TreeType IN ('S', 'A', 'T') ORDER BY P.VisOrder DESC)
+              )
+          )
+      )
 
     UNION ALL
 
@@ -38,7 +48,7 @@ WITH ComponentSums AS (
          FROM DRF1 P 
          WHERE P.DocEntry = T0.DocEntry 
            AND P.VisOrder < T0.VisOrder 
-           AND P.TreeType = 'S' 
+           AND P.TreeType IN ('S', 'A', 'T') -- รองรับแม่ BOM ทุกประเภท
          ORDER BY P.VisOrder DESC) AS Parent_VisOrder,
          T0.U_SLD_T_BeDis AS PriceBefDi,
          T0.U_SLD_Dis_Amount AS U_SLD_Dis_Amount,
@@ -46,10 +56,19 @@ WITH ComponentSums AS (
         '112' AS ObjType
     FROM DRF1 T0
     INNER JOIN ODRF OQ ON T0.DocEntry = OQ.DocEntry
-    WHERE T0.TreeType = 'i' 
-      AND T0.DocEntry = '{?DocKey@}' 
-      AND '{?ObjectId@}' = '112' 
-      AND OQ.ObjType = '23'
+    WHERE T0.DocEntry = '{?DocKey@}' AND '{?ObjectId@}' = '112' AND OQ.ObjType = '23'
+      AND (
+          T0.TreeType IN ('i', 'I') -- ลูก BOM ปกติ
+          OR (
+              -- ลูกที่ถูก SAP แปลงเป็น N (Template BOM) แต่เช็คแล้วว่าเป็นลูกจริงๆ จาก Master Data
+              ISNULL(T0.TreeType, 'N') = 'N' 
+              AND EXISTS (
+                  SELECT 1 FROM ITT1 
+                  WHERE Code = T0.ItemCode 
+                    AND Father = (SELECT TOP 1 P.ItemCode FROM DRF1 P WHERE P.DocEntry = T0.DocEntry AND P.VisOrder < T0.VisOrder AND P.TreeType IN ('S', 'A', 'T') ORDER BY P.VisOrder DESC)
+              )
+          )
+      )
 ),
 GroupedParent AS (
     SELECT 
@@ -138,8 +157,9 @@ SELECT DISTINCT
     QUT12.CountyB     AS 'County12',
     QUT12.StateB      AS 'State12',
     QUT12.CountryB    AS 'Country/Region12',
+    OCRY.Name         AS 'CountryName12', -- 🟢 เพิ่มชื่อประเทศตรงนี้
     COALESCE(GPS.U_SLD_Dis_Amount,QUT1.U_SLD_Dis_Amount) As U_SLD_Dis_Amount,
-    OUGP.UgpCode
+    OUOM.U_SLD_Uomforeign AS UgpCode
 
 FROM OQUT  
 INNER JOIN QUT1 ON OQUT.DocEntry = QUT1.DocEntry 
@@ -161,15 +181,24 @@ LEFT JOIN OSLP ON OQUT.SLPCODE = OSLP.SLPCODE
 LEFT JOIN OPRJ ON QPJ.Project = OPRJ.PRJCODE
 LEFT JOIN OITT ON QUT1.ItemCode = OITT.Code AND OITT.TreeType = 'S'
 INNER JOIN QUT12 ON OQUT.DocEntry = QUT12.DocEntry
-LEFT JOIN OUGP ON QUT1.UomCode = OUGP.UgpCode
+LEFT JOIN OCRY ON QUT12.CountryB = OCRY.Code -- 🟢 เชื่อมตาราง OCRY ของ OQUT
+LEFT JOIN OUOM ON QUT1.UomCode = OUOM.UomCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OQUT.U_SLD_LVatBranch = BRANCH.Code 
 -- ผูก GroupedParent โดยระบุ ObjType = '23'
 LEFT JOIN GroupedParent GPS ON QUT1.DocEntry = GPS.DocEntry AND QUT1.VisOrder = GPS.Parent_VisOrder AND GPS.ObjType = '23'
 CROSS JOIN OADM
 
 WHERE OQUT.DocEntry = '{?DocKey@}' AND '{?ObjectId@}' = '23'
-  AND QUT1.TreeType <> 'I'
-  AND QUT1.TreeType <> 'i' /* ซ่อนบรรทัดลูก */
+  AND QUT1.TreeType NOT IN ('I', 'i') -- ซ่อนบรรทัดลูก BOM ปกติ
+  AND NOT (
+      -- ซ่อนบรรทัดลูก Template BOM ที่เช็คแล้วว่าผูกกับบรรทัดแม่ด้านบน
+      ISNULL(QUT1.TreeType, 'N') = 'N' 
+      AND EXISTS (
+          SELECT 1 FROM ITT1 
+          WHERE Code = QUT1.ItemCode 
+            AND Father = (SELECT TOP 1 P.ItemCode FROM QUT1 P WHERE P.DocEntry = QUT1.DocEntry AND P.VisOrder < QUT1.VisOrder AND P.TreeType IN ('S', 'A', 'T') ORDER BY P.VisOrder DESC)
+      )
+  )
 
 UNION ALL
 
@@ -247,8 +276,9 @@ SELECT DISTINCT
     DRF12.CountyB     AS 'County12',
     DRF12.StateB      AS 'State12',
     DRF12.CountryB    AS 'Country/Region12',
+    OCRY.Name         AS 'CountryName12', -- 🟢 เพิ่มชื่อประเทศตรงนี้
     COALESCE(GPS.U_SLD_Dis_Amount,DRF1.U_SLD_Dis_Amount) As U_SLD_Dis_Amount,
-    OUGP.UgpCode
+    OUOM.U_SLD_Uomforeign AS UgpCode
 
 FROM ODRF  
 INNER JOIN DRF1 ON ODRF.DocEntry = DRF1.DocEntry 
@@ -270,15 +300,24 @@ LEFT JOIN OSLP ON ODRF.SLPCODE = OSLP.SLPCODE
 LEFT JOIN OPRJ ON QPJ.Project = OPRJ.PRJCODE
 LEFT JOIN OITT ON DRF1.ItemCode = OITT.Code AND OITT.TreeType = 'S'
 INNER JOIN DRF12 ON ODRF.DocEntry = DRF12.DocEntry
-LEFT JOIN OUGP ON DRF1.UomCode = OUGP.UgpCode
+LEFT JOIN OCRY ON DRF12.CountryB = OCRY.Code -- 🟢 เชื่อมตาราง OCRY ของ ODRF
+LEFT JOIN OUOM ON DRF1.UomCode = OUOM.UomCode
 LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON ODRF.U_SLD_LVatBranch = BRANCH.Code 
 -- ผูก GroupedParent โดยระบุ ObjType = '112'
 LEFT JOIN GroupedParent GPS ON DRF1.DocEntry = GPS.DocEntry AND DRF1.VisOrder = GPS.Parent_VisOrder AND GPS.ObjType = '112'
 CROSS JOIN OADM
 
 WHERE ODRF.DocEntry = '{?DocKey@}' AND '{?ObjectId@}' = '112' AND ODRF.ObjType = '23'
-  AND DRF1.TreeType <> 'I'
-  AND DRF1.TreeType <> 'i' /* ซ่อนบรรทัดลูก */
+  AND DRF1.TreeType NOT IN ('I', 'i') -- ซ่อนบรรทัดลูก BOM ปกติ
+  AND NOT (
+      -- ซ่อนบรรทัดลูก Template BOM ที่เช็คแล้วว่าผูกกับบรรทัดแม่ด้านบน
+      ISNULL(DRF1.TreeType, 'N') = 'N' 
+      AND EXISTS (
+          SELECT 1 FROM ITT1 
+          WHERE Code = DRF1.ItemCode 
+            AND Father = (SELECT TOP 1 P.ItemCode FROM DRF1 P WHERE P.DocEntry = DRF1.DocEntry AND P.VisOrder < DRF1.VisOrder AND P.TreeType IN ('S', 'A', 'T') ORDER BY P.VisOrder DESC)
+      )
+  )
 
 -- ========================================================
 -- การเรียงลำดับ (ORDER BY ต้องอยู่ล่างสุดของการทำ UNION)

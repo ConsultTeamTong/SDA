@@ -1,7 +1,7 @@
 ﻿-- ============================================================
 -- Report: 1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
 Path:   1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
-Extracted: 2026-08-05 14:09:12
+Extracted: 2026-08-17 11:43:02
 -- Source: Subreport [Head_Remark]
 -- Table:  Command
 -- ============================================================

@@ -1,28 +1,27 @@
 ﻿-- ============================================================
 -- Report: 1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
 Path:   1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
-Extracted: 2026-08-05 14:09:12
+Extracted: 2026-08-17 11:43:02
 -- Source: Subreport [Remark]
 -- Table:  Command
 -- ============================================================
 
-SELECT TOP 1 T0.[LineText]
+SELECT T0.[LineText] 
 FROM (
     -- สำหรับใบเสนอราคาปกติ (Object Type = 23)
-    SELECT QUT10.[LineText]
-    FROM QUT1
-    INNER JOIN QUT10 ON QUT1.[DocEntry] = QUT10.[DocEntry] 
-                    AND QUT10.[AftLineNum] = {?lineNum@}
-    WHERE QUT1.[DocEntry] = {?DocKey@}
+    SELECT [LineText], [LineSeq]
+    FROM QUT10
+    WHERE [DocEntry] = {?DocKey@} 
       AND {?ObjectId@} = '23'
+      AND [AftLineNum] = {?lineNum@}
 
     UNION ALL
 
     -- สำหรับเอกสาร Draft (Object Type = 112)
-    SELECT DRF10.[LineText]
-    FROM DRF1
-    INNER JOIN DRF10 ON DRF1.[DocEntry] = DRF10.[DocEntry] 
-                    AND DRF10.[AftLineNum] = {?lineNum@}
-    WHERE DRF1.[DocEntry] = {?DocKey@}
+    SELECT [LineText], [LineSeq]
+    FROM DRF10
+    WHERE [DocEntry] = {?DocKey@} 
       AND {?ObjectId@} = '112'
+      AND [AftLineNum] = {?lineNum@}
 ) T0
+ORDER BY T0.[LineSeq] ASC
