@@ -1,0 +1,283 @@
+﻿============================================================
+Report: 1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
+Path:   1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
+Extracted: 2026-08-17 11:43:02
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: (error)
+  Type:     You cannot call a method on a null-valued expression.
+  Report:   
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@count date}
+--- BEGIN ---
+{AR_SQ.DocDueDate}-{AR_SQ.DocDate}
+
+--- END ---
+
+Formula: {@Totext}
+--- BEGIN ---
+//=========================================================
+// @AmountToWordsEng - Convert number to English words
+// Multi-currency: USD, THB, EUR, GBP, JPY, CNY, SGD, MYR, LAK, VND, AUD, HKD
+//=========================================================
+
+// ===== Inputs =====
+NumberVar nAmount   := {AR_SQ.DocTotal};
+StringVar sCurrency := {AR_SQ.DocCur};
+
+// ===== Variable declarations (all at top) =====
+StringVar  sMajor    := "";
+StringVar  sMajors   := "";
+StringVar  sMinor    := "";
+StringVar  sMinors   := "";
+BooleanVar bHasMinor := True;
+
+NumberVar nAbs  := 0;
+NumberVar nInt  := 0;
+NumberVar nDec  := 0;
+NumberVar nWork := 0;
+NumberVar nGrp  := 0;
+NumberVar nH    := 0;
+NumberVar nR    := 0;
+NumberVar nTen  := 0;
+NumberVar nOne  := 0;
+
+StringVar sIntWords := "";
+StringVar sDecWords := "";
+StringVar sResult   := "";
+StringVar sNeg      := "";
+
+StringVar Array aOnes := ["", "One", "Two", "Three", "Four", "Five",
+                          "Six", "Seven", "Eight", "Nine", "Ten",
+                          "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
+                          "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+
+StringVar Array aTens := ["", "", "Twenty", "Thirty", "Forty", "Fifty",
+                          "Sixty", "Seventy", "Eighty", "Ninety"];
+
+// ===== Currency mapping =====
+Select UCase(sCurrency)
+    Case "USD" :  (sMajor := "Dollar";   sMajors := "Dollars";   sMinor := "Cent";    sMinors := "Cents";   bHasMinor := True)
+    Case "THB" :  (sMajor := "Baht";     sMajors := "Baht";      sMinor := "Satang";  sMinors := "Satang";  bHasMinor := True)
+    Case "EUR" :  (sMajor := "Euro";     sMajors := "Euros";     sMinor := "Cent";    sMinors := "Cents";   bHasMinor := True)
+    Case "GBP" :  (sMajor := "Pound";    sMajors := "Pounds";    sMinor := "Penny";   sMinors := "Pence";   bHasMinor := True)
+    Case "JPY" :  (sMajor := "Yen";      sMajors := "Yen";       sMinor := "";        sMinors := "";        bHasMinor := False)
+    Case "CNY" :  (sMajor := "Yuan";     sMajors := "Yuan";      sMinor := "Fen";     sMinors := "Fen";     bHasMinor := True)
+    Case "SGD" :  (sMajor := "Dollar";   sMajors := "Dollars";   sMinor := "Cent";    sMinors := "Cents";   bHasMinor := True)
+    Case "MYR" :  (sMajor := "Ringgit";  sMajors := "Ringgit";   sMinor := "Sen";     sMinors := "Sen";     bHasMinor := True)
+    Case "LAK" :  (sMajor := "Kip";      sMajors := "Kip";       sMinor := "";        sMinors := "";        bHasMinor := False)
+    Case "VND" :  (sMajor := "Dong";     sMajors := "Dong";      sMinor := "";        sMinors := "";        bHasMinor := False)
+    Case "AUD" :  (sMajor := "Dollar";   sMajors := "Dollars";   sMinor := "Cent";    sMinors := "Cents";   bHasMinor := True)
+    Case "HKD" :  (sMajor := "Dollar";   sMajors := "Dollars";   sMinor := "Cent";    sMinors := "Cents";   bHasMinor := True)
+    Case "DKK" :  (sMajor := "Krone";    sMajors := "Kroner";    sMinor := "Øre";     sMinors := "Øre";     bHasMinor := True)
+    Case "SEK" :  (sMajor := "Krona";    sMajors := "Kronor";    sMinor := "Öre";     sMinors := "Öre";     bHasMinor := True)
+    Case "NOK" :  (sMajor := "Krone";    sMajors := "Kroner";    sMinor := "Øre";     sMinors := "Øre";     bHasMinor := True)
+    Case "CHF" :  (sMajor := "Franc";    sMajors := "Francs";    sMinor := "Centime"; sMinors := "Centimes";bHasMinor := True)
+    Case "CAD" :  (sMajor := "Dollar";   sMajors := "Dollars";   sMinor := "Cent";    sMinors := "Cents";   bHasMinor := True)
+    Case "NZD" :  (sMajor := "Dollar";   sMajors := "Dollars";   sMinor := "Cent";    sMinors := "Cents";   bHasMinor := True)
+    Case "KRW" :  (sMajor := "Won";      sMajors := "Won";       sMinor := "";        sMinors := "";        bHasMinor := False)
+    Case "TWD" :  (sMajor := "Dollar";   sMajors := "Dollars";   sMinor := "Cent";    sMinors := "Cents";   bHasMinor := True)
+    Case "INR" :  (sMajor := "Rupee";    sMajors := "Rupees";    sMinor := "Paisa";   sMinors := "Paise";   bHasMinor := True)
+    Case "IDR" :  (sMajor := "Rupiah";   sMajors := "Rupiah";    sMinor := "Sen";     sMinors := "Sen";     bHasMinor := True)
+    Case "PHP" :  (sMajor := "Peso";     sMajors := "Pesos";     sMinor := "Centavo"; sMinors := "Centavos";bHasMinor := True)
+    Case "MMK" :  (sMajor := "Kyat";     sMajors := "Kyats";     sMinor := "Pya";     sMinors := "Pyas";    bHasMinor := True)
+    Case "KHR" :  (sMajor := "Riel";     sMajors := "Riels";     sMinor := "Sen";     sMinors := "Sen";     bHasMinor := True)
+    Case "AED" :  (sMajor := "Dirham";   sMajors := "Dirhams";   sMinor := "Fils";    sMinors := "Fils";    bHasMinor := True)
+    Case "SAR" :  (sMajor := "Riyal";    sMajors := "Riyals";    sMinor := "Halala";  sMinors := "Halalas"; bHasMinor := True)
+    Case "ZAR" :  (sMajor := "Rand";     sMajors := "Rand";      sMinor := "Cent";    sMinors := "Cents";   bHasMinor := True)
+    Case "RUB" :  (sMajor := "Ruble";    sMajors := "Rubles";    sMinor := "Kopeck";  sMinors := "Kopecks"; bHasMinor := True)
+    Default    :  (sMajor := sCurrency;  sMajors := sCurrency;   sMinor := "Cent";    sMinors := "Cents";   bHasMinor := True)
+;
+
+// ===== Split integer / decimal =====
+nAbs := Abs(nAmount);
+nInt := Truncate(nAbs);
+nDec := Round((nAbs - nInt) * 100);
+If nDec = 100 Then (nInt := nInt + 1; nDec := 0);
+
+nWork := nInt;
+
+// ----- Trillions -----
+nGrp  := Truncate(nWork / 1000000000000);
+nWork := nWork - nGrp * 1000000000000;
+If nGrp > 0 Then (
+    nH := Truncate(nGrp / 100);
+    nR := nGrp - nH * 100;
+    If nH > 0 Then sIntWords := sIntWords + aOnes[nH + 1] + " Hundred ";
+    If nR >= 20 Then (
+        sIntWords := sIntWords + aTens[Truncate(nR / 10) + 1];
+        If nR Mod 10 > 0 Then sIntWords := sIntWords + "-" + aOnes[(nR Mod 10) + 1];
+        sIntWords := sIntWords + " "
+    ) Else If nR > 0 Then (
+        sIntWords := sIntWords + aOnes[nR + 1] + " "
+    );
+    sIntWords := sIntWords + "Trillion "
+);
+
+// ----- Billions -----
+nGrp  := Truncate(nWork / 1000000000);
+nWork := nWork - nGrp * 1000000000;
+If nGrp > 0 Then (
+    nH := Truncate(nGrp / 100);
+    nR := nGrp - nH * 100;
+    If nH > 0 Then sIntWords := sIntWords + aOnes[nH + 1] + " Hundred ";
+    If nR >= 20 Then (
+        sIntWords := sIntWords + aTens[Truncate(nR / 10) + 1];
+        If nR Mod 10 > 0 Then sIntWords := sIntWords + "-" + aOnes[(nR Mod 10) + 1];
+        sIntWords := sIntWords + " "
+    ) Else If nR > 0 Then (
+        sIntWords := sIntWords + aOnes[nR + 1] + " "
+    );
+    sIntWords := sIntWords + "Billion "
+);
+
+// ----- Millions -----
+nGrp  := Truncate(nWork / 1000000);
+nWork := nWork - nGrp * 1000000;
+If nGrp > 0 Then (
+    nH := Truncate(nGrp / 100);
+    nR := nGrp - nH * 100;
+    If nH > 0 Then sIntWords := sIntWords + aOnes[nH + 1] + " Hundred ";
+    If nR >= 20 Then (
+        sIntWords := sIntWords + aTens[Truncate(nR / 10) + 1];
+        If nR Mod 10 > 0 Then sIntWords := sIntWords + "-" + aOnes[(nR Mod 10) + 1];
+        sIntWords := sIntWords + " "
+    ) Else If nR > 0 Then (
+        sIntWords := sIntWords + aOnes[nR + 1] + " "
+    );
+    sIntWords := sIntWords + "Million "
+);
+
+// ----- Thousands -----
+nGrp  := Truncate(nWork / 1000);
+nWork := nWork - nGrp * 1000;
+If nGrp > 0 Then (
+    nH := Truncate(nGrp / 100);
+    nR := nGrp - nH * 100;
+    If nH > 0 Then sIntWords := sIntWords + aOnes[nH + 1] + " Hundred ";
+    If nR >= 20 Then (
+        sIntWords := sIntWords + aTens[Truncate(nR / 10) + 1];
+        If nR Mod 10 > 0 Then sIntWords := sIntWords + "-" + aOnes[(nR Mod 10) + 1];
+        sIntWords := sIntWords + " "
+    ) Else If nR > 0 Then (
+        sIntWords := sIntWords + aOnes[nR + 1] + " "
+    );
+    sIntWords := sIntWords + "Thousand "
+);
+
+// ----- Hundreds (last group) -----
+nGrp := nWork;
+If nGrp > 0 Then (
+    nH := Truncate(nGrp / 100);
+    nR := nGrp - nH * 100;
+    If nH > 0 Then sIntWords := sIntWords + aOnes[nH + 1] + " Hundred ";
+    If nR >= 20 Then (
+        sIntWords := sIntWords + aTens[Truncate(nR / 10) + 1];
+        If nR Mod 10 > 0 Then sIntWords := sIntWords + "-" + aOnes[(nR Mod 10) + 1]
+    ) Else If nR > 0 Then (
+        sIntWords := sIntWords + aOnes[nR + 1]
+    )
+);
+
+If nInt = 0 Then sIntWords := "Zero";
+sIntWords := Trim(sIntWords);
+
+// ===== Decimal part =====
+If nDec > 0 Then (
+    If nDec < 20 Then
+        sDecWords := aOnes[nDec + 1]
+    Else (
+        nTen := Truncate(nDec / 10);
+        nOne := nDec - nTen * 10;
+        sDecWords := aTens[nTen + 1];
+        If nOne > 0 Then sDecWords := sDecWords + "-" + aOnes[nOne + 1]
+    )
+);
+
+// ===== Build final result =====
+If nAmount < 0 Then sNeg := "Minus ";
+
+If bHasMinor Then (
+    If nDec > 0 Then
+        sResult := sNeg + sIntWords + " " +
+                   (If nInt = 1 Then sMajor Else sMajors) +
+                   " and " + sDecWords + " " +
+                   (If nDec = 1 Then sMinor Else sMinors) + " Only"
+    Else
+        sResult := sNeg + sIntWords + " " +
+                   (If nInt = 1 Then sMajor Else sMajors) + " Only"
+) Else (
+    sResult := sNeg + sIntWords + " " +
+               (If nInt = 1 Then sMajor Else sMajors) + " Only"
+);
+
+sResult
+--- END ---
+
+Formula: {@Sub Total}
+--- BEGIN ---
+{AR_SQ.Sum_LineTotal_All}-{AR_SQ.DiscSum}
+--- END ---
+
+Formula: {@thaipage}
+--- BEGIN ---
+" Page " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+--- END ---
+
+Formula: {@discount}
+--- BEGIN ---
+If IsNull({AR_SQ.U_SLD_Dis_Amount}) Then 0.00 Else {AR_SQ.U_SLD_Dis_Amount}
+--- END ---
+
+Formula: {@ToEng}
+--- BEGIN ---
+If IsNull({Address.Branch Name}) Then
+    ""
+Else
+    Replace ({Address.Branch Name}, "(สำนักงานใหญ่)", "(Head Office)")
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    AR_SQ
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Address
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Create
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Approve
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+(No table links)
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

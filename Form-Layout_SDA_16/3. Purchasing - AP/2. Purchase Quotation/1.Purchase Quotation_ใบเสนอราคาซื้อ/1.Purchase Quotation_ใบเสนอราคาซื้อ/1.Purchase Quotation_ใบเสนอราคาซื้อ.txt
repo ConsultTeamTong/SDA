@@ -1,0 +1,89 @@
+﻿============================================================
+Report: 1.Purchase Quotation_ใบเสนอราคาซื้อ.rpt
+Path:   1.Purchase Quotation_ใบเสนอราคาซื้อ.rpt
+Extracted: 2026-08-05 18:27:23
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: (error)
+  Type:     You cannot call a method on a null-valued expression.
+  Report:   
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@T SUM}
+--- BEGIN ---
+{AP_PQ.DocTotal}-{AP_PQ.VatSum}
+--- END ---
+
+Formula: {@F SUM}
+--- BEGIN ---
+sum({AP_PQ.TotalFrgn})
+--- END ---
+
+Formula: {@No.}
+--- BEGIN ---
+{AP_PQ.No.} + 1
+--- END ---
+
+Formula: {@lineTotal}
+--- BEGIN ---
+{AP_PQ.Quantity}*{AP_PQ.Price}
+--- END ---
+
+Formula: {@CountDate}
+--- BEGIN ---
+
+--- END ---
+
+Formula: {@page}
+--- BEGIN ---
+"หน้า " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+--- END ---
+
+Formula: {@discount}
+--- BEGIN ---
+If IsNull({AP_PQ.U_SLD_Dis_Amount}) Then 0.00 Else {AP_PQ.U_SLD_Dis_Amount}
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    AP_PQ
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Address
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Create
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Approve
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+(No table links)
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

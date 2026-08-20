@@ -1,0 +1,175 @@
+﻿============================================================
+Report: 1.Sale Order_ใบสั่งขาย_(Dis).rpt
+Path:   1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt
+Extracted: 2026-08-05 14:18:16
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: (error)
+  Type:     You cannot call a method on a null-valued expression.
+  Report:   
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@SubTotal}
+--- BEGIN ---
+{AR_SO.Sum_LineTotal_All}-{AR_SO.DiscSum}
+--- END ---
+
+Formula: {@ToText}
+--- BEGIN ---
+// =======================================================
+// สูตรแปลงตัวเลขเป็นคำอ่านภาษาไทย (รองรับหลายสกุลเงิน)
+// =======================================================
+Local NumberVar InputNum := {AR_SO.DocTotal}; // 1. เปลี่ยนฟิลด์ยอดเงินที่นี่
+Local StringVar Cur := {AR_SO.DocCur};          // 2. เปลี่ยนฟิลด์สกุลเงินที่นี่
+
+// กำหนดชื่อหน่วยหลักและหน่วยย่อย
+Local StringVar MajorUnit;
+Local StringVar MinorUnit;
+
+If Cur = "USD" Then (
+    MajorUnit := "ดอลลาร์";
+    MinorUnit := "เซนต์"
+) Else If Cur = "CNY" Then (
+    MajorUnit := "หยวน";
+    MinorUnit := "เฟิน" 
+) Else If Cur = "EUR" Then (
+    MajorUnit := "ยูโร";
+    MinorUnit := "เซนต์"
+) Else If Cur = "THB" Or Cur = "" Then (
+    MajorUnit := "บาท";
+    MinorUnit := "สตางค์"
+) Else (
+    MajorUnit := Cur; // ถ้าไม่ตรงกับข้างบน ให้แสดงตัวย่อสกุลเงิน
+    MinorUnit := "เซนต์"
+);
+
+// แยกจำนวนเต็มและทศนิยม
+Local StringVar TxtNum := ToText(InputNum, 2, "");
+Local StringVar IntPart := Split(TxtNum, ".")[1];
+Local StringVar DecPart := Split(TxtNum, ".")[2];
+
+Local StringVar Array TxtNumArr := ["", "หนึ่ง", "สอง", "สาม", "สี่", "ห้า", "หก", "เจ็ด", "แปด", "เก้า"];
+Local StringVar Array TxtPosArr := ["", "สิบ", "ร้อย", "พัน", "หมื่น", "แสน", "ล้าน"];
+
+Local StringVar MainText := "";
+Local NumberVar i;
+Local NumberVar LenInt := Length(IntPart);
+Local NumberVar Digit;
+
+// ------------------------------------
+// ส่วนที่ 1: คำนวณคำอ่านจำนวนเต็ม
+// ------------------------------------
+For i := 1 To LenInt Do
+(
+    Digit := ToNumber(Mid(IntPart, i, 1));
+    Local NumberVar Pos := LenInt - i + 1;
+    Local NumberVar TruePos := ((Pos - 1) Mod 6) + 1;
+    
+    If Digit > 0 Then
+    (
+        If TruePos = 2 And Digit = 2 Then
+            MainText := MainText + "ยี่สิบ"
+        Else If TruePos = 2 And Digit = 1 Then
+            MainText := MainText + "สิบ"
+        Else If TruePos = 1 And Digit = 1 And i > 1 Then
+            MainText := MainText + "เอ็ด"
+        Else
+            MainText := MainText + TxtNumArr[Digit + 1] + TxtPosArr[TruePos];
+    );
+    
+    If TruePos = 1 And Pos > 1 Then
+        MainText := MainText + "ล้าน";
+);
+
+If MainText = "" Or IntPart = "0" Then MainText := "ศูนย์";
+MainText := MainText + MajorUnit;
+
+// ------------------------------------
+// ส่วนที่ 2: คำนวณคำอ่านทศนิยม (หน่วยย่อย)
+// ------------------------------------
+Local StringVar SubText := "";
+Local NumberVar LenDec := Length(DecPart);
+
+If DecPart = "00" Then
+    SubText := "ถ้วน"
+Else
+(
+    For i := 1 To LenDec Do
+    (
+        Digit := ToNumber(Mid(DecPart, i, 1));
+        Local NumberVar PosDec := LenDec - i + 1;
+        
+        If Digit > 0 Then
+        (
+            If PosDec = 2 And Digit = 2 Then
+                SubText := SubText + "ยี่สิบ"
+            Else If PosDec = 2 And Digit = 1 Then
+                SubText := SubText + "สิบ"
+            Else If PosDec = 1 And Digit = 1 And Left(DecPart, 1) <> "0" Then
+                SubText := SubText + "เอ็ด"
+            Else If PosDec = 1 And Digit = 1 And Left(DecPart, 1) = "0" Then
+                SubText := SubText + "หนึ่ง"
+            Else
+                SubText := SubText + TxtNumArr[Digit + 1] + TxtPosArr[PosDec];
+        );
+    );
+    SubText := SubText + MinorUnit;
+);
+
+// คืนค่าผลลัพธ์
+MainText + SubText;
+--- END ---
+
+Formula: {@page}
+--- BEGIN ---
+"หน้า " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+--- END ---
+
+Formula: {@discount}
+--- BEGIN ---
+If IsNull({AR_SO.U_SLD_Dis_Amount}) Then 0.00 Else {AR_SO.U_SLD_Dis_Amount}
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    AR_SO
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Address
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Create
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Approve
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+(No table links)
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

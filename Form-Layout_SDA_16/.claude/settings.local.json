@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(brew list:*)",
+      "Bash(brew search:*)",
+      "Bash(brew tap:*)",
+      "Bash(HOMEBREW_ACCEPT_EULA=Y brew install mssql-tools18)",
+      "Bash(pip3 install:*)",
+      "Bash(pip install:*)",
+      "Bash(npm list:*)",
+      "Bash(npx -y mssql-cli --version)",
+      "Bash(mssql -s 10.10.10.108 -u sa -p '1q2w3e4r' -e)",
+      "Bash(npm install:*)",
+      "Bash(npm root:*)",
+      "Bash(node -e ':*)",
+      "Bash(code --install-extension ms-mssql.mssql)",
+      "Bash(mdfind \"kMDItemCFBundleIdentifier == 'com.microsoft.VSCode'\")",
+      "Bash(\"/Users/user/Library/CloudStorage/GoogleDrive-sattrawut@sala-daeng.com/My Drive/00.Downloads/Visual Studio Code.app/Contents/Resources/app/bin/code\" --install-extension ms-mssql.mssql)",
+      "Bash(mkdir -p \"C:/SDAWR/SDA/backup-before-pull/6. AP Down Payment Invoice\")",
+      "Bash(mkdir -p \"C:/SDAWR/SDA/backup-before-pull/8. AP Credit Memo\")",
+      "Bash(cp -r \"C:/SDAWR/SDA/Form-Layout/3. Purchasing - AP/6. AP Down Payment Invoice/2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\" \"C:/SDAWR/SDA/backup-before-pull/6. AP Down Payment Invoice/\")",
+      "Bash(cp -r \"C:/SDAWR/SDA/Form-Layout/3. Purchasing - AP/6. AP Down Payment Invoice/1.AP Down Payment ใบจ่ายเงินมัดจำ\" \"C:/SDAWR/SDA/backup-before-pull/6. AP Down Payment Invoice/\")",
+      "Bash(cp \"C:/SDAWR/SDA/Form-Layout/3. Purchasing - AP/8. AP Credit Memo/1.AP Credit Memo_ใบลดหนี้/HAddress.sql\" \"C:/SDAWR/SDA/backup-before-pull/8. AP Credit Memo/\")",
+      "Read(//c/SDAWR/SDA/backup-before-pull/6. AP Down Payment Invoice/**)",
+      "Read(//c/SDAWR/SDA/backup-before-pull/8. AP Credit Memo/**)",
+      "Bash(tasklist)",
+      "Bash(git checkout:*)",
+      "Bash(git ls-tree *)",
+      "Bash(grep -iE \"PQ|\\\\.prt$\")",
+      "Bash(git -c core.quotepath=false ls-tree -r 6342564e9deee6331d7140772e36b2eaa9cd3a8f --name-only)",
+      "Bash(git *)",
+      "Bash(printf 'DLN12.StreetB     AS '\\\\''1Bill'\\\\'',\\\\r\\\\n    DLN12.StreetNoB   AS '\\\\''2Bill'\\\\'',\\\\r\\\\n    DLN12.BlockB      AS '\\\\''3Bill'\\\\'',\\\\r\\\\n    DLN12.CityB       AS '\\\\''4Bill'\\\\'',\\\\r\\\\n    DLN12.CountyB     AS '\\\\''5Bill'\\\\'',\\\\r\\\\n    DLN12.ZipCodeB    AS '\\\\''6Bill'\\\\'',\\\\r\\\\n        DLN12.StreetS     AS '\\\\''1Ship'\\\\'',\\\\r\\\\n    DLN12.StreetNoS   AS '\\\\''2Ship'\\\\'',\\\\r\\\\n    DLN12.BlockS      AS '\\\\''3Ship'\\\\'',\\\\r\\\\n    DLN12.CityS       AS '\\\\''4Ship'\\\\'',\\\\r\\\\n    DLN12.CountyS     AS '\\\\''5Ship'\\\\'',\\\\r\\\\n    DLN12.ZipCodeS    AS '\\\\''6Ship'\\\\'',\\\\r\\\\n')",
+      "Read(//tmp/**)",
+      "Bash(grep \"\\\\.rpt$\")",
+      "Bash(python *)",
+      "Bash(powershell *)"
+    ]
+  }
+}

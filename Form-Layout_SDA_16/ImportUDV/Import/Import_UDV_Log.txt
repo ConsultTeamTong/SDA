@@ -1,0 +1,40 @@
+﻿[2026-05-13 00:05:26] [INFO] Loaded DI API: C:\Program Files\SAP\Data Transfer Workbench\Interop.SAPbobsCOM.dll
+[2026-05-13 00:05:26] [INFO] === Start UDV/FMS Import (DI API) ===
+[2026-05-13 00:05:27] [INFO] Server   : POWERAIDB115
+[2026-05-13 00:05:27] [INFO] CompanyDB: SBO_SDA_UAT
+[2026-05-13 00:05:27] [INFO] DBType   : MSSQL
+[2026-05-13 00:05:27] [INFO] MapFile  : C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (6 rows)
+[2026-05-13 00:05:27] [INFO] DryRun   : False
+[2026-05-13 00:05:33] [INFO] Connected (DbServerType=dst_MSSQL2019)
+[2026-05-13 00:05:33] [INFO] Pre-loaded 32 existing CSHS rows for IndexID lookup
+[2026-05-13 00:05:34] [INFO]   Reuse existing Query 'FMS_DisAmount' (IntrnalKey=298)
+[2026-05-13 00:05:35] [INFO] OK   UPSERT->UPDATE FMS (row#1 Form=139 Item=38 Col=15 Action=UPSERT)
+[2026-05-13 00:05:35] [ERROR] FAIL (row#2 Form=139 Item=38 Col=20 Action=UPSERT): Exception setting "FixedValue": "The property 'FixedValue' cannot be found on this object. Verify that the property exists and can be set."
+[2026-05-13 00:05:35] [ERROR] FAIL (row#3 Form=139 Item=38 Col=21 Action=UPSERT): Exception setting "FixedValue": "The property 'FixedValue' cannot be found on this object. Verify that the property exists and can be set."
+[2026-05-13 00:05:35] [INFO]   Reuse existing Query 'FMS_ToUnit' (IntrnalKey=303)
+[2026-05-13 00:05:35] [INFO] OK   UPSERT->ADD FMS (row#4 Form=139 Item=38 Col=U_SLD_Dis_Amount Action=UPSERT)
+[2026-05-13 00:05:36] [INFO]   Reuse existing Query 'FMS_ToSum' (IntrnalKey=302)
+[2026-05-13 00:05:36] [INFO] OK   UPSERT->ADD FMS (row#5 Form=139 Item=38 Col=U_SLD_Dis_Sum Action=UPSERT)
+[2026-05-13 00:05:36] [INFO]   Reuse existing Query 'FMS_Price_Total' (IntrnalKey=301)
+[2026-05-13 00:05:37] [INFO] OK   UPSERT->UPDATE FMS (row#6 Form=139 Item=38 Col=U_SLD_T_BeDis Action=UPSERT)
+[2026-05-13 00:05:38] [INFO] === Done. OK=4  FAIL=2  SKIP=0 ===
+[2026-05-13 00:08:23] [INFO] Loaded DI API: C:\Program Files\SAP\Data Transfer Workbench\Interop.SAPbobsCOM.dll
+[2026-05-13 00:08:23] [INFO] === Start UDV/FMS Import (DI API) ===
+[2026-05-13 00:08:23] [INFO] Server   : POWERAIDB115
+[2026-05-13 00:08:23] [INFO] CompanyDB: SBO_SDA_UAT
+[2026-05-13 00:08:23] [INFO] DBType   : MSSQL
+[2026-05-13 00:08:23] [INFO] MapFile  : C:\GitHub\SDA\Form-Layout\ImportUDV\Config\UDV_SO_Match_SQ.csv  (6 rows)
+[2026-05-13 00:08:23] [INFO] DryRun   : False
+[2026-05-13 00:08:28] [INFO] Connected (DbServerType=dst_MSSQL2019)
+[2026-05-13 00:08:29] [INFO] Pre-loaded 34 existing CSHS rows for IndexID lookup
+[2026-05-13 00:08:29] [INFO]   Reuse existing Query 'FMS_DisAmount' (IntrnalKey=298)
+[2026-05-13 00:08:30] [INFO] OK   UPSERT->UPDATE FMS (row#1 Form=139 Item=38 Col=15 Action=UPSERT)
+[2026-05-13 00:08:30] [INFO] OK   UPSERT->ADD FMS (row#2 Form=139 Item=38 Col=20 Action=UPSERT)
+[2026-05-13 00:08:30] [INFO] OK   UPSERT->ADD FMS (row#3 Form=139 Item=38 Col=21 Action=UPSERT)
+[2026-05-13 00:08:31] [INFO]   Reuse existing Query 'FMS_ToUnit' (IntrnalKey=303)
+[2026-05-13 00:08:31] [INFO] OK   UPSERT->UPDATE FMS (row#4 Form=139 Item=38 Col=U_SLD_Dis_Amount Action=UPSERT)
+[2026-05-13 00:08:31] [INFO]   Reuse existing Query 'FMS_ToSum' (IntrnalKey=302)
+[2026-05-13 00:08:32] [INFO] OK   UPSERT->UPDATE FMS (row#5 Form=139 Item=38 Col=U_SLD_Dis_Sum Action=UPSERT)
+[2026-05-13 00:08:32] [INFO]   Reuse existing Query 'FMS_Price_Total' (IntrnalKey=301)
+[2026-05-13 00:08:33] [INFO] OK   UPSERT->UPDATE FMS (row#6 Form=139 Item=38 Col=U_SLD_T_BeDis Action=UPSERT)
+[2026-05-13 00:08:34] [INFO] === Done. OK=6  FAIL=0  SKIP=0 ===
