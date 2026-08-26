@@ -1,0 +1,416 @@
+﻿[2026-08-25 11:18:54][INFO] === Convert-Rpt start ===
+[2026-08-25 11:18:54][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA  Provider=SQLNCLI11 -> MSOLEDBSQL  Width=1000  WhatIf=False
+[2026-08-25 11:18:54][INFO] Found 64 report file(s).
+[2026-08-25 11:18:54][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\1. Financials\1.Journal Entry_ใบบันทึกรายการบัญชี\1.Journal Entry_ใบบันทึกรายการบัญชี.rpt
+[2026-08-25 11:18:55][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:55][OK]   [main] 'Command_Addrees' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:55][OK]   [main] 'Bank_JE' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:55][OK]   saved  provider=3  sql=0
+[2026-08-25 11:18:55][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\1. Sales Quotation\1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
+[2026-08-25 11:18:56][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:56][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:56][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:56][OK]   [main] 'AR_SQ' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:56][OK]   [main] 'AR_SQ' SQL rewritten (23212 -> 23216 chars)
+[2026-08-25 11:18:56][OK]   saved  provider=4  sql=1
+[2026-08-25 11:18:56][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\1. Sales Quotation\1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(Bom).rpt
+[2026-08-25 11:18:57][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:57][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:57][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:57][OK]   [main] 'AR_SQ' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:57][OK]   saved  provider=4  sql=0
+[2026-08-25 11:18:58][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\1. Sales Quotation\2.Sale Quotation_ใบเสนอราคาขาย_(Dis)\2.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG.rpt
+[2026-08-25 11:18:58][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:58][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:58][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:59][OK]   [main] 'AR_SQ' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:18:59][OK]   [main] 'AR_SQ' SQL rewritten (17341 -> 17345 chars)
+[2026-08-25 11:18:59][OK]   saved  provider=4  sql=1
+[2026-08-25 11:18:59][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\1. Sales Quotation\2.Sale Quotation_ใบเสนอราคาขาย_(Dis)\2.Sale Quotation_ใบเสนอราคาขาย_(Dis).rpt
+[2026-08-25 11:19:00][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:00][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:00][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:00][OK]   [main] 'AR_SQ' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:00][OK]   [main] 'AR_SQ' SQL rewritten (13897 -> 13947 chars)
+[2026-08-25 11:19:00][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:01][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt
+[2026-08-25 11:19:02][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:02][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:02][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:02][OK]   [main] 'AR_SO' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:02][OK]   [main] 'AR_SO' SQL rewritten (14281 -> 14331 chars)
+[2026-08-25 11:19:02][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:03][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\3.Sale Order_ใบสั่งขาย_(Bomm)\2.Sale Order_ใบสั่งขาย_(Bom).rpt
+[2026-08-25 11:19:03][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:03][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:03][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:03][OK]   [main] 'AR_SO' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:03][OK]   [main] 'AR_SO' SQL rewritten (14265 -> 14315 chars)
+[2026-08-25 11:19:04][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:04][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_(Batch_Serial).rpt
+[2026-08-25 11:19:05][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:05][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:05][OK]   [main] 'AR_Delivery_BS' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:05][OK]   [main] 'AR_Delivery_BS' SQL rewritten (10774 -> 10776 chars)
+[2026-08-25 11:19:05][OK]   [sub:Batch/Serial] 'AR_Drlivery_BS' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:05][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:05][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt
+[2026-08-25 11:19:06][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:06][OK]   [main] 'address_eng' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:07][OK]   [main] 'AR_Delivery_BS' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:07][OK]   [main] 'AR_Delivery_BS' SQL rewritten (10430 -> 10432 chars)
+[2026-08-25 11:19:07][OK]   [sub:Batch/Serial] 'AR_Drlivery_BS' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:07][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:07][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-25 11:19:08][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:08][OK]   [main] 'OADM' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:08][OK]   [main] 'AR_Retrun_BS' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:08][OK]   [main] 'AR_Retrun_BS' SQL rewritten (8368 -> 8418 chars)
+[2026-08-25 11:19:08][OK]   [sub:Batch/Serial] 'AR_Retrun_BS' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:08][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:09][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-25 11:19:09][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:09][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:09][OK]   [main] 'AR_Retrun_BS' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:09][OK]   [main] 'AR_Retrun_BS' SQL rewritten (8994 -> 9044 chars)
+[2026-08-25 11:19:10][OK]   [sub:Batch/Serial] 'AR_Retrun_BS' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:10][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:10][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\1.AR Down Payment_ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_BOM ใบเสร็จรับเงินมัดจำ.rpt
+[2026-08-25 11:19:11][OK]   [main] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:11][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:11][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:11][OK]   [main] 'AR_DownPayment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:11][OK]   [main] 'AR_DownPayment' SQL rewritten (23944 -> 23994 chars)
+[2026-08-25 11:19:11][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:11][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\1.AR Down Payment_ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_BOM_ENG ใบเสร็จรับเงินมัดจำ.rpt
+[2026-08-25 11:19:12][OK]   [main] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:12][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:12][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:12][OK]   [main] 'AR_DownPayment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:12][OK]   [main] 'AR_DownPayment' SQL rewritten (26564 -> 26614 chars)
+[2026-08-25 11:19:12][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:12][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_BOM ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+[2026-08-25 11:19:13][OK]   [main] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:13][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:13][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:13][OK]   [main] 'AR_DownPayment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:13][OK]   [main] 'AR_DownPayment' SQL rewritten (23944 -> 23994 chars)
+[2026-08-25 11:19:13][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:13][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_BOM_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+[2026-08-25 11:19:14][OK]   [main] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:14][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:14][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:14][OK]   [main] 'AR_DownPayment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:14][OK]   [main] 'AR_DownPayment' SQL rewritten (26564 -> 26614 chars)
+[2026-08-25 11:19:14][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:14][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\3.AR Down Payment Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down Payment Invoice_BOM ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+[2026-08-25 11:19:15][OK]   [main] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:15][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:15][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:15][OK]   [main] 'AR_DownPayment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:15][OK]   [main] 'AR_DownPayment' SQL rewritten (23944 -> 23994 chars)
+[2026-08-25 11:19:15][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:16][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\3.AR Down Payment Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down PaymentTax Invoice_BOM_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+[2026-08-25 11:19:17][OK]   [main] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:17][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:17][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:17][OK]   [main] 'AR_DownPayment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:17][OK]   [main] 'AR_DownPayment' SQL rewritten (26564 -> 26614 chars)
+[2026-08-25 11:19:17][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:17][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\2.AR Invoice_ใบแจ้งหนี้_(Dis)\1.AR Invoice_ENG ใบแจ้งหนี้_(Dis).rpt
+[2026-08-25 11:19:18][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:18][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:18][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:18][OK]   [main] 'AR_INV' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:18][OK]   [main] 'AR_INV' SQL rewritten (12470 -> 12520 chars)
+[2026-08-25 11:19:18][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:18][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\2.AR Invoice_ใบแจ้งหนี้_(Dis)\1.AR Invoice_ใบแจ้งหนี้_(Dis).rpt
+[2026-08-25 11:19:19][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:19][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:19][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:19][OK]   [main] 'AR_INV' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:19][OK]   [main] 'AR_INV' SQL rewritten (12210 -> 12260 chars)
+[2026-08-25 11:19:19][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:19][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\4.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis)\2.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).rpt
+[2026-08-25 11:19:20][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:20][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:20][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:20][OK]   [main] 'AR_INV' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:20][OK]   [main] 'AR_INV' SQL rewritten (12466 -> 12516 chars)
+[2026-08-25 11:19:21][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:21][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\4.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis)\2.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).rpt
+[2026-08-25 11:19:22][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:22][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:22][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:22][OK]   [main] 'AR_INV' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:22][OK]   [main] 'AR_INV' SQL rewritten (12214 -> 12264 chars)
+[2026-08-25 11:19:22][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:22][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\6.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis)\3.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Dis).rpt
+[2026-08-25 11:19:23][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:23][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:23][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:23][OK]   [main] 'AR_INV' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:23][OK]   [main] 'AR_INV' SQL rewritten (12588 -> 12638 chars)
+[2026-08-25 11:19:23][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:24][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\6.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis)\3.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis).rpt
+[2026-08-25 11:19:25][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:25][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:25][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:25][OK]   [main] 'AR_INV' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:25][OK]   [main] 'AR_INV' SQL rewritten (12214 -> 12264 chars)
+[2026-08-25 11:19:25][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:25][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\7. AR Credit Memo\4.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis)\1.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis).rpt
+[2026-08-25 11:19:26][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:26][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:26][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:26][OK]   [main] 'AR_CN' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:26][OK]   [main] 'AR_CN' SQL rewritten (14560 -> 14610 chars)
+[2026-08-25 11:19:26][OK]   [sub:B/S] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:26][OK]   saved  provider=5  sql=1
+[2026-08-25 11:19:26][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\7. AR Credit Memo\4.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis)\1.AR_Credit Memo_ใบลดหนี้_ENG (Batch_Serial) (Dis).rpt
+[2026-08-25 11:19:27][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:27][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:27][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:27][OK]   [main] 'AR_CN' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:27][OK]   [main] 'AR_CN' SQL rewritten (14976 -> 15026 chars)
+[2026-08-25 11:19:27][OK]   [sub:B/S] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:28][OK]   saved  provider=5  sql=1
+[2026-08-25 11:19:28][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\1. Purchase Request\1.Purchase Request_TH_ใบขอซื้อ\1.Purchase Request_TH_ใบขอซื้อ.rpt
+[2026-08-25 11:19:28][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:28][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:28][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:28][OK]   [main] 'AP_PR' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:28][OK]   [main] 'AP_PR' SQL rewritten (19300 -> 19374 chars)
+[2026-08-25 11:19:29][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:29][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\2. Purchase Quotation\1.Purchase Quotation_ใบเสนอราคาซื้อ\1.Purchase Quotation_ใบเสนอราคาซื้อ.rpt
+[2026-08-25 11:19:30][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:30][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:30][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:30][OK]   [main] 'AP_PQ' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:30][OK]   [main] 'AP_PQ' SQL rewritten (13876 -> 13950 chars)
+[2026-08-25 11:19:30][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:30][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_ENG_ใบสั่งซื้อ.rpt
+[2026-08-25 11:19:31][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:31][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:31][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:31][OK]   [main] 'AP_PO' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:31][OK]   [main] 'AP_PO' SQL rewritten (22368 -> 22468 chars)
+[2026-08-25 11:19:31][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:31][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_ENG_ใบสั่งซื้อEdit.rpt
+[2026-08-25 11:19:32][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:32][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:32][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:32][OK]   [main] 'AP_PO' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:32][OK]   [main] 'AP_PO' SQL rewritten (22362 -> 22462 chars)
+[2026-08-25 11:19:32][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:32][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_TH_ใบสั่งซื้อ.rpt
+[2026-08-25 11:19:33][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:34][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:34][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:34][OK]   [main] 'AP_PO' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:34][OK]   [main] 'AP_PO' SQL rewritten (21968 -> 22068 chars)
+[2026-08-25 11:19:34][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:34][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\4. Goods Receipt PO\2.Goods Receive PO_TH_ใบรับสินค้า_(Batch_Serial) - Copy\1.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial).rpt
+[2026-08-25 11:19:35][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:35][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:35][OK]   [main] 'AP_GRPO_BN' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:35][OK]   [main] 'AP_GRPO_BN' SQL rewritten (14208 -> 14258 chars)
+[2026-08-25 11:19:35][OK]   [sub:Batch/Serial] 'AP_GRPO_BN' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:35][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:35][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\5. Goods Return\2.Goods Return_EN_ใบส่งคืนสินค้า_(Batch_Serial)\1.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial).rpt
+[2026-08-25 11:19:36][OK]   [main] 'Company' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:36][OK]   [main] 'AP_GR_BN' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:36][OK]   [main] 'AP_GR_BN' SQL rewritten (13418 -> 13492 chars)
+[2026-08-25 11:19:36][OK]   [sub:batch&serial] 'AP_GR_BN' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:36][OK]   saved  provider=3  sql=1
+[2026-08-25 11:19:36][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment ใบจ่ายเงินมัดจำ\1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ.rpt
+[2026-08-25 11:19:37][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:37][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:37][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:37][OK]   [main] 'AP_DownPayment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:37][OK]   [main] 'AP_DownPayment' SQL rewritten (28668 -> 28718 chars)
+[2026-08-25 11:19:37][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:37][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment ใบจ่ายเงินมัดจำ\1.AP Down Payment_ใบจ่ายเงินมัดจำ.rpt
+[2026-08-25 11:19:38][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:38][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:38][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:38][OK]   [main] 'AP_DownPayment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:38][OK]   [main] 'AP_DownPayment' SQL rewritten (26320 -> 26370 chars)
+[2026-08-25 11:19:39][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:39][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\6. AP Down Payment Invoice\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\2.AP Down Payment Invoice_ENG ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+[2026-08-25 11:19:40][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:40][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:40][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:40][OK]   [main] 'AP_DownPayment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:40][OK]   [main] 'AP_DownPayment' SQL rewritten (28668 -> 28718 chars)
+[2026-08-25 11:19:40][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:40][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\6. AP Down Payment Invoice\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+[2026-08-25 11:19:41][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:41][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:41][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:41][OK]   [main] 'AP_DownPayment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:41][OK]   [main] 'AP_DownPayment' SQL rewritten (26200 -> 26250 chars)
+[2026-08-25 11:19:41][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:41][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\7. AP Invoice\2.AP Invoice_ใบแจ้งหนี้_(Batch_Serial)\1.AP Invoice_ใบแจ้งหนี้_(Batch_Serial).rpt
+[2026-08-25 11:19:42][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:42][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:42][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:42][OK]   [main] 'AP_INV_BN' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:42][OK]   [main] 'AP_INV_BN' SQL rewritten (12630 -> 12632 chars)
+[2026-08-25 11:19:42][OK]   [sub:batch&sserial] 'AP_INV_BN' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:43][OK]   saved  provider=5  sql=1
+[2026-08-25 11:19:43][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\8. AP Credit Memo\1.AP Credit Memo_ใบลดหนี้\1.AP Credit Memo_ใบลดหนี้.rpt
+[2026-08-25 11:19:44][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:44][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:44][OK]   [main] 'HAddress' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:44][OK]   [main] 'AP_CN' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:44][OK]   [main] 'AP_CN' SQL rewritten (14844 -> 14894 chars)
+[2026-08-25 11:19:44][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:44][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\9. Landed Costs\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt
+[2026-08-25 11:19:45][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:45][OK]   [main] 'Landed_Cost' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:45][OK]   [sub:Landed_Cost] 'Landed_Cost' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:45][OK]   saved  provider=3  sql=0
+[2026-08-25 11:19:45][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\1. Incoming Payments\1.Incoming Payments_ใบเสร็จรับเงิน\1.Incoming Payments_Eng ใบเสร็จรับเงิน.rpt
+[2026-08-25 11:19:47][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:47][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:47][OK]   [main] 'Bank_Receipt' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:47][OK]   [sub:CheckNum] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:47][OK]   saved  provider=4  sql=0
+[2026-08-25 11:19:47][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\1. Incoming Payments\1.Incoming Payments_ใบเสร็จรับเงิน\1.Incoming Payments_ใบเสร็จรับเงิน.rpt
+[2026-08-25 11:19:48][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:48][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:48][OK]   [main] 'Bank_Receipt' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:48][OK]   [sub:CheckNum] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:48][OK]   saved  provider=4  sql=0
+[2026-08-25 11:19:48][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\1. Incoming Payments\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี\2.Incoming Payments_ ENG ใบเสร็จรับเงินใบกำกับภาษี.rpt
+[2026-08-25 11:19:49][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:49][OK]   [main] 'Bank_ReceiptTax' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:49][OK]   [sub:CheckNum] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:49][OK]   saved  provider=3  sql=0
+[2026-08-25 11:19:49][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\1. Incoming Payments\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี.rpt
+[2026-08-25 11:19:50][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:50][OK]   [main] 'Bank_ReceiptTax' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:50][OK]   [sub:CheckNum] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:51][OK]   saved  provider=3  sql=0
+[2026-08-25 11:19:51][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\2. Outgoing Payments\1.Outgoing Payments_ใบจ่ายชำระ\1.Outgoing Payments_ENG ใบจ่ายชำระ.rpt
+[2026-08-25 11:19:52][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:52][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:52][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:52][OK]   [main] 'Bank_Payment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:52][OK]   [sub:Bank] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:52][OK]   [sub:Cash] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:52][OK]   [sub:Credit Card] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:52][OK]   [sub:JE] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:52][OK]   [sub:Report] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:52][OK]   [sub:TranFer] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:53][OK]   saved  provider=10  sql=0
+[2026-08-25 11:19:53][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\2. Outgoing Payments\1.Outgoing Payments_ใบจ่ายชำระ\1.Outgoing Payments_ใบจ่ายชำระ.rpt
+[2026-08-25 11:19:54][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:54][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:54][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:54][OK]   [main] 'Bank_Payment' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:54][OK]   [sub:Bank] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:55][OK]   [sub:Cash] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:55][OK]   [sub:Credit Card] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:55][OK]   [sub:JE] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:55][OK]   [sub:Report] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:55][OK]   [sub:TranFer] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:55][OK]   saved  provider=10  sql=0
+[2026-08-25 11:19:55][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\1. Goods Receipt\2.Goods Receipt_ใบรับสินค้า_(Batch_Serial)\1.Goods Receipt_ENG ใบรับสินค้า_(Batch_Serial).rpt
+[2026-08-25 11:19:56][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:56][OK]   [main] 'G_Receipt' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:56][OK]   [main] 'G_Receipt' SQL rewritten (6614 -> 6616 chars)
+[2026-08-25 11:19:56][OK]   [sub:Batch] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:56][OK]   saved  provider=3  sql=1
+[2026-08-25 11:19:56][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\1. Goods Receipt\2.Goods Receipt_ใบรับสินค้า_(Batch_Serial)\1.Goods Receipt_ใบรับสินค้า_(Batch_Serial).rpt
+[2026-08-25 11:19:57][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:57][OK]   [main] 'G_Receipt' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:57][OK]   [main] 'G_Receipt' SQL rewritten (4598 -> 4600 chars)
+[2026-08-25 11:19:57][OK]   [sub:Batch] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:58][OK]   saved  provider=3  sql=1
+[2026-08-25 11:19:58][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\2. Goods Issue\2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial)\1.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).rpt
+[2026-08-25 11:19:59][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:59][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:59][OK]   [main] 'G_Issue_BS' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:59][OK]   [main] 'G_Issue_BS' SQL rewritten (5963 -> 5965 chars)
+[2026-08-25 11:19:59][OK]   [sub:Batch] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:19:59][OK]   saved  provider=4  sql=1
+[2026-08-25 11:19:59][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\2. Goods Issue\2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial)\1.Goods Issue_ใบเบิกสินค้า_ENG (Batch_Serial).rpt
+[2026-08-25 11:20:00][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:00][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:00][OK]   [main] 'G_Issue_BS' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:00][OK]   [sub:Batch] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:00][OK]   saved  provider=4  sql=0
+[2026-08-25 11:20:00][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\3. Inventory Transfer Request\1.Inventory Transfer Request_ใบขอโอนสินค้า\1.Inventory Transfer Request_ใบขอโอนสินค้า.rpt
+[2026-08-25 11:20:01][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:01][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:01][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:01][OK]   [main] 'Transfer_Re_Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:01][OK]   [main] 'Transfer_Re' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:01][OK]   [main] 'Transfer_Re' SQL rewritten (3810 -> 3812 chars)
+[2026-08-25 11:20:02][OK]   saved  provider=5  sql=1
+[2026-08-25 11:20:02][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\4. Inventory Transfer\2.Inventory Transfer_ใบโอนสินค้า(Batch_Serial)\1.Inventory Transfer_ใบโอนสินค้า_TH_(Batch_Serial).rpt
+[2026-08-25 11:20:03][OK]   [main] 'Approve' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:03][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:03][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:03][OK]   [main] 'Transfer' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:03][OK]   [main] 'Transfer' SQL rewritten (5116 -> 5118 chars)
+[2026-08-25 11:20:03][OK]   [sub:Batch] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:03][OK]   saved  provider=5  sql=1
+[2026-08-25 11:20:04][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\5. Inventory Counting\1.Inventory Counting_ใบตรวจนับสินค้า_Befor\1.Inventory Counting_ใบตรวจนับสินค้า_Befor.rpt
+[2026-08-25 11:20:04][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:04][OK]   [main] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:05][OK]   saved  provider=2  sql=0
+[2026-08-25 11:20:05][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\5. Inventory Counting\2.Inventory Counting_ใบหลังตรวจนับสินค้า_After\2.Inventory Counting_ใบหลังตรวจนับสินค้า_After.rpt
+[2026-08-25 11:20:05][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:05][OK]   [main] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:05][OK]   saved  provider=2  sql=0
+[2026-08-25 11:20:06][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\6. Inventory Revaluation\1.Inventory Revaluation_ใบปรับมูลค่า_Price\1.Inventory Revaluation_ใบปรับมูลค่า_Price.rpt
+[2026-08-25 11:20:06][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:06][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:06][OK]   [main] 'Inventory_Re' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:06][OK]   saved  provider=3  sql=0
+[2026-08-25 11:20:07][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\6. Inventory Revaluation\2.Inventory Revaluation_ใบปรับมูลค่า_DebitCredit\2.Inventory Revaluation_ใบปรับมูลค่า_DebitCredit.rpt
+[2026-08-25 11:20:08][OK]   [main] 'Create' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:08][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:08][OK]   [main] 'Inven_Revalue' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:08][OK]   saved  provider=3  sql=0
+[2026-08-25 11:20:08][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\6. Production\1. Production Order\1.Production Order_ใบสั่งผลิต\1.Production Order_ใบสั่งผลิต.rpt
+[2026-08-25 11:20:09][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:09][OK]   [main] 'Prodution_Order' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:09][OK]   saved  provider=2  sql=0
+[2026-08-25 11:20:09][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\6. Production\2. Receipt from Production\1.Receipt from Production_ใบรับสินค้าจากการผลิต\1.Receipt from Production_ใบรับสินค้าจากการผลิต.rpt
+[2026-08-25 11:20:10][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:10][OK]   [main] 'Receipt_f_Production' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:10][OK]   saved  provider=2  sql=0
+[2026-08-25 11:20:10][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\6. Production\2. Receipt from Production\2.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial)\2.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial).rpt
+[2026-08-25 11:20:10][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:10][OK]   [main] 'Receipt_f_Prodution' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:10][OK]   [main] 'Receipt_f_Prodution' SQL rewritten (6722 -> 6724 chars)
+[2026-08-25 11:20:11][OK]   [sub:B/S Number] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:11][OK]   saved  provider=3  sql=1
+[2026-08-25 11:20:11][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\6. Production\3. Issue for Production\1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต\1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต.rpt
+[2026-08-25 11:20:11][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:11][OK]   [main] 'Issue_f_Prodution' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:11][OK]   [main] 'Issue_f_Prodution' SQL rewritten (6826 -> 6828 chars)
+[2026-08-25 11:20:11][OK]   saved  provider=2  sql=1
+[2026-08-25 11:20:12][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\6. Production\3. Issue for Production\2.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial)\2.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial).rpt
+[2026-08-25 11:20:12][OK]   [main] 'Address' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:12][OK]   [main] 'Issue_f_Prodution' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:12][OK]   [main] 'Issue_f_Prodution' SQL rewritten (6826 -> 6828 chars)
+[2026-08-25 11:20:12][OK]   [sub:B/S Num] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:13][OK]   saved  provider=3  sql=1
+[2026-08-25 11:20:13][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\7.Fixed Asset\ทะเบียนสินทรัพย์\ทะเบียนสินทรัพย์.rpt
+[2026-08-25 11:20:13][OK]   [main] 'คำสั่ง' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:13][OK]   saved  provider=1  sql=0
+[2026-08-25 11:20:13][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\7.Fixed Asset\รายการขายทรัพย์สิน เรียงตามรหัสสินทรัพย์\รายการขายทรัพย์สิน เรียงตามรหัสสินทรัพย์.rpt
+[2026-08-25 11:20:14][OK]   [main] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:14][OK]   saved  provider=1  sql=0
+[2026-08-25 11:20:15][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\7.Fixed Asset\รายการสินทรัพย์เข้าใหม่ เรียงตามรหัสสินทรัพย์\รายการสินทรัพย์เข้าใหม่ เรียงตามรหัสสินทรัพย์.rpt
+[2026-08-25 11:20:15][OK]   [main] 'Command' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:15][OK]   saved  provider=1  sql=0
+[2026-08-25 11:20:16][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\7.Fixed Asset\รายงานค่าเสื่อมประจำเดือน สรุปตามกลุ่มสินทรัพย์\รายงานค่าเสื่อมประจำเดือน สรุปตามกลุ่มสินทรัพย์.rpt
+[2026-08-25 11:20:16][OK]   [main] 'คำสั่ง' provider SQLNCLI11 -> MSOLEDBSQL
+[2026-08-25 11:20:16][OK]   saved  provider=1  sql=0
+[2026-08-25 11:20:16][INFO] === Done. files ok=64 err=0 total=64 | provider changes=240 sql rewrites=44 ===
