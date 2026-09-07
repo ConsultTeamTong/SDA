@@ -3211,3 +3211,713 @@
 [2026-07-30 20:03:54][OK]   [main] 'คำสั่ง' server '192.168.0.216' -> '192.168.0.216' db SBO_SDA_REAL -> SBO_SDA_REAL
 [2026-07-30 20:03:54][OK]   saved 1 table(s)
 [2026-07-30 20:03:54][INFO] === Done. ok=62  err=0  skipped=0  total=62 ===
+[2026-08-31 11:05:09][INFO] === Set-DatasourceLocation start  mode=VERIFY ===
+[2026-08-31 11:05:09][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=
+[2026-08-31 11:05:09][INFO] Found 2 report file(s).
+[2026-08-31 11:05:09][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt
+[2026-08-31 11:05:12][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\3.Sale Order_ใบสั่งขาย_(Bomm)\2.Sale Order_ใบสั่งขาย_(Bom).rpt
+[2026-08-31 11:05:12][INFO] ==============================================================
+[2026-08-31 11:05:12][INFO] SUMMARY mode=VERIFY  files=2  tables=8  mismatch=0  stale=0
+[2026-08-31 11:05:12][INFO] ==============================================================
+[2026-08-31 11:25:33][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 11:25:33][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order  NewServer=192.168.0.216  OldServer=  NewDatabase=SBO_SDA_REAL  NewUser=
+[2026-08-31 11:25:33][INFO] Found 2 report file(s).
+[2026-08-31 11:25:33][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt
+[2026-08-31 11:25:34][INFO]     set [main] AR_SO : '172.17.0.22/SBO_Seoul_Clinic_API' -> '192.168.0.216/SBO_SDA_REAL'
+[2026-08-31 11:25:34][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Clinic_API' -> '192.168.0.216/SBO_SDA_REAL'
+[2026-08-31 11:25:34][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Clinic_API' -> '192.168.0.216/SBO_SDA_REAL'
+[2026-08-31 11:25:34][INFO]     set [main] Approve : '172.17.0.22/SBO_Seoul_Clinic_API' -> '192.168.0.216/SBO_SDA_REAL'
+[2026-08-31 11:25:34][INFO]     backup -> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt.bak
+[2026-08-31 11:25:34][INFO]     saved 4 table change(s) -- verifying from disk
+[2026-08-31 11:25:36][OK]     verified on disk: 4 table(s) now point to 192.168.0.216/SBO_SDA_REAL
+[2026-08-31 11:25:36][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\3.Sale Order_ใบสั่งขาย_(Bomm)\2.Sale Order_ใบสั่งขาย_(Bom).rpt
+[2026-08-31 11:25:36][INFO]     set [main] AR_SO : '172.17.0.22/SBO_Seoul_Clinic_API' -> '192.168.0.216/SBO_SDA_REAL'
+[2026-08-31 11:25:37][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Clinic_API' -> '192.168.0.216/SBO_SDA_REAL'
+[2026-08-31 11:25:37][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Clinic_API' -> '192.168.0.216/SBO_SDA_REAL'
+[2026-08-31 11:25:37][INFO]     set [main] Approve : '172.17.0.22/SBO_Seoul_Clinic_API' -> '192.168.0.216/SBO_SDA_REAL'
+[2026-08-31 11:25:37][INFO]     backup -> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\3.Sale Order_ใบสั่งขาย_(Bomm)\2.Sale Order_ใบสั่งขาย_(Bom).rpt.bak
+[2026-08-31 11:25:37][INFO]     saved 4 table change(s) -- verifying from disk
+[2026-08-31 11:25:38][OK]     verified on disk: 4 table(s) now point to 192.168.0.216/SBO_SDA_REAL
+[2026-08-31 11:25:38][INFO] ==============================================================
+[2026-08-31 11:25:38][INFO] SUMMARY mode=APPLY  files=2  ok=2  err=0  skippedFiles=0  tables=8  changed=8  skippedTables=0  fieldDiff=0
+[2026-08-31 11:25:38][INFO] ==============================================================
+[2026-08-31 11:25:54][INFO] === Set-DatasourceLocation start  mode=VERIFY ===
+[2026-08-31 11:25:55][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order  NewServer=192.168.0.216  OldServer=  NewDatabase=SBO_SDA_REAL  NewUser=
+[2026-08-31 11:25:55][INFO] Found 2 report file(s).
+[2026-08-31 11:25:55][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt
+[2026-08-31 11:25:56][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\3.Sale Order_ใบสั่งขาย_(Bomm)\2.Sale Order_ใบสั่งขาย_(Bom).rpt
+[2026-08-31 11:25:57][INFO] ==============================================================
+[2026-08-31 11:25:57][INFO] SUMMARY mode=VERIFY  files=2  tables=8  mismatch=0  stale=0
+[2026-08-31 11:25:57][INFO] ==============================================================
+[2026-08-31 12:31:42][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 12:31:42][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=sa  Password=<prompt>
+[2026-08-31 12:32:01][INFO] Found 1 report file(s).
+[2026-08-31 12:32:01][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 12:32:02][INFO]     set [main] AR_SO : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 12:32:02][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 12:32:02][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 12:32:02][INFO]     set [main] Approve : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 12:32:04][ERR]     LIVE CONNECT FAILED at VerifyDatabase: Exception calling "VerifyDatabase" with "0" argument(s): "No error."
+[2026-08-31 12:32:04][ERR]     NOT SAVING TEST_Bom.rpt -- the file on disk is untouched.
+[2026-08-31 12:32:04][ERR]     Check server / database / user / password, and that 172.17.0.22 answers on 1433.
+[2026-08-31 12:32:04][INFO] ==============================================================
+[2026-08-31 12:32:04][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=1  skippedFiles=0  tables=4  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=10  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=1
+[2026-08-31 12:32:04][INFO] ==============================================================
+[2026-08-31 12:32:27][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 12:32:27][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=sa  Password=<prompt>
+[2026-08-31 12:32:33][INFO] Found 1 report file(s).
+[2026-08-31 12:32:33][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 12:32:34][INFO]     set [main] AR_SO : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 12:32:34][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 12:32:34][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 12:32:34][INFO]     set [main] Approve : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 12:32:35][ERR]     LIVE CONNECT FAILED at VerifyDatabase: Exception calling "VerifyDatabase" with "0" argument(s): "No error."
+[2026-08-31 12:32:35][ERR]     NOT SAVING TEST_Bom.rpt -- the file on disk is untouched.
+[2026-08-31 12:32:35][ERR]     Check server / database / user / password, and that 172.17.0.22 answers on 1433.
+[2026-08-31 12:32:35][INFO] ==============================================================
+[2026-08-31 12:32:35][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=1  skippedFiles=0  tables=4  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=10  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=1
+[2026-08-31 12:32:35][INFO] ==============================================================
+[2026-08-31 13:28:37][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 13:28:38][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=sa  Password=<prompt>  ConnectMode=1
+[2026-08-31 13:28:48][INFO] Found 1 report file(s).
+[2026-08-31 13:28:48][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 13:28:50][INFO]     set [main] AR_SO : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:28:50][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:28:50][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:28:50][INFO]     set [main] Approve : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:28:54][OK]     live connection to 172.17.0.22/SBO_Seoul_Clinic_API verified as 'sa'
+[2026-08-31 13:28:54][INFO]     saved 4 table change(s) -- verifying from disk
+[2026-08-31 13:28:55][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 13:28:55][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 13:28:55][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 13:28:55][WARN]     -NewUser 'sa' did NOT persist (disk has '') -- same limitation.
+[2026-08-31 13:28:55][OK]     verified on disk: 4 table(s) now point to 172.17.0.22/SBO_Seoul_Clinic_API
+[2026-08-31 13:28:55][INFO] ==============================================================
+[2026-08-31 13:28:55][INFO] SUMMARY mode=APPLY  files=1  ok=1  err=0  skippedFiles=0  tables=4  changed=4  skippedTables=0  fieldDiff=0  removedStaleKeys=10  sqlDbUnset=4  userUnset=4  connectOk=1  connectFail=0
+[2026-08-31 13:28:55][INFO] ==============================================================
+[2026-08-31 13:29:18][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 13:29:18][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 13:29:21][INFO] Found 1 report file(s).
+[2026-08-31 13:29:21][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 13:29:22][INFO]     set [main] AR_SO : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:22][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:22][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:22][INFO]     set [main] Approve : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:25][WARN]     VerifyDatabase threw but connectivity already passed -- continuing. msg='Exception calling "VerifyDatabase" with "0" argument(s): "No error."'  hr=0x80131501  inner[0]='No error.'  innerHr[0]=0x80000000  errorCode[0]=-2147483648
+[2026-08-31 13:29:25][OK]     live connection to 172.17.0.22/SBO_Seoul_Clinic_API verified as 'sa'
+[2026-08-31 13:29:25][INFO]     saved 4 table change(s) -- verifying from disk
+[2026-08-31 13:29:26][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 13:29:26][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 13:29:26][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 13:29:26][WARN]     -NewUser 'sa' did NOT persist (disk has '') -- same limitation.
+[2026-08-31 13:29:26][ERR]     VERIFY fieldDiff [main] AR_SO : 59 -> 62
+[2026-08-31 13:29:26][ERR]     ROLLED BACK TEST_Bom.rpt -- 1 verification error(s), file left unchanged
+[2026-08-31 13:29:26][INFO] ==============================================================
+[2026-08-31 13:29:26][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=1  skippedFiles=0  tables=4  changed=0  skippedTables=0  fieldDiff=1  removedStaleKeys=4  sqlDbUnset=4  userUnset=4  connectOk=1  connectFail=0
+[2026-08-31 13:29:26][INFO] ==============================================================
+[2026-08-31 13:29:30][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 13:29:30][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=sa  Password=<prompt>  ConnectMode=3
+[2026-08-31 13:29:43][INFO] Found 1 report file(s).
+[2026-08-31 13:29:43][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 13:29:45][INFO]     pre-logon done (ConnectMode 3)
+[2026-08-31 13:29:45][INFO]     set [main] AR_SO : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:45][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:45][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:45][INFO]     set [main] Approve : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:48][OK]     live connection to 172.17.0.22/SBO_Seoul_Clinic_API verified as 'sa'
+[2026-08-31 13:29:48][INFO]     saved 4 table change(s) -- verifying from disk
+[2026-08-31 13:29:48][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 13:29:48][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 13:29:48][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 13:29:48][WARN]     -NewUser 'sa' did NOT persist (disk has '') -- same limitation.
+[2026-08-31 13:29:49][OK]     verified on disk: 4 table(s) now point to 172.17.0.22/SBO_Seoul_Clinic_API
+[2026-08-31 13:29:49][INFO] ==============================================================
+[2026-08-31 13:29:49][INFO] SUMMARY mode=APPLY  files=1  ok=1  err=0  skippedFiles=0  tables=4  changed=4  skippedTables=0  fieldDiff=0  removedStaleKeys=4  sqlDbUnset=4  userUnset=4  connectOk=1  connectFail=0
+[2026-08-31 13:29:49][INFO] ==============================================================
+[2026-08-31 13:29:55][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 13:29:55][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=sa  Password=<prompt>  ConnectMode=4
+[2026-08-31 13:29:57][INFO] Found 1 report file(s).
+[2026-08-31 13:29:57][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 13:29:58][INFO]     set [main] AR_SO : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:58][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:58][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:29:58][INFO]     set [main] Approve : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:30:01][INFO]     ReadRecords OK
+[2026-08-31 13:30:01][OK]     live connection to 172.17.0.22/SBO_Seoul_Clinic_API verified as 'sa'
+[2026-08-31 13:30:01][INFO]     saved 4 table change(s) -- verifying from disk
+[2026-08-31 13:30:02][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 13:30:02][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 13:30:02][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 13:30:02][WARN]     -NewUser 'sa' did NOT persist (disk has '') -- same limitation.
+[2026-08-31 13:30:03][OK]     verified on disk: 4 table(s) now point to 172.17.0.22/SBO_Seoul_Clinic_API
+[2026-08-31 13:30:03][INFO] ==============================================================
+[2026-08-31 13:30:03][INFO] SUMMARY mode=APPLY  files=1  ok=1  err=0  skippedFiles=0  tables=4  changed=4  skippedTables=0  fieldDiff=0  removedStaleKeys=4  sqlDbUnset=4  userUnset=4  connectOk=1  connectFail=0
+[2026-08-31 13:30:03][INFO] ==============================================================
+[2026-08-31 13:42:27][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 13:42:27][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 13:42:27][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 13:42:50][INFO] Found 1 report file(s).
+[2026-08-31 13:42:50][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 13:42:52][INFO]     set [main] AR_SO : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:42:52][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:42:52][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:42:52][INFO]     set [main] Approve : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:42:53][WARN]     VerifyDatabase threw but connectivity already passed -- continuing. msg='Exception calling "VerifyDatabase" with "0" argument(s): "No error."'  hr=0x80131501  inner[0]='No error.'  innerHr[0]=0x80000000  errorCode[0]=-2147483648
+[2026-08-31 13:42:53][OK]     live connection to 172.17.0.22/SBO_Seoul_Clinic_API verified as 'sa'
+[2026-08-31 13:42:53][INFO]     saved 4 table change(s) -- verifying from disk
+[2026-08-31 13:42:54][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 13:42:54][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 13:42:54][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 13:42:54][WARN]     -NewUser 'sa' did NOT persist (disk has '') -- same limitation.
+[2026-08-31 13:42:54][INFO]     field count [main] AR_SO : 59 -> 62 (schema refreshed, allowed)
+[2026-08-31 13:42:54][OK]     verified on disk: 4 table(s) now point to 172.17.0.22/SBO_Seoul_Clinic_API
+[2026-08-31 13:42:54][INFO] ==============================================================
+[2026-08-31 13:42:54][INFO] SUMMARY mode=APPLY  files=1  ok=1  err=0  skippedFiles=0  tables=4  changed=4  skippedTables=0  fieldDiff=0  removedStaleKeys=10  sqlDbUnset=4  userUnset=4  connectOk=1  connectFail=0  fieldChanged=1
+[2026-08-31 13:42:54][INFO] ==============================================================
+[2026-08-31 13:46:00][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 13:46:00][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 13:46:01][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 13:46:08][INFO] Found 1 report file(s).
+[2026-08-31 13:46:08][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 13:46:09][INFO]     set [main] AR_SO : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:46:09][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:46:09][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:46:09][INFO]     set [main] Approve : '172.17.0.22/SBO_Seoul_Clinic_API' -> '172.17.0.22/SBO_Seoul_Clinic_API'
+[2026-08-31 13:46:10][WARN]     VerifyDatabase threw but connectivity already passed -- continuing. msg='Exception calling "VerifyDatabase" with "0" argument(s): "No error."'  hr=0x80131501  inner[0]='No error.'  innerHr[0]=0x80000000  errorCode[0]=-2147483648
+[2026-08-31 13:46:10][OK]     live connection to 172.17.0.22/SBO_Seoul_Clinic_API verified as 'sa'
+[2026-08-31 13:46:10][INFO]     saved 4 table change(s) -- verifying from disk
+[2026-08-31 13:46:11][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 13:46:11][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 13:46:11][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 13:46:11][WARN]     -NewUser 'sa' did NOT persist (disk has '') -- same limitation.
+[2026-08-31 13:46:12][OK]     verified on disk: 4 table(s) now point to 172.17.0.22/SBO_Seoul_Clinic_API
+[2026-08-31 13:46:12][INFO] ==============================================================
+[2026-08-31 13:46:12][INFO] SUMMARY mode=APPLY  files=1  ok=1  err=0  skippedFiles=0  tables=4  changed=4  skippedTables=0  fieldDiff=0  removedStaleKeys=4  sqlDbUnset=4  userUnset=4  connectOk=1  connectFail=0  fieldChanged=0
+[2026-08-31 13:46:12][INFO] ==============================================================
+[2026-08-31 14:29:43][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 14:29:43][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 14:29:43][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 14:29:54][INFO] Found 1 report file(s).
+[2026-08-31 14:29:54][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 14:29:56][INFO]     [main] AR_SO : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:29:56][INFO]     [main] Address : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:29:56][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:29:56][INFO]     [main] Approve : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:29:58][ERR]     LIVE CONNECT FAILED at VerifyTableConnectivity[Address]: connection refused or credentials rejected
+[2026-08-31 14:29:58][ERR]     NOT SAVING TEST_Bom.rpt -- the file on disk is untouched.
+[2026-08-31 14:29:58][ERR]     Check server / database / user / password, and that 172.17.0.22 answers on 1433.
+[2026-08-31 14:29:58][INFO] ==============================================================
+[2026-08-31 14:29:58][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=1  skippedFiles=0  tables=4  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=1  fieldChanged=0  logonApplied=4  fallback=0  method=Auto
+[2026-08-31 14:29:58][INFO] ==============================================================
+[2026-08-31 14:37:38][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 14:37:38][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 14:37:38][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 14:37:47][INFO] Found 1 report file(s).
+[2026-08-31 14:37:47][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 14:37:48][INFO]     [main] AR_SO : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:37:48][INFO]     [main] Address : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:37:48][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:37:48][INFO]     [main] Approve : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:37:49][ERR]     LIVE CONNECT FAILED at VerifyTableConnectivity: all 4 table(s) refused -- server unreachable or credentials rejected
+[2026-08-31 14:37:49][ERR]     NOT SAVING TEST_Bom.rpt -- the file on disk is untouched.
+[2026-08-31 14:37:49][ERR]     Check server / database / user / password, and that 172.17.0.22 answers on 1433.
+[2026-08-31 14:37:50][INFO] ==============================================================
+[2026-08-31 14:37:50][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=1  skippedFiles=0  tables=4  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=1  fieldChanged=0  logonApplied=4  fallback=0  method=Auto
+[2026-08-31 14:37:50][INFO] ==============================================================
+[2026-08-31 14:38:14][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 14:38:14][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 14:38:14][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 14:38:20][INFO] Found 1 report file(s).
+[2026-08-31 14:38:20][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 14:38:22][INFO]     [main] AR_SO : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:38:22][INFO]     [main] Address : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:38:22][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:38:22][INFO]     [main] Approve : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:38:22][ERR]     LIVE CONNECT FAILED at VerifyTableConnectivity: all 4 table(s) refused -- server unreachable or credentials rejected
+[2026-08-31 14:38:22][ERR]     NOT SAVING TEST_Bom.rpt -- the file on disk is untouched.
+[2026-08-31 14:38:22][ERR]     Check server / database / user / password, and that 172.17.0.22 answers on 1433.
+[2026-08-31 14:38:23][INFO] ==============================================================
+[2026-08-31 14:38:23][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=1  skippedFiles=0  tables=4  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=1  fieldChanged=0  logonApplied=4  fallback=0  method=Auto
+[2026-08-31 14:38:23][INFO] ==============================================================
+[2026-08-31 14:38:59][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 14:38:59][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 14:38:59][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Clinic_API  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 14:39:03][INFO] Found 1 report file(s).
+[2026-08-31 14:39:03][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 14:39:05][INFO]     [main] AR_SO : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:39:05][INFO]     [main] Address : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:39:05][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:39:05][INFO]     [main] Approve : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:39:05][WARN]     VerifyTableConnectivity: 1/4 passed; not confirmed for Address, Create, Approve.
+[2026-08-31 14:39:05][WARN]     At least one table connected, so the logon itself is good -- continuing.
+[2026-08-31 14:39:06][WARN]     VerifyDatabase threw but connectivity already passed -- continuing. msg='Exception calling "VerifyDatabase" with "0" argument(s): "No error."'  hr=0x80131501  inner[0]='No error.'  innerHr[0]=0x80000000  errorCode[0]=-2147483648
+[2026-08-31 14:39:06][OK]     live connection to 172.17.0.22/SBO_Seoul_Clinic_API verified as 'sa'
+[2026-08-31 14:39:06][INFO]     saved 4 table change(s) -- verifying from disk
+[2026-08-31 14:39:07][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 14:39:07][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 14:39:07][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 14:39:07][WARN]     -NewUser 'sa' did NOT persist (disk has '') -- same limitation.
+[2026-08-31 14:39:07][OK]     verified on disk: 4 table(s) now point to 172.17.0.22/SBO_Seoul_Clinic_API
+[2026-08-31 14:39:07][INFO] ==============================================================
+[2026-08-31 14:39:07][INFO] SUMMARY mode=APPLY  files=1  ok=1  err=0  skippedFiles=0  tables=4  changed=4  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=4  userUnset=4  connectOk=1  connectFail=0  fieldChanged=0  logonApplied=4  fallback=0  method=Auto
+[2026-08-31 14:39:07][INFO] ==============================================================
+[2026-08-31 14:43:12][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 14:43:12][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 14:43:12][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Re  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 14:43:19][INFO] Found 1 report file(s).
+[2026-08-31 14:43:19][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 14:43:21][INFO]     [main] AR_SO : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:43:21][INFO]     [main] Address : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:43:21][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:43:21][INFO]     [main] Approve : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:43:22][ERR]     LIVE CONNECT FAILED at VerifyTableConnectivity: all 4 table(s) refused -- server unreachable or credentials rejected
+[2026-08-31 14:43:22][ERR]     NOT SAVING TEST_Bom.rpt -- the file on disk is untouched.
+[2026-08-31 14:43:22][ERR]     Check server / database / user / password, and that 172.17.0.22 answers on 1433.
+[2026-08-31 14:43:22][INFO] ==============================================================
+[2026-08-31 14:43:22][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=1  skippedFiles=0  tables=4  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=1  fieldChanged=0  logonApplied=4  fallback=0  method=Auto
+[2026-08-31 14:43:22][INFO] ==============================================================
+[2026-08-31 14:44:21][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 14:44:21][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 14:44:21][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Re  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 14:44:22][INFO] Found 1 report file(s).
+[2026-08-31 14:44:22][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 14:44:25][INFO]     [main] AR_SO : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:44:25][INFO]     [main] Address : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:44:25][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:44:25][INFO]     [main] Approve : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 14:44:25][WARN]     VerifyTableConnectivity: 1/4 passed; not confirmed for Address, Create, Approve.
+[2026-08-31 14:44:25][WARN]     At least one table connected, so the logon itself is good -- continuing.
+[2026-08-31 14:44:25][WARN]     VerifyDatabase threw but connectivity already passed -- continuing. msg='Exception calling "VerifyDatabase" with "0" argument(s): "No error."'  hr=0x80131501  inner[0]='No error.'  innerHr[0]=0x80000000  errorCode[0]=-2147483648
+[2026-08-31 14:44:25][OK]     live connection to 172.17.0.22/SBO_Seoul_Re verified as 'sa'
+[2026-08-31 14:44:25][INFO]     saved 4 table change(s) -- verifying from disk
+[2026-08-31 14:44:26][ERR]     VERIFY [main] Address : wanted '172.17.0.22/SBO_Seoul_Re' but disk has QE_DatabaseName='SBO_Seoul_Clinic_API' InitialCatalog='SBO_Seoul_Clinic_API' PreQEDatabaseName='SBO_Seoul_Clinic_API'
+[2026-08-31 14:44:26][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 14:44:26][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 14:44:26][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 14:44:26][WARN]     -NewUser 'sa' did NOT persist (disk has '') -- same limitation.
+[2026-08-31 14:44:26][ERR]     VERIFY [main] Create : wanted '172.17.0.22/SBO_Seoul_Re' but disk has QE_DatabaseName='SBO_Seoul_Clinic_API' InitialCatalog='SBO_Seoul_Clinic_API' PreQEDatabaseName='SBO_Seoul_Clinic_API'
+[2026-08-31 14:44:26][ERR]     VERIFY [main] Approve : wanted '172.17.0.22/SBO_Seoul_Re' but disk has QE_DatabaseName='SBO_Seoul_Clinic_API' InitialCatalog='SBO_Seoul_Clinic_API' PreQEDatabaseName='SBO_Seoul_Clinic_API'
+[2026-08-31 14:44:26][ERR]     ROLLED BACK TEST_Bom.rpt -- 3 verification error(s), file left unchanged
+[2026-08-31 14:44:26][INFO] ==============================================================
+[2026-08-31 14:44:26][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=3  skippedFiles=0  tables=4  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=3  userUnset=3  connectOk=1  connectFail=0  fieldChanged=0  logonApplied=4  fallback=0  method=Auto
+[2026-08-31 14:44:26][INFO] ==============================================================
+[2026-08-31 15:00:28][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:00:28][INFO] Path=C:\_conntest  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 15:00:28][INFO] Found 1 report file(s).
+[2026-08-31 15:00:28][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 15:00:30][INFO] ==============================================================
+[2026-08-31 15:00:30][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 15:00:30][INFO] ==============================================================
+[2026-08-31 15:01:04][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:01:04][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 15:01:04][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Re  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 15:01:14][INFO] Found 1 report file(s).
+[2026-08-31 15:01:14][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 15:01:15][WARN]     donor 'AR_SO' has a blank UserID -- ApplyLogOnInfo will not persist.
+[2026-08-31 15:01:15][INFO]     reusing connection of 'AR_SO' for every table
+[2026-08-31 15:01:16][INFO]     [main] AR_SO : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:01:16][INFO]     [main] Address : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:01:16][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:01:16][INFO]     [main] Approve : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:01:16][ERR]     LIVE CONNECT FAILED at VerifyTableConnectivity: all 4 table(s) refused -- server unreachable or credentials rejected
+[2026-08-31 15:01:16][ERR]     NOT SAVING TEST_Bom.rpt -- the file on disk is untouched.
+[2026-08-31 15:01:16][ERR]     Check server / database / user / password, and that 172.17.0.22 answers on 1433.
+[2026-08-31 15:01:17][INFO] ==============================================================
+[2026-08-31 15:01:17][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=1  skippedFiles=0  tables=4  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=1  fieldChanged=0  logonApplied=4  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 15:01:17][INFO] ==============================================================
+[2026-08-31 15:04:13][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:04:13][INFO] Path=C:\_conntest  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 15:04:13][INFO] Found 1 report file(s).
+[2026-08-31 15:04:13][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 15:04:14][INFO] ==============================================================
+[2026-08-31 15:04:14][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 15:04:14][INFO] ==============================================================
+[2026-08-31 15:12:28][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:12:28][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 15:12:28][INFO] Path=C:\_conntest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Re  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 15:12:35][INFO] Found 1 report file(s).
+[2026-08-31 15:12:35][INFO] --> C:\_conntest\TEST_Bom.rpt
+[2026-08-31 15:12:37][INFO]     [main] AR_SO : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:12:37][INFO]     [main] Address : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:12:37][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:12:37][INFO]     [main] Approve : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:12:38][ERR]     LIVE CONNECT FAILED at VerifyTableConnectivity: all 4 table(s) refused -- server unreachable or credentials rejected
+[2026-08-31 15:12:38][ERR]     NOT SAVING TEST_Bom.rpt -- the file on disk is untouched.
+[2026-08-31 15:12:38][ERR]     Check server / database / user / password, and that 172.17.0.22 answers on 1433.
+[2026-08-31 15:12:38][INFO] ==============================================================
+[2026-08-31 15:12:38][INFO] SUMMARY mode=APPLY  files=1  ok=0  err=1  skippedFiles=0  tables=4  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=1  fieldChanged=0  logonApplied=4  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 15:12:38][INFO] ==============================================================
+[2026-08-31 15:13:49][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:13:49][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 15:13:49][INFO] Found 2 report file(s).
+[2026-08-31 15:13:49][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt
+[2026-08-31 15:13:50][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\3.Sale Order_ใบสั่งขาย_(Bomm)\2.Sale Order_ใบสั่งขาย_(Bom).rpt
+[2026-08-31 15:13:51][INFO] ==============================================================
+[2026-08-31 15:13:51][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 15:13:51][INFO] ==============================================================
+[2026-08-31 15:17:15][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:17:15][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 15:17:15][INFO] Found 2 report file(s).
+[2026-08-31 15:17:15][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt
+[2026-08-31 15:17:17][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\3.Sale Order_ใบสั่งขาย_(Bomm)\2.Sale Order_ใบสั่งขาย_(Bom).rpt
+[2026-08-31 15:17:18][INFO] ==============================================================
+[2026-08-31 15:17:18][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 15:17:18][INFO] ==============================================================
+[2026-08-31 15:24:14][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:24:14][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 15:24:14][INFO] Found 2 report file(s).
+[2026-08-31 15:24:14][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_(Batch_Serial).rpt
+[2026-08-31 15:24:16][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt
+[2026-08-31 15:24:17][INFO] ==============================================================
+[2026-08-31 15:24:17][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 15:24:17][INFO] ==============================================================
+[2026-08-31 15:28:49][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:28:49][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 15:28:49][INFO] Path=C:\_dlvtest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Re  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 15:29:01][INFO] Found 2 report file(s).
+[2026-08-31 15:29:01][INFO] --> C:\_dlvtest\1.Delivery_ใบส่งของ_(Batch_Serial).rpt
+[2026-08-31 15:29:02][INFO]     set [main] AR_Delivery_BS : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 15:29:02][INFO]     set [main] Address : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 15:29:02][INFO]     set [main] Create : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 15:29:56][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:29:56][INFO] ConnectMode 2 refreshes the schema -- field-count changes allowed (no rollback).
+[2026-08-31 15:29:56][INFO] Path=C:\_dlvtest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Re  NewUser=sa  Password=<prompt>  ConnectMode=2
+[2026-08-31 15:29:59][INFO] Found 2 report file(s).
+[2026-08-31 15:29:59][INFO] --> C:\_dlvtest\1.Delivery_ใบส่งของ_(Batch_Serial).rpt
+[2026-08-31 15:30:01][INFO]     set [main] AR_Delivery_BS : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 15:30:01][INFO]     set [main] Address : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 15:30:01][INFO]     set [main] Create : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 15:30:45][WARN]     VerifyDatabase threw but connectivity already passed -- continuing. msg='Exception calling "VerifyDatabase" with "0" argument(s): "No error."'  hr=0x80131501  inner[0]='No error.'  innerHr[0]=0x80000000  errorCode[0]=-2147483648
+[2026-08-31 15:30:45][OK]     live connection to 172.17.0.22/SBO_Seoul_Re verified as 'sa'
+[2026-08-31 15:30:45][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 15:30:46][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 15:30:46][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 15:30:46][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 15:30:46][WARN]     -NewUser 'sa' did NOT persist (disk has '') -- same limitation.
+[2026-08-31 15:30:46][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_Re
+[2026-08-31 15:30:46][INFO] --> C:\_dlvtest\1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt
+[2026-08-31 15:30:47][INFO]     set [main] AR_Delivery_BS : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 15:30:47][INFO]     set [main] address_eng : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 15:30:47][INFO]     set [main] Create : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 15:31:08][WARN]     VerifyDatabase threw but connectivity already passed -- continuing. msg='Exception calling "VerifyDatabase" with "0" argument(s): "No error."'  hr=0x80131501  inner[0]='No error.'  innerHr[0]=0x80000000  errorCode[0]=-2147483648
+[2026-08-31 15:31:08][OK]     live connection to 172.17.0.22/SBO_Seoul_Re verified as 'sa'
+[2026-08-31 15:31:09][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 15:31:10][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_Re
+[2026-08-31 15:31:10][INFO] ==============================================================
+[2026-08-31 15:31:10][INFO] SUMMARY mode=APPLY  files=2  ok=2  err=0  skippedFiles=0  tables=6  changed=6  skippedTables=0  fieldDiff=0  removedStaleKeys=6  sqlDbUnset=6  userUnset=6  connectOk=2  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=SetTableLocation
+[2026-08-31 15:31:10][INFO] ==============================================================
+[2026-08-31 15:36:26][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:36:26][INFO] Path=C:\_dlvtest  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Re  NewUser=sa  Password=<prompt>  ConnectMode=1
+[2026-08-31 15:36:39][INFO] Found 2 report file(s).
+[2026-08-31 15:36:39][INFO] --> C:\_dlvtest\1.Delivery_ใบส่งของ_(Batch_Serial).rpt
+[2026-08-31 15:36:40][INFO]     [main] AR_Delivery_BS : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:36:40][INFO]     [main] Address : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:36:40][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:37:23][WARN]     VerifyTableConnectivity: 1/3 passed; not confirmed for Address, Create.
+[2026-08-31 15:37:23][WARN]     At least one table connected, so the logon itself is good -- continuing.
+[2026-08-31 15:37:23][OK]     live connection to 172.17.0.22/SBO_Seoul_Re verified as 'sa'
+[2026-08-31 15:37:23][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 15:37:24][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 15:37:24][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 15:37:24][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 15:37:24][WARN]     -NewUser 'sa' did NOT persist (disk has '') -- same limitation.
+[2026-08-31 15:37:25][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_Re
+[2026-08-31 15:37:25][INFO] --> C:\_dlvtest\1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt
+[2026-08-31 15:37:25][INFO]     [main] AR_Delivery_BS : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:37:25][INFO]     [main] address_eng : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:37:25][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 15:37:47][WARN]     VerifyTableConnectivity: 1/3 passed; not confirmed for address_eng, Create.
+[2026-08-31 15:37:47][WARN]     At least one table connected, so the logon itself is good -- continuing.
+[2026-08-31 15:37:47][OK]     live connection to 172.17.0.22/SBO_Seoul_Re verified as 'sa'
+[2026-08-31 15:37:47][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 15:37:48][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_Re
+[2026-08-31 15:37:48][INFO] ==============================================================
+[2026-08-31 15:37:48][INFO] SUMMARY mode=APPLY  files=2  ok=2  err=0  skippedFiles=0  tables=6  changed=6  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=6  userUnset=6  connectOk=2  connectFail=0  fieldChanged=0  logonApplied=6  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 15:37:48][INFO] ==============================================================
+[2026-08-31 15:39:41][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 15:39:41][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 15:39:41][INFO] Found 64 report file(s).
+[2026-08-31 15:39:41][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\1. Financials\1.Journal Entry_ใบบันทึกรายการบัญชี\1.Journal Entry_ใบบันทึกรายการบัญชี.rpt
+[2026-08-31 15:39:42][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\1. Sales Quotation\1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
+[2026-08-31 15:39:43][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\1. Sales Quotation\1.Sale Quotation_ใบเสนอราคาขาย(BOM)\1.Sale Quotation_ใบเสนอราคาขาย_(Bom).rpt
+[2026-08-31 15:39:43][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\1. Sales Quotation\2.Sale Quotation_ใบเสนอราคาขาย_(Dis)\2.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG.rpt
+[2026-08-31 15:39:44][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\1. Sales Quotation\2.Sale Quotation_ใบเสนอราคาขาย_(Dis)\2.Sale Quotation_ใบเสนอราคาขาย_(Dis).rpt
+[2026-08-31 15:39:45][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).rpt
+[2026-08-31 15:39:46][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\2. Sales Order\3.Sale Order_ใบสั่งขาย_(Bomm)\2.Sale Order_ใบสั่งขาย_(Bom).rpt
+[2026-08-31 15:39:47][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_(Batch_Serial).rpt
+[2026-08-31 15:39:47][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt
+[2026-08-31 15:39:48][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 15:39:49][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 15:39:50][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\1.AR Down Payment_ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_BOM ใบเสร็จรับเงินมัดจำ.rpt
+[2026-08-31 15:39:51][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\1.AR Down Payment_ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_BOM_ENG ใบเสร็จรับเงินมัดจำ.rpt
+[2026-08-31 15:39:52][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_BOM ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+[2026-08-31 15:39:53][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\2.AR Down PaymentTax Invoice_ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_BOM_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+[2026-08-31 15:39:53][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\3.AR Down Payment Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down Payment Invoice_BOM ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+[2026-08-31 15:39:54][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\5. AR Down Payment Invoice\3.AR Down Payment Invoice_ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down PaymentTax Invoice_BOM_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+[2026-08-31 15:39:54][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\2.AR Invoice_ใบแจ้งหนี้_(Dis)\1.AR Invoice_ENG ใบแจ้งหนี้_(Dis).rpt
+[2026-08-31 15:39:56][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\2.AR Invoice_ใบแจ้งหนี้_(Dis)\1.AR Invoice_ใบแจ้งหนี้_(Dis).rpt
+[2026-08-31 15:39:57][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\4.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis)\2.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).rpt
+[2026-08-31 15:39:57][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\4.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis)\2.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).rpt
+[2026-08-31 15:39:58][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\6.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis)\3.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Dis).rpt
+[2026-08-31 15:40:00][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\6. AR Invoice\6.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis)\3.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis).rpt
+[2026-08-31 15:40:01][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\7. AR Credit Memo\4.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis)\1.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis).rpt
+[2026-08-31 15:40:02][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\7. AR Credit Memo\4.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis)\1.AR_Credit Memo_ใบลดหนี้_ENG (Batch_Serial) (Dis).rpt
+[2026-08-31 15:40:03][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\1. Purchase Request\1.Purchase Request_TH_ใบขอซื้อ\1.Purchase Request_TH_ใบขอซื้อ.rpt
+[2026-08-31 15:40:04][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\2. Purchase Quotation\1.Purchase Quotation_ใบเสนอราคาซื้อ\1.Purchase Quotation_ใบเสนอราคาซื้อ.rpt
+[2026-08-31 15:40:04][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_ENG_ใบสั่งซื้อ.rpt
+[2026-08-31 15:40:05][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_ENG_ใบสั่งซื้อEdit.rpt
+[2026-08-31 15:40:06][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\3. Purchase Order\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_TH_ใบสั่งซื้อ.rpt
+[2026-08-31 15:40:06][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\4. Goods Receipt PO\2.Goods Receive PO_TH_ใบรับสินค้า_(Batch_Serial) - Copy\1.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial).rpt
+[2026-08-31 15:40:07][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\5. Goods Return\2.Goods Return_EN_ใบส่งคืนสินค้า_(Batch_Serial)\1.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 15:40:08][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment ใบจ่ายเงินมัดจำ\1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ.rpt
+[2026-08-31 15:40:09][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\6. AP Down Payment Invoice\1.AP Down Payment ใบจ่ายเงินมัดจำ\1.AP Down Payment_ใบจ่ายเงินมัดจำ.rpt
+[2026-08-31 15:40:10][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\6. AP Down Payment Invoice\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\2.AP Down Payment Invoice_ENG ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+[2026-08-31 15:40:10][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\6. AP Down Payment Invoice\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำ_ใบแจ้งหนี้\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+[2026-08-31 15:40:11][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\7. AP Invoice\2.AP Invoice_ใบแจ้งหนี้_(Batch_Serial)\1.AP Invoice_ใบแจ้งหนี้_(Batch_Serial).rpt
+[2026-08-31 15:40:12][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\8. AP Credit Memo\1.AP Credit Memo_ใบลดหนี้\1.AP Credit Memo_ใบลดหนี้.rpt
+[2026-08-31 15:40:13][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\3. Purchasing - AP\9. Landed Costs\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt
+[2026-08-31 15:40:14][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\1. Incoming Payments\1.Incoming Payments_ใบเสร็จรับเงิน\1.Incoming Payments_Eng ใบเสร็จรับเงิน.rpt
+[2026-08-31 15:40:15][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\1. Incoming Payments\1.Incoming Payments_ใบเสร็จรับเงิน\1.Incoming Payments_ใบเสร็จรับเงิน.rpt
+[2026-08-31 15:40:16][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\1. Incoming Payments\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี\2.Incoming Payments_ ENG ใบเสร็จรับเงินใบกำกับภาษี.rpt
+[2026-08-31 15:40:17][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\1. Incoming Payments\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี.rpt
+[2026-08-31 15:40:18][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\2. Outgoing Payments\1.Outgoing Payments_ใบจ่ายชำระ\1.Outgoing Payments_ENG ใบจ่ายชำระ.rpt
+[2026-08-31 15:40:20][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\4. Banking\2. Outgoing Payments\1.Outgoing Payments_ใบจ่ายชำระ\1.Outgoing Payments_ใบจ่ายชำระ.rpt
+[2026-08-31 15:40:21][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\1. Goods Receipt\2.Goods Receipt_ใบรับสินค้า_(Batch_Serial)\1.Goods Receipt_ENG ใบรับสินค้า_(Batch_Serial).rpt
+[2026-08-31 15:40:22][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\1. Goods Receipt\2.Goods Receipt_ใบรับสินค้า_(Batch_Serial)\1.Goods Receipt_ใบรับสินค้า_(Batch_Serial).rpt
+[2026-08-31 15:40:23][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\2. Goods Issue\2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial)\1.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).rpt
+[2026-08-31 15:40:23][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\2. Goods Issue\2.Goods Issue_ใบเบิกสินค้า_(Batch_Serial)\1.Goods Issue_ใบเบิกสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 15:40:24][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\3. Inventory Transfer Request\1.Inventory Transfer Request_ใบขอโอนสินค้า\1.Inventory Transfer Request_ใบขอโอนสินค้า.rpt
+[2026-08-31 15:40:25][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\4. Inventory Transfer\2.Inventory Transfer_ใบโอนสินค้า(Batch_Serial)\1.Inventory Transfer_ใบโอนสินค้า_TH_(Batch_Serial).rpt
+[2026-08-31 15:40:26][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\5. Inventory Counting\1.Inventory Counting_ใบตรวจนับสินค้า_Befor\1.Inventory Counting_ใบตรวจนับสินค้า_Befor.rpt
+[2026-08-31 15:40:27][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\5. Inventory Counting\2.Inventory Counting_ใบหลังตรวจนับสินค้า_After\2.Inventory Counting_ใบหลังตรวจนับสินค้า_After.rpt
+[2026-08-31 15:40:28][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\6. Inventory Revaluation\1.Inventory Revaluation_ใบปรับมูลค่า_Price\1.Inventory Revaluation_ใบปรับมูลค่า_Price.rpt
+[2026-08-31 15:40:29][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\5. Inventory\6. Inventory Revaluation\2.Inventory Revaluation_ใบปรับมูลค่า_DebitCredit\2.Inventory Revaluation_ใบปรับมูลค่า_DebitCredit.rpt
+[2026-08-31 15:40:29][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\6. Production\1. Production Order\1.Production Order_ใบสั่งผลิต\1.Production Order_ใบสั่งผลิต.rpt
+[2026-08-31 15:40:30][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\6. Production\2. Receipt from Production\1.Receipt from Production_ใบรับสินค้าจากการผลิต\1.Receipt from Production_ใบรับสินค้าจากการผลิต.rpt
+[2026-08-31 15:40:31][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\6. Production\2. Receipt from Production\2.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial)\2.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial).rpt
+[2026-08-31 15:40:31][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\6. Production\3. Issue for Production\1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต\1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต.rpt
+[2026-08-31 15:40:32][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\6. Production\3. Issue for Production\2.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial)\2.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial).rpt
+[2026-08-31 15:40:33][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\7.Fixed Asset\ทะเบียนสินทรัพย์\ทะเบียนสินทรัพย์.rpt
+[2026-08-31 15:40:33][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\7.Fixed Asset\รายการขายทรัพย์สิน เรียงตามรหัสสินทรัพย์\รายการขายทรัพย์สิน เรียงตามรหัสสินทรัพย์.rpt
+[2026-08-31 15:40:34][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\7.Fixed Asset\รายการสินทรัพย์เข้าใหม่ เรียงตามรหัสสินทรัพย์\รายการสินทรัพย์เข้าใหม่ เรียงตามรหัสสินทรัพย์.rpt
+[2026-08-31 15:40:34][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\7.Fixed Asset\รายงานค่าเสื่อมประจำเดือน สรุปตามกลุ่มสินทรัพย์\รายงานค่าเสื่อมประจำเดือน สรุปตามกลุ่มสินทรัพย์.rpt
+[2026-08-31 15:40:35][INFO] ==============================================================
+[2026-08-31 15:40:35][INFO] SUMMARY mode=APPLY  files=64  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 15:40:35][INFO] ==============================================================
+[2026-08-31 16:32:48][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 16:32:48][INFO] Path=C:\_bakchk  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 16:32:48][INFO] Found 2 report file(s).
+[2026-08-31 16:32:48][INFO] --> C:\_bakchk\B24.rpt
+[2026-08-31 16:32:51][INFO] --> C:\_bakchk\B25.rpt
+[2026-08-31 16:32:51][INFO] ==============================================================
+[2026-08-31 16:32:51][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 16:32:51][INFO] ==============================================================
+[2026-08-31 16:33:31][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 16:33:31][INFO] Path=C:\_headchk  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 16:33:31][INFO] Found 2 report file(s).
+[2026-08-31 16:33:31][INFO] --> C:\_headchk\HEAD_Delivery.rpt
+[2026-08-31 16:33:33][INFO] --> C:\_headchk\HEAD_SO_Dis.rpt
+[2026-08-31 16:33:34][INFO] ==============================================================
+[2026-08-31 16:33:34][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 16:33:34][INFO] ==============================================================
+[2026-08-31 17:05:31][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 17:05:31][INFO] Path=C:\_verify  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 17:05:31][INFO] Found 3 report file(s).
+[2026-08-31 17:05:31][INFO] --> C:\_verify\A_restore.rpt
+[2026-08-31 17:05:33][INFO] --> C:\_verify\B_before.rpt
+[2026-08-31 17:05:33][INFO] --> C:\_verify\C_forced.rpt
+[2026-08-31 17:05:34][INFO] ==============================================================
+[2026-08-31 17:05:34][INFO] SUMMARY mode=APPLY  files=3  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 17:05:34][INFO] ==============================================================
+[2026-08-31 17:25:46][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 17:25:46][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 17:25:46][INFO] Found 2 report file(s).
+[2026-08-31 17:25:46][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_(Batch_Serial).rpt
+[2026-08-31 17:25:47][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt
+[2026-08-31 17:25:48][INFO] ==============================================================
+[2026-08-31 17:25:48][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 17:25:48][INFO] ==============================================================
+[2026-08-31 17:44:02][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 17:44:02][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_TEST  NewUser=  Password=<none>  Connect=off
+[2026-08-31 17:44:02][INFO] Found 2 report file(s).
+[2026-08-31 17:44:02][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_(Batch_Serial).rpt
+[2026-08-31 17:44:04][INFO]     [main] AR_Delivery_BS : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 17:44:04][INFO]     [main] Address : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 17:44:04][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 17:44:04][INFO]     backup -> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_(Batch_Serial).rpt.bak4
+[2026-08-31 17:44:04][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 17:44:04][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 17:44:04][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 17:44:04][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 17:44:04][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_TEST
+[2026-08-31 17:44:04][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt
+[2026-08-31 17:44:05][INFO]     [main] AR_Delivery_BS : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 17:44:05][INFO]     [main] address_eng : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 17:44:05][INFO]     [main] Create : moved by ApplyLogOnInfo (UserID kept)
+[2026-08-31 17:44:05][INFO]     backup -> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\3. Delivery\2.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt.bak4
+[2026-08-31 17:44:05][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 17:44:06][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_TEST
+[2026-08-31 17:44:06][INFO] ==============================================================
+[2026-08-31 17:44:06][INFO] SUMMARY mode=APPLY  files=2  ok=2  err=0  skippedFiles=0  tables=6  changed=6  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=6  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=6  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 17:44:06][INFO] USER ID  kept=6  stamped=0  dropped=0
+[2026-08-31 17:44:06][INFO] ==============================================================
+[2026-08-31 17:45:16][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 17:45:16][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 17:45:16][INFO] Found 2 report file(s).
+[2026-08-31 17:45:16][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 17:45:17][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 17:45:18][INFO] ==============================================================
+[2026-08-31 17:45:18][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 17:45:18][INFO] USER ID  kept=0  stamped=0  dropped=0
+[2026-08-31 17:45:18][INFO] ==============================================================
+[2026-08-31 17:45:53][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 17:45:53][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_TEST  NewUser=sa  Password=<none>  Connect=off
+[2026-08-31 17:45:53][INFO] Found 2 report file(s).
+[2026-08-31 17:45:53][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 17:45:54][INFO]     3 table(s) have a blank UserID -- ApplyLogOnInfo cannot write them; using the RAS logon-bag path
+[2026-08-31 17:45:54][INFO]     [main] AR_Retrun_BS : blank UserID -- RAS logon-bag path
+[2026-08-31 17:45:54][OK]     [main] AR_Retrun_BS : User ID stamped 'sa' (was blank)
+[2026-08-31 17:45:54][INFO]     set [main] AR_Retrun_BS : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_TEST'
+[2026-08-31 17:45:54][INFO]     [main] OADM : blank UserID -- RAS logon-bag path
+[2026-08-31 17:45:54][OK]     [main] OADM : User ID stamped 'sa' (was blank)
+[2026-08-31 17:45:54][INFO]     set [main] OADM : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_TEST'
+[2026-08-31 17:45:54][INFO]     [main] Create : blank UserID -- RAS logon-bag path
+[2026-08-31 17:45:54][OK]     [main] Create : User ID stamped 'sa' (was blank)
+[2026-08-31 17:45:54][INFO]     set [main] Create : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_TEST'
+[2026-08-31 17:45:54][INFO]     backup -> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt.bak4
+[2026-08-31 17:45:54][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 17:45:55][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 17:45:55][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 17:45:55][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 17:45:55][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_TEST
+[2026-08-31 17:45:55][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 17:45:56][INFO]     3 table(s) have a blank UserID -- ApplyLogOnInfo cannot write them; using the RAS logon-bag path
+[2026-08-31 17:45:56][INFO]     [main] AR_Retrun_BS : blank UserID -- RAS logon-bag path
+[2026-08-31 17:45:56][OK]     [main] AR_Retrun_BS : User ID stamped 'sa' (was blank)
+[2026-08-31 17:45:56][INFO]     set [main] AR_Retrun_BS : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_TEST'
+[2026-08-31 17:45:56][INFO]     [main] Address : blank UserID -- RAS logon-bag path
+[2026-08-31 17:45:56][OK]     [main] Address : User ID stamped 'sa' (was blank)
+[2026-08-31 17:45:56][INFO]     set [main] Address : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_TEST'
+[2026-08-31 17:45:56][INFO]     [main] Create : blank UserID -- RAS logon-bag path
+[2026-08-31 17:45:56][OK]     [main] Create : User ID stamped 'sa' (was blank)
+[2026-08-31 17:45:56][INFO]     set [main] Create : '192.168.0.216/SBO_SDA_REAL' -> '172.17.0.22/SBO_Seoul_TEST'
+[2026-08-31 17:45:56][INFO]     backup -> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt.bak4
+[2026-08-31 17:45:56][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 17:45:57][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_TEST
+[2026-08-31 17:45:57][INFO] ==============================================================
+[2026-08-31 17:45:57][INFO] SUMMARY mode=APPLY  files=2  ok=2  err=0  skippedFiles=0  tables=6  changed=6  skippedTables=0  fieldDiff=0  removedStaleKeys=6  sqlDbUnset=6  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=6  alreadyOk=0  method=Auto
+[2026-08-31 17:45:57][INFO] USER ID  kept=0  stamped=6  dropped=0
+[2026-08-31 17:45:57][INFO] ==============================================================
+[2026-08-31 17:54:21][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 17:54:21][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Re  NewUser=sa  Password=<none>  Connect=off
+[2026-08-31 17:54:21][INFO] Found 2 report file(s).
+[2026-08-31 17:54:21][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 17:54:22][INFO]     set [main] AR_Retrun_BS : '172.17.0.22/SBO_Seoul_TEST' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 17:54:22][INFO]     set [main] OADM : '172.17.0.22/SBO_Seoul_TEST' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 17:54:22][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_TEST' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 17:54:22][INFO]     backup -> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt.bak5
+[2026-08-31 17:54:22][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 17:54:23][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 17:54:23][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 17:54:23][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 17:54:23][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_Re
+[2026-08-31 17:54:23][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 17:54:24][INFO]     set [main] AR_Retrun_BS : '172.17.0.22/SBO_Seoul_TEST' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 17:54:24][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_TEST' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 17:54:24][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_TEST' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 17:54:24][INFO]     backup -> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt.bak5
+[2026-08-31 17:54:24][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 17:54:25][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_Re
+[2026-08-31 17:54:25][INFO] ==============================================================
+[2026-08-31 17:54:25][INFO] SUMMARY mode=APPLY  files=2  ok=2  err=0  skippedFiles=0  tables=6  changed=6  skippedTables=0  fieldDiff=0  removedStaleKeys=6  sqlDbUnset=6  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=SetTableLocation
+[2026-08-31 17:54:25][INFO] USER ID  kept=6  stamped=0  dropped=0
+[2026-08-31 17:54:25][INFO] ==============================================================
+[2026-08-31 17:54:42][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 17:54:42][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 17:54:42][INFO] Found 2 report file(s).
+[2026-08-31 17:54:42][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 17:54:44][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 17:54:45][INFO] ==============================================================
+[2026-08-31 17:54:45][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 17:54:45][INFO] USER ID  kept=0  stamped=0  dropped=0
+[2026-08-31 17:54:45][INFO] ==============================================================
+[2026-08-31 18:00:55][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 18:00:55][INFO] Path=<โฟลเดอร์>  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Re  NewUser=sa  Password=<none>  Connect=off
+[2026-08-31 18:00:55][INFO] Found 0 report file(s).
+[2026-08-31 18:00:55][INFO] ==============================================================
+[2026-08-31 18:00:55][INFO] SUMMARY mode=APPLY  files=0  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=SetTableLocation
+[2026-08-31 18:00:55][INFO] USER ID  kept=0  stamped=0  dropped=0
+[2026-08-31 18:00:55][INFO] ==============================================================
+[2026-08-31 18:04:07][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 18:04:07][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)  NewServer=172.17.0.22  OldServer=  NewDatabase=SBO_Seoul_Re  NewUser=sa  Password=<none>  Connect=off
+[2026-08-31 18:04:07][INFO] Found 2 report file(s).
+[2026-08-31 18:04:07][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 18:04:08][INFO]     set [main] AR_Retrun_BS : '172.17.0.22/SBO_Seoul_Re' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 18:04:08][INFO]     set [main] OADM : '172.17.0.22/SBO_Seoul_Re' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 18:04:08][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Re' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 18:04:08][INFO]     backup -> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt.bak
+[2026-08-31 18:04:08][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 18:04:09][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 18:04:09][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 18:04:09][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 18:04:09][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_Re
+[2026-08-31 18:04:09][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 18:04:10][INFO]     set [main] AR_Retrun_BS : '172.17.0.22/SBO_Seoul_Re' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 18:04:10][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Re' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 18:04:10][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Re' -> '172.17.0.22/SBO_Seoul_Re'
+[2026-08-31 18:04:10][INFO]     backup -> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt.bak
+[2026-08-31 18:04:10][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 18:04:11][OK]     verified on disk: 3 table(s) now point to 172.17.0.22/SBO_Seoul_Re
+[2026-08-31 18:04:11][INFO] ==============================================================
+[2026-08-31 18:04:11][INFO] SUMMARY mode=APPLY  files=2  ok=2  err=0  skippedFiles=0  tables=6  changed=6  skippedTables=0  fieldDiff=0  removedStaleKeys=6  sqlDbUnset=6  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=SetTableLocation
+[2026-08-31 18:04:11][INFO] USER ID  kept=6  stamped=0  dropped=0
+[2026-08-31 18:04:11][INFO] ==============================================================
+[2026-08-31 18:18:18][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 18:18:18][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 18:18:18][INFO] Found 2 report file(s).
+[2026-08-31 18:18:18][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 18:18:20][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 18:18:21][INFO] ==============================================================
+[2026-08-31 18:18:21][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 18:18:21][INFO] USER ID  kept=0  stamped=0  dropped=0
+[2026-08-31 18:18:21][INFO] ==============================================================
+[2026-08-31 18:18:44][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 18:18:44][INFO] Path=C:\_autotest  NewServer=10.9.9.9  OldServer=  NewDatabase=AUTOCHK_DB  NewUser=  Password=<none>  Connect=off
+[2026-08-31 18:18:44][INFO] Found 2 report file(s).
+[2026-08-31 18:18:44][INFO] --> C:\_autotest\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 18:18:46][INFO]     set [main] AR_Retrun_BS : '172.17.0.22/SBO_Seoul_Re' -> '10.9.9.9/AUTOCHK_DB'
+[2026-08-31 18:18:46][INFO]     set [main] OADM : '172.17.0.22/SBO_Seoul_Re' -> '10.9.9.9/AUTOCHK_DB'
+[2026-08-31 18:18:46][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Re' -> '10.9.9.9/AUTOCHK_DB'
+[2026-08-31 18:18:46][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 18:18:47][WARN]     QE_SQLDB is still 'False' -- SAP B1 may refuse to open this report.
+[2026-08-31 18:18:47][WARN]     An offline edit cannot set it. Re-run with -Connect -NewUser <user>, or:
+[2026-08-31 18:18:47][WARN]       Database > Set Datasource Location > select the new connection > Update > Save.
+[2026-08-31 18:18:47][OK]     verified on disk: 3 table(s) now point to 10.9.9.9/AUTOCHK_DB
+[2026-08-31 18:18:47][INFO] --> C:\_autotest\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 18:18:48][INFO]     set [main] AR_Retrun_BS : '172.17.0.22/SBO_Seoul_Re' -> '10.9.9.9/AUTOCHK_DB'
+[2026-08-31 18:18:48][INFO]     set [main] Address : '172.17.0.22/SBO_Seoul_Re' -> '10.9.9.9/AUTOCHK_DB'
+[2026-08-31 18:18:48][INFO]     set [main] Create : '172.17.0.22/SBO_Seoul_Re' -> '10.9.9.9/AUTOCHK_DB'
+[2026-08-31 18:18:49][INFO]     saved 3 table change(s) -- verifying from disk
+[2026-08-31 18:18:49][OK]     verified on disk: 3 table(s) now point to 10.9.9.9/AUTOCHK_DB
+[2026-08-31 18:18:49][INFO] ==============================================================
+[2026-08-31 18:18:49][INFO] SUMMARY mode=APPLY  files=2  ok=2  err=0  skippedFiles=0  tables=6  changed=6  skippedTables=0  fieldDiff=0  removedStaleKeys=6  sqlDbUnset=6  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=6  fallback=6  alreadyOk=0  method=Auto
+[2026-08-31 18:18:49][INFO] USER ID  kept=6  stamped=0  dropped=0
+[2026-08-31 18:18:49][INFO] ==============================================================
+[2026-08-31 18:18:50][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 18:18:50][INFO] Path=C:\_autotest  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 18:18:50][INFO] Found 2 report file(s).
+[2026-08-31 18:18:50][INFO] --> C:\_autotest\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 18:18:51][INFO] --> C:\_autotest\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 18:18:52][INFO] ==============================================================
+[2026-08-31 18:18:52][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 18:18:52][INFO] USER ID  kept=0  stamped=0  dropped=0
+[2026-08-31 18:18:52][INFO] ==============================================================
+[2026-08-31 19:12:22][INFO] === Set-DatasourceLocation start  mode=APPLY ===
+[2026-08-31 19:12:22][INFO] Path=C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return  NewServer=x  OldServer=  NewDatabase=  NewUser=  Password=<none>  Connect=off
+[2026-08-31 19:12:22][INFO] Found 2 report file(s).
+[2026-08-31 19:12:22][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+[2026-08-31 19:12:23][INFO] --> C:\GitHub\SDA\Form-Layout_SDA\2. Sales - AR\4. Return\2.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+[2026-08-31 19:12:24][INFO] ==============================================================
+[2026-08-31 19:12:24][INFO] SUMMARY mode=APPLY  files=2  ok=0  err=0  skippedFiles=0  tables=0  subreports=0  subTables=0  changed=0  skippedTables=0  fieldDiff=0  removedStaleKeys=0  sqlDbUnset=0  userUnset=0  connectOk=0  connectFail=0  fieldChanged=0  logonApplied=0  fallback=0  alreadyOk=0  method=Auto
+[2026-08-31 19:12:24][INFO] USER ID  kept=0  stamped=0  dropped=0
+[2026-08-31 19:12:24][INFO] ==============================================================

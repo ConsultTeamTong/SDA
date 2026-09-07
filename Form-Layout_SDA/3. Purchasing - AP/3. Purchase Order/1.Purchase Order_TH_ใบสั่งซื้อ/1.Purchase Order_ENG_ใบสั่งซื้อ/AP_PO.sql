@@ -1,108 +1,771 @@
 ﻿-- ============================================================
 -- Report: 1.Purchase Order_ENG_ใบสั่งซื้อ.rpt
 Path:   1.Purchase Order_ENG_ใบสั่งซื้อ.rpt
-Extracted: 2026-07-31 00:18:20
+Extracted: 2026-09-01 18:40:45
 -- Source: Main Report
 -- Table:  AP_PO
 -- ============================================================
 
-SELECT DISTINCT 
-BRANCH.Code ,
-CASE WHEN BRANCH.Code = '00000' AND OPOR.DocCur = OADM.MainCurncy THEN N'สำนักงานใหญ่' 
-  WHEN BRANCH.Code = '00000' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Head office' 
-  WHEN BRANCH.Code <> '00000' AND OPOR.DocCur = OADM.MainCurncy THEN concat(N'สาขาที่' ,' ',BRANCH.Code) 
-  WHEN BRANCH.Code <> '00000' AND OPOR.DocCur <> OADM.MainCurncy THEN concat('Branch' ,' ',BRANCH.Code) 
-END 'GLN_H' ,
-CASE WHEN CRD1.GlblLocNum = '00000' AND OPOR.DocCur = OADM.MainCurncy THEN N'(สำนักงานใหญ่)' 
-  WHEN CRD1.GlblLocNum = '00000' AND OPOR.DocCur <> OADM.MainCurncy THEN '(Head office)' 
-  WHEN CRD1.GlblLocNum <> '00000' AND OPOR.DocCur = OADM.MainCurncy THEN concat(N'(สาขาที่' ,' ',CRD1.GlblLocNum,')') 
-  WHEN CRD1.GlblLocNum <> '00000' AND OPOR.DocCur <> OADM.MainCurncy THEN concat('(Branch' ,' ',CRD1.GlblLocNum,')') 
-  when CRD1.GlblLocNum = '' or CRD1.GlblLocNum is null then ''
-END 'GLN_BP' ,
- CASE 
- WHEN OPOR.Printed = 'N' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Original'
- WHEN OPOR.Printed = 'N' AND OPOR.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ' 
- WHEN OPOR.Printed = 'Y' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Copy'  
- WHEN OPOR.Printed = 'Y' AND OPOR.DocCur = OADM.MainCurncy THEN N'สำเนา'
- END AS 'Print Status',
-BRANCH.[Name] As 'BranchName',
-BRANCH.U_SLD_VTAXID As 'TaxIdNum',
-CAST(BRANCH.U_SLD_VComName AS nvarchar(max)) As 'PrintHeadr',
-CAST(BRANCH.U_SLD_F_VComName AS nvarchar(max)) As 'PrintHdrF',
-CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Building ELSE BRANCH.U_SLD_F_Building END AS nvarchar(max)) AS 'Building',
-CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Steet  ELSE BRANCH.U_SLD_F_Steet  END AS nvarchar(max)) AS 'Street',
-CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Block  ELSE BRANCH.U_SLD_F_Block   END AS nvarchar(max)) AS 'Block',
-CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_City  ELSE BRANCH.U_SLD_F_City  END AS nvarchar(max)) As 'City',
-CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_County ELSE BRANCH.U_SLD_F_County  END AS nvarchar(max)) As 'County',
-BRANCH.U_SLD_ZipCode As 'ZipCode',
-BRANCH.U_SLD_Tel As 'Tel',
-BRANCH.U_SLD_Fax As 'BFax',
-BRANCH.U_SLD_Email AS 'E-Mail',
-OPOR.DocEntry,
-CAST(OPOR.Address2 AS nvarchar(max)) AS 'Address2', 
-CAST(OPOR.[Address] AS nvarchar(max)) AS 'Address',
-OCRD.U_SLD_Title,
-CAST(OCRD.U_SLD_FullName AS nvarchar(max)) AS 'U_SLD_FullName',
-CASE WHEN OCRD.Phone2 IS NULL THEN ''
-  WHEN OCRD.Phone2 IS NOT NULL THEN ', ' + OCRD.Phone2
-  END 'Phone2',
-OCRD.Phone1, 
-ISNULL(OCRD.Fax,'') AS 'Fax',
-OCRD.LicTradNum,
-NNM1.BeginStr, 
-OPOR.DocNum,
-OPOR.CardCode, 
-OPOR.DocDate, 
-OPOR.DocDueDate, 
-OCTG.PymntGroup, 
-CAST(POR1.VisOrder AS FLOAT) AS 'No.', 
-POR1.LineNum as 'Line No.', 
-POR1.ItemCode, 
-CAST(POR1.Dscription AS nvarchar(max)) AS 'Dscription', 
-POR1.Quantity,
-POR1.PriceBefDi, 
---POR1.DiscPrcnt,
-CASE WHEN OPOR.DocCur = 'THB' THEN POR1.LineTotal ELSE POR1.TotalFrgn END AS 'LineTotal',
-CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.DiscSum ELSE OPOR.DiscSumFC END AS 'DiscSum',
-CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.VatSum ELSE OPOR.VatSumFC END AS 'VatSum',
-OPOR.DiscPrcnt,
-OPOR.DocCur,
-CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.DocTotal ELSE OPOR.DocTotalFC END AS 'DocTotal',
-SUM(CASE WHEN OPOR.DocCur = 'THB' THEN POR1.LineTotal ELSE POR1.TotalFrgn END) OVER() AS 'Sum_LineTotal_All',
-POR1.unitmsr,
-CAST(OPOR.Comments AS nvarchar(max)) AS 'Comments',
-POR1.LineType,
-CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
-OCRD.cntctPrsn,
-OCRD.E_mail,
-POR1.U_SLD_Dis_Amount,
-CAST(ocrd.MailAddres AS nvarchar(max)) AS 'MailAddres',
-ocrd.Country,
-pj.Project, 
-CAST(por12.StreetS AS nvarchar(max)) as StreetS, CAST(por12.StreetNoS AS nvarchar(max)) as StreetS,CAST(por12.BlockS AS nvarchar(max)) as BlockS, CAST(por12.BuildingS AS nvarchar(max)) as BuildingS, 
-CAST(por12.CityS AS nvarchar(max)) as CityS, por12.ZipCodeS, CAST(por12.CountyS AS nvarchar(max)) as CountyS, por12.StateS,
-CAST(por12.StreetB AS nvarchar(max)) as StreetB, CAST(por12.StreetNoB AS nvarchar(max)) as StreetNoB,CAST(por12.BlockB AS nvarchar(max)) as BlockB, CAST(por12.BuildingB AS nvarchar(max)) as BuildingB, 
-CAST(por12.CityB AS nvarchar(max)) as CityB, por12.ZipCodeB, CAST(por12.CountyB AS nvarchar(max)) as CountyB, por12.StateB,
-OCPR.Name,
-OCPR.Tel1,
-OCPR.E_MailL,
-OITM.FrgnName AS 'Dscription',
-OUGP.UgpCode
+SELECT T0.*
+FROM (
+-- 1.1 item rows of the real document
+SELECT DISTINCT
+ 
+        BRANCH.Code ,
+
+         CASE 
+         WHEN OPOR.Printed = 'N' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Original'
+         WHEN OPOR.Printed = 'N' AND OPOR.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ' 
+         WHEN OPOR.Printed = 'Y' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Copy'  
+         WHEN OPOR.Printed = 'Y' AND OPOR.DocCur = OADM.MainCurncy THEN N'สำเนา'
+         END AS 'Print Status',
+
+        BRANCH.[Name] As 'BranchName',
+
+        BRANCH.U_SLD_VTAXID As 'TaxIdNum',
+
+        CAST(BRANCH.U_SLD_VComName AS NVARCHAR(4000)) As 'PrintHeadr',
+
+        CAST(BRANCH.U_SLD_F_VComName AS NVARCHAR(4000)) As 'PrintHdrF',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Building ELSE BRANCH.U_SLD_F_Building END AS NVARCHAR(4000)) AS 'Building',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Steet  ELSE BRANCH.U_SLD_F_Steet  END AS NVARCHAR(4000)) AS 'Street',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Block  ELSE BRANCH.U_SLD_F_Block   END AS NVARCHAR(4000)) AS 'Block',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_City  ELSE BRANCH.U_SLD_F_City  END AS NVARCHAR(4000)) As 'City',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_County ELSE BRANCH.U_SLD_F_County  END AS NVARCHAR(4000)) As 'County',
+
+        BRANCH.U_SLD_ZipCode As 'ZipCode',
+
+        BRANCH.U_SLD_Tel As 'Tel',
+
+        BRANCH.U_SLD_Fax As 'BFax',
+
+        BRANCH.U_SLD_Email AS 'E-Mail',
+
+        OPOR.DocEntry,
+
+        CAST(OPOR.Address2 AS NVARCHAR(4000)) AS 'Address2',
+ 
+        CAST(OPOR.[Address] AS NVARCHAR(4000)) AS 'Address',
+
+        OCRD.U_SLD_Title,
+
+        CAST(OCRD.U_SLD_FullName AS NVARCHAR(4000)) AS 'U_SLD_FullName',
+
+        OCRD.Phone1,
+ 
+        ISNULL(OCRD.Fax,'') AS 'Fax',
+
+        OCRD.LicTradNum,
+
+        NNM1.BeginStr,
+ 
+        OPOR.DocNum,
+
+        OPOR.CardCode,
+ 
+        OPOR.DocDate,
+ 
+        OPOR.DocDueDate,
+ 
+        OCTG.PymntGroup,
+ 
+        CAST(POR1.VisOrder + 1 AS FLOAT) AS 'No.',
+ 
+        POR1.LineNum as 'Line No.',
+ 
+        POR1.ItemCode,
+ 
+        CAST(POR1.Dscription AS NVARCHAR(4000)) AS 'Dscription',
+ 
+        POR1.Quantity,
+
+        POR1.PriceBefDi,
+ 
+        CASE WHEN OPOR.DocCur = 'THB' THEN POR1.LineTotal ELSE POR1.TotalFrgn END AS 'LineTotal',
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.DiscSum ELSE OPOR.DiscSumFC END AS 'DiscSum',
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.VatSum ELSE OPOR.VatSumFC END AS 'VatSum',
+
+        OPOR.DiscPrcnt,
+
+        OPOR.DocCur,
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.DocTotal ELSE OPOR.DocTotalFC END AS 'DocTotal',
+    (SELECT CASE WHEN OPOR.DocCur = 'THB' THEN SUM(L.LineTotal) ELSE SUM(L.TotalFrgn) END
+        FROM POR1 L WHERE L.DocEntry = OPOR.DocEntry) AS 'Sum_LineTotal_All',
+
+        POR1.unitmsr,
+
+        CAST(OPOR.Comments AS NVARCHAR(4000)) AS 'Comments',
+
+        POR1.LineType,
+
+        CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
+
+        OCRD.cntctPrsn,
+
+        OCRD.E_mail,
+
+        POR1.U_SLD_Dis_Amount,
+
+        CAST(ocrd.MailAddres AS NVARCHAR(4000)) AS 'MailAddres',
+
+        ocrd.Country,
+
+        QPJ.Project,
+ 
+        CAST(por12.StreetS AS NVARCHAR(4000)) as StreetS,
+ 
+        CAST(por12.StreetNoS AS NVARCHAR(4000)) as StreetNoS,
+ 
+        CAST(por12.BlockS AS NVARCHAR(4000)) as BlockS,
+ 
+        CAST(por12.BuildingS AS NVARCHAR(4000)) as BuildingS,
+ 
+        CAST(por12.CityS AS NVARCHAR(4000)) as CityS,
+ 
+        por12.ZipCodeS,
+ 
+        CAST(por12.CountyS AS NVARCHAR(4000)) as CountyS,
+ 
+        por12.StateS,
+
+        CAST(por12.StreetB AS NVARCHAR(4000)) as StreetB,
+ 
+        CAST(por12.StreetNoB AS NVARCHAR(4000)) as StreetNoB,
+
+        CAST(por12.BlockB AS NVARCHAR(4000)) as BlockB,
+ 
+        CAST(por12.BuildingB AS NVARCHAR(4000)) as BuildingB,
+ 
+        CAST(por12.CityB AS NVARCHAR(4000)) as CityB,
+ 
+        por12.ZipCodeB,
+ 
+        CAST(por12.CountyB AS NVARCHAR(4000)) as CountyB,
+ 
+        OCRY.Name as CountryB,
+
+        por12.StateB,
+
+        OCPR.Name,
+
+        OCPR.Tel1,
+
+        OCPR.E_MailL,
+
+        OITM.FrgnName AS 'Dscription_Frgn',
+ 
+        OUOM.U_SLD_Uomforeign AS UgpCode
+,
+    POR1.VisOrder AS 'Sort_VisOrder',
+    0 AS 'Sort_IsText',
+    0 AS 'Sort_Seq'
+
+    ,
+    (SELECT TOP 1 PJN.PrjName FROM OPRJ PJN WHERE PJN.PrjCode = (QPJ.Project)) AS 'ProjectName'
 FROM OPOR   
-INNER JOIN POR1 ON OPOR.DocEntry = POR1.DocEntry  
-LEFT JOIN POR1 pj ON OPOR.DocEntry = POR1.DocEntry AND pj.Project IS NOT NULL AND pj.Project <> ''
-LEFT JOIN OITM ON POR1.ItemCode = OITM.ItemCode 
-LEFT JOIN OCRD ON OPOR.CardCode = OCRD.CardCode 
-LEFT JOIN CRD1 ON (OPOR.[PaytoCode] = CRD1.[Address] AND OPOR.CardCode = CRD1.CardCode and CRD1.AdresType = 'B')
-LEFT JOIN OCPR ON OPOR.CntctCode = OCPR.CntctCode 
-LEFT JOIN NNM1 ON OPOR.Series = NNM1.Series 
-LEFT JOIN OCTG ON OPOR.GroupNum = OCTG.GroupNum
-LEFT JOIN OHEM ON OPOR.OwnerCode = OHEM.empID
-LEFT JOIN OSLP ON OPOR.SlpCode = OSLP.SlpCode
-LEFT JOIN POR12 ON OPOR.DocEntry = POR12.DocEntry
-LEFT JOIN OUSR ON OPOR.UserSign = OUSR.USERID
-LEFT JOIN OPRJ ON pj.Project = OPRJ.PrjCode
-LEFT JOIN OUGP ON POR1.UomCode = OUGP.UgpCode
-LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPOR.U_SLD_LVatBranch = BRANCH.Code, oadm
-WHERE OPOR.DocEntry = {?DocKey@}
-ORDER BY 'No.' , 'Line No.'
+    INNER JOIN POR1 ON OPOR.DocEntry = POR1.DocEntry  
+    -- OUTER APPLY keeps Project a header-level lookup; the old pj join
+    -- multiplied every detail row. Do not turn it back into a JOIN.
+    
+OUTER APPLY (
+        SELECT TOP 1 P.Project
+        FROM POR1 P
+        WHERE P.DocEntry = OPOR.DocEntry
+          AND P.Project IS NOT NULL
+          AND P.Project <> ''
+    ) QPJ
+    LEFT JOIN OITM ON POR1.ItemCode = OITM.ItemCode 
+    LEFT JOIN OCRD ON OPOR.CardCode = OCRD.CardCode 
+    LEFT JOIN CRD1 ON (OPOR.[PaytoCode] = CRD1.[Address] AND OPOR.CardCode = CRD1.CardCode and CRD1.AdresType = 'B')
+    LEFT JOIN OCPR ON OPOR.CntctCode = OCPR.CntctCode 
+    LEFT JOIN NNM1 ON OPOR.Series = NNM1.Series 
+    LEFT JOIN OCTG ON OPOR.GroupNum = OCTG.GroupNum
+    LEFT JOIN OHEM ON OPOR.OwnerCode = OHEM.empID
+    LEFT JOIN OSLP ON OPOR.SlpCode = OSLP.SlpCode
+    LEFT JOIN POR12 ON OPOR.DocEntry = POR12.DocEntry
+    LEFT JOIN OCRY ON POR12.CountryB = OCRY.Code 
+    LEFT JOIN OUSR ON OPOR.UserSign = OUSR.USERID
+    LEFT JOIN OPRJ ON QPJ.Project = OPRJ.PrjCode
+    LEFT JOIN OUOM ON POR1.UomCode = OUOM.UomCode
+    LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPOR.U_SLD_LVatBranch = BRANCH.Code
+    CROSS JOIN OADM 
+    WHERE OPOR.DocEntry = {?DocKey@}
+      AND {?ObjectId@} = '22'
+
+    
+UNION ALL
+-- 1.2 text rows (remarks) of the real document
+SELECT DISTINCT
+ 
+        BRANCH.Code ,
+
+         CASE 
+         WHEN OPOR.Printed = 'N' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Original'
+         WHEN OPOR.Printed = 'N' AND OPOR.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ' 
+         WHEN OPOR.Printed = 'Y' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Copy'  
+         WHEN OPOR.Printed = 'Y' AND OPOR.DocCur = OADM.MainCurncy THEN N'สำเนา'
+         END AS 'Print Status',
+
+        BRANCH.[Name] As 'BranchName',
+
+        BRANCH.U_SLD_VTAXID As 'TaxIdNum',
+
+        CAST(BRANCH.U_SLD_VComName AS NVARCHAR(4000)) As 'PrintHeadr',
+
+        CAST(BRANCH.U_SLD_F_VComName AS NVARCHAR(4000)) As 'PrintHdrF',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Building ELSE BRANCH.U_SLD_F_Building END AS NVARCHAR(4000)) AS 'Building',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Steet  ELSE BRANCH.U_SLD_F_Steet  END AS NVARCHAR(4000)) AS 'Street',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Block  ELSE BRANCH.U_SLD_F_Block   END AS NVARCHAR(4000)) AS 'Block',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_City  ELSE BRANCH.U_SLD_F_City  END AS NVARCHAR(4000)) As 'City',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_County ELSE BRANCH.U_SLD_F_County  END AS NVARCHAR(4000)) As 'County',
+
+        BRANCH.U_SLD_ZipCode As 'ZipCode',
+
+        BRANCH.U_SLD_Tel As 'Tel',
+
+        BRANCH.U_SLD_Fax As 'BFax',
+
+        BRANCH.U_SLD_Email AS 'E-Mail',
+
+        OPOR.DocEntry,
+
+        CAST(OPOR.Address2 AS NVARCHAR(4000)) AS 'Address2',
+ 
+        CAST(OPOR.[Address] AS NVARCHAR(4000)) AS 'Address',
+
+        OCRD.U_SLD_Title,
+
+        CAST(OCRD.U_SLD_FullName AS NVARCHAR(4000)) AS 'U_SLD_FullName',
+
+        OCRD.Phone1,
+ 
+        ISNULL(OCRD.Fax,'') AS 'Fax',
+
+        OCRD.LicTradNum,
+
+        NNM1.BeginStr,
+ 
+        OPOR.DocNum,
+
+        OPOR.CardCode,
+ 
+        OPOR.DocDate,
+ 
+        OPOR.DocDueDate,
+ 
+        OCTG.PymntGroup,
+    CAST(NULL AS INT) AS 'No.',
+    POR1.LineNum AS 'Line No.',
+    NULL AS 'ItemCode',
+    CAST(POR10.LineText AS NVARCHAR(4000)) AS 'Dscription',
+    NULL AS 'Quantity',
+    NULL AS 'PriceBefDi',
+    NULL AS 'LineTotal',
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.DiscSum ELSE OPOR.DiscSumFC END AS 'DiscSum',
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.VatSum ELSE OPOR.VatSumFC END AS 'VatSum',
+
+        OPOR.DiscPrcnt,
+
+        OPOR.DocCur,
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.DocTotal ELSE OPOR.DocTotalFC END AS 'DocTotal',
+    (SELECT CASE WHEN OPOR.DocCur = 'THB' THEN SUM(L.LineTotal) ELSE SUM(L.TotalFrgn) END
+        FROM POR1 L WHERE L.DocEntry = OPOR.DocEntry) AS 'Sum_LineTotal_All',
+    NULL AS 'unitmsr',
+
+        CAST(OPOR.Comments AS NVARCHAR(4000)) AS 'Comments',
+    'T' AS 'LineType',
+
+        CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
+
+        OCRD.cntctPrsn,
+
+        OCRD.E_mail,
+    NULL AS 'U_SLD_Dis_Amount',
+
+        CAST(ocrd.MailAddres AS NVARCHAR(4000)) AS 'MailAddres',
+
+        ocrd.Country,
+
+        QPJ.Project,
+ 
+        CAST(por12.StreetS AS NVARCHAR(4000)) as StreetS,
+ 
+        CAST(por12.StreetNoS AS NVARCHAR(4000)) as StreetNoS,
+ 
+        CAST(por12.BlockS AS NVARCHAR(4000)) as BlockS,
+ 
+        CAST(por12.BuildingS AS NVARCHAR(4000)) as BuildingS,
+ 
+        CAST(por12.CityS AS NVARCHAR(4000)) as CityS,
+ 
+        por12.ZipCodeS,
+ 
+        CAST(por12.CountyS AS NVARCHAR(4000)) as CountyS,
+ 
+        por12.StateS,
+
+        CAST(por12.StreetB AS NVARCHAR(4000)) as StreetB,
+ 
+        CAST(por12.StreetNoB AS NVARCHAR(4000)) as StreetNoB,
+
+        CAST(por12.BlockB AS NVARCHAR(4000)) as BlockB,
+ 
+        CAST(por12.BuildingB AS NVARCHAR(4000)) as BuildingB,
+ 
+        CAST(por12.CityB AS NVARCHAR(4000)) as CityB,
+ 
+        por12.ZipCodeB,
+ 
+        CAST(por12.CountyB AS NVARCHAR(4000)) as CountyB,
+ 
+        OCRY.Name as CountryB,
+
+        por12.StateB,
+
+        OCPR.Name,
+
+        OCPR.Tel1,
+
+        OCPR.E_MailL,
+
+        OITM.FrgnName AS 'Dscription_Frgn',
+ 
+        OUOM.U_SLD_Uomforeign AS UgpCode
+,
+    POR1.VisOrder AS 'Sort_VisOrder',
+    1 AS 'Sort_IsText',
+    POR10.LineSeq AS 'Sort_Seq'
+
+    ,
+    (SELECT TOP 1 PJN.PrjName FROM OPRJ PJN WHERE PJN.PrjCode = (QPJ.Project)) AS 'ProjectName'
+FROM OPOR   
+INNER JOIN POR10 ON OPOR.DocEntry = POR10.DocEntry
+LEFT JOIN POR1 ON POR10.DocEntry = POR1.DocEntry AND POR10.AftLineNum = POR1.VisOrder
+    -- OUTER APPLY keeps Project a header-level lookup; the old pj join
+    -- multiplied every detail row. Do not turn it back into a JOIN.
+    
+OUTER APPLY (
+        SELECT TOP 1 P.Project
+        FROM POR1 P
+        WHERE P.DocEntry = OPOR.DocEntry
+          AND P.Project IS NOT NULL
+          AND P.Project <> ''
+    ) QPJ
+
+    LEFT JOIN OCRD ON OPOR.CardCode = OCRD.CardCode 
+    LEFT JOIN CRD1 ON (OPOR.[PaytoCode] = CRD1.[Address] AND OPOR.CardCode = CRD1.CardCode and CRD1.AdresType = 'B')
+    LEFT JOIN OCPR ON OPOR.CntctCode = OCPR.CntctCode 
+    LEFT JOIN NNM1 ON OPOR.Series = NNM1.Series 
+    LEFT JOIN OCTG ON OPOR.GroupNum = OCTG.GroupNum
+    LEFT JOIN OHEM ON OPOR.OwnerCode = OHEM.empID
+    LEFT JOIN OSLP ON OPOR.SlpCode = OSLP.SlpCode
+    LEFT JOIN POR12 ON OPOR.DocEntry = POR12.DocEntry
+    LEFT JOIN OCRY ON POR12.CountryB = OCRY.Code 
+    LEFT JOIN OUSR ON OPOR.UserSign = OUSR.USERID
+    LEFT JOIN OPRJ ON QPJ.Project = OPRJ.PrjCode
+    LEFT JOIN OUOM ON POR1.UomCode = OUOM.UomCode
+    LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPOR.U_SLD_LVatBranch = BRANCH.Code
+    CROSS JOIN OADM 
+    WHERE OPOR.DocEntry = {?DocKey@}
+      AND {?ObjectId@} = '22'
+
+    
+UNION ALL
+-- 2.1 item rows of the draft document
+SELECT DISTINCT
+ 
+        BRANCH.Code ,
+
+         CASE 
+         WHEN OPOR.Printed = 'N' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Original'
+         WHEN OPOR.Printed = 'N' AND OPOR.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ' 
+         WHEN OPOR.Printed = 'Y' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Copy'  
+         WHEN OPOR.Printed = 'Y' AND OPOR.DocCur = OADM.MainCurncy THEN N'สำเนา'
+         END AS 'Print Status',
+
+        BRANCH.[Name] As 'BranchName',
+
+        BRANCH.U_SLD_VTAXID As 'TaxIdNum',
+
+        CAST(BRANCH.U_SLD_VComName AS NVARCHAR(4000)) As 'PrintHeadr',
+
+        CAST(BRANCH.U_SLD_F_VComName AS NVARCHAR(4000)) As 'PrintHdrF',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Building ELSE BRANCH.U_SLD_F_Building END AS NVARCHAR(4000)) AS 'Building',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Steet  ELSE BRANCH.U_SLD_F_Steet  END AS NVARCHAR(4000)) AS 'Street',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Block  ELSE BRANCH.U_SLD_F_Block   END AS NVARCHAR(4000)) AS 'Block',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_City  ELSE BRANCH.U_SLD_F_City  END AS NVARCHAR(4000)) As 'City',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_County ELSE BRANCH.U_SLD_F_County  END AS NVARCHAR(4000)) As 'County',
+
+        BRANCH.U_SLD_ZipCode As 'ZipCode',
+
+        BRANCH.U_SLD_Tel As 'Tel',
+
+        BRANCH.U_SLD_Fax As 'BFax',
+
+        BRANCH.U_SLD_Email AS 'E-Mail',
+
+        OPOR.DocEntry,
+
+        CAST(OPOR.Address2 AS NVARCHAR(4000)) AS 'Address2',
+ 
+        CAST(OPOR.[Address] AS NVARCHAR(4000)) AS 'Address',
+
+        OCRD.U_SLD_Title,
+
+        CAST(OCRD.U_SLD_FullName AS NVARCHAR(4000)) AS 'U_SLD_FullName',
+
+        OCRD.Phone1,
+ 
+        ISNULL(OCRD.Fax,'') AS 'Fax',
+
+        OCRD.LicTradNum,
+
+        NNM1.BeginStr,
+ 
+        OPOR.DocNum,
+
+        OPOR.CardCode,
+ 
+        OPOR.DocDate,
+ 
+        OPOR.DocDueDate,
+ 
+        OCTG.PymntGroup,
+ 
+        CAST(POR1.VisOrder + 1 AS FLOAT) AS 'No.',
+ 
+        POR1.LineNum as 'Line No.',
+ 
+        POR1.ItemCode,
+ 
+        CAST(POR1.Dscription AS NVARCHAR(4000)) AS 'Dscription',
+ 
+        POR1.Quantity,
+
+        POR1.PriceBefDi,
+ 
+        CASE WHEN OPOR.DocCur = 'THB' THEN POR1.LineTotal ELSE POR1.TotalFrgn END AS 'LineTotal',
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.DiscSum ELSE OPOR.DiscSumFC END AS 'DiscSum',
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.VatSum ELSE OPOR.VatSumFC END AS 'VatSum',
+
+        OPOR.DiscPrcnt,
+
+        OPOR.DocCur,
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.DocTotal ELSE OPOR.DocTotalFC END AS 'DocTotal',
+    (SELECT CASE WHEN OPOR.DocCur = 'THB' THEN SUM(L.LineTotal) ELSE SUM(L.TotalFrgn) END
+        FROM DRF1 L WHERE L.DocEntry = OPOR.DocEntry) AS 'Sum_LineTotal_All',
+
+        POR1.unitmsr,
+
+        CAST(OPOR.Comments AS NVARCHAR(4000)) AS 'Comments',
+
+        POR1.LineType,
+
+        CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
+
+        OCRD.cntctPrsn,
+
+        OCRD.E_mail,
+
+        POR1.U_SLD_Dis_Amount,
+
+        CAST(ocrd.MailAddres AS NVARCHAR(4000)) AS 'MailAddres',
+
+        ocrd.Country,
+
+        QPJ.Project,
+ 
+        CAST(por12.StreetS AS NVARCHAR(4000)) as StreetS,
+ 
+        CAST(por12.StreetNoS AS NVARCHAR(4000)) as StreetNoS,
+ 
+        CAST(por12.BlockS AS NVARCHAR(4000)) as BlockS,
+ 
+        CAST(por12.BuildingS AS NVARCHAR(4000)) as BuildingS,
+ 
+        CAST(por12.CityS AS NVARCHAR(4000)) as CityS,
+ 
+        por12.ZipCodeS,
+ 
+        CAST(por12.CountyS AS NVARCHAR(4000)) as CountyS,
+ 
+        por12.StateS,
+
+        CAST(por12.StreetB AS NVARCHAR(4000)) as StreetB,
+ 
+        CAST(por12.StreetNoB AS NVARCHAR(4000)) as StreetNoB,
+
+        CAST(por12.BlockB AS NVARCHAR(4000)) as BlockB,
+ 
+        CAST(por12.BuildingB AS NVARCHAR(4000)) as BuildingB,
+ 
+        CAST(por12.CityB AS NVARCHAR(4000)) as CityB,
+ 
+        por12.ZipCodeB,
+ 
+        CAST(por12.CountyB AS NVARCHAR(4000)) as CountyB,
+ 
+        OCRY.Name as CountryB,
+
+        por12.StateB,
+
+        OCPR.Name,
+
+        OCPR.Tel1,
+
+        OCPR.E_MailL,
+
+        OITM.FrgnName AS 'Dscription_Frgn',
+ 
+        OUOM.U_SLD_Uomforeign AS UgpCode
+,
+    POR1.VisOrder AS 'Sort_VisOrder',
+    0 AS 'Sort_IsText',
+    0 AS 'Sort_Seq'
+
+    ,
+    (SELECT TOP 1 PJN.PrjName FROM OPRJ PJN WHERE PJN.PrjCode = (QPJ.Project)) AS 'ProjectName'
+FROM ODRF OPOR   
+    INNER JOIN DRF1 POR1 ON OPOR.DocEntry = POR1.DocEntry  
+    -- OUTER APPLY keeps Project a header-level lookup; the old pj join
+    -- multiplied every detail row. Do not turn it back into a JOIN.
+    
+OUTER APPLY (
+        SELECT TOP 1 P.Project
+        FROM DRF1 P
+        WHERE P.DocEntry = OPOR.DocEntry
+          AND P.Project IS NOT NULL
+          AND P.Project <> ''
+    ) QPJ
+    LEFT JOIN OITM ON POR1.ItemCode = OITM.ItemCode 
+    LEFT JOIN OCRD ON OPOR.CardCode = OCRD.CardCode 
+    LEFT JOIN CRD1 ON (OPOR.[PaytoCode] = CRD1.[Address] AND OPOR.CardCode = CRD1.CardCode and CRD1.AdresType = 'B')
+    LEFT JOIN OCPR ON OPOR.CntctCode = OCPR.CntctCode 
+    LEFT JOIN NNM1 ON OPOR.Series = NNM1.Series 
+    LEFT JOIN OCTG ON OPOR.GroupNum = OCTG.GroupNum
+    LEFT JOIN OHEM ON OPOR.OwnerCode = OHEM.empID
+    LEFT JOIN OSLP ON OPOR.SlpCode = OSLP.SlpCode
+    LEFT JOIN DRF12 POR12 ON OPOR.DocEntry = POR12.DocEntry
+    LEFT JOIN OCRY ON POR12.CountryB = OCRY.Code 
+    LEFT JOIN OUSR ON OPOR.UserSign = OUSR.USERID
+    LEFT JOIN OPRJ ON QPJ.Project = OPRJ.PrjCode
+    LEFT JOIN OUOM ON POR1.UomCode = OUOM.UomCode
+    LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPOR.U_SLD_LVatBranch = BRANCH.Code
+    CROSS JOIN OADM 
+    WHERE OPOR.DocEntry = {?DocKey@}
+      AND {?ObjectId@} = '112'
+      AND OPOR.ObjType = '22' 
+
+
+UNION ALL
+-- 2.2 text rows (remarks) of the draft document
+SELECT DISTINCT
+ 
+        BRANCH.Code ,
+
+         CASE 
+         WHEN OPOR.Printed = 'N' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Original'
+         WHEN OPOR.Printed = 'N' AND OPOR.DocCur = OADM.MainCurncy THEN N'ต้นฉบับ' 
+         WHEN OPOR.Printed = 'Y' AND OPOR.DocCur <> OADM.MainCurncy THEN 'Copy'  
+         WHEN OPOR.Printed = 'Y' AND OPOR.DocCur = OADM.MainCurncy THEN N'สำเนา'
+         END AS 'Print Status',
+
+        BRANCH.[Name] As 'BranchName',
+
+        BRANCH.U_SLD_VTAXID As 'TaxIdNum',
+
+        CAST(BRANCH.U_SLD_VComName AS NVARCHAR(4000)) As 'PrintHeadr',
+
+        CAST(BRANCH.U_SLD_F_VComName AS NVARCHAR(4000)) As 'PrintHdrF',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Building ELSE BRANCH.U_SLD_F_Building END AS NVARCHAR(4000)) AS 'Building',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Steet  ELSE BRANCH.U_SLD_F_Steet  END AS NVARCHAR(4000)) AS 'Street',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_Block  ELSE BRANCH.U_SLD_F_Block   END AS NVARCHAR(4000)) AS 'Block',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_City  ELSE BRANCH.U_SLD_F_City  END AS NVARCHAR(4000)) As 'City',
+
+        CAST(CASE WHEN OPOR.DocCur = OADM.MainCurncy THEN BRANCH.U_SLD_County ELSE BRANCH.U_SLD_F_County  END AS NVARCHAR(4000)) As 'County',
+
+        BRANCH.U_SLD_ZipCode As 'ZipCode',
+
+        BRANCH.U_SLD_Tel As 'Tel',
+
+        BRANCH.U_SLD_Fax As 'BFax',
+
+        BRANCH.U_SLD_Email AS 'E-Mail',
+
+        OPOR.DocEntry,
+
+        CAST(OPOR.Address2 AS NVARCHAR(4000)) AS 'Address2',
+ 
+        CAST(OPOR.[Address] AS NVARCHAR(4000)) AS 'Address',
+
+        OCRD.U_SLD_Title,
+
+        CAST(OCRD.U_SLD_FullName AS NVARCHAR(4000)) AS 'U_SLD_FullName',
+
+        OCRD.Phone1,
+ 
+        ISNULL(OCRD.Fax,'') AS 'Fax',
+
+        OCRD.LicTradNum,
+
+        NNM1.BeginStr,
+ 
+        OPOR.DocNum,
+
+        OPOR.CardCode,
+ 
+        OPOR.DocDate,
+ 
+        OPOR.DocDueDate,
+ 
+        OCTG.PymntGroup,
+    CAST(NULL AS INT) AS 'No.',
+    POR1.LineNum AS 'Line No.',
+    NULL AS 'ItemCode',
+    CAST(POR10.LineText AS NVARCHAR(4000)) AS 'Dscription',
+    NULL AS 'Quantity',
+    NULL AS 'PriceBefDi',
+    NULL AS 'LineTotal',
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.DiscSum ELSE OPOR.DiscSumFC END AS 'DiscSum',
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.VatSum ELSE OPOR.VatSumFC END AS 'VatSum',
+
+        OPOR.DiscPrcnt,
+
+        OPOR.DocCur,
+
+        CASE WHEN OPOR.DocCur = 'THB' THEN OPOR.DocTotal ELSE OPOR.DocTotalFC END AS 'DocTotal',
+    (SELECT CASE WHEN OPOR.DocCur = 'THB' THEN SUM(L.LineTotal) ELSE SUM(L.TotalFrgn) END
+        FROM DRF1 L WHERE L.DocEntry = OPOR.DocEntry) AS 'Sum_LineTotal_All',
+    NULL AS 'unitmsr',
+
+        CAST(OPOR.Comments AS NVARCHAR(4000)) AS 'Comments',
+    'T' AS 'LineType',
+
+        CONCAT(OCPR.FirstName,' ',OCPR.LastName) AS 'Coontact',
+
+        OCRD.cntctPrsn,
+
+        OCRD.E_mail,
+    NULL AS 'U_SLD_Dis_Amount',
+
+        CAST(ocrd.MailAddres AS NVARCHAR(4000)) AS 'MailAddres',
+
+        ocrd.Country,
+
+        QPJ.Project,
+ 
+        CAST(por12.StreetS AS NVARCHAR(4000)) as StreetS,
+ 
+        CAST(por12.StreetNoS AS NVARCHAR(4000)) as StreetNoS,
+ 
+        CAST(por12.BlockS AS NVARCHAR(4000)) as BlockS,
+ 
+        CAST(por12.BuildingS AS NVARCHAR(4000)) as BuildingS,
+ 
+        CAST(por12.CityS AS NVARCHAR(4000)) as CityS,
+ 
+        por12.ZipCodeS,
+ 
+        CAST(por12.CountyS AS NVARCHAR(4000)) as CountyS,
+ 
+        por12.StateS,
+
+        CAST(por12.StreetB AS NVARCHAR(4000)) as StreetB,
+ 
+        CAST(por12.StreetNoB AS NVARCHAR(4000)) as StreetNoB,
+
+        CAST(por12.BlockB AS NVARCHAR(4000)) as BlockB,
+ 
+        CAST(por12.BuildingB AS NVARCHAR(4000)) as BuildingB,
+ 
+        CAST(por12.CityB AS NVARCHAR(4000)) as CityB,
+ 
+        por12.ZipCodeB,
+ 
+        CAST(por12.CountyB AS NVARCHAR(4000)) as CountyB,
+ 
+        OCRY.Name as CountryB,
+
+        por12.StateB,
+
+        OCPR.Name,
+
+        OCPR.Tel1,
+
+        OCPR.E_MailL,
+
+        OITM.FrgnName AS 'Dscription_Frgn',
+ 
+        OUOM.U_SLD_Uomforeign AS UgpCode
+,
+    POR1.VisOrder AS 'Sort_VisOrder',
+    1 AS 'Sort_IsText',
+    POR10.LineSeq AS 'Sort_Seq'
+
+    ,
+    (SELECT TOP 1 PJN.PrjName FROM OPRJ PJN WHERE PJN.PrjCode = (QPJ.Project)) AS 'ProjectName'
+FROM ODRF OPOR   
+INNER JOIN DRF10 POR10 ON OPOR.DocEntry = POR10.DocEntry
+LEFT JOIN DRF1 POR1 ON POR10.DocEntry = POR1.DocEntry AND POR10.AftLineNum = POR1.VisOrder
+    -- OUTER APPLY keeps Project a header-level lookup; the old pj join
+    -- multiplied every detail row. Do not turn it back into a JOIN.
+    
+OUTER APPLY (
+        SELECT TOP 1 P.Project
+        FROM DRF1 P
+        WHERE P.DocEntry = OPOR.DocEntry
+          AND P.Project IS NOT NULL
+          AND P.Project <> ''
+    ) QPJ
+
+    LEFT JOIN OCRD ON OPOR.CardCode = OCRD.CardCode 
+    LEFT JOIN CRD1 ON (OPOR.[PaytoCode] = CRD1.[Address] AND OPOR.CardCode = CRD1.CardCode and CRD1.AdresType = 'B')
+    LEFT JOIN OCPR ON OPOR.CntctCode = OCPR.CntctCode 
+    LEFT JOIN NNM1 ON OPOR.Series = NNM1.Series 
+    LEFT JOIN OCTG ON OPOR.GroupNum = OCTG.GroupNum
+    LEFT JOIN OHEM ON OPOR.OwnerCode = OHEM.empID
+    LEFT JOIN OSLP ON OPOR.SlpCode = OSLP.SlpCode
+    LEFT JOIN DRF12 POR12 ON OPOR.DocEntry = POR12.DocEntry
+    LEFT JOIN OCRY ON POR12.CountryB = OCRY.Code 
+    LEFT JOIN OUSR ON OPOR.UserSign = OUSR.USERID
+    LEFT JOIN OPRJ ON QPJ.Project = OPRJ.PrjCode
+    LEFT JOIN OUOM ON POR1.UomCode = OUOM.UomCode
+    LEFT JOIN [dbo].[@SLDT_SET_BRANCH] BRANCH ON OPOR.U_SLD_LVatBranch = BRANCH.Code
+    CROSS JOIN OADM 
+    WHERE OPOR.DocEntry = {?DocKey@}
+      AND {?ObjectId@} = '112'
+      AND OPOR.ObjType = '22' 
+
+
+) T0
+ORDER BY T0.[Sort_VisOrder] ASC, T0.[Sort_IsText] ASC, T0.[Sort_Seq] ASC

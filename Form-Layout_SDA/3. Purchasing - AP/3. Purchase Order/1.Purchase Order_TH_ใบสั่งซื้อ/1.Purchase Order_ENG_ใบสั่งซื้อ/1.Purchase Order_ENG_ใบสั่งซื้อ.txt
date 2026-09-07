@@ -1,7 +1,7 @@
 ﻿============================================================
 Report: 1.Purchase Order_ENG_ใบสั่งซื้อ.rpt
 Path:   1.Purchase Order_ENG_ใบสั่งซื้อ.rpt
-Extracted: 2026-07-31 00:18:20
+Extracted: 2026-09-01 18:40:45
 ============================================================
 
 ************************************************************
@@ -236,28 +236,36 @@ Formula: {@One to Date}
 Replace(Replace({AP_PO.PymntGroup}, "วัน", "Day"), "เงินสด", "Cash")
 --- END ---
 
+Formula: {@ToEng}
+--- BEGIN ---
+If IsNull({Address.GLN_H}) Then
+    ""
+Else
+    Replace ({Address.GLN_H}, "(สำนักงานใหญ่)", "(Head Office)")
+--- END ---
+
 
 ************************************************************
   CONNECTION INFO
 ************************************************************
 Table:    AP_PO
-  Server:   192.168.0.216
-  Database: SBO_SDA_REAL
+  Server:   172.17.0.22
+  Database: SBO_Seoul_Re
   UserID:   sa
 
 Table:    Address
-  Server:   192.168.0.216
-  Database: SBO_SDA_REAL
+  Server:   172.17.0.22
+  Database: SBO_Seoul_Re
   UserID:   sa
 
 Table:    Create
-  Server:   192.168.0.216
-  Database: SBO_SDA_REAL
+  Server:   172.17.0.22
+  Database: SBO_Seoul_Re
   UserID:   sa
 
 Table:    Approve
-  Server:   192.168.0.216
-  Database: SBO_SDA_REAL
+  Server:   172.17.0.22
+  Database: SBO_Seoul_Re
   UserID:   sa
 
 
