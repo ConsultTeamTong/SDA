@@ -1,0 +1,74 @@
+﻿============================================================
+Report: 1.Goods Receipt_ENG ใบรับสินค้า_(Batch_Serial).rpt
+Path:   1.Goods Receipt_ENG ใบรับสินค้า_(Batch_Serial).rpt
+Extracted: 2026-09-24 10:20:09
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: DocKey@
+  Type:     StringParameter
+  Report:   
+  Default:  
+
+Parameter: ObjectId@
+  Type:     StringParameter
+  Report:   
+  Default:  
+
+Parameter: DocKey@
+  Type:     StringParameter
+  Report:   Batch
+  Default:  
+
+Parameter: ItemCode@
+  Type:     StringParameter
+  Report:   Batch
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@page}
+--- BEGIN ---
+"Page " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    G_Receipt
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Address
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Approve
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Create
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+(No table links)
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

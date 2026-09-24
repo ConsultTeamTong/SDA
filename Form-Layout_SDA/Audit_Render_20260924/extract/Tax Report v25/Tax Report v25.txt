@@ -1,0 +1,84 @@
+﻿============================================================
+Report: Tax Report v25.rpt
+Path:   Tax Report v25.rpt
+Extracted: 2026-09-24 10:21:01
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: DocKey@
+  Type:     StringParameter
+  Report:   
+  Default:  
+
+Parameter: Pm-Command.U_Branch
+  Type:     StringParameter
+  Report:   detail
+  Default:  
+
+Parameter: Pm-Command.U_SubmitDate
+  Type:     StringParameter
+  Report:   detail
+  Default:  
+
+Parameter: Pm-Command.U_Branch
+  Type:     StringParameter
+  Report:   detail.rpt
+  Default:  
+
+Parameter: Pm-Command.U_SubmitDate
+  Type:     StringParameter
+  Report:   detail.rpt
+  Default:  
+
+Parameter: Pm-Command.U_Branch
+  Type:     StringParameter
+  Report:   detail.rpt - 01
+  Default:  
+
+Parameter: Pm-Command.U_SubmitDate
+  Type:     StringParameter
+  Report:   detail.rpt - 01
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@BasisTotal}
+--- BEGIN ---
+{Command.U_Total}-{Command.U_TaxAmount}
+--- END ---
+
+Formula: {@D}
+--- BEGIN ---
+//if ({Command_1.U_SLD_TYPE} = 'D' AND {Command_1.U_Type} = 'Sell') then {Command_1.Total}
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    Command
+  Server:   192.168.0.216
+  Database: SBO_SDA_Training
+  UserID:   sa
+
+Table:    Command_1
+  Server:   192.168.0.216
+  Database: SBO_SDA_Training
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+Command.U_Branch --[Equal]--> Command_1.U_Branch
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

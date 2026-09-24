@@ -1,0 +1,105 @@
+﻿============================================================
+Report: Withholding Tax certificate (53) v28_A0070001.rpt
+Path:   Withholding Tax certificate (53) v28_A0070001.rpt
+Extracted: 2026-09-24 10:21:05
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: Dockey@
+  Type:     StringParameter
+  Report:   
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@C1}
+--- BEGIN ---
+Left({Header.U_SLD_VTAXID},1)
+--- END ---
+
+Formula: {@C2}
+--- BEGIN ---
+Right(Left({Header.U_SLD_VTAXID},5),4)
+--- END ---
+
+Formula: {@C3}
+--- BEGIN ---
+Right(Left({Header.U_SLD_VTAXID},10),5)
+--- END ---
+
+Formula: {@C4}
+--- BEGIN ---
+Left(Right({Header.U_SLD_VTAXID},3),2)
+--- END ---
+
+Formula: {@C5}
+--- BEGIN ---
+Right({Header.U_SLD_VTAXID},1)
+--- END ---
+
+Formula: {@TotalAmnt}
+--- BEGIN ---
+SUM({Wtaxamnt.TaxbleAmnt})
+--- END ---
+
+Formula: {@WTAmnt}
+--- BEGIN ---
+SUM({Wtaxamnt.WTAmnt})
+--- END ---
+
+Formula: {@MaxRow}
+--- BEGIN ---
+Maximum({YearMountSubmit.Row})
+--- END ---
+
+Formula: {@CountPage}
+--- BEGIN ---
+MAXIMUM({CountRow.Row})
+--- END ---
+
+Formula: {@CountAtt}
+--- BEGIN ---
+CEILING({@MaxRow}/6)
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    Header
+  Server:   192.168.0.216
+  Database: SBO_SDA_Training
+  UserID:   sa
+
+Table:    Wtaxamnt
+  Server:   192.168.0.216
+  Database: SBO_SDA_Training
+  UserID:   sa
+
+Table:    YearMountSubmit
+  Server:   192.168.0.216
+  Database: SBO_SDA_Training
+  UserID:   sa
+
+Table:    CountRow
+  Server:   192.168.0.216
+  Database: SBO_SDA_Training
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+Wtaxamnt.Branch --[Equal]--> Header.Code
+Wtaxamnt.TransId --[Equal]--> YearMountSubmit.Name
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

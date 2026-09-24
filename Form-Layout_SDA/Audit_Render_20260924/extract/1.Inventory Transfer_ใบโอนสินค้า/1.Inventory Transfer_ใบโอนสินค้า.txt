@@ -1,0 +1,74 @@
+﻿============================================================
+Report: 1.Inventory Transfer_ใบโอนสินค้า.rpt
+Path:   1.Inventory Transfer_ใบโอนสินค้า.rpt
+Extracted: 2026-09-24 10:20:16
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: dockey@
+  Type:     NumberParameter
+  Report:   
+  Default:  
+
+Parameter: DocKey@
+  Type:     StringParameter
+  Report:   HRemark
+  Default:  
+
+Parameter: DocKey@
+  Type:     StringParameter
+  Report:   TEXT
+  Default:  
+
+Parameter: lineNum@
+  Type:     NumberParameter
+  Report:   TEXT
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@page}
+--- BEGIN ---
+"หน้า " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    Transfer
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Address
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Create
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Approve
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+Create.picture --[Equal]--> Approve.picture
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

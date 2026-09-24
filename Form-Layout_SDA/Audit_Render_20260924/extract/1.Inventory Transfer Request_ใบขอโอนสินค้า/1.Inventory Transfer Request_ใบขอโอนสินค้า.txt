@@ -1,0 +1,69 @@
+﻿============================================================
+Report: 1.Inventory Transfer Request_ใบขอโอนสินค้า.rpt
+Path:   1.Inventory Transfer Request_ใบขอโอนสินค้า.rpt
+Extracted: 2026-09-24 10:20:15
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: dockey@
+  Type:     StringParameter
+  Report:   
+  Default:  
+
+Parameter: ObjectId@
+  Type:     StringParameter
+  Report:   
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@page}
+--- BEGIN ---
+"หน้า " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    Transfer_Re
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Transfer_Re_Address
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Address
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Create
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Approve
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+(No table links)
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

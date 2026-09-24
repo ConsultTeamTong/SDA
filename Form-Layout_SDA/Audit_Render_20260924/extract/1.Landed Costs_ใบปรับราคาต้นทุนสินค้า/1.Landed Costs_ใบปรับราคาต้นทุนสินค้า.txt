@@ -1,0 +1,59 @@
+﻿============================================================
+Report: 1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt
+Path:   1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt
+Extracted: 2026-09-24 10:20:20
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: DocKey@
+  Type:     NumberParameter
+  Report:   
+  Default:  
+
+Parameter: Pm-Landed_Cost.DocEntry
+  Type:     NumberParameter
+  Report:   Landed_Cost
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@balance}
+--- BEGIN ---
+{Landed_Cost.SUMCOST}-{Landed_Cost.CostSum}
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    Landed_Cost
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Address
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Create
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+(No table links)
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

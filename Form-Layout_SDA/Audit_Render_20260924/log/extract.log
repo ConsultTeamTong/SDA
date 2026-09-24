@@ -1,0 +1,526 @@
+﻿[OK] Crystal Reports assemblies loaded (64-bit host).
+     CrystalDecisions.CrystalReports.Engine v13.0.4000.0
+     CrystalDecisions.Shared v13.0.4000.0
+     CrystalDecisions.ReportAppServer.ClientDoc v13.0.4000.0
+     CrystalDecisions.ReportAppServer.DataDefModel v13.0.4000.0
+
+========================================
+  Crystal Report SQL Extractor
+  Found 81 .rpt files
+  Source: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\rpt
+  Output: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract
+========================================
+
+[1/81] Processing: 1.AP Credit Memo_ใบลดหนี้.rpt
+  -> SQL [1]: AP_CN.sql
+  -> SQL [2]: HAddress.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AP Credit Memo_ใบลดหนี้\1.AP Credit Memo_ใบลดหนี้.txt
+[2/81] Processing: 1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ.rpt
+  -> SQL [1]: AP_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ\1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ.txt
+[3/81] Processing: 1.AP Down Payment_ใบจ่ายเงินมัดจำ.rpt
+  -> SQL [1]: AP_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AP Down Payment_ใบจ่ายเงินมัดจำ\1.AP Down Payment_ใบจ่ายเงินมัดจำ.txt
+[4/81] Processing: 1.AP Invoice_ใบแจ้งหนี้_(Batch_Serial).rpt
+  -> SQL [1]: AP_INV_BN.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> SQL [5]: batch&sserial_AP_INV_BN.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AP Invoice_ใบแจ้งหนี้_(Batch_Serial)\1.AP Invoice_ใบแจ้งหนี้_(Batch_Serial).txt
+[5/81] Processing: 1.AR Down Payment_BOM ใบเสร็จรับเงินมัดจำ.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AR Down Payment_BOM ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_BOM ใบเสร็จรับเงินมัดจำ.txt
+[6/81] Processing: 1.AR Down Payment_BOM_ENG ใบเสร็จรับเงินมัดจำ.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AR Down Payment_BOM_ENG ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_BOM_ENG ใบเสร็จรับเงินมัดจำ.txt
+[7/81] Processing: 1.AR Down Payment_Dis ใบเสร็จรับเงินมัดจำ.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AR Down Payment_Dis ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_Dis ใบเสร็จรับเงินมัดจำ.txt
+[8/81] Processing: 1.AR Down Payment_Dis_ENG ใบเสร็จรับเงินมัดจำ.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AR Down Payment_Dis_ENG ใบเสร็จรับเงินมัดจำ\1.AR Down Payment_Dis_ENG ใบเสร็จรับเงินมัดจำ.txt
+[9/81] Processing: 1.AR Invoice_ENG ใบแจ้งหนี้_(Bom).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AR Invoice_ENG ใบแจ้งหนี้_(Bom)\1.AR Invoice_ENG ใบแจ้งหนี้_(Bom).txt
+[10/81] Processing: 1.AR Invoice_ENG ใบแจ้งหนี้_(Dis).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AR Invoice_ENG ใบแจ้งหนี้_(Dis)\1.AR Invoice_ENG ใบแจ้งหนี้_(Dis).txt
+[11/81] Processing: 1.AR Invoice_ใบแจ้งหนี้_(Bom).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AR Invoice_ใบแจ้งหนี้_(Bom)\1.AR Invoice_ใบแจ้งหนี้_(Bom).txt
+[12/81] Processing: 1.AR Invoice_ใบแจ้งหนี้_(Dis).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AR Invoice_ใบแจ้งหนี้_(Dis)\1.AR Invoice_ใบแจ้งหนี้_(Dis).txt
+[13/81] Processing: 1.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis).rpt
+  -> SQL [1]: AR_CN.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> SQL [5]: B_S_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis)\1.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis).txt
+[14/81] Processing: 1.AR_Credit Memo_ใบลดหนี้_ENG (Batch_Serial) (Dis).rpt
+  -> SQL [1]: AR_CN.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> SQL [5]: B_S_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.AR_Credit Memo_ใบลดหนี้_ENG (Batch_Serial) (Dis)\1.AR_Credit Memo_ใบลดหนี้_ENG (Batch_Serial) (Dis).txt
+[15/81] Processing: 1.Delivery_ใบส่งของ_(Batch_Serial).rpt
+  -> SQL [1]: AR_Delivery_BS.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Batch_Serial_AR_Drlivery_BS.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Delivery_ใบส่งของ_(Batch_Serial)\1.Delivery_ใบส่งของ_(Batch_Serial).txt
+[16/81] Processing: 1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt
+  -> SQL [1]: AR_Delivery_BS.sql
+  -> SQL [2]: address_eng.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Batch_Serial_AR_Drlivery_BS.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Delivery_ใบส่งของ_Eng (Batch_Serial)\1.Delivery_ใบส่งของ_Eng (Batch_Serial).txt
+[17/81] Processing: 1.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).rpt
+  -> SQL [1]: G_Issue_BS.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Approve.sql
+  -> SQL [4]: Create.sql
+  -> SQL [5]: Batch_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Goods Issue_ใบเบิกสินค้า_(Batch_Serial)\1.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).txt
+[18/81] Processing: 1.Goods Issue_ใบเบิกสินค้า_ENG (Batch_Serial).rpt
+  -> SQL [1]: G_Issue_BS.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Approve.sql
+  -> SQL [4]: Create.sql
+  -> SQL [5]: Batch_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Goods Issue_ใบเบิกสินค้า_ENG (Batch_Serial)\1.Goods Issue_ใบเบิกสินค้า_ENG (Batch_Serial).txt
+[19/81] Processing: 1.Goods Receipt_ENG ใบรับสินค้า_(Batch_Serial).rpt
+  -> SQL [1]: G_Receipt.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Approve.sql
+  -> SQL [4]: Create.sql
+  -> SQL [5]: Batch_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Goods Receipt_ENG ใบรับสินค้า_(Batch_Serial)\1.Goods Receipt_ENG ใบรับสินค้า_(Batch_Serial).txt
+[20/81] Processing: 1.Goods Receipt_ใบรับสินค้า_(Batch_Serial).rpt
+  -> SQL [1]: G_Receipt.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Approve.sql
+  -> SQL [4]: Create.sql
+  -> SQL [5]: Batch_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Goods Receipt_ใบรับสินค้า_(Batch_Serial)\1.Goods Receipt_ใบรับสินค้า_(Batch_Serial).txt
+[21/81] Processing: 1.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial).rpt
+  -> SQL [1]: AP_GRPO_BN.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Batch_Serial_AP_GRPO_BN.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial)\1.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial).txt
+[22/81] Processing: 1.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial).rpt
+  -> SQL [1]: AP_GR_BN.sql
+  -> SQL [2]: Company.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: batch&serial_AP_GR_BN.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial)\1.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial).txt
+[23/81] Processing: 1.Incoming Payments_Eng ใบเสร็จรับเงิน.rpt
+  -> SQL [1]: Bank_Receipt.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: CheckNum_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Incoming Payments_Eng ใบเสร็จรับเงิน\1.Incoming Payments_Eng ใบเสร็จรับเงิน.txt
+[24/81] Processing: 1.Incoming Payments_ใบเสร็จรับเงิน.rpt
+  -> SQL [1]: Bank_Receipt.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: CheckNum_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Incoming Payments_ใบเสร็จรับเงิน\1.Incoming Payments_ใบเสร็จรับเงิน.txt
+[25/81] Processing: 1.Inventory Counting_ใบตรวจนับสินค้า_Befor.rpt
+  -> SQL [1]: Command.sql
+  -> SQL [2]: Address.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Inventory Counting_ใบตรวจนับสินค้า_Befor\1.Inventory Counting_ใบตรวจนับสินค้า_Befor.txt
+[26/81] Processing: 1.Inventory Transfer Request_ใบขอโอนสินค้า.rpt
+  -> SQL [1]: Transfer_Re.sql
+  -> SQL [2]: Transfer_Re_Address.sql
+  -> SQL [3]: Address.sql
+  -> SQL [4]: Create.sql
+  -> SQL [5]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Inventory Transfer Request_ใบขอโอนสินค้า\1.Inventory Transfer Request_ใบขอโอนสินค้า.txt
+[27/81] Processing: 1.Inventory Transfer_ใบโอนสินค้า.rpt
+  -> SQL [1]: Transfer.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> SQL [5]: HRemark_Command.sql
+  -> SQL [6]: TEXT_Transfer_Re_Text.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Inventory Transfer_ใบโอนสินค้า\1.Inventory Transfer_ใบโอนสินค้า.txt
+[28/81] Processing: 1.Inventory Transfer_ใบโอนสินค้า_TH_(Batch_Serial).rpt
+  -> SQL [1]: Transfer.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> SQL [5]: Batch_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Inventory Transfer_ใบโอนสินค้า_TH_(Batch_Serial)\1.Inventory Transfer_ใบโอนสินค้า_TH_(Batch_Serial).txt
+[29/81] Processing: 1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial).rpt
+  -> SQL [1]: Issue_f_Prodution.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> SQL [5]: B_S Num_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial)\1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial).txt
+[30/81] Processing: 1.Journal Entry_ใบบันทึกรายการบัญชี.rpt
+  -> SQL [1]: Bank_JE.sql
+  -> SQL [2]: Command_Addrees.sql
+  -> SQL [3]: Create.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Journal Entry_ใบบันทึกรายการบัญชี\1.Journal Entry_ใบบันทึกรายการบัญชี.txt
+[31/81] Processing: 1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt
+  -> SQL [1]: Landed_Cost.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Landed_Cost_Landed_Cost.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า\1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.txt
+[32/81] Processing: 1.Outgoing Payments_ENG ใบจ่ายชำระ.rpt
+  -> SQL [1]: Bank_Payment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> SQL [5]: Bank_Command.sql
+  -> SQL [6]: Cash_Command.sql
+  -> SQL [7]: Credit Card_Command.sql
+  -> SQL [8]: JE_Command.sql
+  -> SQL [9]: Report_Command.sql
+  -> SQL [10]: TranFer_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Outgoing Payments_ENG ใบจ่ายชำระ\1.Outgoing Payments_ENG ใบจ่ายชำระ.txt
+[33/81] Processing: 1.Outgoing Payments_ใบจ่ายชำระ.rpt
+  -> SQL [1]: Bank_Payment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> SQL [5]: Bank_Command.sql
+  -> SQL [6]: Cash_Command.sql
+  -> SQL [7]: Credit Card_Command.sql
+  -> SQL [8]: JE_Command.sql
+  -> SQL [9]: Report_Command.sql
+  -> SQL [10]: TranFer_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Outgoing Payments_ใบจ่ายชำระ\1.Outgoing Payments_ใบจ่ายชำระ.txt
+[34/81] Processing: 1.Production Order_ใบสั่งผลิต.rpt
+  -> SQL [1]: Prodution_Order.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Production Order_ใบสั่งผลิต\1.Production Order_ใบสั่งผลิต.txt
+[35/81] Processing: 1.Purchase Order_ENG_ใบสั่งซื้อ.rpt
+  -> SQL [1]: AP_PO.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Purchase Order_ENG_ใบสั่งซื้อ\1.Purchase Order_ENG_ใบสั่งซื้อ.txt
+[36/81] Processing: 1.Purchase Order_TH_ใบสั่งซื้อ.rpt
+  -> SQL [1]: AP_PO.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Purchase Order_TH_ใบสั่งซื้อ\1.Purchase Order_TH_ใบสั่งซื้อ.txt
+[37/81] Processing: 1.Purchase Quotation_ใบเสนอราคาซื้อ.rpt
+  -> SQL [1]: AP_PQ.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Purchase Quotation_ใบเสนอราคาซื้อ\1.Purchase Quotation_ใบเสนอราคาซื้อ.txt
+[38/81] Processing: 1.Purchase Request_TH_ใบขอซื้อ.rpt
+  -> SQL [1]: AP_PR.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Approve.sql
+  -> SQL [4]: Create.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Purchase Request_TH_ใบขอซื้อ\1.Purchase Request_TH_ใบขอซื้อ.txt
+[39/81] Processing: 1.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial).rpt
+  -> SQL [1]: Receipt_f_Prodution.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> SQL [5]: B_S Number_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial)\1.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial).txt
+[40/81] Processing: 1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt
+  -> SQL [1]: AR_Retrun_BS.sql
+  -> SQL [2]: OADM.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Batch_Serial_AR_Retrun_BS.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).txt
+[41/81] Processing: 1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt
+  -> SQL [1]: AR_Retrun_BS.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Batch_Serial_AR_Retrun_BS.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial)\1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).txt
+[42/81] Processing: 1.Sale Order_ใบสั่งขาย_(Dis).rpt
+  -> SQL [1]: AR_SO.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Sale Order_ใบสั่งขาย_(Dis)\1.Sale Order_ใบสั่งขาย_(Dis).txt
+[43/81] Processing: 1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt
+  -> SQL [1]: AR_SQ.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG\1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.txt
+[44/81] Processing: 1.Sale Quotation_ใบเสนอราคาขาย_(Bom).rpt
+  -> SQL [1]: AR_SQ.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\1.Sale Quotation_ใบเสนอราคาขาย_(Bom)\1.Sale Quotation_ใบเสนอราคาขาย_(Bom).txt
+[45/81] Processing: 2.AP Down Payment Invoice_ENG ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+  -> SQL [1]: AP_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.AP Down Payment Invoice_ENG ใบจ่ายเงินมัดจำใบกำกับภาษี\2.AP Down Payment Invoice_ENG ใบจ่ายเงินมัดจำใบกำกับภาษี.txt
+[46/81] Processing: 2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt
+  -> SQL [1]: AP_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี\2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี.txt
+[47/81] Processing: 2.AR Down PaymentTax Invoice_BOM ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.AR Down PaymentTax Invoice_BOM ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_BOM ใบเสร็จรับเงินมัดจำใบกำกับภาษี.txt
+[48/81] Processing: 2.AR Down PaymentTax Invoice_BOM_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.AR Down PaymentTax Invoice_BOM_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_BOM_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี.txt
+[49/81] Processing: 2.AR Down PaymentTax Invoice_Dis ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.AR Down PaymentTax Invoice_Dis ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_Dis ใบเสร็จรับเงินมัดจำใบกำกับภาษี.txt
+[50/81] Processing: 2.AR Down PaymentTax Invoice_Dis_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.AR Down PaymentTax Invoice_Dis_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี\2.AR Down PaymentTax Invoice_Dis_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี.txt
+[51/81] Processing: 2.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom)\2.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom).txt
+[52/81] Processing: 2.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis)\2.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).txt
+[53/81] Processing: 2.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom)\2.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom).txt
+[54/81] Processing: 2.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis)\2.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).txt
+[55/81] Processing: 2.Incoming Payments_ ENG ใบเสร็จรับเงินใบกำกับภาษี.rpt
+  -> SQL [1]: Bank_Receipt.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: CheckNum_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.Incoming Payments_ ENG ใบเสร็จรับเงินใบกำกับภาษี\2.Incoming Payments_ ENG ใบเสร็จรับเงินใบกำกับภาษี.txt
+[56/81] Processing: 2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี.rpt
+  -> SQL [1]: Bank_Receipt.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: CheckNum_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี\2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี.txt
+[57/81] Processing: 2.Inventory Counting_ใบหลังตรวจนับสินค้า_After.rpt
+  -> SQL [1]: Command.sql
+  -> SQL [2]: Address.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.Inventory Counting_ใบหลังตรวจนับสินค้า_After\2.Inventory Counting_ใบหลังตรวจนับสินค้า_After.txt
+[58/81] Processing: 2.Sale Order_ใบสั่งขาย_(Bom).rpt
+  -> SQL [1]: AR_SO.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.Sale Order_ใบสั่งขาย_(Bom)\2.Sale Order_ใบสั่งขาย_(Bom).txt
+[59/81] Processing: 2.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG.rpt
+  -> SQL [1]: AR_SQ.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG\2.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG.txt
+[60/81] Processing: 2.Sale Quotation_ใบเสนอราคาขาย_(Dis).rpt
+  -> SQL [1]: AR_SQ.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\2.Sale Quotation_ใบเสนอราคาขาย_(Dis)\2.Sale Quotation_ใบเสนอราคาขาย_(Dis).txt
+[61/81] Processing: 3.AR Down Payment Invoice_BOM ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\3.AR Down Payment Invoice_BOM ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down Payment Invoice_BOM ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.txt
+[62/81] Processing: 3.AR Down Payment Invoice_Dis ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\3.AR Down Payment Invoice_Dis ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down Payment Invoice_Dis ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.txt
+[63/81] Processing: 3.AR Down PaymentTax Invoice_BOM_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\3.AR Down PaymentTax Invoice_BOM_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down PaymentTax Invoice_BOM_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.txt
+[64/81] Processing: 3.AR Down PaymentTax Invoice_Dis_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt
+  -> SQL [1]: AR_DownPayment.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\3.AR Down PaymentTax Invoice_Dis_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี\3.AR Down PaymentTax Invoice_Dis_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.txt
+[65/81] Processing: 3.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Bom).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\3.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Bom)\3.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Bom).txt
+[66/81] Processing: 3.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Dis).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\3.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Dis)\3.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Dis).txt
+[67/81] Processing: 3.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Bom).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\3.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Bom)\3.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Bom).txt
+[68/81] Processing: 3.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\3.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis)\3.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis).txt
+[69/81] Processing: 4.AR Invoice_ENG ใบแจ้งหนี้ใบกำกับภาษี_(BOM).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\4.AR Invoice_ENG ใบแจ้งหนี้ใบกำกับภาษี_(BOM)\4.AR Invoice_ENG ใบแจ้งหนี้ใบกำกับภาษี_(BOM).txt
+[70/81] Processing: 4.AR Invoice_ENG ใบแจ้งหนี้ใบกำกับภาษี_(Dis).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\4.AR Invoice_ENG ใบแจ้งหนี้ใบกำกับภาษี_(Dis)\4.AR Invoice_ENG ใบแจ้งหนี้ใบกำกับภาษี_(Dis).txt
+[71/81] Processing: 4.AR Invoice_ใบแจ้งหนี้ใบแจ้งหนี้ใบกำกับภาษี_(BOM).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\4.AR Invoice_ใบแจ้งหนี้ใบแจ้งหนี้ใบกำกับภาษี_(BOM)\4.AR Invoice_ใบแจ้งหนี้ใบแจ้งหนี้ใบกำกับภาษี_(BOM).txt
+[72/81] Processing: 4.AR Invoice_ใบแจ้งหนี้ใบแจ้งหนี้ใบกำกับภาษี_(Dis).rpt
+  -> SQL [1]: AR_INV.sql
+  -> SQL [2]: Address.sql
+  -> SQL [3]: Create.sql
+  -> SQL [4]: Approve.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\4.AR Invoice_ใบแจ้งหนี้ใบแจ้งหนี้ใบกำกับภาษี_(Dis)\4.AR Invoice_ใบแจ้งหนี้ใบแจ้งหนี้ใบกำกับภาษี_(Dis).txt
+[73/81] Processing: Attachment of P.N.D.3 v28.rpt
+  -> SQL [1]: Detail.sql
+  -> SQL [2]: WtaxAmnt.sql
+  -> SQL [3]: Header.sql
+  -> SQL [4]: DetailWht3_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\Attachment of P.N.D.3 v28\Attachment of P.N.D.3 v28.txt
+[74/81] Processing: Attachment of P.N.D.53 v28.rpt
+  -> SQL [1]: Detail.sql
+  -> SQL [2]: Header.sql
+  -> SQL [3]: DetailWht3_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\Attachment of P.N.D.53 v28\Attachment of P.N.D.53 v28.txt
+[75/81] Processing: Attachment of PP30 v28.rpt
+  -> SQL [1]: Command.sql
+  -> SQL [2]: Branch_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\Attachment of PP30 v28\Attachment of PP30 v28.txt
+[76/81] Processing: Tax Report v25.rpt
+  -> SQL [1]: Command.sql
+  -> SQL [2]: Command_1.sql
+  -> SQL [3]: detail_Command.sql
+  -> SQL [4]: detail.rpt_Command.sql
+  -> SQL [5]: detail.rpt - 01_Command.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\Tax Report v25\Tax Report v25.txt
+[77/81] Processing: Value Added Tax Return under the Revenue Code (P.P.30) v28.rpt
+  -> SQL [1]: Command.sql
+  -> SQL [2]: Command_1.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\Value Added Tax Return under the Revenue Code (P.P.30) v28\Value Added Tax Return under the Revenue Code (P.P.30) v28.txt
+[78/81] Processing: Withholding Income Tax Return (P.N.D.3)v28.rpt
+  -> SQL [1]: Header.sql
+  -> SQL [2]: WtaxAmnt.sql
+  -> SQL [3]: YearmountSubmit.sql
+  -> SQL [4]: CountRow.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\Withholding Income Tax Return (P.N.D.3)v28\Withholding Income Tax Return (P.N.D.3)v28.txt
+[79/81] Processing: Withholding Tax certificate (03) v28.rpt
+  -> SQL [1]: Detail.sql
+  -> SQL [2]: Header.sql
+  -> SQL [3]: WhtDetail_PD0350.sql
+  -> SQL [4]: WhtDetail.rpt_PD0350.sql
+  -> SQL [5]: WhtDetail.rpt - 01_PD0350.sql
+  -> SQL [6]: WhtDetail1.rpt_PD0350.sql
+  -> SQL [7]: WhtDetail2.rpt_PD0350.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\Withholding Tax certificate (03) v28\Withholding Tax certificate (03) v28.txt
+[80/81] Processing: Withholding Tax certificate (53) v28.rpt
+  -> SQL [1]: Detail.sql
+  -> SQL [2]: Header.sql
+  -> SQL [3]: WhtDetail_PD5350.sql
+  -> SQL [4]: WhtDetail.rpt_PD5350.sql
+  -> SQL [5]: WhtDetail.rpt - 01_PD5350.sql
+  -> SQL [6]: WhtDetail1.rpt_PD5350.sql
+  -> SQL [7]: WhtDetail2.rpt_PD5350.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\Withholding Tax certificate (53) v28\Withholding Tax certificate (53) v28.txt
+[81/81] Processing: Withholding Tax certificate (53) v28_A0070001.rpt
+  -> SQL [1]: Header.sql
+  -> SQL [2]: Wtaxamnt.sql
+  -> SQL [3]: YearMountSubmit.sql
+  -> SQL [4]: CountRow.sql
+  -> TXT: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract\Withholding Tax certificate (53) v28_A0070001\Withholding Tax certificate (53) v28_A0070001.txt
+
+========================================
+  DONE! Processed 81 / 81 files
+  No errors!
+  Output folder: C:\GitHub\SDA\Form-Layout_SDA\Audit_Render_20260924\extract
+========================================

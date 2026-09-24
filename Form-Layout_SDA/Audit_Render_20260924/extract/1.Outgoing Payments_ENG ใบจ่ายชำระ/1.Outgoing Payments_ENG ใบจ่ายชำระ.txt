@@ -1,0 +1,89 @@
+﻿============================================================
+Report: 1.Outgoing Payments_ENG ใบจ่ายชำระ.rpt
+Path:   1.Outgoing Payments_ENG ใบจ่ายชำระ.rpt
+Extracted: 2026-09-24 10:20:21
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: DocKey@
+  Type:     StringParameter
+  Report:   
+  Default:  
+
+Parameter: Pm-OVPM.DocEntry
+  Type:     NumberParameter
+  Report:   Bank
+  Default:  
+
+Parameter: Docnum
+  Type:     StringParameter
+  Report:   Cash
+  Default:  
+
+Parameter: Pm-OVPM.DocEntry
+  Type:     NumberParameter
+  Report:   Credit Card
+  Default:  
+
+Parameter: Pm-OVPM.TransId
+  Type:     NumberParameter
+  Report:   JE
+  Default:  
+
+Parameter: Pm-Bank_Payment.DocEntry
+  Type:     NumberParameter
+  Report:   Report
+  Default:  
+
+Parameter: docnum
+  Type:     StringParameter
+  Report:   TranFer
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@page}
+--- BEGIN ---
+"Page " & ToText(PageNumber, 0) & " / " & ToText(TotalPageCount, 0)
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    Bank_Payment
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Address
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Create
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+Table:    Approve
+  Server:   192.168.0.216
+  Database: SBO_SDA_REAL
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+(No table links)
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

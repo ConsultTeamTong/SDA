@@ -1,0 +1,82 @@
+﻿[1%] 001 NO-SAMPLE   p=1   rec=0       3697ms  1.AP Credit Memo_ใบลดหนี้.rpt  smoke run OK (key -1); ORPC empty, no draft
+[2%] 002 NO-SAMPLE   p=1   rec=0       3802ms  1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ.rpt  smoke run OK (key -1); ODPO empty, no draft
+[4%] 003 NO-SAMPLE   p=1   rec=0       3626ms  1.AP Down Payment_ใบจ่ายเงินมัดจำ.rpt  smoke run OK (key -1); ODPO empty, no draft
+[5%] 004 NEEDS-PARAM p=0   rec=-1      2866ms  1.AP Invoice_ใบแจ้งหนี้_(Batch_Serial).rpt  no value for: ItemCode@
+[6%] 005 NO-SAMPLE   p=1   rec=0       4271ms  1.AR Down Payment_BOM ใบเสร็จรับเงินมัดจำ.rpt  smoke run OK (key -1); ODPI empty, no draft
+[7%] 006 NO-SAMPLE   p=1   rec=0       4006ms  1.AR Down Payment_BOM_ENG ใบเสร็จรับเงินมัดจำ.rpt  smoke run OK (key -1); ODPI empty, no draft
+[9%] 007 NO-SAMPLE   p=1   rec=0       4038ms  1.AR Down Payment_Dis ใบเสร็จรับเงินมัดจำ.rpt  smoke run OK (key -1); ODPI empty, no draft
+[10%] 008 NO-SAMPLE   p=1   rec=0       4201ms  1.AR Down Payment_Dis_ENG ใบเสร็จรับเงินมัดจำ.rpt  smoke run OK (key -1); ODPI empty, no draft
+[11%] 009 NO-SAMPLE   p=1   rec=0       3293ms  1.AR Invoice_ENG ใบแจ้งหนี้_(Bom).rpt  smoke run OK (key -1); OINV empty, no draft
+[12%] 010 NO-SAMPLE   p=1   rec=0       3794ms  1.AR Invoice_ENG ใบแจ้งหนี้_(Dis).rpt  smoke run OK (key -1); OINV empty, no draft
+[14%] 011 NO-SAMPLE   p=1   rec=0       3271ms  1.AR Invoice_ใบแจ้งหนี้_(Bom).rpt  smoke run OK (key -1); OINV empty, no draft
+[15%] 012 NO-SAMPLE   p=1   rec=0       3868ms  1.AR Invoice_ใบแจ้งหนี้_(Dis).rpt  smoke run OK (key -1); OINV empty, no draft
+[16%] 013 NEEDS-PARAM p=0   rec=-1      3077ms  1.AR_Credit Memo_ใบลดหนี้_(Batch_Serial) (Dis).rpt  no value for: ItemCode@
+[17%] 014 NEEDS-PARAM p=0   rec=-1      2898ms  1.AR_Credit Memo_ใบลดหนี้_ENG (Batch_Serial) (Dis).rpt  no value for: ItemCode@
+[19%] 015 NEEDS-PARAM p=0   rec=-1      2958ms  1.Delivery_ใบส่งของ_(Batch_Serial).rpt  no value for: ItemCode@
+[20%] 016 NEEDS-PARAM p=0   rec=-1      2420ms  1.Delivery_ใบส่งของ_Eng (Batch_Serial).rpt  no value for: ItemCode@
+[21%] 017 NEEDS-PARAM p=0   rec=-1      2976ms  1.Goods Issue_ใบเบิกสินค้า_(Batch_Serial).rpt  no value for: ItemCode@
+[22%] 018 NEEDS-PARAM p=0   rec=-1      2265ms  1.Goods Issue_ใบเบิกสินค้า_ENG (Batch_Serial).rpt  no value for: ItemCode@
+[23%] 019 NEEDS-PARAM p=0   rec=-1      2387ms  1.Goods Receipt_ENG ใบรับสินค้า_(Batch_Serial).rpt  no value for: ItemCode@
+[25%] 020 NEEDS-PARAM p=0   rec=-1      2310ms  1.Goods Receipt_ใบรับสินค้า_(Batch_Serial).rpt  no value for: ItemCode@
+[26%] 021 NEEDS-PARAM p=0   rec=-1      2798ms  1.Goods Reciept PO_TH_ใบรับสินค้า_(Batch_Serial).rpt  no value for: ItemCode@
+[27%] 022 NEEDS-PARAM p=0   rec=-1      2312ms  1.Goods Return_TH_ใบส่งคืนสินค้า_(Batch_Serial).rpt  no value for: ItemCode@
+[28%] 023 NO-SAMPLE   p=1   rec=0       3072ms  1.Incoming Payments_Eng ใบเสร็จรับเงิน.rpt  smoke run OK (key -1); ORCT empty, no draft
+[30%] 024 NO-SAMPLE   p=1   rec=0       3278ms  1.Incoming Payments_ใบเสร็จรับเงิน.rpt  smoke run OK (key -1); ORCT empty, no draft
+[31%] 025 NO-SAMPLE   p=1   rec=0       3245ms  1.Inventory Counting_ใบตรวจนับสินค้า_Befor.rpt  smoke run OK (key -1); OINC empty, no draft
+[32%] 026 NO-SAMPLE   p=1   rec=0       3575ms  1.Inventory Transfer Request_ใบขอโอนสินค้า.rpt  smoke run OK (key -1); OWTQ empty, no draft
+[33%] 027 NEEDS-PARAM p=0   rec=-1      2653ms  1.Inventory Transfer_ใบโอนสินค้า.rpt  no value for: lineNum@
+[35%] 028 NEEDS-PARAM p=0   rec=-1      2983ms  1.Inventory Transfer_ใบโอนสินค้า_TH_(Batch_Serial).rpt  no value for: ItemCode@
+[36%] 029 RENDER-FAIL p=0   rec=-1      2674ms  1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial).rpt  Exception calling "ExportToDisk" with "2" argument(s): "Error in File 1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial) 11804_14896_{4D585EFA-8C76-4CC8-B7B3-6C6DE960C52A}.rpt: Error in formula Object_Visibility: 'isnull({Approve.ApproverPicture})' This field name is not known. Details: errorKind" | Error in File 1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial) 11804_14896_{4D585EFA-8C76-4CC8-B7B3-6C6DE960C52A}.rpt: Error in formula Object_Visibility: 'isnull({Approve.ApproverPicture})' This field name is not known. Details: errorKind | Error in File 1.Issue for Production_ใบเบิกวัตถุดิบเพื่อการผลิต_(Batch_Serial) 11804_14896_{4D585EFA-8C76-4CC8-B7B3-6C6DE960C52A}.rpt: Error in formula Object_Visibility: 'isnull({Approve.ApproverPicture})' This field name is not known. Details: errorKind
+[37%] 030 OK          p=5   rec=170     3767ms  1.Journal Entry_ใบบันทึกรายการบัญชี.rpt  
+[38%] 031 NO-SAMPLE   p=1   rec=0       3451ms  1.Landed Costs_ใบปรับราคาต้นทุนสินค้า.rpt  smoke run OK (key -1); OIPF empty, no draft
+[40%] 032 NEEDS-PARAM p=0   rec=-1      2751ms  1.Outgoing Payments_ENG ใบจ่ายชำระ.rpt  no value for: Docnum, docnum
+[41%] 033 NEEDS-PARAM p=0   rec=-1      2676ms  1.Outgoing Payments_ใบจ่ายชำระ.rpt  no value for: Docnum, docnum
+[42%] 034 NO-SAMPLE   p=1   rec=0       3259ms  1.Production Order_ใบสั่งผลิต.rpt  smoke run OK (key -1); OWOR empty, no draft
+[43%] 035 OK          p=1   rec=1       8095ms  1.Purchase Order_ENG_ใบสั่งซื้อ.rpt  
+[44%] 036 OK          p=1   rec=1       4015ms  1.Purchase Order_TH_ใบสั่งซื้อ.rpt  
+[46%] 037 NO-SAMPLE   p=1   rec=0       3877ms  1.Purchase Quotation_ใบเสนอราคาซื้อ.rpt  smoke run OK (key -1); OPQT empty, no draft
+[47%] 038 OK          p=1   rec=2       3994ms  1.Purchase Request_TH_ใบขอซื้อ.rpt  
+[48%] 039 NO-SAMPLE   p=1   rec=0       2775ms  1.Receipt from Production_ใบรับสินค้าจากการผลิต_(Batch_Serial).rpt  smoke run OK (key -1); OIGN empty, no draft
+[49%] 040 NEEDS-PARAM p=0   rec=-1      2402ms  1.Retrun_ใบรับคืนสินค้า_(Batch_Serial).rpt  no value for: ItemCode@
+[51%] 041 NEEDS-PARAM p=0   rec=-1      2870ms  1.Retrun_ใบรับคืนสินค้า_ENG (Batch_Serial).rpt  no value for: ItemCode@
+[52%] 042 OK          p=1   rec=1       3320ms  1.Sale Order_ใบสั่งขาย_(Dis).rpt  
+[53%] 043 OK          p=1   rec=2       8834ms  1.Sale Quotation_ใบเสนอราคาขาย_(BOM) ENG.rpt  
+[54%] 044 OK          p=1   rec=2       3900ms  1.Sale Quotation_ใบเสนอราคาขาย_(Bom).rpt  
+[56%] 045 NO-SAMPLE   p=1   rec=0       3283ms  2.AP Down Payment Invoice_ENG ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt  smoke run OK (key -1); ODPO empty, no draft
+[57%] 046 NO-SAMPLE   p=1   rec=0       3270ms  2.AP Down Payment Invoice_ใบจ่ายเงินมัดจำใบกำกับภาษี.rpt  smoke run OK (key -1); ODPO empty, no draft
+[58%] 047 NO-SAMPLE   p=1   rec=0       3691ms  2.AR Down PaymentTax Invoice_BOM ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt  smoke run OK (key -1); ODPI empty, no draft
+[59%] 048 NO-SAMPLE   p=1   rec=0       4038ms  2.AR Down PaymentTax Invoice_BOM_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt  smoke run OK (key -1); ODPI empty, no draft
+[60%] 049 NO-SAMPLE   p=1   rec=0       3278ms  2.AR Down PaymentTax Invoice_Dis ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt  smoke run OK (key -1); ODPI empty, no draft
+[62%] 050 NO-SAMPLE   p=1   rec=0       3229ms  2.AR Down PaymentTax Invoice_Dis_ENG ใบเสร็จรับเงินมัดจำใบกำกับภาษี.rpt  smoke run OK (key -1); ODPI empty, no draft
+[63%] 051 NO-SAMPLE   p=1   rec=0       3306ms  2.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom).rpt  smoke run OK (key -1); OINV empty, no draft
+[64%] 052 NO-SAMPLE   p=1   rec=0       3377ms  2.BillingAR InvoiceTax Invoice_ENG ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).rpt  smoke run OK (key -1); OINV empty, no draft
+[65%] 053 NO-SAMPLE   p=1   rec=0       3470ms  2.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Bom).rpt  smoke run OK (key -1); OINV empty, no draft
+[67%] 054 NO-SAMPLE   p=1   rec=0       3248ms  2.BillingAR InvoiceTax Invoice_ใบวางบิลใบแจ้งหนี้ใบกำกับภาษี (Dis).rpt  smoke run OK (key -1); OINV empty, no draft
+[68%] 055 NO-SAMPLE   p=1   rec=0       3328ms  2.Incoming Payments_ ENG ใบเสร็จรับเงินใบกำกับภาษี.rpt  smoke run OK (key -1); ORCT empty, no draft
+[69%] 056 NO-SAMPLE   p=1   rec=0       3300ms  2.Incoming Payments_ใบเสร็จรับเงินใบกำกับภาษี.rpt  smoke run OK (key -1); ORCT empty, no draft
+[70%] 057 NO-SAMPLE   p=1   rec=0       3382ms  2.Inventory Counting_ใบหลังตรวจนับสินค้า_After.rpt  smoke run OK (key -1); OINC empty, no draft
+[72%] 058 OK          p=1   rec=1       7023ms  2.Sale Order_ใบสั่งขาย_(Bom).rpt  
+[73%] 059 OK          p=1   rec=2       5820ms  2.Sale Quotation_ใบเสนอราคาขาย_(Dis) ENG.rpt  
+[74%] 060 OK          p=1   rec=2       3919ms  2.Sale Quotation_ใบเสนอราคาขาย_(Dis).rpt  
+[75%] 061 NO-SAMPLE   p=1   rec=0       3302ms  3.AR Down Payment Invoice_BOM ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt  smoke run OK (key -1); ODPI empty, no draft
+[77%] 062 NO-SAMPLE   p=1   rec=0       3329ms  3.AR Down Payment Invoice_Dis ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt  smoke run OK (key -1); ODPI empty, no draft
+[78%] 063 NO-SAMPLE   p=1   rec=0       3108ms  3.AR Down PaymentTax Invoice_BOM_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt  smoke run OK (key -1); ODPI empty, no draft
+[79%] 064 NO-SAMPLE   p=1   rec=0       3003ms  3.AR Down PaymentTax Invoice_Dis_ENG ใบแจ้งหนี้เงินค่ามัดจำใบกำกับภาษี.rpt  smoke run OK (key -1); ODPI empty, no draft
+[80%] 065 NO-SAMPLE   p=1   rec=0       3109ms  3.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Bom).rpt  smoke run OK (key -1); OINV empty, no draft
+[81%] 066 NO-SAMPLE   p=1   rec=0       2992ms  3.BillingAR Invoice_ENG ใบวางบิลใบแจ้งหนี้ (Dis).rpt  smoke run OK (key -1); OINV empty, no draft
+[83%] 067 NO-SAMPLE   p=1   rec=0       3272ms  3.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Bom).rpt  smoke run OK (key -1); OINV empty, no draft
+[84%] 068 NO-SAMPLE   p=1   rec=0       3228ms  3.BillingAR Invoice_ใบวางบิลใบแจ้งหนี้ (Dis).rpt  smoke run OK (key -1); OINV empty, no draft
+[85%] 069 NO-SAMPLE   p=1   rec=0       3148ms  4.AR Invoice_ENG ใบแจ้งหนี้ใบกำกับภาษี_(BOM).rpt  smoke run OK (key -1); OINV empty, no draft
+[86%] 070 NO-SAMPLE   p=1   rec=0       3335ms  4.AR Invoice_ENG ใบแจ้งหนี้ใบกำกับภาษี_(Dis).rpt  smoke run OK (key -1); OINV empty, no draft
+[88%] 071 NO-SAMPLE   p=1   rec=0       3889ms  4.AR Invoice_ใบแจ้งหนี้ใบแจ้งหนี้ใบกำกับภาษี_(BOM).rpt  smoke run OK (key -1); OINV empty, no draft
+[89%] 072 NO-SAMPLE   p=1   rec=0       3152ms  4.AR Invoice_ใบแจ้งหนี้ใบแจ้งหนี้ใบกำกับภาษี_(Dis).rpt  smoke run OK (key -1); OINV empty, no draft
+[90%] 073 OK          p=2   rec=5       4413ms  Attachment of P.N.D.3 v28.rpt  
+[91%] 074 OK          p=2   rec=5       4224ms  Attachment of P.N.D.53 v28.rpt  
+[93%] 075 NO-SAMPLE   p=1   rec=1       4180ms  Attachment of PP30 v28.rpt  smoke run OK (key 202608); @SLDT_TS_TST empty -- smoke with last month
+[94%] 076 NO-SAMPLE   p=1   rec=0       3434ms  Tax Report v25.rpt  smoke run OK (key ''); @SLDT_RT_TST empty -- smoke with empty IN list
+[95%] 077 NO-SAMPLE   p=1   rec=1       3410ms  Value Added Tax Return under the Revenue Code (P.P.30) v28.rpt  smoke run OK (key 202608); @SLDT_TS_TST empty -- smoke with last month
+[96%] 078 EMPTY       p=1   rec=0       3387ms  Withholding Income Tax Return (P.N.D.3)v28.rpt  0 records for key 4
+[98%] 079 EMPTY       p=1   rec=0       4600ms  Withholding Tax certificate (03) v28.rpt  0 records for key 4
+[99%] 080 EMPTY       p=1   rec=0       3603ms  Withholding Tax certificate (53) v28.rpt  0 records for key 4
+[100%] 081 EMPTY       p=1   rec=0       3654ms  Withholding Tax certificate (53) v28_A0070001.rpt  0 records for key 4
+results.csv rows=81

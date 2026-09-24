@@ -1,0 +1,85 @@
+﻿============================================================
+Report: Attachment of PP30 v28.rpt
+Path:   Attachment of PP30 v28.rpt
+Extracted: 2026-09-24 10:21:00
+============================================================
+
+************************************************************
+  PARAMETERS
+************************************************************
+Parameter: DocKey@
+  Type:     StringParameter
+  Report:   Branch
+  Default:  
+
+
+************************************************************
+  FORMULA FIELDS
+************************************************************
+Formula: {@<TemplateField1>}
+--- BEGIN ---
+//Crystal Report Template Field
+WhileReadingRecords;Space(10)
+--- END ---
+
+Formula: {@1}
+--- BEGIN ---
+Left({Command.U_SLD_VTAXID},1)
+--- END ---
+
+Formula: {@2}
+--- BEGIN ---
+RIGHT(LEFT({Command.U_SLD_VTAXID},5),4)
+--- END ---
+
+Formula: {@3}
+--- BEGIN ---
+RIGHT(LEFT({Command.U_SLD_VTAXID},10),5)
+--- END ---
+
+Formula: {@4}
+--- BEGIN ---
+LEFT(RIGHT({Command.U_SLD_VTAXID},3),2)
+--- END ---
+
+Formula: {@5}
+--- BEGIN ---
+RIGHT({Command.U_SLD_VTAXID},1)
+--- END ---
+
+Formula: {@totalSale}
+--- BEGIN ---
+{Command_1.Total D} + {Command_1.Total E} + {Command_1.Total N} 
+--- END ---
+
+Formula: {@Total9}
+--- BEGIN ---
+({Command_1.Total TaxAmount})*-1
+--- END ---
+
+Formula: {@Total12}
+--- BEGIN ---
+({Command_1.Total TaxAmount} )* -1
+--- END ---
+
+
+************************************************************
+  CONNECTION INFO
+************************************************************
+Table:    Command
+  Server:   192.168.0.216
+  Database: SBO_SDA_Training
+  UserID:   sa
+
+
+************************************************************
+  TABLE LINKS
+************************************************************
+(No table links)
+
+************************************************************
+  RECORD SELECTION FORMULA
+************************************************************
+(No record selection formula)
+
+

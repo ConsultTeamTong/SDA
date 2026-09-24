@@ -1,0 +1,40 @@
+﻿-- ============================================================
+-- Report: 1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ.rpt
+-- Path:   1.AP Down Payment_ENG ใบจ่ายเงินมัดจำ.rpt
+-- Extracted: 2026-09-24 10:19:51
+-- Source: Main Report
+-- Table:  Approve
+-- ============================================================
+
+SELECT SDAWRAP.*, CONCAT(OADP."BitmapPath", SDAWRAP."ApproverPicture") AS "Path"
+FROM (
+SELECT TOP 1 
+    ODPO.DocEntry,
+    ODPO.DocNum,
+    ODPO.DocStatus          AS 'DocStatus',
+    WDD1.UserID             AS 'ApproverUserID',
+    OUSR.U_NAME             AS 'ApproverUserName',
+    OHEM.empID,
+    OHEM.middleName          AS 'ApproverFirstName',
+    ''           AS 'ApproverLastName',
+    OHEM.picture            AS 'ApproverPicture',
+    CASE WDD1.Status
+        WHEN 'Y' THEN 'Approved'
+        WHEN 'N' THEN 'Rejected'
+        WHEN 'W' THEN 'Waiting'
+        ELSE 'No Workflow'
+    END                     AS 'ApprovalStatus',
+    WDD1.UpdateDate         AS 'ApprovalDate'
+FROM ODPO
+LEFT JOIN OWDD ON ODPO.DocEntry = OWDD.DocEntry 
+             AND OWDD.ObjType   = '204'             -- A/P Down Payment Invoice
+LEFT JOIN WDD1 ON OWDD.WddCode  = WDD1.WddCode 
+             AND WDD1.Status    = 'Y'
+LEFT JOIN OUSR ON WDD1.UserID   = OUSR.USERID
+LEFT JOIN OHEM ON WDD1.UserID   = OHEM.userId
+WHERE ODPO.DocEntry = {?DocKey@}
+ORDER BY
+    WDD1.UpdateDate DESC,
+    WDD1.UpdateTime DESC
+) SDAWRAP
+CROSS JOIN OADP
